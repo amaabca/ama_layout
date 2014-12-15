@@ -1,0 +1,1 @@
+@AMALayout = window.AMALayout ? {}
