@@ -4,10 +4,6 @@ describe AmaLayoutContentHelper do
   let(:site_domain) { "http://waffleemporium.ca" }
   let(:site_url) { "#{site_domain}/wafflesauce" }
 
-  before(:each) do
-
-  end
-
   describe "#greeting" do
     it "returns the greeting set in the domain cookie" do
       helper.request.cookies[:logged_in_meta] = greeting
@@ -97,6 +93,17 @@ describe AmaLayoutContentHelper do
 
     it "does not render the tablet menu if the visitor is not logged in" do
       expect(helper.tablet_menu(false, greeting)).to eq ""
+    end
+  end
+
+  describe "#tablet_signout" do
+    it "renders a signout link if the visitor is logged in" do
+      expect(helper).to receive(:render).with("ama_layout/tablet_signout")
+      helper.tablet_signout(true)
+    end
+
+    it "does not render the tablet menu if the visitor is not logged in" do
+      expect(helper.tablet_signout(false)).to eq ""
     end
   end
 

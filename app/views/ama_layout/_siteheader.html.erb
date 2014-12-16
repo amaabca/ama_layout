@@ -421,7 +421,7 @@
       <%= tablet_menu(logged_in, greeting) %>
       <ul class="menu-www-tablet">
         <%= render partial: "ama_layout/menu_www_items", locals: { logged_in: logged_in } %>
-        <li><%= link_to 'Sign Out', logout_path, class:"link_logout" %></li>
+        <%= tablet_signout(logged_in) %>
       </ul>
     </div>
   </nav>

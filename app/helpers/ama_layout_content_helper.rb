@@ -35,6 +35,11 @@ module AmaLayoutContentHelper
     render partial: "ama_layout/tablet_menu", locals: { logged_in: logged_in, greeting: greeting }
   end
 
+  def tablet_signout(logged_in)
+    return "" unless logged_in
+    render "ama_layout/tablet_signout"
+  end
+
   def notice(notice)
     render "ama_layout/notice" if notice
   end
