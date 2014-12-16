@@ -11,6 +11,10 @@ module AmaLayoutContentHelper
     "active" if path.include?(request.fullpath) || path.include?(request.url)
   end
 
+  def active_domain(domain)
+    "active" if request.url.include?(domain)
+  end
+
   def renew_or_join_path(logged_in)
     return "" if logged_in
     link_to("Become a Member", "http://www.ama.ab.ca/membership/join-ama-online", target: "_blank")
@@ -22,10 +26,12 @@ module AmaLayoutContentHelper
   end
 
   def dropdown_menu(logged_in, greeting)
+    return "" unless logged_in
     render partial: "ama_layout/dropdown_menu", locals: { logged_in: logged_in, greeting: greeting }
   end
 
   def tablet_menu(logged_in, greeting)
+    return "" unless logged_in
     render partial: "ama_layout/tablet_menu", locals: { logged_in: logged_in, greeting: greeting }
   end
 
