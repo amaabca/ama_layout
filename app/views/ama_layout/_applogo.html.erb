@@ -1,4 +1,3 @@
-<!-- need to make utm_source and link name flexible -->
 <section class="grid-full applogo">
   <h2><%= link_to(Rails.configuration.site_name, root_path(utm_campaign: "logged-in-#{logged_in.present?}", utm_source: utm_source, utm_medium: "link")) %></h2>
 </section>
