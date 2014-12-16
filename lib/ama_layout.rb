@@ -1,5 +1,9 @@
 require "ama_layout/version"
+require "rails/all"
 
 module AmaLayout
-  # Your code goes here...
+  module Rails
+    class Engine < ::Rails::Engine
+    end
+  end
 end
