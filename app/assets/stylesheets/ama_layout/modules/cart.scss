@@ -1,0 +1,17 @@
+.cart{
+  font-size: $base-font-size*0.875;
+  hr{
+    margin-top: $base-margin*4;
+    margin-bottom: $base-margin*4;
+  }
+}
+.cart-price{
+  text-align: right;
+}
+.cart-totals{
+  text-align:right;
+  font-size: $base-font-size*0.875;
+  .cart-totals-balance{
+    font-size: $base-font-size*1.125;
+  }
+}

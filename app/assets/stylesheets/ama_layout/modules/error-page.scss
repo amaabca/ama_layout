@@ -1,0 +1,25 @@
+.error-page-emph{
+  color: $secondary-color;
+}
+
+.error-pg-width {
+  max-width: 650px !important;
+  margin:0 auto !important;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.error-pg-mb{
+  margin: 0 auto 40px auto !important;
+}
+
+.error-pg-num{
+  min-width: 50%;
+  min-height: 80px;
+  padding-top: 10px;
+}
+
+.error-pg-num-border{
+  border-left:1px solid $slate;
+  margin-top:0px;
+}

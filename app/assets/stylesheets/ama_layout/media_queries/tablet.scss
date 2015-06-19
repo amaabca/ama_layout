@@ -1,0 +1,13 @@
+@media screen and (min-width:40.064em) and (max-width:64em){
+  .main-content-container{
+    padding: $base-padding*4 0 0;
+  }
+  .site-header img{
+    padding-left: $base-padding*4;
+  }
+  .membership-card-radio, .membership-card-radio-plus-primary, .membership-card-label{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

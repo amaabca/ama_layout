@@ -1,0 +1,78 @@
+html, body{
+  height: auto !important;
+}
+html{
+  background: image-url('alberta-blur.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body{
+  background: none;
+}
+.site-header{
+  width: 100%;
+  height: 50px;
+  background-color: $primary-color;
+  margin-bottom: $base-margin*10;
+  padding: $base-padding*2 0 0;
+  a, a:visited{
+    padding-top: $base-padding*2;
+  }
+  a:hover{
+    color: $sky;
+    cursor: pointer;
+  }
+}
+.main-wrapper{
+  margin: $base-margin*4 auto;
+}
+.page-wrapper{
+  border: $base-border;
+  background-color: $white;
+}
+.page-title{
+  background: $ash;
+  border-bottom: $base-border;
+  padding: $base-padding 0;
+}
+.page-steps{
+  text-align:right;
+}
+.content-block{
+  margin-bottom: $base-margin*4;
+  background: $white;
+  border:$base-border;
+}
+.content-block-bottom{
+  margin-top: $base-margin*8;
+}
+.panel-box{
+  padding: $base-padding*4;
+  h4, p{
+    color: $white;
+    margin-top: 0;
+  }
+}
+.panel-box-confirmation{
+  background: $green;
+}
+.panel-box-error{
+  background: $brand-red;
+}
+.image-callout{
+  border: $base-border;
+}
+.sidebar{
+  @extend %white-trans;
+  padding: $base-padding*4;
+  p{
+    margin-bottom: $base-margin*2;
+  }
+}
+footer{
+  background: image-url('footer-racetrack-big.png') no-repeat center 0;
+  height: 200px;
+  margin-top: $base-margin*12;
+}

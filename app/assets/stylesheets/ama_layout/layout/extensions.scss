@@ -1,0 +1,64 @@
+%white-trans{
+  background-color: $white;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  background-color: rgba(255,255,255,0.6);
+}
+.membership-card-radio{
+  text-align:center;
+  padding: 0;
+  width: 32%;
+  &.columns{
+    padding-left:0;
+    padding-right:0;
+  }
+}
+.membership-card-radio-plus-primary{
+  text-align:center;
+  padding: 0;
+  width: 49%;
+  &.columns{
+    padding-left:0;
+    padding-right:0;
+  }
+}
+.base-button{
+  @extend .radius;
+  @extend .small;
+  color: $white;
+}
+.emphasized, .emphasized:visited{
+  @extend .base-button;
+  background: $secondary-color;
+  &:hover, &:active, &:focus{
+   background-color: lighten($secondary-color, 10%);
+  }
+}
+button.disabled, button[disabled], .button.disabled, .button[disabled]{
+  background-color: lighten($secondary-color, 10%);
+  border-color:none;
+  &:hover, &:active, &:focus{
+    background-color: lighten($secondary-color, 10%);
+    border-color:none;
+  }
+}
+.de-emphasized, .de-emphasized:visited{
+  @extend .base-button;
+  background: $slate;
+  &:hover, &:active, &:focus{
+   background-color: lighten($slate, 10%);
+  }
+}
+.red-btn {
+  background:$brand-red;
+  &:hover, &:active, &:focus{
+   background-color: darken($brand-red, 10%);
+  }
+}
+%inputs-thirds{
+  max-width: 30%;
+  float:left;
+}
+%inputs-halves{
+  max-width: 47.5%;
+  float:left;
+}
