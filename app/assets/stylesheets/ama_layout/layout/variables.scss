@@ -1,0 +1,30 @@
+/* Colours */
+$brand-red: #da291c;
+$white: #ffffff;
+$green: #3fae60;
+$brand-green: #78be20; //Rewards Green
+$brand-blue-insurance:#00a3e0;
+// Blue tones - ordered from lightest to darkest
+$sky: #e2f4fc;
+$ocean: #8cceec;
+$brand-blue-light: #00539b;
+$brand-blue-dark: #00205b;
+// Grey tones - ordered from lightest to darkest
+$ash: #f7f7f7;
+$smoke: #cccccc;
+$slate: #838383;
+$jet: #323232;
+$charcoal: #656565;
+// For foundation
+$primary-color: $brand-blue-dark;
+$secondary-color: $brand-blue-light;
+// Fonts
+$font-family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
+$base-font-size: 1em;
+// Spacing
+$base-margin: 5px;
+$base-padding: 5px;
+// Borders
+$base-border: 1px solid $smoke;
+//Radius
+$base-radius: 3px;

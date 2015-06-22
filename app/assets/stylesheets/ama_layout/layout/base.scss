@@ -11,9 +11,12 @@ html{
 body{
   background: none;
 }
- .main-wrapper{
-   margin: $base-margin*4 auto;
- }
+.row{
+  max-width: 74rem;
+}
+.main-wrapper{
+ margin: $base-margin*4 auto;
+}
 .page-wrapper{
   border: $base-border;
   background-color: $white;
@@ -97,44 +100,22 @@ body{
   margin-bottom: $base-margin*4 !important;
 }
 .pl0 {
-  padding-left:0;
+  padding-left:0 !important;
 }
 .pr0 {
-  padding-right:0;
+  padding-right:0 !important;
 }
 .pb0 {
   padding-bottom:0 !important;
 }
-h1, h2, h3, h4, h5, h6, p{
-  font-family: $font-family-sans-serif;
-  margin-bottom: 0.2em;
-  margin-bottom: 0.2rem; //this is so headers have equal padding on bottom and top
+.pt0 {
+  padding-top:0 !important;
 }
-h4{
-  margin-top: $base-margin*4;
-  margin-bottom: $base-margin*2;
+.full-width{
+  width:100%;
 }
-label{
-  font-family: $font-family-sans-serif;
-  color: $charcoal;
-}
-p, li{
-  font-size: $base-font-size*0.875;
-  color: $charcoal;
-  font-weight: 200;
-  font-family: $font-family-sans-serif;
-}
-a{
-  text-decoration:underline;
-  color: $secondary-color;
-  font-size: $base-font-size*0.875;
-}
-p>a{
-  font-size: $base-font-size;
-}
-hr{
-  margin: $base-margin 0;
-}
-small{
-  font-size: 80%;
+.white-trans{
+  background-color: $white;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  background-color: rgba(255,255,255,0.6);
 }
