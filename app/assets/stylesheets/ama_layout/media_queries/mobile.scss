@@ -1,3 +1,12 @@
+@media screen and (max-width:1026px){
+  .reward-dollars {
+    padding: 15px 10px 15px 10px;
+    background: #78be20;
+    min-height: 130px;
+    color: white;
+  }
+}
+
 @media screen and (max-width:40.063em){
   .site-header{
     margin-bottom: $base-margin*4;
