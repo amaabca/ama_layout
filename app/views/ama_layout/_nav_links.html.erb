@@ -1,0 +1,10 @@
+<ul>
+  <li class="dashboard-nav dashboard-title mt0"><%= link_to 'Your Account Dashboard <br/><span>Member Exclusive Services</span>'.html_safe, dashboard_path, alt:'Back to my dashboard', class: active_page(dashboard_path) %></li>
+  <li class="dashboard-nav dashboard-title"><%= link_to 'Online Profile<br/><span>Email / Passsword Change</span>'.html_safe, gatekeeper_profile_path %></li>
+  <li class="dashboard-nav dashboard-title"><%= link_to 'Billing<br/><span>Statements / Reward Options</span>'.html_safe, billing_path, class: active_page(billing_path, reward_dollars_path) %></li>
+  <li class="dashboard-nav dashboard-title"><%= link_to 'Your Membership<br/><span>Print Cards / Change Address</span>'.html_safe, membership_path, class: active_page(membership_path, new_membership_update_path, memberships_printcard_path) %></li>
+  <li class="dashboard-nav dashboard-title"><%= link_to 'Newsletters<br/><span>Subscriptions / Reminders</span>'.html_safe, subscriptions_path, class: active_page(subscriptions_path) %></li>
+  <li class="dashboard-nav dashboard-title"><%= link_to 'AMA Esso Rewards Cards<br/><span>Manage Cards / Esso Reload</span>'.html_safe, subscriptions_path, class: active_page(subscriptions_path) %></li>
+  <li class="dashboard-nav dashboard-title"><%= link_to 'Westworld<br/><span>View Online / Change Address</span>'.html_safe, '/westworld', class: active_page('/westworld') %></li>
+  <li class="dashboard-nav dashboard-title"><%= link_to 'Sign Out', logout_path %></li>
+</ul>
