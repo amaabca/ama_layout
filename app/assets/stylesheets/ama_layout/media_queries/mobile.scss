@@ -1,3 +1,8 @@
+@media screen and (max-width:640px){
+  .dashboard-nav{
+    margin-top:0;
+  }
+}
 @media screen and (max-width:40.063em){
   .site-header{
     margin-bottom: $base-margin*4;
