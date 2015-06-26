@@ -112,10 +112,10 @@ body{
   padding-top:0 !important;
 }
 .pt1 {
-  padding-top: $base-margin !important;
+  padding-top: $base-margin*4 !important;
 }
 .pb1 {
-  padding-bottom: $base-margin !important;
+  padding-bottom: $base-margin*4 !important;
 }
 .full-width{
   width:100%;
