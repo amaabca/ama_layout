@@ -26,7 +26,7 @@ button.disabled, button[disabled], .button.disabled, .button[disabled]{
   }
 }
 .red-btn{
-  background:$brand-red;
+  background:$brand-red !important;
   &:hover, &:active, &:focus{
    background-color: darken($brand-red, 10%);
   }

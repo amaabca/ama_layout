@@ -2,7 +2,6 @@
   <div class="row">
     <div id="navWrapper">
       <div id="pattern" class="pattern">
-
         <%= link_to(image_tag("AMA-Logo.png"), "https://www.ama.ab.ca") %>
         <% if current_user %>
           <a href="#" class="menu-link show-for-small-only"></a>
@@ -16,14 +15,3 @@
     </div>
   </div>
 </header>
-<script>
-$(document).ready(function() {
-  var menulink = $('.menu-link');
-  var nav = $('#menu');
-
-  menulink.click(function() {
-    nav.toggleClass('active');
-    return false;
-  });
-});
-</script>
