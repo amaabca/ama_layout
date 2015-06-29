@@ -8,7 +8,7 @@ module AmaLayoutContentHelper
   end
 
   def active_page(*path)
-    "active" if path.include?(request.fullpath) || path.include?(request.url)
+    "activepage" if path.include?(request.fullpath) || path.include?(request.url)
   end
 
   def active_domain(domain)
