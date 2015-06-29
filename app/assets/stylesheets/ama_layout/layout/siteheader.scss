@@ -1,0 +1,14 @@
+.site-header{
+  width: 100%;
+  height: 50px;
+  background-color: $primary-color;
+  margin-bottom: 30px;
+  padding: 0;
+  a:hover{
+    color: $sky;
+    cursor: pointer;
+  }
+  img {
+    padding-top:10px;
+  }
+}

@@ -1,0 +1,135 @@
+
+.dashboard-title {
+  font-size: 14px;
+  font-weight: normal;
+  color: #5C5C5C;
+  text-transform: uppercase;
+  background:white;
+  padding: 15px;
+}
+
+.dashboard-nav {
+  width: 100%;
+  background: white;
+  display: block;
+  margin-top: 12px;
+  text-transform: capitalize;
+  padding: 0px;
+
+  a {
+    font-family: $font-family-sans-serif;
+    font-size: 18px;
+    color: #646464;
+    text-decoration:none;
+    display: block;
+    width: 100%;
+    padding: 8px 15px;
+
+    &:hover , &:active{
+     color:white;
+    }
+  }
+
+  &:hover , &:active{
+   background:#00539b;
+   a {
+     color:white;
+   }
+  }
+
+  span {
+    display: block;
+    font-size: 12px;
+  }
+  
+}
+
+a.activepage{
+  background:#00539b;
+  color:white;
+}
+
+.sidebar{
+  @extend .white-trans;
+  padding: $base-padding*4;
+  p{
+    margin-bottom: $base-margin*2;
+  }
+}
+
+
+/***************
+Mobile NAV
+******************/
+
+.pattern {
+	margin-bottom: 1em;
+	overflow: hidden;
+}
+
+a.menu-link {
+	float:right;
+	display:block;
+	padding:0em;
+	width: 50px;
+	text-align: center;
+	text-decoration: none;
+}
+/* Hide */
+nav[role=navigation] {
+	max-height:0;
+}
+/* Show */
+nav[role=navigation].active {
+	max-height:60em;
+}
+
+a.menu-link:before {
+		color: #fff;
+		content: '\2630';
+		font-size:33px;
+		font-weight: lighter;
+		text-align: center;
+		text-decoration: none;
+}
+
+/* Vertical Menu */
+nav[role=navigation] {
+	clear: both;
+	-webkit-transition: all 0.3s ease-out;  
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+nav[role=navigation] ul {
+	margin: 0;
+	padding: 0;
+	background-color: rgba(255,255,255,0.65);
+	margin-top: -1px;
+
+}
+nav[role=navigation] li a {
+	display: block;
+	padding: 0.2em;
+	text-decoration: none;
+}
+
+#menu{
+	float:none;
+	margin-top: 0px;
+	margin-right: 0px;
+  
+  a{
+  	font-size: 21px;
+  	letter-spacing: 0.1px;
+  	margin-top: 0px;
+  }
+}
+
+#navWrapper{
+	position: relative;
+	z-index: 900;
+  width:100%;
+}

@@ -1,0 +1,12 @@
+.notice_notification {
+  max-width: 500px;
+  padding: 10px 30px 10px 30px;
+  background-color: #3fae60;
+  color: white;
+  margin: 20px auto 0 auto;
+}
+
+.error_notification{
+  @extend .notice_notification;
+  background-color: #da291c;
+}

@@ -1,0 +1,74 @@
+/* ------------- Styles for <= IE8 ------------- */
+.old-ie{
+  .day, .month, .year{
+    max-width: 26%;
+  }
+  [type="checkbox"]:checked + label > span{
+    background-color: $secondary-color;
+  }
+  small.error{
+    margin-top: -1em;
+    margin-bottom: 1em;
+    padding: 0.375em 0.5625em 0.5625em;
+  }
+  h1 {
+    font-size: 2.125em;
+  }
+  h2 {
+    font-size: 1.6875em;
+  }
+  h3 {
+    font-size: 1.375em;
+  }
+  h4 {
+    font-size: 1.125em;
+  }
+  h5 {
+    font-size: 1.125em;
+  }
+  h6 {
+    font-size: 1em;
+  }
+  .column,
+  .columns {
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+  }
+  .row .row {
+    margin-left: -0.9375em;
+    margin-right: -0.9375em;
+  }
+  button, .button {
+    margin: 0 0 1.25em;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-bottom: 1.0625em;
+    padding-left: 1em;
+    font-size: 1em;
+  }
+  .collapse.row > .columns{
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  input[type="color"],
+  textarea,
+  select{
+    margin-bottom: 1em;
+  }
+  ul{
+    margin-left: 1.1em; 
+  }
+}
