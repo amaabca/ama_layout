@@ -33,7 +33,7 @@ button.disabled, button[disabled], .button.disabled, .button[disabled]{
 }
 .green-btn{
   background: #78be20;
-  &:hover, &:active, &:focus{
+  &:hover, &:active, &:focus, &:visited{
    background-color: darken(#78be20, 10%);
   }
 }
