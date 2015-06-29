@@ -3,12 +3,14 @@ describe AmaLayoutPathHelper do
   let(:youraccount_site) { "http://youraccount.waffles.ca" }
   let(:insurance_site) { "http://insurance.waffles.ca" }
   let(:membership_site) { "http://membership.waffles.ca" }
+  let(:driveredonline_site) { "http://driveredonline.waffles.ca" }
 
   before(:each) do
     allow(Rails.configuration).to receive(:gatekeeper_site).and_return(gatekeeper_site)
     allow(Rails.configuration).to receive(:youraccount_site).and_return(youraccount_site)
     allow(Rails.configuration).to receive(:insurance_site).and_return(insurance_site)
     allow(Rails.configuration).to receive(:membership_site).and_return(membership_site)
+    allow(Rails.configuration).to receive(:driveredonline_site).and_return(:driveredonline_site)
   end
 
   describe "#gatekeeper_profile_path" do
@@ -100,9 +102,16 @@ describe AmaLayoutPathHelper do
       expect(helper.insurance_path).to eq insurance_site
     end
   end
+
   describe "#membership_path" do
     it "returns the membership esso reload path" do
       expect(helper.membership_esso_reload_path).to eq "#{membership_site}/reward_"
+    end
+  end
+
+  describe "#driveredonline_path" do
+    it "returns the driveredonile path" do
+      expect(helper.driveredonline_path).to eq "#{driveredonline_site}/login"
     end
   end
 end
