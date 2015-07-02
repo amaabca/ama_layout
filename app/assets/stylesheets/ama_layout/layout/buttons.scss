@@ -12,10 +12,10 @@
 }
 button.disabled, button[disabled], .button.disabled, .button[disabled]{
   background-color: lighten($secondary-color, 10%);
-  border-color:none;
+  border-color: none;
   &:hover, &:active, &:focus{
     background-color: lighten($secondary-color, 10%);
-    border-color:none;
+    border-color: none;
   }
 }
 .de-emphasized, .de-emphasized:visited{
@@ -26,14 +26,15 @@ button.disabled, button[disabled], .button.disabled, .button[disabled]{
   }
 }
 .red-btn{
-  background:$brand-red !important;
+  background: $brand-red !important;
   &:hover, &:active, &:focus{
-   background-color: darken($brand-red, 10%);
+   background-color: lighten($brand-red, 10%);
   }
 }
 .green-btn{
-  background: #78be20;
-  &:hover, &:active, &:focus, &:visited{
-   background-color: darken(#78be20, 10%);
+  @extend .base-button;
+  background: $brand-green;
+  &:hover, &:active, &:focus{
+   background-color: lighten($brand-green, 10%);
   }
 }

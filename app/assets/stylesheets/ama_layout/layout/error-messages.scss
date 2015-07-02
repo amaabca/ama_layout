@@ -1,12 +1,10 @@
 .notice_notification {
-  max-width: 500px;
-  padding: 10px 30px 10px 30px;
-  background-color: #3fae60;
-  color: white;
-  margin: 20px auto 0 auto;
+  padding: 10px 15px 10px 15px;
+  background-color: $brand-blue-insurance;
+  color: $white;
 }
 
 .error_notification{
   @extend .notice_notification;
-  background-color: #da291c;
+  background-color: $brand-red;
 }
