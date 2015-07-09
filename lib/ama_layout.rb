@@ -1,6 +1,6 @@
 require "ama_layout/version"
 require "rails/all"
-require "ama_foundation_css"
+require "foundation-rails"
 
 module AmaLayout
   module Rails
