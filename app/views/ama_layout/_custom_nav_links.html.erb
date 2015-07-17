@@ -1,24 +1,13 @@
-<ul>
-  <li class="dashboard-nav dashboard-title mt0">
-    <%
-
-    def nested_hash_value(obj,key)
-      if obj.respond_to?(:key?) && obj.key?(key)
-        obj[key]
-      elsif obj.respond_to?(:each)
-        r = nil
-        obj.find{ |*a| r=nested_hash_value(a.last,key) }
-        r
-      end
-    end
-
-
-    navigation_items.each do | key, value |
-
-      binding.pry
-      %>
-      <%= link_to "#{key}", "#{ nested_hash_value(navigation_items, :link) }" %>
-
-    <% end %>
+<% first_item = 'mt0' %>
+<% navigation_items.each do | key, value | %>
+  <li class="dashboard-nav dashboard-title <% first_item %>">
+    <%= link_to "#{key}".html_safe, "#{ value.fetch(:link) }",
+      class: active_page("#{ value.fetch(:link) }"),
+      target: "#{ (value.has_key? :target) ? value.fetch(:target) : ' ' }",
+      alt: "#{ (value.has_key? :alt) ? value.fetch(:alt) : ' '  }" %>
   </li>
-</ul>
+  <% first_item = '' %>
+<% end %>
+<% if current_user %>
+  <li class="dashboard-nav dashboard-title mt1"><%= link_to 'Sign Out', logout_path %></li>
+<% end %>
