@@ -30,27 +30,66 @@ Rails.configuration.youraccount_site
 
 Rails.configuration.insurance_site
 
+
+### Navigation
+
+Navigation for each application has been built in custom made Navigation class and set as a hash to ama_layout gem:
+
+Example:
+
+    class Navigation
+      include ActiveModel::Model
+
+      attr_accessor :current_user
+
+      def initialize args={}
+        self.current_user = args.fetch(:current_user)
+      end
+
+      def navigation
+        if current_user.member?
+          member_navigation
+        else
+          non_member_navigation
+        end
+      end
+
+      def member_navigation
+        {
+          "Your Account Dashboard" => { subtitle: "Member Exclusive Services", alt: "Back to my dashboard", link: "#{Rails.configuration.youraccount_site}/dashboard" },
+          "Online Profile" => { subtitle: "Email / Password Change", link: "#{Rails.configuration.gatekeeper_site}/user/edit" }
+      end
+
+      def non_member_navigation
+        {
+          "Join" => { alt: "Back to my dashboard", link: "#{Rails.configuration.membership_site}" },
+          "New Driver Online Program" => { link: "#{Rails.configuration.driveredonline_site}/login", target: "_blank" }
+        }
+      end
+    end
+
+
 ### Layout
 
-The following layout example will give you a header, left nav and footer consistent with .ama.ab.ca sites.
+The following layout example will give you:
+       a header with appropriate navigation if applicable,
+       side navigation if applicable and footer
 
     <body class="<%= controller_name %>" id="top">
-      <div class="container-fluid">
-        <%= render partial: "ama_layout/header", locals: { logged_in: current_user } %>
-        <div class="waiting"></div>
-        <%= render "ama_layout/menuleft" %>
-        <div class="grid-9 appcontent collapse omega">
-          <%= yield %>
-        </div>
-        <%= render partial: "ama_layout/footer" %>
+      <%= render partial: "ama_layout/siteheader", locals: { navigation: Navigation.new(current_user: current_user).navigation } if current_user %>
+      <%= render "ama_layout/notices" %>
+      <div class="row wrapper">
+        <%= render partial: "ama_layout/custom_sidebar", locals: { navigation: Navigation.new(current_user: current_user).navigation } if current_user %>
+        <%= yield %>
       </div>
+      <%= render "ama_layout/footer" %>
     </body>
 
 ### Stylesheets
 
 Add the following to your application.scss
 
-    @import "foundation/application";
+    @import "ama_layout/application";
 
 ### Javascript
 
@@ -60,7 +99,7 @@ Add the following to your application.js
 
 ### Mobile Layouts
 
-AmaLayout supports mobile layouts using the mobylette gem.
+There is no need for you to set any specific code, values,... for mobile views.
 
 ## Contributing
 
