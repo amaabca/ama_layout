@@ -1,9 +1,4 @@
 module AmaLayoutContentHelper
-
-  def sidebar_links(navigation)
-    render partial: "ama_layout/custom_nav_links", locals: { navigation_items: navigation }
-  end
-
   def greeting
     cookies["logged_in_meta"]
   end
