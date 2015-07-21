@@ -30,6 +30,14 @@ Rails.configuration.youraccount_site
 
 Rails.configuration.insurance_site
 
+Rails.configuration.membership_site
+
+Rails.configuration.driveredonline_site
+
+Rails.configuration.amaabca_site
+
+Rails.configuration.forms_amaabca_site
+
 
 ### Navigation
 
@@ -47,26 +55,53 @@ Example:
       end
 
       def navigation
-        if current_user.member?
-          member_navigation
-        else
-          non_member_navigation
+        return nil unless current_user
+        return navigation_items["member-in-renewal"] if current_user.profile.in_billing?
+        return navigation_items["member"] if current_user.member?
+        navigation_items["non-member"]
+      end
+
+    private
+        def navigation_items
+          YAML.load(ERB.new(File.read("#{Rails.root}/config/locales/navigation.yml")).result)
         end
-      end
-
-      def member_navigation
-        {
-          "Your Account Dashboard" => { subtitle: "Member Exclusive Services", alt: "Back to my dashboard", link: "#{Rails.configuration.youraccount_site}/dashboard" },
-          "Online Profile" => { subtitle: "Email / Password Change", link: "#{Rails.configuration.gatekeeper_site}/user/edit" }
-      end
-
-      def non_member_navigation
-        {
-          "Join" => { alt: "Back to my dashboard", link: "#{Rails.configuration.membership_site}" },
-          "New Driver Online Program" => { link: "#{Rails.configuration.driveredonline_site}/login", target: "_blank" }
-        }
-      end
     end
+
+Custom Navigation yaml file used to set all navigation:
+
+    member:
+      "Your Account Dashboard":
+        subtitle: "Member Exclusive Services"
+        alt: "Back to my dashboard"
+        link: "<%= Rails.configuration.youraccount_site %>/dashboard"
+      "Online Profile":
+        subtitle: "Email / Password Change"
+        link: "<%= Rails.configuration.gatekeeper_site %>/user/edit"
+      "Billing":
+        subtitle: "Statements / Reward Options"
+        link: "<%= Rails.configuration.youraccount_site %>/billing"
+      .
+      .
+      .
+    non-member:
+      "Joins":
+        alt: "Back to my dashboard"
+        link: <%= Rails.configuration.membership_site %>
+      "New Driver Online Program":
+        link: "<%= Rails.configuration.driveredonline_site %>/login"
+        target: "_blank"
+    member-in-renewal:
+      "Your Account Dashboard":
+        subtitle: "Member Exclusive Services"
+        alt: "Back to my dashboard"
+        link: "<%= Rails.configuration.youraccount_site %>/dashboard"
+      "Renew":
+        link: "<%= Rails.configuration.youraccount_site %>/renew"
+      "Help":
+        link: "<%= Rails.configuration.youraccount_site %>/help"
+      "Contact Us":
+        link: "<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information"
+        target: "_blank"
 
 
 ### Layout
@@ -76,10 +111,10 @@ The following layout example will give you:
        side navigation if applicable and footer
 
     <body class="<%= controller_name %>" id="top">
-      <%= render partial: "ama_layout/siteheader", locals: { navigation: Navigation.new(current_user: current_user).navigation } if current_user %>
+      <%= render partial: "ama_layout/siteheader", locals: { navigation: Navigation.new(current_user: current_user).navigation } %>
       <%= render "ama_layout/notices" %>
       <div class="row wrapper">
-        <%= render partial: "ama_layout/custom_sidebar", locals: { navigation: Navigation.new(current_user: current_user).navigation } if current_user %>
+        <%= render partial: "ama_layout/custom_sidebar", locals: { navigation: Navigation.new(current_user: current_user).navigation } %>
         <%= yield %>
       </div>
       <%= render "ama_layout/footer" %>
