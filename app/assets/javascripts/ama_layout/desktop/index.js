@@ -3,5 +3,5 @@
 //= require ./toggle_menu
 //= require ./header_menu
 //= require ./ready
-//= require ./foundation
+//= require foundation
 //= require ./foundation-ready
