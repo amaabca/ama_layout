@@ -3,7 +3,6 @@
   background-color: $brand-blue-insurance;
   color: $white;
 }
-
 .error_notification{
   @extend .notice_notification;
   background-color: $brand-red;
