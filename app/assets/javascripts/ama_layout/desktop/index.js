@@ -5,3 +5,5 @@
 //= require ./ready
 //= require foundation
 //= require ./foundation-ready
+//= require ./sticky-footer
+//= require ./foundation-namespace
