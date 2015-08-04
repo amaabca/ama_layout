@@ -138,7 +138,7 @@ There is no need for you to set any specific code, values,... for mobile views.
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/ama_layout/fork )
+1. Fork it ( https://github.com/amaabca/ama_layout/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Create rspec tests to cover your feature (100% coverage required)
 4. Commit your changes (`git commit -am 'Add some feature'`)
