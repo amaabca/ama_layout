@@ -31,7 +31,7 @@ button.disabled, button[disabled], .button.disabled, .button[disabled]{
    background-color: lighten($brand-red, 10%);
   }
 }
-.green-btn{
+.green-btn, .green-btn:visited{
   @extend .base-button;
   background: $brand-green;
   &:hover, &:active, &:focus{
