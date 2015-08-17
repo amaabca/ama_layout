@@ -1,39 +1,7 @@
 <div class="medium-4 large-3 columns show-for-medium-up pl0">
   <div class="white-trans pb0">
     <div class="large-12 fullwidth center">
-      <ul>
-        <li class="dashboard-nav dashboard-title mt0">
-          <span class="nav-icon fa fa-tachometer"></span>
-          <a>Account Dashboard</a>
-        </li>
-        <li class="dashboard-nav dashboard-title">
-          <span class='nav-icon fa fa-credit-card'></span>
-          
-          <a>Membership</a>
-        </li>
-        <li class="dashboard-nav dashboard-title">
-          <span class="nav-icon fa fa-car"></span>
-          <a>Driver Education</a>
-        </li>
-        <li class="dashboard-nav dashboard-title">
-          <span class="nav-icon fa fa-umbrella"></span>
-          <a>Insurance</a>
-          <ul class="inner-nav mb1">
-            <li><a href="#">Add a policy</a></li>
-            <li><a href="#">View your policies</a></li>
-            <li><a href="#">Insurance</a></li>
-          </ul>
-        </li>
-        <li class="dashboard-nav dashboard-title">
-          <span class="nav-icon fa fa-arrow-up"></span>
-          <a>Reload Esso Gift Cards</a>
-        </li>
-        <li class="dashboard-nav dashboard-title">
-          <span class="nav-icon fa fa-cogs"></span>
-          <a>Settings & Subscriptions</a>
-        </li>
-      </ul>
-      <!--<%= render partial: "ama_layout/custom_nav_links", locals: { navigation_items: navigation } if navigation %>-->
+      <%= render partial: "ama_layout/main_nav_item", collection: navigation, as: :nav_item if navigation %>
     </div>
   </div>
 </div>
