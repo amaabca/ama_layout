@@ -1,48 +1,97 @@
-<!-- ><header class="site-header">
-  <div class="sticky">
-    <nav role="navigation" class="top-bar" data-topbar>
-      <div class="row">
-        <div id="navWrapper">
-          <div id="pattern" class="pattern">
-            <%= link_to(image_tag("AMA-Logo.png"), "https://www.ama.ab.ca") %>
-            <% if navigation %>
-
-              <a href="#" class="menu-link"></a>
-              <nav id="menu" role="navigation" class="">
-                <ul>
-                  <%= render partial: "ama_layout/custom_nav_links", locals: { navigation_items: navigation } %>
-                </ul>
-              </nav>
-            <% end  %>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </div>
-</header> -->
-
-<div class="sticky contain-to-grid">
+<div class="sticky contain-to-grid top-bar-nav">
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
         <%= link_to(image_tag("AMA-Logo.png"), "https://www.ama.ab.ca") %>
       </li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
     </ul>
 
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
-        <li class=""><a href="#">Help</a></li>
-        <li class=""><a href="#">Contact Us</a></li>
-        <li class="has-dropdown">
+        <li><a href="#">Help</a></li>
+        <li class="divider show-for-small-only"></li>
+        <li><a href="#">Contact Us</a></li>
+        <li class="divider show-for-small-only"></li>
+        <li class="has-dropdown dropdown-open-link">
           <a href="#">Welcome, Batman</a>
           <ul class="dropdown">
-            <li><a href="#">Online Account</a></li>
+            <li class="divider"></li>
+            <li class="has-dropdown hover">
+              <a href="#">Membership</a>
+              <ul class="dropdown nested">
+                <li class="divider"></li>
+                <li><a href="#">Membership Overview</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Manage Membership</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Billing Options</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Print/Request New AMA Card</a></li>
+                <li class="divider"></li>
+              </ul>
+            </li>
+            <li class="divider"></li>
+            <li class="has-dropdown">
+              <a href="#">Driver Education</a>
+              <ul class="dropdown nested">
+                <li class="divider"></li>
+                <li><a href="#">Driver Education Overview</a></li>
+                <li class="divider"></li>
+                <li><a href="#">New Driver Online Course</a></li>
+                <li class="divider"></li>
+              </ul>
+            </li>
+            <li class="divider"></li>
+            <li class="has-dropdown">
+              <a href="#">Insurance</a>
+              <ul class="dropdown nested">
+                <li class="divider"></li>
+                <li><a href="#">Insurance Overview</a></li>
+                <li class="divider"></li>
+                <li><a href="#">View Policy</a></li>
+                <li class="divider"></li>
+              </ul>
+            </li>
+            <li class="divider"></li>
+            <li class="has-dropdown">
+              <a href="#">Reward Dollars</a>
+              <ul class="dropdown nested">
+                <li class="divider"></li>
+                <li><a href="#">Reward Dollars Overview</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Reload Esso Gift Card</a></li>
+                <li class="divider"></li>
+              </ul>
+            </li>
+            <li class="divider"></li>
+            <li class="has-dropdown">
+              <a href="#">Settings &amp; Subscriptions</a>
+              <ul class="dropdown nested">
+                <li class="divider"></li>
+                <li><a href="#">Settings and Subscriptions Overview</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Change Email/Password</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Manage Subscriptions</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Change Address</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Delete Account</a></li>
+                <li class="divider"></li>
+              </ul>
+            </li>
+            <li class="divider"></li>
             <li><a href="#">AMA Website</a></li>
+            <li class="divider"></li>
             <li><a href="#">AMA Road Reports</a></li>
-            <li><a href="#">Settings</a></li>
+            <li class="divider"></li>
+            <li class="show-for-small-only"><a href="#">Help</a></li>
+            <li class="divider show-for-small-only"></li>
+            <li class="show-for-small-only"><a href="#">Contact Us</a></li>
+            <li class="divider show-for-small-only"></li>
             <li><a href="#">Sign Out</a></li>
           </ul>
         </li>
