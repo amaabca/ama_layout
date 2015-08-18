@@ -45,11 +45,15 @@
      color:white;
    }
    .inner-nav{
-     display:block;
+     max-height:200px;
+     visibility:visible;
+     opacity:1;
+     transition-delay:0s;
+     
    }
   }
 
-  .inner-nav li:hover, &:active{
+  .inner-nav li:hover, .inner-nav li:active{
     text-decoration:underline;
   }
 
@@ -60,7 +64,10 @@
 }
 
 .inner-nav{
-  display:none;
+  visibility:hidden;
+  opacity:0;
+  max-height: 0;
+  transition: max-height 0.25s ease-out, opacity 0.3s linear;
   margin-left: 62px;
   margin-top: -15px;
   li{
