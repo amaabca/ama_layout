@@ -7,6 +7,12 @@ module AmaLayoutContentHelper
     Rails.configuration.site_name.downcase.gsub(/\W/, "")
   end
 
+  def active_section(nav_item)
+    paths = [nav_item["link"]]
+    paths += [nav_item["subnav"]].flatten.compact.map { |sn| sn["link"] }
+    active_page(*paths)
+  end
+
   def active_page(*path)
     "activepage" if path.include?(request.fullpath) || path.include?(request.url)
   end

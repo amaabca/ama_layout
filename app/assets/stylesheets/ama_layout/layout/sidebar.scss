@@ -10,7 +10,7 @@
 
 .dashboard-nav {
   width: 100%;
-  background: white;
+  background: $white;
   display: block;
   margin-top: $base-margin*2;
   text-transform: capitalize;
@@ -20,36 +20,40 @@
   a {
     font-family: $font-family-sans-serif;
     font-size: $base-font-size*1.125;
-    color: #646464;
+    color: $stormcloud;
     text-decoration:none;
     display: block;
     width: 100%;
     padding: $base-margin*3.6;
 
     &:hover, &:active{
-     color:white;
+     color:$white;
     }
 
     span{
-      margin-top:15px;
+      margin-top:$base-margin*3;
     }
   }
 
   &:hover, 
-  &:active {
+  &:active, 
+  &.activepage {
    background:#00539b;
    a {
      color:white;
      max-height:inherit;
-   }
-   span.nav-icon {
+    }
+    span.nav-icon {
      color:white;
-   }
-   .inner-nav{
+    }
+    .inner-nav{
      max-height:200px;
      visibility:visible;
      opacity:1;
-   }
+    }
+    a.activepage {
+      text-decoration:underline;
+    }
   }
 
   .inner-nav li:hover, 
@@ -69,8 +73,8 @@
   -webkit-transition: max-height 0.15s ease-out;
   -moz-transition: max-height 0.15s ease-out;
   transition: max-height 0.15s ease-out;
-  margin-left: 62px;
-  margin-top: -15px;
+  margin-left: $base-margin*12.4;
+  margin-top: -$base-margin*3;
   li{
     color:white;
   }
