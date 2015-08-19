@@ -1,5 +1,5 @@
 <div class="sticky contain-to-grid top-bar-nav">
-  <nav class="top-bar" data-topbar role="navigation">
+  <nav class="top-bar" data-topbar data-options="mobile_show_parent_link: false" role="navigation">
     <ul class="title-area">
       <li class="name">
         <%= link_to(image_tag("AMA-Logo.png"), "https://www.ama.ab.ca") %>
@@ -7,23 +7,6 @@
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
     </ul>
-
-    <section class="top-bar-section show-for-medium-up">
-      <ul class="right">
-        <li><a href="#">Help</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <% if navigation %>
-        <li class="has-dropdown dropdown-open-link">
-          <% if current_user %>
-          <a href="#">Welcome, Batman</a>
-          <% end %>
-          <ul class="dropdown">
-            <%= render partial: "ama_layout/main_top_nav_item", collection: navigation, as: :nav_item %>
-          </ul>
-        </li>
-        <% end %>
-      </ul>
-    </section>
     <section class="top-bar-section show-for-small-only">
       <ul class="right">
         <%= render partial: "ama_layout/main_top_nav_item", collection: navigation, as: :nav_item if navigation %>
@@ -34,6 +17,20 @@
         <li class="divider show-for-small-only"></li>
         <% if current_user %>
         <li><a href="/logout">Sign Out</a></li>
+        <% end %>
+      </ul>
+    </section>
+    <section class="top-bar-section show-for-medium-up">
+      <ul class="right">
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <% if navigation %>
+        <li class="has-dropdown dropdown-open-link">
+          <a>My Online Account</a>
+          <ul class="dropdown">
+            <%= render partial: "ama_layout/main_top_nav_item", collection: navigation, as: :nav_item %>
+          </ul>
+        </li>
         <% end %>
       </ul>
     </section>
