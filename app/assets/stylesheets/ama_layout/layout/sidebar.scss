@@ -26,11 +26,12 @@
     width: 100%;
     padding: $base-margin*3.6;
 
-    &:hover, &:active{
+    &:hover, 
+    &:active {
      color:$white;
     }
 
-    span{
+    span {
       margin-top:$base-margin*3;
     }
   }
@@ -46,7 +47,7 @@
     span.nav-icon {
      color:white;
     }
-    .inner-nav{
+    .inner-nav {
      max-height:200px;
      visibility:visible;
      opacity:1;
@@ -67,7 +68,7 @@
   }
 }
 
-.inner-nav{
+.inner-nav {
   visibility:hidden;
   max-height: 0;
   -webkit-transition: max-height 0.15s ease-out;
@@ -84,12 +85,12 @@
   }
 }
 
-a.activepage{
+a.activepage {
   background:#00539b;
   color:white;
 }
 
-.sidebar{
+.sidebar {
   @extend .white-trans;
   padding: $base-padding*4;
   p{
