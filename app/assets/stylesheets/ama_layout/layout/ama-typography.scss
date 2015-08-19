@@ -40,7 +40,7 @@ small{
 .uppercase-title {
   font-size: $base-font-size*0.875;
   font-weight: normal;
-  color: #5C5C5C;
+  color: $slate;
   text-transform: uppercase;
   padding:$base-padding*2 $base-padding*0 $base-padding*2 $base-padding*2;
 }

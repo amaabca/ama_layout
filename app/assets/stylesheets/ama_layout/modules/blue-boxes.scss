@@ -12,14 +12,14 @@
 .quicklink-box{
   background:$brand-blue-light;
   min-height:150px;
-  margin-top:5px;
+  margin-top:$base-margin;
   padding-top: 1px;
 }
 
 .icon-box{
   width:100px;
   height:80px;
-  margin:20px auto 0 auto;
+  margin:$base-margin*4 auto $base-margin*0 auto;
   background-repeat:no-repeat;
   background-position:center center;
 }
@@ -28,5 +28,5 @@
   text-align: center;
   color: white;
   width: 90%;
-  margin: 10px auto 0 auto;
+  margin:$base-margin*2 auto $base-margin*0 auto;
 }
