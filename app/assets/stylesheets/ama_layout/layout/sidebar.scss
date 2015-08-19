@@ -35,20 +35,23 @@
     }
   }
 
-  &:hover, &:active {
-   background:#00539b;
-   a {
+  &:hover, &:active, &.activepage {
+    background:#00539b;
+    a {
      color:white;
      max-height:inherit;
-   }
-   span.nav-icon {
+    }
+    span.nav-icon {
      color:white;
-   }
-   .inner-nav{
+    }
+    .inner-nav{
      max-height:200px;
      visibility:visible;
      opacity:1;
-   }
+    }
+    a.activepage {
+      text-decoration:underline;
+    }
   }
 
   .inner-nav li:hover, .inner-nav li:active{
