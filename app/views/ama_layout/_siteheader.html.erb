@@ -8,93 +8,33 @@
       <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
     </ul>
 
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
+    <section class="top-bar-section show-for-medium-up">
       <ul class="right">
         <li><a href="#">Help</a></li>
-        <li class="divider show-for-small-only"></li>
         <li><a href="#">Contact Us</a></li>
-        <li class="divider show-for-small-only"></li>
+        <% if navigation %>
         <li class="has-dropdown dropdown-open-link">
+          <% if current_user %>
           <a href="#">Welcome, Batman</a>
+          <% end %>
           <ul class="dropdown">
-            <li class="divider"></li>
-            <li class="has-dropdown hover">
-              <a href="#">Membership</a>
-              <ul class="dropdown nested">
-                <li class="divider"></li>
-                <li><a href="#">Membership Overview</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Manage Membership</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Billing Options</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Print/Request New AMA Card</a></li>
-                <li class="divider"></li>
-              </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown">
-              <a href="#">Driver Education</a>
-              <ul class="dropdown nested">
-                <li class="divider"></li>
-                <li><a href="#">Driver Education Overview</a></li>
-                <li class="divider"></li>
-                <li><a href="#">New Driver Online Course</a></li>
-                <li class="divider"></li>
-              </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown">
-              <a href="#">Insurance</a>
-              <ul class="dropdown nested">
-                <li class="divider"></li>
-                <li><a href="#">Insurance Overview</a></li>
-                <li class="divider"></li>
-                <li><a href="#">View Policy</a></li>
-                <li class="divider"></li>
-              </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown">
-              <a href="#">Reward Dollars</a>
-              <ul class="dropdown nested">
-                <li class="divider"></li>
-                <li><a href="#">Reward Dollars Overview</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Reload Esso Gift Card</a></li>
-                <li class="divider"></li>
-              </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown">
-              <a href="#">Settings &amp; Subscriptions</a>
-              <ul class="dropdown nested">
-                <li class="divider"></li>
-                <li><a href="#">Settings and Subscriptions Overview</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Change Email/Password</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Manage Subscriptions</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Change Address</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Delete Account</a></li>
-                <li class="divider"></li>
-              </ul>
-            </li>
-            <li class="divider"></li>
-            <li><a href="#">AMA Website</a></li>
-            <li class="divider"></li>
-            <li><a href="#">AMA Road Reports</a></li>
-            <li class="divider"></li>
-            <li class="show-for-small-only"><a href="#">Help</a></li>
-            <li class="divider show-for-small-only"></li>
-            <li class="show-for-small-only"><a href="#">Contact Us</a></li>
-            <li class="divider show-for-small-only"></li>
-            <li><a href="#">Sign Out</a></li>
+            <%= render partial: "ama_layout/main_top_nav_item", collection: navigation, as: :nav_item %>
           </ul>
         </li>
+        <% end %>
+      </ul>
+    </section>
+    <section class="top-bar-section show-for-small-only">
+      <ul class="right">
+        <%= render partial: "ama_layout/main_top_nav_item", collection: navigation, as: :nav_item if navigation %>
+        <li class="divider"></li>
+        <li class="show-for-small-only"><a href="#">Help</a></li>
+        <li class="divider show-for-small-only"></li>
+        <li class="show-for-small-only"><a href="#">Contact Us</a></li>
+        <li class="divider show-for-small-only"></li>
+        <% if current_user %>
+        <li><a href="/logout">Sign Out</a></li>
+        <% end %>
       </ul>
     </section>
   </nav>

@@ -1,0 +1,5 @@
+<li class="divider"></li>
+<li class="<%= nav_item["subnav"] ? "has-dropdown" : "" %>">
+  <%= link_to nav_item["name"], nav_item["link"] %>
+  <%= render partial: "ama_layout/top_sub_nav", locals: { subnav: nav_item["subnav"] } if nav_item["subnav"] %>
+</li>
