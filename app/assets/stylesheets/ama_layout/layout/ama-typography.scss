@@ -44,3 +44,15 @@ small{
   text-transform: uppercase;
   padding:10px 0px 10px 0px;
 }
+
+ //grey title
+
+.quarter-title{
+  @extend .page-title;
+  border: 0px;
+  padding: 10px;
+  background-color:#eeeeee;
+  h5{
+    color:rgb(114, 114, 114);
+  }
+}
