@@ -1,5 +1,5 @@
-.dashboard-title{
-  font-size: 14px;
+.dashboard-title {
+  font-size: $base-font-size*0.875;
   font-weight: normal;
   color: $charcoal;
   text-transform: uppercase;
@@ -10,31 +10,75 @@
   width: 100%;
   background: $white;
   display: block;
-  margin-top: 12px;
+  margin-top: $base-margin*2;
   text-transform: capitalize;
-  padding: 0px;
-  a{
+  padding: $base-margin*0;
+  overflow:hidden;
+
+  a {
     font-family: $font-family-sans-serif;
-    font-size: 18px;
-    color: $charcoal;
-    text-decoration: none;
+    font-size: $base-font-size*1.125;
+    color: $stormcloud;
+    text-decoration:none;
     display: block;
     width: 100%;
-    padding: 8px $base-padding*3;
-    &:hover , &:active{
-     color: $white;
+    padding: $base-margin*3.6;
+
+    &:hover,
+    &:active {
+     color:$white;
+    }
+
+    span {
+      margin-top:$base-margin*3;
     }
   }
+
   &:hover,
-  &:active{
-   background: $brand-blue-light;
-   a{
-     color: $white;
-   }
+  &:active,
+  &.activepage {
+   background:#00539b;
+   a {
+     color:white;
+     max-height:inherit;
+    }
+    span.nav-icon {
+     color:white;
+    }
+    .inner-nav {
+     max-height:200px;
+     visibility:visible;
+     opacity:1;
+    }
+    a.activepage {
+      text-decoration:underline;
+    }
+  }
+
+  .inner-nav li:hover,
+  .inner-nav li:active {
+    text-decoration:underline;
   }
   span{
     display: block;
-    font-size: 12px;
+    font-size: $base-font-size*0.75;
+  }
+}
+
+.inner-nav {
+  visibility:hidden;
+  max-height: 0;
+  -webkit-transition: max-height 0.15s ease-out;
+  -moz-transition: max-height 0.15s ease-out;
+  transition: max-height 0.15s ease-out;
+  margin-left: $base-margin*12.4;
+  margin-top: -$base-margin*3;
+  li{
+    color:white;
+  }
+  a {
+    padding: $base-margin*0;
+    font-size: $base-font-size*0.875;
   }
 }
 a.activepage{
@@ -48,6 +92,22 @@ a.activepage{
     margin-bottom: $base-margin*2;
   }
 }
+
+span.nav-icon {
+  width: 40px;
+  height: 29px;
+  float: left;
+  margin: $base-margin*2;
+  margin-top: $base-margin*4;
+  font-size: $base-font-size*1.5;
+  color: rgb(179, 179, 179);
+  text-align: center;
+}
+
+span.activepage {
+  color: white;
+}
+
 /* Top-Bar Styles */
 .contain-to-grid .top-bar{
   @extend .row;

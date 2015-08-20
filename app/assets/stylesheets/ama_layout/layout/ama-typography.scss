@@ -35,9 +35,20 @@ small{
 }
 
 .uppercase-title {
-  font-size: 14px;
+  font-size: $base-font-size*0.875;
   font-weight: normal;
-  color: #5C5C5C;
+  color: $slate;
   text-transform: uppercase;
-  padding:10px 0px 10px 0px;
+  padding:$base-padding*2 $base-padding*0 $base-padding*2 $base-padding*2;
+}
+
+ //grey title
+
+.panel-title{
+  @extend .page-title;
+  border: 0px;
+  padding: $base-padding*2;
+  h5{
+    color:$jet;
+  }
 }
