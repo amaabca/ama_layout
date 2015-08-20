@@ -1,0 +1,10 @@
+<li class="dashboard-nav dashboard-title <%= nav_item_counter == 0 ? "mt0" : "" %> <%= active_section(nav_item) %>">
+  <span class="nav-icon fa <%= nav_item["icon"] %> <%= active_page(nav_item["link"]) %>"></span>
+  <%= link_to nav_item["name"], nav_item["link"],
+      target: nav_item["target"], alt: nav_item["alt"],
+      class: active_page(nav_item["link"]) %>
+  <%= render partial: "ama_layout/sub_nav", locals: { subnav: nav_item["subnav"] } if nav_item["subnav"] %>
+</li>
+
+
+<%= active_section(nav_item["link"], *[nav_item["subnav"]].compact.flatten.map { |sn| sn["link"] }) %>
