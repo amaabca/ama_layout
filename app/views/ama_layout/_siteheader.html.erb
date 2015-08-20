@@ -9,31 +9,20 @@
     </ul>
     <section class="top-bar-section show-for-small-only">
       <ul class="right">
-        <%= render partial: "ama_layout/main_top_nav_item", collection: navigation, as: :nav_item if navigation %>
+        <%= render partial: "ama_layout/main_top_nav_item", collection: navigation.items, as: :nav_item %>
         <li class="divider"></li>
         <li class="show-for-small-only"><a href="#">Help</a></li>
         <li class="divider show-for-small-only"></li>
         <li class="show-for-small-only"><a href="#">Contact Us</a></li>
         <li class="divider show-for-small-only"></li>
-        <% if current_user %>
-        <li><a href="/logout">Sign Out</a></li>
-        <% end %>
+        <%= navigation.sign_out_link %>
       </ul>
     </section>
     <section class="top-bar-section show-for-medium-up">
       <ul class="right">
         <li><a href="#">Help</a></li>
         <li><a href="#">Contact Us</a></li>
-        <% if navigation %>
-        <li class="has-dropdown dropdown-open-link">
-          <a>My Online Account</a>
-          <ul class="dropdown">
-            <%= render partial: "ama_layout/main_top_nav_item", collection: navigation, as: :nav_item %>
-            <li class="divider"></li>
-            <li><a href="/logout">Sign Out</a></li>
-          </ul>
-        </li>
-        <% end %>
+        <%= navigation.top_nav %>
       </ul>
     </section>
   </nav>

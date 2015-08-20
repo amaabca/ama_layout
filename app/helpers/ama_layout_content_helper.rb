@@ -8,8 +8,8 @@ module AmaLayoutContentHelper
   end
 
   def active_section(nav_item)
-    paths = [nav_item["link"]]
-    paths += [nav_item["subnav"]].flatten.compact.map { |sn| sn["link"] }
+    paths = [nav_item.link]
+    paths += nav_item.sub_nav.map(&:link)
     active_page(*paths)
   end
 
