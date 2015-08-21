@@ -8,7 +8,6 @@ require "ama_layout/navigation"
 require "ama_layout/navigation_item"
 require "ama_layout/decorators/navigation_decorator"
 require "ama_layout/decorators/navigation_item_decorator"
-require "pry"
 
 module AmaLayout
   module Rails
