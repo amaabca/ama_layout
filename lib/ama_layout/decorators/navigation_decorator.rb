@@ -16,5 +16,9 @@ module AmaLayout
     def top_nav
       h.render partial: "ama_layout/top_nav", locals: { navigation: self } if items.any?
     end
+
+    def sidebar
+      h.render partial: "ama_layout/sidebar", locals: { navigation: self } if items.any?
+    end
   end
 end
