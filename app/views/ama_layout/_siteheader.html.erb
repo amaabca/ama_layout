@@ -1,17 +1,40 @@
-<header class="site-header">
-  <div class="row">
-    <div id="navWrapper">
-      <div id="pattern" class="pattern">
+<div class="sticky contain-to-grid top-bar-nav">
+  <nav class="top-bar" data-topbar data-options="mobile_show_parent_link: false" role="navigation">
+    <ul class="title-area">
+      <li class="name">
         <%= link_to(image_tag("AMA-Logo.png"), "https://www.ama.ab.ca") %>
-        <% if navigation %>
-          <a href="#" class="menu-link show-for-small-only"></a>
-          <nav id="menu" role="navigation" class="show-for-small-only">
-            <ul>
-              <%= render partial: "ama_layout/custom_nav_links", locals: { navigation_items: navigation } %>
-            </ul>
-          </nav>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+    <section class="top-bar-section show-for-small-only">
+      <ul class="right">
+        <%= render partial: "ama_layout/main_top_nav_item", collection: navigation, as: :nav_item if navigation %>
+        <li class="divider"></li>
+        <li class="show-for-small-only"><a href="<%= Rails.configuration.youraccount_site %>/help#faq1">Help</a></li>
+        <li class="divider show-for-small-only"></li>
+        <li class="show-for-small-only"><a href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a></li>
+        <li class="divider show-for-small-only"></li>
+        <% if current_user %>
+        <li><a href="/logout">Sign Out</a></li>
         <% end %>
-      </div>
-    </div>
-  </div>
-</header>
+      </ul>
+    </section>
+    <section class="top-bar-section show-for-medium-up">
+      <ul class="right">
+        <li><a href="<%= Rails.configuration.youraccount_site %>/help#faq1">Help</a></li>
+        <li><a href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a></li>
+        <% if navigation %>
+        <li class="has-dropdown dropdown-open-link">
+          <a>My Online Account</a>
+          <ul class="dropdown">
+            <%= render partial: "ama_layout/main_top_nav_item", collection: navigation, as: :nav_item %>
+            <li class="divider"></li>
+            <li><a href="/logout">Sign Out</a></li>
+          </ul>
+        </li>
+        <% end %>
+      </ul>
+    </section>
+  </nav>
+</div>
