@@ -5,6 +5,19 @@ module AmaLayout
 
     attr_accessor :user, :current_url
 
+    cattr_accessor :member do
+      "member"
+    end
+    cattr_accessor :non_member do
+      "non-member"
+    end
+    cattr_accessor :member_in_renewal do
+      "member-in-renewal"
+    end
+    cattr_accessor :member_in_renewal_late do
+      "member-in-renewal-late"
+    end
+
     def items
       navigation_items.fetch(user.try(:navigation), []).map do |n|
         NavigationItem.new n.merge({ current_url: current_url})
