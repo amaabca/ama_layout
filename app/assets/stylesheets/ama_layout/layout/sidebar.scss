@@ -7,7 +7,7 @@
   padding: $base-padding*3;
 }
 
-.dashboard-nav{
+.dashboard-nav {
   width: 100%;
   background: $white;
   display: block;
@@ -16,7 +16,7 @@
   padding: $base-margin*0;
   overflow: hidden;
 
-  a{
+  a {
     font-family: $font-family-sans-serif;
     font-size: $base-font-size*1.125;
     color: $stormcloud;
@@ -26,52 +26,52 @@
     padding: $base-margin*3.6;
 
     &:hover,
-    &:active{
+    &:active {
      color: $white;
     }
 
-    span{
+    span {
       margin-top: $base-margin*3;
     }
   }
 
   &:hover,
   &:active,
-  &.activepage{
-   background: $brand-blue-light;
+  &.activepage {
+    background: $brand-blue-light;
 
-   a{
-     color: white;
-     max-height: inherit;
+    a {
+      color: $white;
+      max-height: inherit;
     }
 
-    span.nav-icon{
-     color: white;
+    span.nav-icon {
+      color: $white;
     }
 
-    .inner-nav{
-     max-height: 200px;
-     visibility: visible;
-     opacity: 1;
+    .inner-nav {
+      max-height: 200px;
+      visibility: visible;
+      opacity: 1;
     }
 
-    a.activepage{
+    a.activepage {
       text-decoration: underline;
     }
   }
 
   .inner-nav li:hover,
-  .inner-nav li:active{
+  .inner-nav li:active {
     text-decoration: underline;
   }
 
-  span{
+  span {
     display: block;
     font-size: $base-font-size*0.75;
   }
 }
 
-.inner-nav{
+.inner-nav {
   visibility: hidden;
   max-height: 0;
   -webkit-transition: max-height 0.15s ease-out;
@@ -80,29 +80,29 @@
   margin-left: $base-margin*12.4;
   margin-top: -$base-margin*3;
 
-  li{
-    color: white;
+  li {
+    color: $white;
   }
 
-  a{
+  a {
     padding: $base-margin*0;
     font-size: $base-font-size*0.875;
   }
 }
-a.activepage{
+a.activepage {
   background: $brand-blue-light;
   color: $white;
 }
-.sidebar{
+.sidebar {
   @extend .white-trans;
   padding: $base-padding*4;
 
-  p{
+  p {
     margin-bottom: $base-margin*2;
   }
 }
 
-span.nav-icon{
+span.nav-icon {
   width: 40px;
   height: 29px;
   float: left;
@@ -113,32 +113,32 @@ span.nav-icon{
   text-align: center;
 }
 
-span.activepage{
+span.activepage {
   color: $white;
 }
 
 /* Top-Bar Styles */
-.contain-to-grid .top-bar{
+.contain-to-grid .top-bar {
   @extend .row;
 }
 
-.title-area li.name img{
+.title-area li.name img {
   padding-top: $base-padding*2;
 }
 
-.top-bar a{
+.top-bar a {
   text-decoration: none;
 }
 
-.dropdown-open-link{
+.dropdown-open-link {
   min-width: 201px; //The 1 px accounts for the border on the dropdown
 }
 
-.top-bar-nav.fixed{
+.top-bar-nav.fixed {
   max-height: 50px;
 }
 
-ul.dropdown:not(.nested){
+ul.dropdown:not(.nested) {
   -webkit-box-shadow: 0px 8px -5px -5px rgba(50,50,50,0.5);
   -moz-box-shadow: 0px 8px -5px -5px rgba(50,50,50,0.5);
   box-shadow: 0px 8px 20px -5px rgba(50,50,50,0.5);
@@ -147,18 +147,18 @@ ul.dropdown:not(.nested){
   margin-top: -5px;
 }
 
-.dropdown{
-  .nested{
+.dropdown {
+  .nested {
     margin-top: -1px;
     border-right: solid 1px darken($brand-blue-light, 5%);
     border-left: solid 1px darken($brand-blue-light, 5%);
 
-    li{
+    li {
       background: lighten($brand-blue-light, 3%);
     }
   }
 
-  .title.back a{
+  .title.back a {
     font-weight: bold;
   }
 }
