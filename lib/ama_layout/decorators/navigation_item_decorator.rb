@@ -24,10 +24,7 @@ module AmaLayout
 
   private
     def active_link?
-      binding.pry if link.include? "westworld"
       sub_nav.map(&:link).push(link).include? current_url
-    rescue
-      binding.pry
     end
   end
 end

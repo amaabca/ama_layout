@@ -4,22 +4,27 @@
       <li class="name">
         <%= link_to(image_tag("AMA-Logo.png"), "https://www.ama.ab.ca") %>
       </li>
-       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
     </ul>
     <section class="top-bar-section show-for-small-only">
       <ul class="right">
         <%= render partial: "ama_layout/main_top_nav_item", collection: navigation.items, as: :nav_item %>
         <li class="divider"></li>
-        <li class="show-for-small-only"><a href="#">Help</a></li>
-        <li class="divider show-for-small-only"></li>
-        <li class="show-for-small-only"><a href="#">Contact Us</a></li>
+        <li><a href="#">AMA Website</a></li>
+        <li class="divider"></li>
+        <li><a href="#">AMA Road Reports</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Help</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Contact Us</a></li>
         <li class="divider show-for-small-only"></li>
         <%= navigation.sign_out_link %>
       </ul>
     </section>
     <section class="top-bar-section show-for-medium-up">
       <ul class="right">
+        <li><a href="#">AMA Website</a></li>
+        <li><a href="#">AMA Road Reports</a></li>
         <li><a href="#">Help</a></li>
         <li><a href="#">Contact Us</a></li>
         <%= navigation.top_nav %>
