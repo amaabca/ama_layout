@@ -1,0 +1,8 @@
+<li class="has-dropdown dropdown-open-link">
+  <a>My Online Account</a>
+  <ul class="dropdown">
+    <%= render partial: "ama_layout/main_top_nav_item", collection: navigation.items, as: :nav_item %>
+    <li class="divider"></li>
+    <li><a href="/logout">Sign Out</a></li>
+  </ul>
+</li>
