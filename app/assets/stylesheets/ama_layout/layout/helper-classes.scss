@@ -8,30 +8,12 @@
 6. Background & Text Colours
 7. Lists
 8. Links
+9. Buttons
+10. Typography
 
 */
 
 /* ==================== 1. Main Layout Elements ==================== */
-html, body{
-  height: auto !important;
-}
-
-html{
-  background: image-url('alberta-blur.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-body{
-  background: none;
-}
-
-.row{
-  max-width: 74rem;
-}
-
 .main-wrapper{
  margin: $base-margin*4 auto;
 }
@@ -85,6 +67,16 @@ body{
 
 .panel-box-error{
   background: $brand-red;
+}
+
+.panel-title{
+  @extend .page-title;
+  border: 0px;
+  padding: $base-padding*2;
+
+  h5{
+    color :$jet;
+  }
 }
 
 /* ==================== 3. Positioning ==================== */
@@ -211,7 +203,7 @@ body{
   border-bottom: 0px !important;
 }
 
-/* ==================== 6. Background & Text Colours ==================== */
+/* ==================== 6. Background Colours ==================== */
 .whitebg{
   background-color: $white;
 }
@@ -234,15 +226,6 @@ body{
 
 .rewards-green-bg{
   background-color: $brand-green;
-}
-
-.white-text{
-  color: $white;
-}
-
-.text-shadow{
-  filter: Shadow(Color=#656565, Direction=130, Strength=1);
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .white-trans{
@@ -274,4 +257,70 @@ body{
 .multiline-link{
   line-height: 1.3rem !important;
 }
+
+/* ==================== 9. Buttons ==================== */
+.base-button{
+  @extend .radius;
+  @extend .small;
+  color: $white;
+}
+.emphasized, .emphasized:visited{
+  @extend .base-button;
+  background: $secondary-color;
+  &:hover, &:active, &:focus{
+   background-color: lighten($secondary-color, 10%);
+  }
+}
+button.disabled, button[disabled], .button.disabled, .button[disabled]{
+  background-color: lighten($secondary-color, 10%);
+  border-color: none;
+  &:hover, &:active, &:focus{
+    background-color: lighten($secondary-color, 10%);
+    border-color: none;
+  }
+}
+.de-emphasized, .de-emphasized:visited{
+  @extend .base-button;
+  background: $slate;
+  &:hover, &:active, &:focus{
+   background-color: lighten($slate, 10%);
+  }
+}
+.red-btn{
+  background: $brand-red;
+  &:hover, &:active, &:focus{
+   background-color: lighten($brand-red, 10%);
+  }
+}
+.green-btn, .green-btn:visited{
+  @extend .base-button;
+  background: $brand-green;
+  &:hover, &:active, &:focus{
+   background-color: lighten($brand-green, 10%);
+  }
+}
+
+/* ==================== 10. Typography ==================== */
+.white-text{
+  color: $white;
+}
+
+.text-shadow{
+  filter: Shadow(Color=#656565, Direction=130, Strength=1);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.strike-through{
+  text-decoration: line-through;
+  color: $black;
+}
+
+.uppercase-title{
+  font-size: $base-font-size*0.875;
+  font-weight: normal;
+  color: $slate;
+  text-transform: uppercase;
+  padding: $base-padding*2 $base-padding*0 $base-padding*2 $base-padding*2;
+}
+
 
