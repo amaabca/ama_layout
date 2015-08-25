@@ -22,7 +22,7 @@ member:
     link: "<%= Rails.configuration.youraccount_site %>/reward_dollars"
     icon: "fa-usd"
   - text: "Reload Esso Gift Cards"
-    link: "<%= Rails.configuration.youraccount_site %>/reward_cards"
+    link: "<%= Rails.configuration.membership_site %>/reward_cards"
     icon: "fa-arrow-up"
   - text: "Settings & Subscriptions"
     link: "<%= Rails.configuration.gatekeeper_site %>/"
