@@ -25,7 +25,7 @@
     text-decoration: none;
     display: block;
     width: 100%;
-    padding: $base-margin*3.6;
+    padding: 18px;
 
     &:hover,
     &:active{
@@ -78,9 +78,9 @@
   -webkit-transition: max-height 0.15s ease-out;
   -moz-transition: max-height 0.15s ease-out;
   transition: max-height 0.15s ease-out;
-  margin-left: $base-margin*12.4;
+  margin-left: 74px;
   margin-top: -$base-margin*3;
-
+  list-style: none;
   li{
     color: $white;
   }
