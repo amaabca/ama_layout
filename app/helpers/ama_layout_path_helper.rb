@@ -64,6 +64,6 @@ module AmaLayoutPathHelper
   end
 
   def driveredonline_path
-    "#{Rails.configuration.driveredonline_site}/login"
+    "#{Rails.configuration.driversed_site}/login"
   end
 end

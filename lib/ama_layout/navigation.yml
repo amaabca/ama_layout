@@ -16,8 +16,11 @@ member:
       - text: "Print/Request New Card"
         link: "<%= Rails.configuration.youraccount_site %>/membership"
   - text: "Driver Education"
-    link: "<%= Rails.configuration.driveredonline_site %>/login"
+    link: "<%= Rails.configuration.driversed_site %>"
     icon: "fa-car"
+    sub_nav:
+      - text: "New Driver Online Course"
+        link: "<%= Rails.configuration.driversed_site %>/dashboard"
   - text: "Reward Dollars"
     link: "<%= Rails.configuration.youraccount_site %>/reward_dollars"
     icon: "fa-usd"
@@ -46,7 +49,7 @@ non-member:
     link: <%= Rails.configuration.membership_site %>
     icon: "fa-credit-card"
   - text: "Driver Education"
-    link: "<%= Rails.configuration.driveredonline_site %>/login"
+    link: "<%= Rails.configuration.driversed_site %>/login"
     icon: "fa-car"
 member-in-renewal:
   - text: "Account Dashboard"
@@ -57,7 +60,7 @@ member-in-renewal:
     link: "<%= Rails.configuration.youraccount_site %>/renew"
     icon: "fa-credit-card"
   - text: "Driver Education"
-    link: "<%= Rails.configuration.driveredonline_site %>/login"
+    link: "<%= Rails.configuration.driversed_site %>/login"
     icon: "fa-car"
 member-in-renewal-late:
   - text: "Account Dashboard"
