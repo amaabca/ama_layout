@@ -144,6 +144,9 @@ body{
   background-color: rgba(255,255,255,0.6);
 }
 
+.no-bullets{
+  list-style-type: none;
+}
 //bg colour
 
 .whitebg{
@@ -155,8 +158,18 @@ body{
 .insurance-blue-bg{
   background-color:$brand-blue-insurance;
 }
-
-
+.light-blue-bg{
+  background: $brand-blue-light;
+}
+.dark-blue-bg{
+  background: $brand-blue-dark;
+}
+.rewards-green-bg{
+  background-color: $brand-green;
+}
+.white-text{
+  color: $white;
+}
 .text-shadow{
   filter: Shadow(Color=#656565, Direction=130, Strength=1);
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
