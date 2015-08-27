@@ -46,10 +46,10 @@ non-member:
     icon: "fa-tachometer"
   - text: "Join AMA"
     alt: "Join AMA"
-    link: <%= Rails.configuration.membership_site %>
+    link: "<%= Rails.configuration.membership_site %>"
     icon: "fa-credit-card"
   - text: "Driver Education"
-    link: "<%= Rails.configuration.driversed_site %>/login"
+    link: "<%= Rails.configuration.driversed_site %>"
     icon: "fa-car"
     sub_nav:
       - text: "New Driver Online Course"
@@ -63,7 +63,7 @@ member-in-renewal:
     link: "<%= Rails.configuration.youraccount_site %>/renew"
     icon: "fa-credit-card"
   - text: "Driver Education"
-    link: "<%= Rails.configuration.driversed_site %>/login"
+    link: "<%= Rails.configuration.driversed_site %>"
     icon: "fa-car"
     sub_nav:
       - text: "New Driver Online Course"
@@ -74,7 +74,7 @@ member-in-renewal-late:
     link: "<%= Rails.configuration.youraccount_site %>/dashboard"
     icon: "fa-tachometer"
   - text: "Driver Education"
-    link: "<%= Rails.configuration.driversed_site %>/login"
+    link: "<%= Rails.configuration.driversed_site %>"
     icon: "fa-car"
     sub_nav:
       - text: "New Driver Online Course"
