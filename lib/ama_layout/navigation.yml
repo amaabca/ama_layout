@@ -51,6 +51,9 @@ non-member:
   - text: "Driver Education"
     link: "<%= Rails.configuration.driversed_site %>/login"
     icon: "fa-car"
+    sub_nav:
+      - text: "New Driver Online Course"
+        link: "<%= Rails.configuration.driversed_site %>/dashboard"
 member-in-renewal:
   - text: "Account Dashboard"
     alt: "Back to my dashboard"
@@ -62,8 +65,17 @@ member-in-renewal:
   - text: "Driver Education"
     link: "<%= Rails.configuration.driversed_site %>/login"
     icon: "fa-car"
+    sub_nav:
+      - text: "New Driver Online Course"
+        link: "<%= Rails.configuration.driversed_site %>/dashboard"
 member-in-renewal-late:
   - text: "Account Dashboard"
     alt: "Back to my dashboard"
     link: "<%= Rails.configuration.youraccount_site %>/dashboard"
     icon: "fa-tachometer"
+  - text: "Driver Education"
+    link: "<%= Rails.configuration.driversed_site %>/login"
+    icon: "fa-car"
+    sub_nav:
+      - text: "New Driver Online Course"
+        link: "<%= Rails.configuration.driversed_site %>/dashboard"
