@@ -22,7 +22,13 @@ footer{
 }
 
 /* ============== Base Typography Styles ================ */
-h1, h2, h3, h4, h5, h6, p{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
   font-family: $font-family-sans-serif;
   margin-bottom: 0.2em;
   margin-bottom: 0.2rem; //this is so headers have equal padding on bottom and top
@@ -38,7 +44,8 @@ label{
   color: $charcoal;
 }
 
-p, li{
+p,
+li{
   font-size: $base-font-size*0.875;
   color: $charcoal;
   font-weight: 200;
