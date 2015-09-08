@@ -1,6 +1,16 @@
 $(window).bind "load", ->
-  footer = $("footer")
-  position = footer.position()
-  footer_top = if position is undefined then 0 else position.top
-  height = $(window).height() - footer_top - footer.height()
-  footer.css({ 'margin-top': height + 'px' }) if height > 0
+  adjustFooter = ->
+    $("footer").css({ 'margin-top': calcHeight() + 'px' })
+
+  calcHeight = ->
+    footer = $("footer")
+    position = footer.position()
+    footer_top = if position is undefined then 0 else position.top
+    height = $(window).height() - footer_top - footer.height()
+    Math.max(height, 50)
+
+  adjustFooter()
+  $("a.asset-link.clearfix").click ->
+    setTimeout ->
+      adjustFooter()
+    , 1
