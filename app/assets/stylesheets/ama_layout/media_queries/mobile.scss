@@ -81,4 +81,14 @@
   .credit-card-year{
     margin-left: 0;
   }
+
+  .outer-quicklink-box:first-child:nth-last-child(4),
+  .outer-quicklink-box:first-child:nth-last-child(4) ~ div,
+  .outer-quicklink-box:first-child:nth-last-child(3),
+  .outer-quicklink-box:first-child:nth-last-child(3) ~ div,
+  .outer-quicklink-box:first-child:nth-last-child(3) ~ li,
+  .outer-quicklink-box:first-child:nth-last-child(1){
+    width: 48.5%;
+    margin-top: 1.5%;
+  }
 }

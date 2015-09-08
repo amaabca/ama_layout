@@ -1,4 +1,8 @@
 /* ============== Base Page Layout Styles ================ */
+*:focus{ //yes, all the elements
+  outline: none;
+}
+
 html, body{
   height: auto !important;
 }

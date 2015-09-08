@@ -29,6 +29,17 @@
   padding: $base-padding 0;
 }
 
+.section-title{
+  @extend .page-title;
+  border: 0;
+  padding: $base-padding*2;
+  background-color: $stone;
+
+  h5{
+    color: $slate;
+  }
+}
+
 .page-steps{
   text-align: right;
 }
