@@ -55,9 +55,10 @@
       max-height: 200px;
       visibility: visible;
       opacity: 1;
+      margin-top: 0;
     }
-    a.sub-nav.activepage {
-      text-decoration:underline;
+    a.sub-nav.activepage{
+      text-decoration: underline;
     }
   }
 
@@ -162,4 +163,8 @@ ul.dropdown:not(.nested){
   .title.back a{
     font-weight: bold;
   }
+}
+
+.sub-nav {
+  margin-left: -14px;
 }
