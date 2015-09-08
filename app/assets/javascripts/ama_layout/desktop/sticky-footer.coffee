@@ -1,6 +1,6 @@
 $(window).bind "load", ->
   adjustFooter = ->
-    $("footer").css({ 'margin-top': calcHeight() + 'px' }) if calcHeight() > 0
+    $("footer").css({ 'margin-top': calcHeight() + 'px' })
 
   calcHeight = ->
     footer = $("footer")
