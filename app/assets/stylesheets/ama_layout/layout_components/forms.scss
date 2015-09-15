@@ -69,19 +69,19 @@ input[type="radio"] + label, input[type="checkbox"] + label{
 input[type="radio"] + label > span, input[type="checkbox"] + label > span:first-of-type, input[type="radio"] + label span{
   display: inline-block;
   width: 30px;
+  max-width: 10%;
   height: 30px;
-  margin: $base-margin 0 $base-margin*2;
+  margin: $base-margin $base-margin*2 $base-margin 0px;
   vertical-align: top;
   cursor: pointer;
   -moz-border-radius: 50%;
   border-radius:  50%;
   background-color: $white;
   border: $base-border;
-  margin-right: $base-margin*2;
 }
 .checkbox-label{
   display:inline-block;
-  width: 90%;
+  width: 80%;
 }
 input[type="radio"]:checked + label > span, input[type="radio"]:checked + label span{
   background-color: $white;
@@ -110,12 +110,14 @@ input[type="checkbox"]:checked + label{
   color: $white;
   position: absolute;
   width: 30px;
+  max-width: 10%;
   height: 30px;
   top: 15px;
   padding-left: 6px;
   font-size: $base-font-size*1.3;
   -moz-border-radius: 50%;
   border-radius:  50%;
+  margin: 0 $base-margin*2 $base-margin 0px;
 }
 [type="checkbox"]:checked + label:after{
   margin-left: $base-margin*6;
