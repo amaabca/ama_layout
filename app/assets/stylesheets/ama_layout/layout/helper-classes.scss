@@ -76,7 +76,7 @@
 
   h5{
     color: $jet;
-    padding-left: 10px;
+    padding-left: $base-padding*2;
   }
 }
 
@@ -227,6 +227,14 @@
 
 .rewards-green-bg{
   background-color: $brand-green;
+}
+
+// On a coloured background, the child links should be white
+.insurance-blue-bg a,
+.light-blue-bg a,
+.rewards-green-bg a,
+.dark-blue-bg a{
+  color: $white;
 }
 
 .white-trans{
