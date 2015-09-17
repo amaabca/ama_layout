@@ -66,7 +66,9 @@ input[type="radio"] + label, input[type="checkbox"] + label{
     background: darken($ash, 4%);
   }
 }
-input[type="radio"] + label > span, input[type="checkbox"] + label > span:first-of-type, input[type="radio"] + label span{
+input[type="radio"] + label > span,
+input[type="checkbox"] + label > span:first-of-type, 
+input[type="radio"] + label span{
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -89,7 +91,8 @@ input[type="checkbox"] + label > span:first-of-type{
   width: 80%;
 }
 
-input[type="radio"]:checked + label > span, input[type="radio"]:checked + label span{
+input[type="radio"]:checked + label > span,
+input[type="radio"]:checked + label span{
   background-color: $white;
   border: 7px solid $secondary-color;
 }
