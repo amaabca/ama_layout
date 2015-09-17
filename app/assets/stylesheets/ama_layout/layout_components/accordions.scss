@@ -1,0 +1,24 @@
+.asset-link{
+  min-height: 50px;
+  background: $brand-blue-light !important;
+  margin-top: $base-margin*3;
+  text-decoration: none;
+  display: block;
+
+  h3,
+  h5{
+    color: $white;
+    font-size: $base-font-size*1.4;
+    line-height: 21px;
+    float: left;
+  }
+}
+
+.accordion-icon{
+  width: 16px;
+  height: 16px;
+  display: block;
+  float: right;
+  color: $white;
+  margin-top: $base-margin;
+}
