@@ -81,17 +81,19 @@ input[type="radio"] + label > span, input[type="checkbox"] + label > span:first-
 
 input[type="checkbox"] + label > span:first-of-type{
   max-width: 10%;
-  margin: $base-margin $base-margin*2 $base-margin 0px;
+  margin: $base-margin $base-margin*2 $base-margin 0;
 }
 
 .checkbox-label{
-  display:inline-block;
+  display: inline-block;
   width: 80%;
 }
+
 input[type="radio"]:checked + label > span, input[type="radio"]:checked + label span{
   background-color: $white;
   border: 7px solid $secondary-color;
 }
+
 input[type="radio"]:checked + label{
   background-color: $sky;
   border: 1px solid $ocean;
@@ -106,9 +108,11 @@ input[type="radio"]:checked + label{
     background: darken($sky, 4%);
   }
 }
+
 input[type="checkbox"]:checked + label{
   position: relative;
 }
+
 [type="checkbox"]:checked + label:before{
   content: '✔';
   background-color: $secondary-color;
@@ -122,8 +126,9 @@ input[type="checkbox"]:checked + label{
   font-size: $base-font-size*1.3;
   -moz-border-radius: 50%;
   border-radius:  50%;
-  margin: 0 $base-margin*2 $base-margin 0px;
+  margin: 0 $base-margin*2 $base-margin 0;
 }
+
 [type="checkbox"]:checked + label:after{
   margin-left: $base-margin*6;
 }
