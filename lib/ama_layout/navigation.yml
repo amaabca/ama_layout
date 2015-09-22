@@ -19,11 +19,11 @@ member:
     link: "<%= Rails.configuration.driveredonline_site %>/login"
     icon: "fa-car"
   - text: "Insurance"
-    link: "<%= Rails.configuration.insurance_site %>"
+    link: "<%= Rails.configuration.insurance_site %>/"
     icon: "fa-umbrella"
     sub_nav:
       - text: "Insurance Overview"
-        link: "<%= Rails.configuration.insurance_site %>"
+        link: "<%= Rails.configuration.insurance_site %>/"
       - text: "View My Policies"
         link: "<%= Rails.configuration.insurance_site %>/policies"
   - text: "Reward Dollars"
