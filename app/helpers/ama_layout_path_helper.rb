@@ -56,11 +56,7 @@ module AmaLayoutPathHelper
   end
 
   def insurance_path
-    "#{Rails.configuration.insurance_site}/"
-  end
-
-  def insurance_policies_path
-    "#{Rails.configuration.insurance_site}/policies"
+    Rails.configuration.insurance_site
   end
 
   def membership_esso_reload_path
