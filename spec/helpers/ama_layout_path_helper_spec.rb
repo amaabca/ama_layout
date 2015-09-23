@@ -103,12 +103,6 @@ describe AmaLayoutPathHelper do
     end
   end
 
-  describe "#insurance_policies_path" do
-    it "returns the insurance policies path" do
-      expect(helper.insurance_policies_path).to eq "#{insurance_site}/policies"
-    end
-  end
-
   describe "#membership_path" do
     it "returns the membership esso reload path" do
       expect(helper.membership_esso_reload_path).to eq "#{membership_site}/reward_"
