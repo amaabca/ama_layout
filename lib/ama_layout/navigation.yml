@@ -16,8 +16,11 @@ member:
       - text: "Print/Request New Card"
         link: "<%= Rails.configuration.youraccount_site %>/membership"
   - text: "Driver Education"
-    link: "<%= Rails.configuration.driveredonline_site %>/login"
+    link: "<%= Rails.configuration.driveredonline_site %>"
     icon: "fa-car"
+    sub_nav:
+      - text: "Online New Driver Program"
+        link: "<%= Rails.configuration.driveredonline_site %>/dashboard"
   - text: "Reward Dollars"
     link: "<%= Rails.configuration.youraccount_site %>/reward_dollars"
     icon: "fa-usd"
@@ -43,11 +46,14 @@ non-member:
     icon: "fa-tachometer"
   - text: "Join AMA"
     alt: "Join AMA"
-    link: <%= Rails.configuration.membership_site %>
+    link: "<%= Rails.configuration.membership_site %>"
     icon: "fa-credit-card"
   - text: "Driver Education"
-    link: "<%= Rails.configuration.driveredonline_site %>/login"
+    link: "<%= Rails.configuration.driveredonline_site %>"
     icon: "fa-car"
+    sub_nav:
+      - text: "Online New Driver Program"
+        link: "<%= Rails.configuration.driveredonline_site %>/dashboard"
 member-in-renewal:
   - text: "Account Dashboard"
     alt: "Back to my dashboard"
@@ -57,10 +63,19 @@ member-in-renewal:
     link: "<%= Rails.configuration.youraccount_site %>/renew"
     icon: "fa-credit-card"
   - text: "Driver Education"
-    link: "<%= Rails.configuration.driveredonline_site %>/login"
+    link: "<%= Rails.configuration.driveredonline_site %>"
     icon: "fa-car"
+    sub_nav:
+      - text: "Online New Driver Program"
+        link: "<%= Rails.configuration.driveredonline_site %>/dashboard"
 member-in-renewal-late:
   - text: "Account Dashboard"
     alt: "Back to my dashboard"
     link: "<%= Rails.configuration.youraccount_site %>/dashboard"
     icon: "fa-tachometer"
+  - text: "Driver Education"
+    link: "<%= Rails.configuration.driveredonline_site %>"
+    icon: "fa-car"
+    sub_nav:
+      - text: "Online New Driver Program"
+        link: "<%= Rails.configuration.driveredonline_site %>/dashboard"

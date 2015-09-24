@@ -29,6 +29,17 @@
   padding: $base-padding 0;
 }
 
+.section-title{
+  @extend .page-title;
+  border: 0;
+  padding: $base-padding*2;
+  background-color: $stone;
+
+  h5{
+    color: $slate;
+  }
+}
+
 .page-steps{
   text-align: right;
 }
@@ -273,38 +284,64 @@
   @extend .small;
   color: $white;
 }
-.emphasized, .emphasized:visited{
+
+.emphasized,
+.emphasized:visited{
   @extend .base-button;
   background: $secondary-color;
-  &:hover, &:active, &:focus{
+
+  &:hover,
+  &:active,
+  &:focus{
    background-color: lighten($secondary-color, 10%);
   }
 }
-button.disabled, button[disabled], .button.disabled, .button[disabled]{
+
+button.disabled,
+button[disabled],
+.button.disabled,
+.button[disabled]{
   background-color: lighten($secondary-color, 10%);
   border-color: none;
-  &:hover, &:active, &:focus{
+
+  &:hover,
+  &:active,
+  &:focus{
     background-color: lighten($secondary-color, 10%);
     border-color: none;
   }
 }
+
 .de-emphasized, .de-emphasized:visited{
   @extend .base-button;
   background: $slate;
-  &:hover, &:active, &:focus{
+
+  &:hover,
+  &:active,
+  &:focus{
    background-color: lighten($slate, 10%);
   }
 }
+
 .red-btn{
+  @extend .base-button;
   background: $brand-red;
-  &:hover, &:active, &:focus{
+
+  &:hover,
+  &:active,
+  &:focus{
    background-color: lighten($brand-red, 10%);
   }
 }
-.green-btn, .green-btn:visited{
+
+.green-btn,
+.green-btn:visited{
   @extend .base-button;
   background: $brand-green;
-  &:hover, &:active, &:focus{
+
+  &:hover,
+  &:active,
+  &:focus{
    background-color: lighten($brand-green, 10%);
   }
 }
@@ -312,6 +349,10 @@ button.disabled, button[disabled], .button.disabled, .button[disabled]{
 /* ==================== 10. Typography ==================== */
 .white-text{
   color: $white;
+
+  >a{
+    color: $white;
+  }
 }
 
 .white-micetype{
