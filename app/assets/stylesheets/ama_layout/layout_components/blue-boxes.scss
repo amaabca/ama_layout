@@ -13,6 +13,8 @@
 }
 
 .icon-box{
+  width: 100px;
+  height: 80px;
   margin: $base-margin*4 auto 0 auto;
   background-repeat: no-repeat;
   background-position: center center;
@@ -51,6 +53,10 @@
   width: 23.5%;
   margin-left: 0;
   margin-right: 1.5%;
+
+  &.fullwidth{
+    margin-top: 1.5%;
+  }
 }
 
 .outer-quicklink-box:first-child:nth-last-child(2),
