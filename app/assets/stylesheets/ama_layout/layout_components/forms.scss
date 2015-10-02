@@ -2,29 +2,33 @@
   text-align:center;
   padding: 0;
   width: 32%;
+
   &.columns{
-    padding-left:0;
-    padding-right:0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
+
 .membership-card-radio-plus-primary{
-  text-align:center;
+  text-align: center;
   padding: 0;
   width: 49%;
+
   &.columns{
-    padding-left:0;
-    padding-right:0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 /* ------------- Input Styles  ------------- */
 %inputs-thirds{
   max-width: 30%;
-  float:left;
+  float: left;
 }
+
 %inputs-halves{
   max-width: 47.5%;
-  float:left;
+  float: left;
 }
 
 /* ------------- Custom Radio Button + Checkbox Styles  ------------- */
@@ -33,41 +37,52 @@
     padding: $base-padding*2;
     width: 100%;
   }
+
   .box2{
     margin-top: $base-margin*2;
   }
 }
+
 .checkbox-content{
-  display:inline;
+  display: inline;
   padding-left: $base-padding*8;
 }
+
 .radio-label{
   padding: $base-padding*2;
   width: 100%;
 }
+
 .radio-options{
   padding: 0;
   width: 100%;
 }
-input[type="radio"], input[type="checkbox"]{
+
+input[type="radio"],
+input[type="checkbox"]:not(.default){
   position: absolute;
   left: -9999px;
   margin: 0;
 }
-input[type="radio"] + label, input[type="checkbox"] + label{
+
+input[type="radio"] + label,
+input[type="checkbox"] + label{
   background: $ash;
   border: $base-border;
   margin: 0;
+
   &:nth-child(2){
     margin-top: -1px;
   }
+
   .membership-card-header{
     border-bottom: $base-border;
     background: darken($ash, 4%);
   }
 }
+
 input[type="radio"] + label > span,
-input[type="checkbox"] + label > span:first-of-type, 
+input[type="checkbox"] + label > span:first-of-type,
 input[type="radio"] + label span{
   display: inline-block;
   width: 30px;
@@ -101,11 +116,13 @@ input[type="radio"]:checked + label{
   background-color: $sky;
   border: 1px solid $ocean;
   position: relative;
+
   &>hr{
     border: solid $ocean;
     border-width: 1px 0 0;
     height: 0;
   }
+
   .membership-card-header{
     border-bottom: 1px solid $ocean;
     background: darken($sky, 4%);
@@ -135,33 +152,42 @@ input[type="checkbox"]:checked + label{
 [type="checkbox"]:checked + label:after{
   margin-left: $base-margin*6;
 }
+
 .month, .year{
   @extend %inputs-thirds;
 }
+
 .day{
   @extend %inputs-thirds;
   margin: 0 5%;
 }
 
 /* ------------- Error Messaging ------------- */
-.error small.error, small.error{
+.error small.error,
+small.error{
   background: $brand-red;
 }
-.error label, .error label.error{
+
+.error label,
+.error label.error{
   color: $brand-red;
 }
 
 .error-message{
   background: $brand-red;
 }
+
 .join-birthdate small.error{
   margin-top: $base-margin*8;
 }
 
 /* ------------- Moneris ------------- */
-#monerisFrameSurround iframe, #monerisFrameSurround object, #monerisFrameSurround embed {
+#monerisFrameSurround iframe,
+#monerisFrameSurround object,
+#monerisFrameSurround embed {
   width: 100%;
 }
+
 .iframe-error {
   margin-top: -8px !important;
 }

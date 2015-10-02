@@ -2,13 +2,15 @@
   width: 100%;
   height: 50px;
   background-color: $primary-color;
-  margin-bottom: 30px;
+  margin-bottom: $base-margin*6;
   padding: 0;
+
   a:hover{
     color: $sky;
     cursor: pointer;
   }
+
   img {
-    padding-top:10px;
+    padding-top:$base-padding*2;
   }
 }
