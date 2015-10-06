@@ -1,6 +1,14 @@
 module AmaLayoutPathHelper
+  def gatekeeper_path
+    "#{Rails.configuration.gatekeeper_site}/"
+  end
+
   def gatekeeper_profile_path
     "#{Rails.configuration.gatekeeper_site}/user/edit"
+  end
+
+  def youraccount_path
+    "#{Rails.configuration.youraccount_site}/"
   end
 
   def youraccount_dashboard_path
@@ -43,6 +51,10 @@ module AmaLayoutPathHelper
     "#{Rails.configuration.youraccount_site}/subscriptions"
   end
 
+  def youraccount_renew_path
+    "#{Rails.configuration.youraccount_site}/renew"
+  end
+
   def youraccount_westworld_path
     "#{Rails.configuration.youraccount_site}/westworld"
   end
@@ -63,11 +75,25 @@ module AmaLayoutPathHelper
     "#{Rails.configuration.insurance_site}/policies"
   end
 
+  def membership_path
+    "#{Rails.configuration.membership_site}/"
+  end
+
   def membership_esso_reload_path
     "#{Rails.configuration.membership_site}/reward_cards"
   end
 
-  def driveredonline_path
-    Rails.configuration.driveredonline_site
+  def membership_overview_path
+    "#{Rails.configuration.membership_site}/membership/overview"
   end
+
+  def membership_manage_path
+    "#{Rails.configuration.membership_site}/membership/manage"
+  end
+
+  def driveredonline_path
+    "#{Rails.configuration.driveredonline_site}/"
+  end
+
+
 end
