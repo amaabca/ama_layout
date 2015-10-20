@@ -1,7 +1,7 @@
 member:
   - text: "Account Dashboard"
     alt: "Back to my dashboard"
-    link: "<%= Rails.configuration.youraccount_site %>/dashboard"
+    link: "<%= Rails.configuration.gatekeeper_site %>/"
     icon: "fa-tachometer"
   - text: "Membership"
     link: "<%= Rails.configuration.membership_site %>/membership/overview"
@@ -25,7 +25,7 @@ member:
     link: "<%= Rails.configuration.membership_site %>/reward_cards"
     icon: "fa-arrow-up"
   - text: "Settings & Subscriptions"
-    link: "<%= Rails.configuration.gatekeeper_site %>/"
+    link: "<%= Rails.configuration.youraccount_site %>/subscriptions"
     icon: "fa-cogs"
     sub_nav:
       - text: "Change Email/Password"
@@ -39,7 +39,7 @@ member:
 non-member:
   - text: "Account Dashboard"
     alt: "Back to my dashboard"
-    link: "<%= Rails.configuration.gatekeeper_site %>"
+    link: "<%= Rails.configuration.gatekeeper_site %>/"
     icon: "fa-tachometer"
   - text: "Join AMA"
     alt: "Join AMA"
