@@ -7,3 +7,4 @@
 //= require ./foundation-ready
 //= require ./sticky-footer
 //= require ./foundation-namespace
+//= require ./sidebar
