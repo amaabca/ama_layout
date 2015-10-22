@@ -54,7 +54,7 @@ non-member:
 member-in-renewal:
   - text: "Account Dashboard"
     alt: "Back to my dashboard"
-    link: "<%= Rails.configuration.youraccount_site %>/dashboard"
+    link: "<%= Rails.configuration.gatekeeper_site %>/"
     icon: "fa-tachometer"
   - text: "Renew"
     link: "<%= Rails.configuration.youraccount_site %>/renew"
@@ -65,7 +65,7 @@ member-in-renewal:
 member-in-renewal-late:
   - text: "Account Dashboard"
     alt: "Back to my dashboard"
-    link: "<%= Rails.configuration.youraccount_site %>/dashboard"
+    link: "<%= Rails.configuration.gatekeeper_site %>/"
     icon: "fa-tachometer"
   - text: "Driver Education"
     link: "<%= Rails.configuration.driveredonline_site %>"
