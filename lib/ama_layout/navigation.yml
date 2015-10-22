@@ -25,9 +25,11 @@ member:
     link: "<%= Rails.configuration.membership_site %>/reward_cards"
     icon: "fa-arrow-up"
   - text: "My Account Settings"
-    link: "<%= Rails.configuration.gatekeeper_site %>/"
+    link: "#"
     icon: "fa-cogs"
     sub_nav:
+      - text: "Settings Overview"
+        link: "<%= Rails.configuration.gatekeeper_site %>/"
       - text: "Change Email/Password"
         link: "<%= Rails.configuration.gatekeeper_site %>/user/edit"
       - text: "Email Subscriptions"
