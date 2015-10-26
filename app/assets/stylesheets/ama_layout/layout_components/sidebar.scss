@@ -38,12 +38,12 @@
       visibility: visible;
       opacity: 1;
       margin-top: 0;
-    }
 
-    a.sub-nav.activepage{
-      text-decoration: underline;
+      .sub-nav:active,
+      .sub-nav:focus{
+        text-decoration: underline;
+      }
     }
-
   }
 
   &.activepage{
