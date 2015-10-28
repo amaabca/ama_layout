@@ -1,4 +1,4 @@
 $(window).bind "load", ->
-  $('.dashboard-nav').click ->
+  $('.dashboard-nav a').click ->
     $(this).toggleClass 'nav-open'
     return

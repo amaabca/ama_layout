@@ -32,6 +32,18 @@
     span{
       margin-top: $base-margin*3;
     }
+
+    &.nav-open ~ .inner-nav{
+      max-height: 200px;
+      visibility: visible;
+      opacity: 1;
+      margin-top: 0;
+
+      .sub-nav:active,
+      .sub-nav:focus{
+        text-decoration: underline;
+      }
+    }
   }
 
   &.activepage{
@@ -46,19 +58,6 @@
       color: $white;
     }
 
-    .inner-nav{
-      max-height: 200px;
-      visibility: visible;
-      opacity: 1;
-      margin-top: 0;
-    }
-
-    a.sub-nav.activepage{
-      text-decoration: underline;
-    }
-  }
-
-  &.nav-open{
     .inner-nav{
       max-height: 200px;
       visibility: visible;
