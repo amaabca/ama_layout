@@ -162,6 +162,11 @@ input[type="checkbox"]:checked + label{
   margin: 0 5%;
 }
 
+p.hint{
+  font-size: $base-font-size*0.85;
+  color: $smoke;
+}
+
 /* ------------- Error Messaging ------------- */
 .error small.error,
 small.error{
