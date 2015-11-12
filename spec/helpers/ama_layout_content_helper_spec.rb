@@ -24,7 +24,7 @@ describe AmaLayoutContentHelper do
     end
 
     it "returns active if the given path matches the request path" do
-      expect(helper.active_page(site_url)).to eq "active"
+      expect(helper.active_page(site_url)).to eq "activepage"
     end
 
     it "returns nothing if the given patch does not match the request path" do

@@ -21,5 +21,6 @@ ActionView::TestCase::TestController.class_eval do
 end
 
 RSpec.configure do |config|
+  config.infer_spec_type_from_file_location!
   config.include Rails.application.routes.url_helpers
 end
