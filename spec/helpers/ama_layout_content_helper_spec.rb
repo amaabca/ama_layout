@@ -3,6 +3,7 @@ describe AmaLayoutContentHelper do
   let(:site_name) { "Waffle Emporium" }
   let(:site_domain) { "http://waffleemporium.ca" }
   let(:site_url) { "#{site_domain}/wafflesauce" }
+  let(:nav_item) { FactoryGirl.build(:navigation_item) }
 
   describe "#greeting" do
     it "returns the greeting set in the domain cookie" do
@@ -18,13 +19,24 @@ describe AmaLayoutContentHelper do
     end
   end
 
+  describe "#active_section" do
+    it "returns active if request include the path" do
+      allow_any_instance_of(ActionController::TestRequest).to receive(:fullpath).and_return("#{site_domain}/gotica")
+      expect(helper.active_section(nav_item)).to eq "activepage"
+    end
+
+    it "returns nil if request  does not include the path" do
+      expect(helper.active_section(nav_item)).to eq nil
+    end
+  end
+
   describe "#active_page" do
     before(:each) do
       allow(helper.request).to receive(:fullpath).and_return(site_url)
     end
 
     it "returns active if the given path matches the request path" do
-      expect(helper.active_page(site_url)).to eq "active"
+      expect(helper.active_page(site_url)).to eq "activepage"
     end
 
     it "returns nothing if the given patch does not match the request path" do
