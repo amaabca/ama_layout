@@ -3,9 +3,9 @@
   <ul class="dropdown">
     <%= render partial: "ama_layout/main_top_nav_item", collection: navigation.items, as: :nav_item %>
     <li class="divider"></li>
-    <li><a href="#">AMA Website</a></li>
+    <li><a href="<%= Rails.configuration.amaabca_site %>">AMA Website</a></li>
     <li class="divider"></li>
-    <li><a href="#">AMA Road Reports</a></li>
+    <li><a href="http://amaroadreports.ca/">AMA Road Reports</a></li>
     <li class="divider"></li>
     <li><a href="/logout">Sign Out</a></li>
   </ul>

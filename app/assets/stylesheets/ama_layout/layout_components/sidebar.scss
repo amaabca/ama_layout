@@ -29,18 +29,23 @@
     width: 100%;
     padding: 18px;
 
-    &:hover,
-    &:active{
-     color: $white;
-    }
-
     span{
       margin-top: $base-margin*3;
     }
+
+    &.nav-open ~ .inner-nav{
+      max-height: 200px;
+      visibility: visible;
+      opacity: 1;
+      margin-top: 0;
+
+      .sub-nav:active,
+      .sub-nav:focus{
+        text-decoration: underline;
+      }
+    }
   }
 
-  &:hover,
-  &:active,
   &.activepage{
     background: $brand-blue-light;
 
