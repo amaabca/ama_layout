@@ -70,6 +70,14 @@ member-in-renewal:
   - text: "Driver Education"
     link: "<%= Rails.configuration.driveredonline_site %>"
     icon: "fa-car"
+  - text: "Insurance"
+    link: "#"
+    icon: "fa-umbrella"
+    sub_nav:
+      - text: "Insurance Overview"
+        link: "<%= Rails.configuration.insurance_site %>/"
+      - text: "View My Policies"
+        link: "<%= Rails.configuration.insurance_site %>/policies"
 member-in-renewal-late:
   - text: "Account Dashboard"
     alt: "Back to my dashboard"
