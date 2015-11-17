@@ -33,17 +33,21 @@ describe AmaLayout::Navigation do
         expect(subject.items[2].link).to eq "#{driveredonline_site}"
         expect(subject.items[2].icon).to eq "fa-car"
 
-        expect(subject.items[3].text).to eq "My Reward Dollars"
-        expect(subject.items[3].link).to eq "#{youraccount_site}/reward_dollars"
-        expect(subject.items[3].icon).to eq "fa-usd"
+        expect(subject.items[3].text).to eq "Insurance"
+        expect(subject.items[3].link).to eq "#"
+        expect(subject.items[3].icon).to eq "fa-umbrella"
 
-        expect(subject.items[4].text).to eq "Reload Esso Gift Cards"
-        expect(subject.items[4].link).to eq "#{membership_site}/reward_cards"
-        expect(subject.items[4].icon).to eq "fa-arrow-up"
+        expect(subject.items[4].text).to eq "My Reward Dollars"
+        expect(subject.items[4].link).to eq "#{youraccount_site}/reward_dollars"
+        expect(subject.items[4].icon).to eq "fa-usd"
 
-        expect(subject.items[5].text).to eq "My Account Settings"
-        expect(subject.items[5].link).to eq "#"
-        expect(subject.items[5].icon).to eq "fa-cogs"
+        expect(subject.items[5].text).to eq "Reload Esso Gift Cards"
+        expect(subject.items[5].link).to eq "#{membership_site}/reward_cards"
+        expect(subject.items[5].icon).to eq "fa-arrow-up"
+
+        expect(subject.items[6].text).to eq "My Account Settings"
+        expect(subject.items[6].link).to eq "#"
+        expect(subject.items[6].icon).to eq "fa-cogs"
       end
     end
 
