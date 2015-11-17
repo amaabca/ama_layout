@@ -10,7 +10,7 @@ describe AmaLayoutPathHelper do
     allow(Rails.configuration).to receive(:youraccount_site).and_return(youraccount_site)
     allow(Rails.configuration).to receive(:insurance_site).and_return(insurance_site)
     allow(Rails.configuration).to receive(:membership_site).and_return(membership_site)
-    allow(Rails.configuration).to receive(:driveredonline_site).and_return(:driveredonline_site)
+    allow(Rails.configuration).to receive(:driveredonline_site).and_return(driveredonline_site)
   end
 
   describe "#gatekeeper_profile_path" do
@@ -105,13 +105,13 @@ describe AmaLayoutPathHelper do
 
   describe "#membership_path" do
     it "returns the membership esso reload path" do
-      expect(helper.membership_esso_reload_path).to eq "#{membership_site}/reward_"
+      expect(helper.membership_esso_reload_path).to eq "#{membership_site}/reward_cards"
     end
   end
 
   describe "#driveredonline_path" do
     it "returns the driveredonile path" do
-      expect(helper.driveredonline_path).to eq "#{driveredonline_site}/login"
+      expect(helper.driveredonline_path).to eq "#{driveredonline_site}"
     end
   end
 end
