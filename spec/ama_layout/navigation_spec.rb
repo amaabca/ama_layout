@@ -30,15 +30,15 @@ describe AmaLayout::Navigation do
         expect(subject.items[1].icon).to eq "fa-credit-card"
 
         expect(subject.items[2].text).to eq "My Driver Education"
-        expect(subject.items[2].link).to eq "#{driveredonline_site}"
+        expect(subject.items[2].link).to eq driveredonline_site
         expect(subject.items[2].icon).to eq "fa-car"
 
         expect(subject.items[3].text).to eq "My Reward Dollars"
-        expect(subject.items[3].link).to eq "#{youraccount_site}/rewards"
+        expect(subject.items[3].link).to eq "#"
         expect(subject.items[3].icon).to eq "fa-usd"
 
         expect(subject.items[4].text).to eq "My Account Settings"
-        expect(subject.items[4].link).to eq "#{youraccount_site}/subscriptions"
+        expect(subject.items[4].link).to eq "#"
         expect(subject.items[4].icon).to eq "fa-cogs"
       end
     end

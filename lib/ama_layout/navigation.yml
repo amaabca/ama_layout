@@ -19,7 +19,7 @@ member:
     link: "<%= Rails.configuration.driveredonline_site %>"
     icon: "fa-car"
   - text: "My Reward Dollars"
-    link: "<%= Rails.configuration.youraccount_site %>/rewards"
+    link: "#"
     icon: "fa-usd"
     sub_nav:
       - text: "Rewards Overview"
@@ -29,7 +29,7 @@ member:
       - text: "Transaction History"
         link: "<%= Rails.configuration.youraccount_site %>/reward_dollars"
   - text: "My Account Settings"
-    link: "<%= Rails.configuration.youraccount_site %>/subscriptions"
+    link: "#"
     icon: "fa-cogs"
     sub_nav:
       - text: "Change Email/Password"
