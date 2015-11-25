@@ -33,7 +33,7 @@ describe AmaLayout::Navigation do
         expect(subject.items[2].link).to eq driveredonline_site
         expect(subject.items[2].icon).to eq "fa-car"
 
-        expect(subject.items[3].text).to eq "My Reward Dollars"
+        expect(subject.items[3].text).to eq "My AMA Rewards"
         expect(subject.items[3].link).to eq "#"
         expect(subject.items[3].icon).to eq "fa-usd"
 
