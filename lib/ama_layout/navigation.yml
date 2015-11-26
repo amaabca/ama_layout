@@ -21,7 +21,7 @@ member:
     sub_nav:
       - text: "New Driver Online Course"
         link: "<%= Rails.configuration.driveredonline_site %>"
-  - text: My AMA Rewards"
+  - text: "My AMA Rewards"
     link: "#"
     icon: "fa-usd"
     sub_nav:
