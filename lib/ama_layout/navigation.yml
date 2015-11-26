@@ -19,8 +19,10 @@ member:
     link: "#"
     icon: "fa-car"
     sub_nav:
-      - text: "New Driver Online Course"
-        link: "<%= Rails.configuration.driveredonline_site %>"
+      - text: "Driver Education Overview"
+        link: "<%= Rails.configuration.driveredonline_site %>/"
+      - text: "New Driver Online Program"
+        link: "<%= Rails.configuration.driveredonline_site %>/dashboard"
   - text: "My Reward Dollars"
     link: "<%= Rails.configuration.youraccount_site %>/reward_dollars"
     icon: "fa-usd"
