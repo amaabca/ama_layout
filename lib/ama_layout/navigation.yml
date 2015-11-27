@@ -54,8 +54,10 @@ non-member:
     link: "#"
     icon: "fa-car"
     sub_nav:
-      - text: "New Driver Online Course"
-        link: "<%= Rails.configuration.driveredonline_site %>"
+      - text: "Driver Education Overview"
+        link: "<%= Rails.configuration.driveredonline_site %>/"
+      - text: "New Driver Online Program"
+        link: "<%= Rails.configuration.driveredonline_site %>/dashboard"
   - text: "Change Email/Password"
     link: "<%= Rails.configuration.gatekeeper_site %>/user/edit"
     icon: "fa-cogs"
@@ -71,8 +73,10 @@ member-in-renewal:
     link: "#"
     icon: "fa-car"
     sub_nav:
-      - text: "New Driver Online Course"
-        link: "<%= Rails.configuration.driveredonline_site %>"
+      - text: "Driver Education Overview"
+        link: "<%= Rails.configuration.driveredonline_site %>/"
+      - text: "New Driver Online Program"
+        link: "<%= Rails.configuration.driveredonline_site %>/dashboard"
 member-in-renewal-late:
   - text: "Account Dashboard"
     alt: "Back to my dashboard"
@@ -85,5 +89,7 @@ member-in-renewal-late:
     link: "#"
     icon: "fa-car"
     sub_nav:
-      - text: "New Driver Online Course"
-        link: "<%= Rails.configuration.driveredonline_site %>"
+      - text: "Driver Education Overview"
+        link: "<%= Rails.configuration.driveredonline_site %>/"
+      - text: "New Driver Online Program"
+        link: "<%= Rails.configuration.driveredonline_site %>/dashboard"
