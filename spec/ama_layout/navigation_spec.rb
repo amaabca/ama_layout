@@ -37,13 +37,13 @@ describe AmaLayout::Navigation do
         expect(subject.items[3].link).to eq "#"
         expect(subject.items[3].icon).to eq "fa-umbrella"
 
-        expect(subject.items[3].text).to eq "My AMA Rewards"
-        expect(subject.items[3].link).to eq "#"
-        expect(subject.items[3].icon).to eq "fa-usd"
-
-        expect(subject.items[4].text).to eq "My Account Settings"
+        expect(subject.items[4].text).to eq "My AMA Rewards"
         expect(subject.items[4].link).to eq "#"
-        expect(subject.items[4].icon).to eq "fa-cogs"
+        expect(subject.items[4].icon).to eq "fa-usd"
+
+        expect(subject.items[5].text).to eq "My Account Settings"
+        expect(subject.items[5].link).to eq "#"
+        expect(subject.items[5].icon).to eq "fa-cogs"
       end
 
       context "subnavs" do
