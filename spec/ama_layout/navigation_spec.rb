@@ -41,6 +41,20 @@ describe AmaLayout::Navigation do
         expect(subject.items[4].link).to eq "#"
         expect(subject.items[4].icon).to eq "fa-cogs"
       end
+
+      context "subnavs" do
+        context "driver education" do
+          let(:driver_education_subnav) { subject.items[2].sub_nav }
+
+          it "return the subnav items" do
+            expect(driver_education_subnav[0].text).to eq "Driver Education Overview"
+            expect(driver_education_subnav[0].link).to eq "#{driveredonline_site}/"
+
+            expect(driver_education_subnav[1].text).to eq "New Driver Online Program"
+            expect(driver_education_subnav[1].link).to eq "#{driveredonline_site}/dashboard"
+          end
+        end
+      end
     end
 
     context "non-member" do
@@ -67,6 +81,20 @@ describe AmaLayout::Navigation do
         expect(subject.items[3].link).to eq "#{gatekeeper_site}/user/edit"
         expect(subject.items[3].icon).to eq "fa-cogs"
       end
+
+      context "subnavs" do
+        context "driver education" do
+          let(:driver_education_subnav) { subject.items[2].sub_nav }
+
+          it "return the subnav items" do
+            expect(driver_education_subnav[0].text).to eq "Driver Education Overview"
+            expect(driver_education_subnav[0].link).to eq "#{driveredonline_site}/"
+
+            expect(driver_education_subnav[1].text).to eq "New Driver Online Program"
+            expect(driver_education_subnav[1].link).to eq "#{driveredonline_site}/dashboard"
+          end
+        end
+      end
     end
 
     context "member-in-renewal" do
@@ -88,6 +116,20 @@ describe AmaLayout::Navigation do
         expect(subject.items[2].link).to eq "#"
         expect(subject.items[2].icon).to eq "fa-car"
       end
+
+      context "subnavs" do
+        context "driver education" do
+          let(:driver_education_subnav) { subject.items[2].sub_nav }
+
+          it "return the subnav items" do
+            expect(driver_education_subnav[0].text).to eq "Driver Education Overview"
+            expect(driver_education_subnav[0].link).to eq "#{driveredonline_site}/"
+
+            expect(driver_education_subnav[1].text).to eq "New Driver Online Program"
+            expect(driver_education_subnav[1].link).to eq "#{driveredonline_site}/dashboard"
+          end
+        end
+      end
     end
 
     context "member-in-renewal-late" do
@@ -108,6 +150,20 @@ describe AmaLayout::Navigation do
         expect(subject.items[2].text).to eq "Driver Education"
         expect(subject.items[2].link).to eq "#"
         expect(subject.items[2].icon).to eq "fa-car"
+      end
+
+      context "subnavs" do
+        context "driver education" do
+          let(:driver_education_subnav) { subject.items[2].sub_nav }
+
+          it "return the subnav items" do
+            expect(driver_education_subnav[0].text).to eq "Driver Education Overview"
+            expect(driver_education_subnav[0].link).to eq "#{driveredonline_site}/"
+
+            expect(driver_education_subnav[1].text).to eq "New Driver Online Program"
+            expect(driver_education_subnav[1].link).to eq "#{driveredonline_site}/dashboard"
+          end
+        end
       end
     end
   end

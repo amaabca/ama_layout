@@ -1,19 +1,29 @@
 $(window).bind
   load: ->
     adjustFooter()
-    accordionAdjust()
+    clickChecker()
   resize: ->
     adjustFooter()
-    accordionAdjust()
+    clickChecker()
 
 adjustFooter = ->
   $("footer").css({ 'margin-top': calcHeight() + 'px' })
 
-accordionAdjust = ->
-  $("a.asset-link.clearfix").click ->
-    setTimeout ->
-      adjustFooter()
-    , 1
+clickChecker = ->
+  checkClicks(".close-button", 250)
+  checkClicks("a.asset-link.clearfix", 1)
+
+checkClicks = (tag_to_check, delay) ->
+  $(tag_to_check).click ->
+    i = delay
+    while i >= 0
+      readjust(i)
+      i--
+
+readjust = (delay) ->
+  setTimeout ->
+    adjustFooter()
+  , delay
 
 calcHeight = ->
   footer = $("footer")
