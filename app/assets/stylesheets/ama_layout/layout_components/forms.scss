@@ -164,7 +164,8 @@ input[type="checkbox"]:checked + label{
 
 p.hint{
   font-size: $base-font-size*0.85;
-  color: $smoke;
+  color: darken($smoke, 15%);
+  font-style: italic;
 }
 
 /* ------------- Error Messaging ------------- */
