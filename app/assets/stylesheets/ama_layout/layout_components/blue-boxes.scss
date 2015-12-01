@@ -33,13 +33,16 @@
 }
 
 .quicklink-box{
-  background: $brand-blue-light;
   margin-top: 0;
   padding-top: 1px;
   min-height: 161px;
 
-  &:hover{
+  &.light-blue-bg:hover{
     background: lighten($brand-blue-light, 3%);
+  }
+
+  &.rewards-green-bg:hover{
+    background: lighten($brand-green, 3%);
   }
 }
 
