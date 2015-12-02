@@ -29,7 +29,7 @@ describe AmaLayout::Navigation do
         expect(subject.items[1].link).to eq "#"
         expect(subject.items[1].icon).to eq "fa-credit-card"
 
-        expect(subject.items[2].text).to eq "Driver Education"
+        expect(subject.items[2].text).to eq "My Driver Education"
         expect(subject.items[2].link).to eq "#"
         expect(subject.items[2].icon).to eq "fa-car"
 
