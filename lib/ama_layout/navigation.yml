@@ -15,7 +15,7 @@ member:
         link: "<%= Rails.configuration.youraccount_site %>/billing"
       - text: "Print/Request New Card"
         link: "<%= Rails.configuration.youraccount_site %>/membership"
-  - text: "Driver Education"
+  - text: "My Driver Education"
     link: "#"
     icon: "fa-car"
     sub_nav:
