@@ -86,6 +86,7 @@ input[type="checkbox"] + label > span:first-of-type,
 input[type="radio"] + label span:first-of-type{
   display: inline-block;
   width: 30px;
+  min-width: 30px;
   height: 30px;
   margin: $base-margin 0 $base-margin*2;
   vertical-align: top;
@@ -139,6 +140,7 @@ input[type="checkbox"]:checked + label{
   color: $white;
   position: absolute;
   width: 30px;
+  min-width: 30px;
   max-width: 10%;
   height: 30px;
   top: 15px;
