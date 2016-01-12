@@ -189,6 +189,19 @@ small.error{
   margin-top: $base-margin*8;
 }
 
+#email_hint{
+  color: $brand-red;
+  display: none;
+  font-size: 0.875em;
+  margin: -10px 0 10px;
+}
+
+.email_domain{
+  color: $brand-blue-insurance;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 /* ------------- Moneris ------------- */
 #monerisFrameSurround iframe,
 #monerisFrameSurround object,
