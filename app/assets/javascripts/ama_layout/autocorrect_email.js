@@ -1,30 +1,29 @@
 var $email = $('[type="email"]');
 var $hint = $("*#email_hint");
 
-$email.on('blur' , function() {
-  $.each( $email, function( index, value ) {
-    $.each( $hint, function( hint_index, hint_value) {
-      $(value).mailcheck({
-        suggested: function(element, suggestion) {
-          var suggestion = "Did you mean <span class='suggestion'>" +
-            "<span class='address'>" + suggestion.address + "</span>" +
-            "@<a href='#' class='email_domain'>" + suggestion.domain +
-            "</a></span>?";
+$email.on('blur', function() {
+  $(this).mailcheck({
+    suggested: function(element, suggestion) {
+      var text = "Did you mean <span class='suggestion'>" +
+        "<span class='address'>" + suggestion.address + "</span>" +
+        "@<a href='#' class='email_domain'>" + suggestion.domain +
+        "</a></span>?";
 
-          $($hint[hint_index]).html(suggestion).fadeIn(150);
-        }
-      });
-    })
-
+      element.parent().siblings("#email_hint").html(text).fadeIn(150);
+    },
+    empty: function(element) {
+      element.parent().siblings("#email_hint").html("");
+    }
   });
 });
 
 $hint.on('click', '.email_domain', function() {
-  $.each( $email, function( index, value ){
-    $($email[index]).val($(".suggestion").first().text());
-  });
+  email_hint = $(this).parents("#email_hint");
+  email = $(email_hint).siblings(".input.email").find("[type='email']")
 
-  $hint.fadeOut(200, function() {
+  $(email).val($(".suggestion").first().text());
+
+  $(email_hint).fadeOut(200, function() {
     $(this).empty();
   });
   return false;

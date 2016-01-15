@@ -193,7 +193,7 @@ small.error{
   color: $brand-red;
   display: none;
   font-size: 0.875em;
-  margin: -10px 0 10px;
+  margin: -$base-padding*2 0 $base-padding*2;
 }
 
 .email_domain{
