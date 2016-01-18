@@ -4,7 +4,7 @@ var domains = ['msn.com', 'bellsouth.net', 'telus.net', 'comcast.net', 'optusnet
                 'google.com', 'optonline.net', 'sbcglobal.net', 'aol.com', 'me.com', 'btinternet.com', 'charter.net',
                 'shaw.ca', 'xplore.com', 'abnorth.com', 'pentnet.net', 'canadasurf.net'];
 
-var secondLevelDomains = ["yahoo", "hotmail", "mail", "live", "outlook", "gmx", "xplore", "abnorth", "pentnet", "canadasurf"];
+var secondLevelDomains = ["yahoo", "hotmail", "mail", "live", "outlook", "gmx"];
 
 var $email = $('[type="email"]');
 var $hint = $("*#email_hint");
