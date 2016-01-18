@@ -1,10 +1,18 @@
-Mailcheck.defaultDomains.push('xplore.com', 'abnorth.com', "pentnet.net", "canadasurf.net")
+var domains = ['msn.com', 'bellsouth.net', 'telus.net', 'comcast.net', 'optusnet.com.au', 'earthlink.net', 'qq.com',
+                'sky.com', 'icloud.com', 'mac.com', 'sympatico.ca', 'googlemail.com', 'att.net', 'xtra.co.nz', 'web.de',
+                'cox.net', 'gmail.com', 'ymail.com', 'aim.com', 'rogers.com', 'verizon.net', 'rocketmail.com',
+                'google.com', 'optonline.net', 'sbcglobal.net', 'aol.com', 'me.com', 'btinternet.com', 'charter.net',
+                'shaw.ca', 'xplore.com', 'abnorth.com', 'pentnet.net', 'canadasurf.net'];
+
+var secondLevelDomains = ["yahoo", "hotmail", "mail", "live", "outlook", "gmx", "xplore", "abnorth", "pentnet", "canadasurf"];
 
 var $email = $('[type="email"]');
 var $hint = $("*#email_hint");
 
 $email.on('blur', function() {
   $(this).mailcheck({
+    domains: domains,                       // optional
+    secondLevelDomains: secondLevelDomains, // optional
     suggested: function(element, suggestion) {
       var text = "Did you mean <span class='suggestion'>" +
         "<span class='address'>" + suggestion.address + "</span>" +

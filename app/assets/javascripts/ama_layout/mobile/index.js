@@ -2,3 +2,4 @@
 //= require ./mobile_menu
 //= require ./tablesaw.stackonly.js
 //= require ./ready
+//= require ./mailcheck
