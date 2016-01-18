@@ -1,3 +1,5 @@
+Mailcheck.defaultDomains.push('xplore.com', 'abnorth.com', "pentnet.net", "canadasurf.net")
+
 var $email = $('[type="email"]');
 var $hint = $("*#email_hint");
 
