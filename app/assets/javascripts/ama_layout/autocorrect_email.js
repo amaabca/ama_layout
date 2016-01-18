@@ -4,15 +4,12 @@ var domains = ['msn.com', 'bellsouth.net', 'telus.net', 'comcast.net', 'optusnet
                 'google.com', 'optonline.net', 'sbcglobal.net', 'aol.com', 'me.com', 'btinternet.com', 'charter.net',
                 'shaw.ca', 'xplore.com', 'abnorth.com', 'pentnet.net', 'canadasurf.net'];
 
-var secondLevelDomains = ["yahoo", "hotmail", "mail", "live", "outlook", "gmx"];
-
 var $email = $('[type="email"]');
 var $hint = $("*#email_hint");
 
 $email.on('blur', function() {
   $(this).mailcheck({
-    domains: domains,                       // optional
-    secondLevelDomains: secondLevelDomains, // optional
+    domains: domains,
     suggested: function(element, suggestion) {
       var text = "Did you mean <span class='suggestion'>" +
         "<span class='address'>" + suggestion.address + "</span>" +
