@@ -8,4 +8,4 @@
 //= require ./sticky-footer
 //= require ./foundation-namespace
 //= require ./sidebar
-//= require ./mailcheck
+//= require ../mailcheck
