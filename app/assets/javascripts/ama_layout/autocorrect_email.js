@@ -7,7 +7,7 @@ var domains = ['msn.com', 'bellsouth.net', 'telus.net', 'comcast.net', 'optusnet
 var secondLevelDomains = ["yahoo", "hotmail", "mail", "live", "outlook"]
 
 var $email = $('[type="email"]');
-var $hint = $("*#email_hint");
+var $hint = $("*.email_hint");
 
 $email.on('blur', function() {
   $(this).mailcheck({
@@ -19,17 +19,17 @@ $email.on('blur', function() {
         "@<a href='#' class='email_domain'>" + suggestion.domain +
         "</a></span>?";
 
-      element.parent().siblings("#email_hint").html(text).fadeIn(150);
+      element.nextAll(".email_hint:first").html(text).fadeIn(150);
     },
     empty: function(element) {
-      element.parent().siblings("#email_hint").html("");
+      element.nextAll(".email_hint:first").html("");
     }
   });
 });
 
 $hint.on('click', '.email_domain', function() {
-  email_hint = $(this).parents("#email_hint");
-  email = $(email_hint).siblings(".input.email").find("[type='email']")
+  email_hint = $(this).parents(".email_hint");
+  email = $(email_hint).prevAll('input[type=email]:last');
 
   $(email).val($(".suggestion").first().text());
 
