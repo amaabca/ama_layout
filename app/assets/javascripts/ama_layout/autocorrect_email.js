@@ -7,7 +7,7 @@ var domains = ['msn.com', 'bellsouth.net', 'telus.net', 'comcast.net', 'optusnet
 var secondLevelDomains = ["yahoo", "hotmail", "mail", "live", "outlook"]
 
 var $email = $('[type="email"]');
-var $hint = $("*.email_hint");
+var $hint = $(".email_hint");
 
 $email.on('blur', function() {
   $(this).mailcheck({
@@ -19,22 +19,26 @@ $email.on('blur', function() {
         "@<a href='#' class='email_domain'>" + suggestion.domain +
         "</a></span>?";
 
-      element.nextAll(".email_hint:first").html(text).fadeIn(150);
+      if (!$('.email_hint').length) {
+        $('<div class="email_hint">' + text + '</div>').insertAfter(element).fadeIn(150);
+
+      } else {
+        $(".email_hint").html(text);
+      }
     },
     empty: function(element) {
-      element.nextAll(".email_hint:first").html("");
+      $(".email_hint").html("");
     }
   });
 });
 
-$hint.on('click', '.email_domain', function() {
+
+$(document).on('click', '.email_hint .suggestion a.email_domain', function() {
   email_hint = $(this).parents(".email_hint");
   email = $(email_hint).prevAll('input[type=email]:last');
 
   $(email).val($(".suggestion").first().text());
+  $(".email_hint").remove();
 
-  $(email_hint).fadeOut(200, function() {
-    $(this).empty();
-  });
   return false;
 });
