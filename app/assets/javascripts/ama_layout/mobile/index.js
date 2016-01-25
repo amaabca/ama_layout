@@ -3,3 +3,4 @@
 //= require ./tablesaw.stackonly.js
 //= require ./ready
 //= require ../mailcheck
+//= require ../autocorrect_email
