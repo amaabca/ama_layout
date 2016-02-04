@@ -34,7 +34,7 @@ describe PagesController, type: :controller do
       end
     end
 
-    context 'with unsupported user agent' do
+    context 'with supported user agent' do
       SUPPORTED_BROWSER_HEADERS.each do |name, header|
         it "does not render a flash alert for #{name}" do
           request.env['HTTP_USER_AGENT'] = header
