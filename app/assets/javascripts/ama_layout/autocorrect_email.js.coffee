@@ -3,6 +3,7 @@ window.onload = ->
     'msn.com'
     'bellsouth.net'
     'telus.net'
+    'telusplanet.net'
     'comcast.net'
     'optusnet.com.au'
     'earthlink.net'
