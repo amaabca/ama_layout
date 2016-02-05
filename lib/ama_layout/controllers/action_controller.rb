@@ -8,9 +8,9 @@ module AmaLayout
 
     private
 
-      def check_browser
-        browser_url   = 'http://windows.microsoft.com/en-ca/internet-explorer/download-ie'
-        flash[:alert] = I18n.t("errors.unsupported_ie", ie_path: browser_url) unless browser.modern?
-      end
+    def check_browser
+      browser_url = 'http://windows.microsoft.com/en-ca/internet-explorer/download-ie'
+      flash[:alert] = I18n.t("errors.unsupported_ie", ie_path: browser_url) unless browser.modern?
+    end
   end
 end
