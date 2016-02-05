@@ -11,7 +11,7 @@ require "ama_layout/navigation_item"
 require "ama_layout/decorators/moneris_decorator"
 require "ama_layout/decorators/navigation_decorator"
 require "ama_layout/decorators/navigation_item_decorator"
-require "ama_layout/controllers/action_controller.rb"
+require "ama_layout/controllers/action_controller"
 
 module AmaLayout
   module Rails
