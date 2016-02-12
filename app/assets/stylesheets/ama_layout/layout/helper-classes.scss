@@ -211,6 +211,10 @@
   padding-left: 0 !important;
 }
 
+.bmt{
+  padding-top: $base-padding;
+}
+
 .bb0{
   border-bottom: 0px !important;
 }
@@ -380,4 +384,19 @@ button[disabled],
 
 .uppercase{
   text-transform: uppercase;
+}
+
+.grey-sub-title{
+  font-weight: bold;
+  font-size: $base-font-size*0.875;
+  color: $charcoal;
+  padding: $base-padding;
+}
+
+.brand-blue-dark-text{
+  color: $brand-blue-dark;
+}
+
+.brand-blue-light-text{
+  color: $brand-blue-light;
 }
