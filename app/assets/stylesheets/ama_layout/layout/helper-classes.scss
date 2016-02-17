@@ -170,9 +170,21 @@
   margin-left: 0px !important;
 }
 
+.mt25{
+  margin-top: 25px;
+}
+
+.bmt{
+  margin-top: $base-margin;
+}
+
+.bmb{
+  margin-bottom: $base-margin;
+}
+
 /* ==================== 5. Padding ==================== */
 .p1{
-  padding: $base-padding*4;
+  padding: $base-padding*4 !important;
 }
 
 .pt1 {
@@ -209,10 +221,6 @@
 
 .pl0 {
   padding-left: 0 !important;
-}
-
-.bmt{
-  padding-top: $base-padding;
 }
 
 .bb0{
@@ -399,4 +407,16 @@ button[disabled],
 
 .brand-blue-light-text{
   color: $brand-blue-light;
+}
+
+.micetype{
+  font-size: 80%;
+}
+
+.green-text{
+  color: $brand-green;
+}
+
+.small-text{
+  font-size: $base-font-size*0.75;
 }
