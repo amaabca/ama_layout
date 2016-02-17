@@ -164,6 +164,14 @@ input[type="checkbox"]:checked + label{
   margin: 0 5%;
 }
 
+.hour, .minute {
+  max-width: 45%;
+}
+
+.minute {
+  float: right;
+}
+
 p.hint{
   font-size: $base-font-size*0.85;
   color: darken($smoke, 15%);
