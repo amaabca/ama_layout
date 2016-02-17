@@ -155,13 +155,23 @@ input[type="checkbox"]:checked + label{
   margin-left: $base-margin*6;
 }
 
-.month, .year{
+.month,
+.year{
   @extend %inputs-thirds;
 }
 
 .day{
   @extend %inputs-thirds;
   margin: 0 5%;
+}
+
+.hour,
+.minute{
+  @extend %inputs-halves;
+}
+
+.minute{
+  float: right;
 }
 
 p.hint{
