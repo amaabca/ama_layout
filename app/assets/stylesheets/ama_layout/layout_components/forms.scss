@@ -167,7 +167,7 @@ input[type="checkbox"]:checked + label{
 
 .hour,
 .minute{
-  max-width: 45%;
+  @extend %inputs-halves;
 }
 
 .minute{
