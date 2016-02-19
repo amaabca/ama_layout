@@ -41,8 +41,8 @@ member:
         link: "<%= Rails.configuration.gatekeeper_site %>/user/edit"
       - text: "Email Subscriptions"
         link: "<%= Rails.configuration.youraccount_site %>/subscriptions"
-      - text: "Westworld"
-        link: "<%= Rails.configuration.youraccount_site %>/westworld"
+      - text: "AMA Insider Magazine"
+        link: "<%= Rails.configuration.youraccount_site %>/amainsider"
       - text: "Change Address"
         link: "<%= Rails.configuration.youraccount_site %>/membership_update/new"
 non-member:
