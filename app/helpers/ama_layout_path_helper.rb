@@ -43,8 +43,8 @@ module AmaLayoutPathHelper
     "#{Rails.configuration.youraccount_site}/subscriptions"
   end
 
-  def youraccount_westworld_path
-    "#{Rails.configuration.youraccount_site}/westworld"
+  def youraccount_amainsider_path
+    "#{Rails.configuration.youraccount_site}/amainsider"
   end
 
   def youraccount_privacy_path
