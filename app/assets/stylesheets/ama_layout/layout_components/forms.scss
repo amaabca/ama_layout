@@ -99,7 +99,7 @@ input[type="radio"] + label span:first-of-type{
 
 input[type="radio"] + label > span:first-of-type,
 input[type="radio"] + label span:first-of-type{
-  margin: 7px 5px;
+  margin: 7px $base-margin;
 
   &:before{
     content: ' ';
