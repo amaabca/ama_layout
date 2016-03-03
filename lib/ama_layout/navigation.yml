@@ -45,6 +45,13 @@ member:
         link: "<%= Rails.configuration.youraccount_site %>/amainsider"
       - text: "Change Address"
         link: "<%= Rails.configuration.youraccount_site %>/membership_update/new"
+  - text: "My Registries"
+    link: "#"
+    icon: "fa-folder-open"
+    sub_nav:
+      - text: "Automatic Vehicle Registraion Renewal"
+        link: "<%= Rails.configuration.registries_site %>/renewals"
+
 non-member:
   - text: "Account Dashboard"
     alt: "Back to my dashboard"
