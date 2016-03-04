@@ -66,7 +66,7 @@ describe AmaLayout::Navigation do
 
           it "returns the subnav items" do
             expect(registries_subnav[0].text).to eq "Automatic Vehicle Registration Renewal"
-            expect(registries_subnav[0].link).to eq "#{registries_site}/renewals"
+            expect(registries_subnav[0].link).to eq "#{registries_site}/registrations/new"
           end
         end
       end
