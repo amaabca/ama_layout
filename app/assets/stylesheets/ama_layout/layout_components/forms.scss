@@ -130,17 +130,17 @@ input[type="radio"]:checked + label{
 
   &:after{
     content: '';
+    position: absolute;
+    display: block;
+    top: 16px;
+    left: 18px;
     background-color: $brand-blue-light;
     width: 8px;
     height: 8px;
     -moz-transform: scale(2, 2);
     -webkit-transform: scale(2, 2);
     transform: scale(2, 2);
-    display: block;
     border-radius: 100%;
-    top: 16px;
-    left: 18px;
-    position: absolute;
   }
 
   &>hr{
