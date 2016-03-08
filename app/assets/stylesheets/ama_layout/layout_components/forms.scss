@@ -34,7 +34,6 @@
 /* ------------- Custom Radio Button + Checkbox Styles  ------------- */
 .checkboxes{
   label{
-    padding: $base-padding*2;
     width: 100%;
   }
 
@@ -71,6 +70,22 @@ input[type="checkbox"] + label{
   border: $base-border;
   margin: 0;
   width: 100%;
+  position: relative;
+  cursor: pointer;
+  padding: 0 $base-padding*2 0 $base-padding*2;
+
+  &:before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    background-color: $white;
+    border: $base-border;
+  }
 
   &:nth-child(2){
     margin-top: -1px;
@@ -82,55 +97,51 @@ input[type="checkbox"] + label{
   }
 }
 
-input[type="checkbox"] + label > span:first-of-type,
-input[type="radio"] + label > span:first-of-type,
-input[type="radio"] + label span:first-of-type{
+.checkbox-label{
   display: inline-block;
-  width: 24px;
-  min-width: 24px;
-  height: 24px;
-  margin: $base-margin 0 $base-margin;
-  vertical-align: top;
-  cursor: pointer;
-  border-radius:  50%;
-  background-color: $white;
-  border: $base-border;
+  width: 85%;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  margin-left: 32px;
 }
 
-input[type="radio"] + label > span:first-of-type,
-input[type="radio"] + label span:first-of-type{
-  margin: 7px $base-margin;
+input[type="radio"] + label{
+  margin: $base-margin 0;
 
   &:before{
-    content: ' ';
     border-radius: 100%;
-    margin: 6px auto 0 auto;
-    transition: all .5s ease-in-out;
   }
-}
 
-input[type="radio"]:checked + label > span:first-of-type,
-input[type="radio"]:checked + label span:first-of-type{
-  background-color: $white;
-  border: 2px solid $secondary-color;
-
-  &:before{
-    content: '';
-    display: block;
-    position: relative;
-    width: 8px;
-    height: 8px;
-    background-color: $secondary-color;
-    -moz-transform: scale(2,2);
-    -webkit-transform: scale(2,2);
-    transform: scale(2,2);
+  &:after{
+    content: ' ';
+    transition: all .5s ease-in-out;
   }
 }
 
 input[type="radio"]:checked + label{
   background-color: $sky;
   border: 1px solid $ocean;
-  position: relative;
+
+  &:before{
+    content: '';
+    background-color: $white;
+    border: 2px solid $secondary-color;
+  }
+
+  &:after{
+    content: '';
+    background-color: $brand-blue-light;
+    width: 8px;
+    height: 8px;
+    -moz-transform: scale(2, 2);
+    -webkit-transform: scale(2, 2);
+    transform: scale(2, 2);
+    display: block;
+    border-radius: 100%;
+    top: 16px;
+    left: 18px;
+    position: absolute;
+  }
 
   &>hr{
     border: solid $ocean;
@@ -144,28 +155,15 @@ input[type="radio"]:checked + label{
   }
 }
 
-input[type="checkbox"] + label > span:first-of-type{
-  border-radius: 0;
-  max-width: 10%;
-  margin: $base-margin $base-margin*2 $base-margin 0;
-}
-
-.checkbox-label{
-  display: inline-block;
-  width: 80%;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-
 input[type="checkbox"]:checked + label{
-  position: relative;
 
-  &:before{
+  &:after{
     content: '';
     display: block;
     position: absolute;
+    z-index: 200;
     left: 14px;
-    top: 28px;
+    top: 21px;
     width: 8px;
     height: 16px;
     border-right: 3px solid $white;
@@ -179,13 +177,9 @@ input[type="checkbox"]:checked + label{
     animation:checkbox 0.8s;
   }
 
-  span:first-of-type{
+  &:before{
     background: $brand-blue-light;
   }
-}
-
-[type="checkbox"]:checked + label:after{
-  margin-left: $base-margin*6;
 }
 
 @keyframes checkbox{
