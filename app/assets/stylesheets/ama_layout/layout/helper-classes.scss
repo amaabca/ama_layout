@@ -413,6 +413,13 @@ button[disabled],
   font-size: 80%;
 }
 
+.hint{
+  font-size: $base-font-size*0.75;
+  line-height: $base-font-size;
+  color: darken($smoke, 15%);
+  font-style: italic;
+}
+
 .green-text{
   color: $brand-green;
 }

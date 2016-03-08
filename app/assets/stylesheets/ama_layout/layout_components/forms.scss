@@ -224,13 +224,6 @@ input[type="checkbox"]:checked + label{
   float: right;
 }
 
-p.hint{
-  font-size: $base-font-size*0.75;
-  line-height: $base-font-size;
-  color: darken($smoke, 15%);
-  font-style: italic;
-}
-
 /* ------------- Error Messaging ------------- */
 .error small.error,
 small.error{
