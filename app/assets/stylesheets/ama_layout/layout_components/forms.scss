@@ -224,6 +224,25 @@ input[type="checkbox"]:checked + label{
   float: right;
 }
 
+/*-------------- Credit Card images ---------- */
+.cc-type{
+  width: 40px;
+  height: 15px;
+  display: inline-block;
+}
+
+.type-visa{
+  background: url(image-path("cc-type-visa.png")) no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.type-mc{
+  background: url(image-path("cc-type-mc.png")) no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
 /* ------------- Error Messaging ------------- */
 .error small.error,
 small.error{
