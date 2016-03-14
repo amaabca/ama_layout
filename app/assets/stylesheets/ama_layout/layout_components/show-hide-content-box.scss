@@ -1,0 +1,11 @@
+.expand-box-bg{
+  background-color: $stone;
+  padding: $base-padding*4;
+
+  .expand-close{
+    margin-top: -10px;
+    margin-right: -10px;
+    color: $charcoal;
+    cursor: pointer;
+  }
+}
