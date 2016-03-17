@@ -6,8 +6,8 @@ require 'ama_layout/version'
 Gem::Specification.new do |spec|
   spec.name          = "ama_layout"
   spec.version       = AmaLayout::VERSION
-  spec.authors       = ["Michael van den Beuken", "Ruben Estevez", "Jordan Babe", "Mathieu Gilbert", "Ryan Jones", "Darko Dosenovic", "Jonathan Weyermann", "Adam Melnyk", "Kayt Campbell", "Kathleen Robertson"]
-  spec.email         = ["michael.beuken@gmail.com", "ruben.a.estevez@gmail.com", "jorbabe@gmail.com", "mathieu.gilbert@ama.ab.ca", "ryan.michael.jones@gmail.com", "darko.dosenovic@ama.ab.ca", "jonathan.weyermann@ama.ab.ca", "adam.melnyk@ama.ab.ca", "kayt.campbell@ama.ab.ca", "kathleen.robertson@ama.ab.ca"]
+  spec.authors       = ["Michael van den Beuken", "Ruben Estevez", "Jordan Babe", "Mathieu Gilbert", "Ryan Jones", "Darko Dosenovic", "Jonathan Weyermann", "Adam Melnyk", "Kayt Campbell", "Kathleen Robertson", "Jesse Doyle"]
+  spec.email         = ["michael.beuken@gmail.com", "ruben.a.estevez@gmail.com", "jorbabe@gmail.com", "mathieu.gilbert@ama.ab.ca", "ryan.michael.jones@gmail.com", "darko.dosenovic@ama.ab.ca", "jonathan.weyermann@ama.ab.ca", "adam.melnyk@ama.ab.ca", "kayt.campbell@ama.ab.ca", "kathleen.robertson@ama.ab.ca", "jesse.doyle@ama.ab.ca"]
   spec.summary       = %q{.ama.ab.ca site layouts}
   spec.description   = %q{.ama.ab.ca site layouts}
   spec.homepage      = ""
@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "sass-rails", "~> 5.0"
   spec.add_dependency "font-awesome-sass", "4.5.0"
   spec.add_dependency "draper", "~> 2.1"
+  spec.add_dependency "browser", "~> 1.1"
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec-rails"

@@ -170,9 +170,21 @@
   margin-left: 0px !important;
 }
 
+.mt25{
+  margin-top: 25px;
+}
+
+.bmt{
+  margin-top: $base-margin;
+}
+
+.bmb{
+  margin-bottom: $base-margin;
+}
+
 /* ==================== 5. Padding ==================== */
 .p1{
-  padding: $base-padding*4;
+  padding: $base-padding*4 !important;
 }
 
 .pt1 {
@@ -380,4 +392,38 @@ button[disabled],
 
 .uppercase{
   text-transform: uppercase;
+}
+
+.grey-sub-title{
+  font-weight: bold;
+  font-size: $base-font-size*0.875;
+  color: $charcoal;
+  padding: $base-padding;
+}
+
+.brand-blue-dark-text{
+  color: $brand-blue-dark;
+}
+
+.brand-blue-light-text{
+  color: $brand-blue-light;
+}
+
+.micetype{
+  font-size: 80%;
+}
+
+.green-text{
+  color: $brand-green;
+}
+
+.small-text{
+  font-size: $base-font-size*0.75;
+}
+
+.word-wrap{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-word;
+  word-break: break-word;
 }

@@ -79,9 +79,9 @@ describe AmaLayoutPathHelper do
     end
   end
 
-  describe "#youraccount_westworld_path" do
-    it "returns the westworld path" do
-      expect(helper.youraccount_westworld_path).to eq "#{youraccount_site}/westworld"
+  describe "#youraccount_amainsider_path" do
+    it "returns the amainsider path" do
+      expect(helper.youraccount_amainsider_path).to eq "#{youraccount_site}/amainsider"
     end
   end
 

@@ -8,3 +8,5 @@
 //= require ./sticky-footer
 //= require ./foundation-namespace
 //= require ./sidebar
+//= require ../mailcheck
+//= require ../autocorrect_email

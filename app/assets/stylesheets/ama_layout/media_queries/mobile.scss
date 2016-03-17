@@ -44,10 +44,6 @@
     margin: 0;
   }
 
-  .checkbox-label{
-    width: 84%;
-  }
-
   h4{
     margin-top: $base-margin*6;
   }
@@ -90,5 +86,10 @@
   .outer-quicklink-box:first-child:nth-last-child(1){
     width: 48.5%;
     margin-top: 1.5%;
+  }
+
+  .hour,
+  .minute{
+    margin: $base-margin*2 0;
   }
 }
