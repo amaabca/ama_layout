@@ -1,6 +1,7 @@
 .DS_Store
 .idea
-/.bundle/
+/.bundle
+/vendor/bundle
 /.yardoc
 /Gemfile.lock
 /_yardoc/
