@@ -37,6 +37,8 @@ member:
     link: "#"
     icon: "fa-folder-open"
     sub_nav:
+      - text: "Registries Overview"
+        link: "<%= Rails.configuration.registries_site %>/"
       - text: "Automatic Vehicle Registration Renewal"
         link: "<%= Rails.configuration.registries_site %>/registrations/new"
   - text: "My Account Settings"
