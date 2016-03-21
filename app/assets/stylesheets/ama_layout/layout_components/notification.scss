@@ -10,7 +10,7 @@
 }
 
 .summary-cart {
-	ul {
+  ul {
     .summary-flash-notice {
       color: $white;
       background: $brand-blue-insurance;
@@ -19,10 +19,12 @@
         color: $white;
       }
     }
+
     .delete-icon{
       margin-top: $base-margin;
       float: right;
     }
+    
     li{
       padding: 8px;
     }
