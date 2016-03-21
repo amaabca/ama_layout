@@ -34,7 +34,7 @@
 }
 
 .status-icon{
-  font-size: 2rem;
+  font-size: 2rem !important; //needs important to overwrite the .fa font size
   text-align: center;
   margin: 0 auto;
   display: block;
