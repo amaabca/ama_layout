@@ -40,7 +40,7 @@ member:
       - text: "Registries Overview"
         link: "<%= Rails.configuration.registries_site %>/"
       - text: "Automatic Vehicle Registration Renewal"
-        link: "<%= Rails.configuration.registries_site %>/registrations/new"
+        link: "<%= Rails.configuration.registries_site %>/order/registrations/new"
   - text: "My Account Settings"
     link: "#"
     icon: "fa-cogs"
