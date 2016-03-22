@@ -1,0 +1,33 @@
+.notice_notification{
+  padding: $base-padding*2 $base-padding*3 $base-padding*2 $base-padding*3;
+  background-color: $brand-blue-insurance;
+  color: $white;
+}
+
+.error_notification{
+  @extend .notice_notification;
+  background-color: $brand-red;
+}
+
+.summary-cart {
+  ul {
+    .summary-flash-notice {
+      color: $white;
+      background: $brand-blue-insurance;
+
+      p{
+        color: $white;
+      }
+    }
+
+    .delete-icon{
+      margin-top: $base-margin;
+      float: right;
+    }
+    
+    li{
+      padding: 8px;
+    }
+  }
+}
+
