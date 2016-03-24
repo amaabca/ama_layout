@@ -45,4 +45,9 @@
   margin-top: $base-margin;
   float: right;
   font-size: 2rem;
+
+  a{
+    color: $slate;
+    text-decoration: none;
+  }
 }
