@@ -1404,8 +1404,8 @@ $topbar-bg-color: $brand-blue-dark;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-$topbar-height: 50px;
-$topbar-margin-bottom: 30px;
+$topbar-height: rem-calc(50);
+$topbar-margin-bottom: rem-calc(30);
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
