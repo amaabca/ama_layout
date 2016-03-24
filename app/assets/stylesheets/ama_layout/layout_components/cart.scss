@@ -17,6 +17,30 @@
   margin-top: $base-margin;
 }
 
+//cart notifcation style
+
+.summary-cart{
+  ul{
+    .summary-flash-notice{
+      color: $white;
+      background: $brand-blue-insurance;
+
+      p{
+        color: $white;
+      }
+    }
+
+    .delete-icon{
+      margin-top: $base-margin;
+      float: right;
+    }
+
+    li{
+      padding: 8px;
+    }
+  }
+}
+
 @media screen and (max-width: 64em){
   .mobile-accordion{
     @include accordion-container;

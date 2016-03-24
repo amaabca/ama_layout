@@ -9,6 +9,7 @@
   background-color: $brand-red;
 }
 
+//Status error classes
 .orange-warning-icon{
   @extend .fa;
   @extend .fa-exclamation-circle;
