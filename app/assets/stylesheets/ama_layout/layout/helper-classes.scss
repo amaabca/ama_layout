@@ -292,7 +292,7 @@
 
 /* ==================== 9. Buttons ==================== */
 .base-button{
-  @extend .radius;
+  radius: $global-radius;
   @extend .small;
   color: $white;
 }
