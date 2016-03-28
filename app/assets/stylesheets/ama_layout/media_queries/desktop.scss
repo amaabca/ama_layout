@@ -1,4 +1,4 @@
-@media screen and (min-width: $large-breakpoint){
+@include breakpoint(large){
   *:focus{ //yes, all the elements
     outline: none;
   }
