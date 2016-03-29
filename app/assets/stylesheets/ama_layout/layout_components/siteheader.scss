@@ -14,3 +14,75 @@
     padding-top:$base-padding*2;
   }
 }
+
+/* Styles for Top Bar, Title Bar */
+
+$menu-background: $brand-blue-dark;
+
+.title-bar{
+  background: $menu-background;
+  padding: 0.9rem;
+}
+
+.top-bar{
+  background: $menu-background;
+  margin-bottom: $base-margin*4;
+
+  ul{
+    background: $menu-background;
+
+    li{
+      background: $menu-background;
+
+        a{
+          color: $white;
+      }
+    }
+  }
+}
+
+.menu-icon{
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  height: 16px;
+  color: $white;
+}
+
+.menu-icon,
+.title-bar-title{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.menu-icon::after{
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: $white;
+  box-shadow: 0 7px 0 $white, 0 14px 0 $white; //This creates the menu icon
+}
+
+.menu-icon.dark::after,
+.menu-icon::after{
+  content: '';
+  top: 0;
+  left: 0;
+}
+
+.dropdown.menu .submenu{
+  border: none;
+}
+
+.dropdown.menu .is-dropdown-submenu-parent.is-right-arrow>a::after{
+  border-color: $white transparent transparent;
+}
+
+.is-drilldown-submenu-parent>a::after{
+  border-color: transparent transparent transparent $white;
+}
+
+.js-drilldown-back::before{
+  border-color: transparent $white transparent transparent;
+}

@@ -77,8 +77,8 @@
     li:active{
       text-decoration: underline;
     }
-  } 
-    
+  }
+
 
   span{
     display: block;
@@ -129,6 +129,10 @@ span.nav-icon{
   font-size: $base-font-size*1.5;
   color: $smoke;
   text-align: center;
+  @include breakpoint(small only){
+    margin: $base-margin*2 $base-margin $base-margin*2 0;
+    color: $white;
+  }
 }
 
 span.activepage{
@@ -140,18 +144,22 @@ span.activepage{
   @extend .row;
 }
 
-.title-area{
-  li.name{
-    img{
-      padding-top: $base-padding*2;
-      height: 35px;
-    }
-  }
+.ama-logo{
+  width: 132px;
+  padding: $base-padding $base-padding*2;
 }
-
 .top-bar{
   a{
     text-decoration: none;
+  }
+}
+
+.title-bar{
+  .ama-logo{
+    @include breakpoint(small only){
+      margin: 0 auto;
+      text-align: center;
+    }
   }
 }
 
@@ -167,9 +175,6 @@ ul.dropdown:not(.nested){
   -webkit-box-shadow: 0px 8px -5px -5px rgba(50,50,50,0.5);
   -moz-box-shadow: 0px 8px -5px -5px rgba(50,50,50,0.5);
   box-shadow: 0px 8px 20px -5px rgba(50,50,50,0.5);
-  border-left: solid 1px darken($brand-blue-light, 5%);
-  border-right: solid 1px darken($brand-blue-light, 5%);
-  margin-top: -5px;
 }
 
 .dropdown{
@@ -189,7 +194,6 @@ ul.dropdown:not(.nested){
     }
   }
 }
-
 
 .sub-nav{
   margin-left: -14px;
