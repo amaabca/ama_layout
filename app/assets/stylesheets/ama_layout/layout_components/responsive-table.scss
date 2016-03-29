@@ -19,7 +19,6 @@ table.tablesaw{
 /* Structure */
 
 .tablesaw{
-  border: 1px solid $smoke;
   padding: 0;
 }
 
@@ -29,6 +28,8 @@ table.tablesaw{
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: .5em .7em;
+  font-size: $base-font-size*0.875;
+  color: $slate;
 }
 
 .tablesaw thead tr:first-child th{
@@ -36,10 +37,14 @@ table.tablesaw{
   padding-bottom: .7em;
 }
 
+thead, tbody, tfoot{
+  border: none;
+}
+
 /* Table rows have a gray bottom stroke by default */
 
 .tablesaw-stack tbody tr{
-  border-bottom: 1px solid $smoke;
+  border-bottom: 2px solid $stone;
 }
 
 .tablesaw-stack td .tablesaw-cell-label,
@@ -47,8 +52,12 @@ table.tablesaw{
   display: none;
 }
 .tablesaw-stack thead{
-	background: lighten($smoke, 10%);
-	border-bottom: 1px solid $smoke;
+  background: darken($ash, 3%);
+  border-bottom: 2px solid darken($stone, 3%);
+  td,
+  th{
+    color: $charcoal;
+  }
 }
 
 /* Mobile first styles: Begin with the stacked presentation at narrow widths */
@@ -166,11 +175,11 @@ $use-respond-mixins: false !default;
 }
 
 .tablesaw-parent{
-  @include tablesaw-stack( 60em );
-	table tr.even, table tr.alt, table tr:nth-of-type(even){
-		background: darken($ash, 1%);
-	}
-	table{
-		margin-bottom: 0;
-	}
+  @include tablesaw-stack(60em);
+  table tr.even, table tr.alt, table tr:nth-of-type(even){
+    background: darken($ash, 1%);
+  }
+  table{
+    margin-bottom: 0;
+  }
 }
