@@ -292,8 +292,8 @@
 
 /* ==================== 9. Buttons ==================== */
 .base-button{
-  radius: $global-radius;
-  @extend .small;
+  border-radius: $global-radius;
+  @extend .button;
   color: $white;
 }
 
