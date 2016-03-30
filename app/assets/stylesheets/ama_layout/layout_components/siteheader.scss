@@ -10,8 +10,8 @@
     cursor: pointer;
   }
 
-  img {
-    padding-top:$base-padding*2;
+  img{
+    padding-top: $base-padding*2;
   }
 }
 
@@ -19,6 +19,11 @@
 
 .top-bar{
   margin-bottom: $base-margin*4;
+  @include breakpoint(small only){
+    h4{
+      color: $brand-blue-light;
+    }
+  }
 
   ul{
     background: $topbar-background;

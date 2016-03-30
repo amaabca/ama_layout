@@ -1,31 +1,33 @@
-
-  <nav class="top-bar" data-topbar data-options="mobile_show_parent_link: false" role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <%= link_to(image_tag("AMA-Logo.svg"), "https://www.ama.ab.ca") %>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle></button>
+  <div class="title-bar-title">
+    <%= link_to(image_tag("AMA-Logo.svg", class: "topbar-logo"), "https://www.ama.ab.ca") %>
+  </div>
+</div>
+<div class="top-bar" id="main-menu">
+  <div class="top-bar-left show-for-medium">
+    <%= link_to(image_tag("AMA-Logo.svg" , class: "topbar-logo"), "https://www.ama.ab.ca") %>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu show-for-small-only" data-responsive-menu="drilldown medium-dropdown">
+      <%= render partial: "ama_layout/main_top_nav_item", collection: navigation.items, as: :nav_item %>
+      <li class="divider"></li>
+      <li><a href="<%= Rails.configuration.amaabca_site %>">AMA Website</a></li>
+      <li class="divider"></li>
+      <li><a href="http://amaroadreports.ca/">AMA Road Reports</a></li>
+      <li class="divider"></li>
+      <li><a href="<%= Rails.configuration.gatekeeper_site %>/help" target="_blank">Help</a></li>
+      <li class="divider"></li>
+      <li><a href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a></li>
+      <li class="divider show-for-small-only"></li>
+      <%= navigation.sign_out_link %>
     </ul>
-    <section class="top-bar-section show-for-small-only">
-      <ul class="right">
-        <%= render partial: "ama_layout/main_top_nav_item", collection: navigation.items, as: :nav_item %>
-        <li class="divider"></li>
-        <li><a href="<%= Rails.configuration.amaabca_site %>">AMA Website</a></li>
-        <li class="divider"></li>
-        <li><a href="http://amaroadreports.ca/">AMA Road Reports</a></li>
-        <li class="divider"></li>
-        <li><a href="<%= Rails.configuration.gatekeeper_site %>/help" target="_blank">Help</a></li>
-        <li class="divider"></li>
-        <li><a href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a></li>
-        <li class="divider show-for-small-only"></li>
-        <%= navigation.sign_out_link %>
-      </ul>
-    </section>
-    <section class="top-bar-section show-for-medium-up">
-      <ul class="right">
-        <li><a href="<%= Rails.configuration.gatekeeper_site %>/help" target="_blank">Help</a></li>
-        <li><a href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a></li>
-        <%= navigation.top_nav %>
-      </ul>
-    </section>
-  </nav>
+  </div>
+  <div class="top-bar-section show-for-medium-up">
+    <ul class="right">
+      <li><a href="<%= Rails.configuration.gatekeeper_site %>/help" target="_blank">Help</a></li>
+      <li><a href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a></li>
+      <%= navigation.top_nav %>
+    </ul>
+  </div>
+</div>
