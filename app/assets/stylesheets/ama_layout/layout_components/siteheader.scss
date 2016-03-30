@@ -17,22 +17,14 @@
 
 /* Styles for Top Bar, Title Bar */
 
-$menu-background: $brand-blue-dark;
-
-.title-bar{
-  background: $menu-background;
-  padding: 0.9rem;
-}
-
 .top-bar{
-  background: $menu-background;
   margin-bottom: $base-margin*4;
 
   ul{
-    background: $menu-background;
+    background: $topbar-background;
 
     li{
-      background: $menu-background;
+      background: $topbar-background;
 
         a{
           color: $white;

@@ -37,7 +37,9 @@ table.tablesaw{
   padding-bottom: .7em;
 }
 
-thead, tbody, tfoot{
+thead,
+tbody,
+tfoot{
   border: none;
 }
 
@@ -51,9 +53,11 @@ thead, tbody, tfoot{
 .tablesaw-stack th .tablesaw-cell-label{
   display: none;
 }
+
 .tablesaw-stack thead{
   background: darken($ash, 3%);
   border-bottom: 2px solid darken($stone, 3%);
+
   td,
   th{
     color: $charcoal;
@@ -111,24 +115,29 @@ thead, tbody, tfoot{
     display: none !important;
   }
 }
+
 @mixin tablesaw-stack-max{
   .tablesaw-stack thead td,
   .tablesaw-stack thead th{
     display: none;
   }
+
   .tablesaw-stack tbody td,
   .tablesaw-stack tbody th{
     clear: left;
     float: left;
     width: 100%;
   }
+
   .tablesaw-cell-label{
     vertical-align: top;
   }
+
   .tablesaw-cell-content{
     max-width: 67%;
     display: inline-block;
   }
+
   .tablesaw-stack td:empty,
   .tablesaw-stack th:empty{
     display: none;
@@ -139,6 +148,7 @@ thead, tbody, tfoot{
   .tablesaw-stack tr{
     display: table-row;
   }
+
   /* Show the table header rows */
   .tablesaw-stack td,
   .tablesaw-stack th,
@@ -147,6 +157,7 @@ thead, tbody, tfoot{
     display: table-cell;
     margin: 0;
   }
+
   /* Hide the labels in each cell */
   .tablesaw-stack td .tablesaw-cell-label,
   .tablesaw-stack th .tablesaw-cell-label{

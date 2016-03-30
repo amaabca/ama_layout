@@ -144,22 +144,14 @@ span.activepage{
   @extend .row;
 }
 
-.ama-logo{
+.topbar-logo{
   width: 132px;
   padding: $base-padding $base-padding*2;
 }
+
 .top-bar{
   a{
     text-decoration: none;
-  }
-}
-
-.title-bar{
-  .ama-logo{
-    @include breakpoint(small only){
-      margin: 0 auto;
-      text-align: center;
-    }
   }
 }
 
