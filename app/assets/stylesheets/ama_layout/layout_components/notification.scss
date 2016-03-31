@@ -43,10 +43,19 @@
 
 .delete-icon{ //same one used in the cart and on info charts
   margin-top: $base-margin;
-  font-size: 2rem;
+  float: right;
+
+  .fa-times-circle-o{
+    font-size: $base-font-size*2;
+  }
 
   a{
     color: $slate;
     text-decoration: none;
+
+    &:hover,
+    &focus{
+      color: $charcoal;
+    }
   }
 }
