@@ -135,4 +135,11 @@
     margin-right: $base-margin*6;
     background: lighten($brand-green, 5%);
   }
+
+  .summary-cart{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
 }
