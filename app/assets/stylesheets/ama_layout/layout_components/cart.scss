@@ -1,4 +1,95 @@
 /*Cart*/
+.shopping-cart{
+  background-color: $stone;
+  padding: $base-padding*2;
+  font-size: $base-font-size*0.875;
+  color: $charcoal;
+
+  ul{
+    list-style: none;
+    margin: 0;
+
+    li{
+      padding: 8px;
+    }
+
+    li:not(:nth-child(1)){
+      border-top: 1px solid $smoke;
+    }
+
+    .delete-icon{ //same one used in the cart and on info charts
+      margin-top: $base-margin;
+      float: right;
+
+      .fa-times-circle-o{
+        font-size: $base-font-size*2;
+      }
+
+      a{
+        color: $slate;
+        text-decoration: none;
+
+        &:hover,
+        &focus{
+          color: $charcoal;
+        }
+      }
+    }
+
+    .summary-flash-notice{
+      color: $white;
+      background: $brand-blue-insurance;
+
+      p,
+      a,
+      a:hover,
+      a:focus{
+        color: $white;
+      }
+
+      &:not(:nth-child(1)){
+        border-top: none;
+      }
+    }
+  }
+
+  .items{
+    overflow-y: scroll;
+    max-height: auto;
+  }
+
+  .items_many_mobile{
+    overflow-y: scroll;
+    max-height: 150px;
+  }
+
+  .items_many_desktop{
+    overflow-y: scroll;
+    max-height: 240px;
+  }
+}
+
+.summary-cart.active.summary_height{
+  min-height: 300px;
+}
+
+.summary-cart{
+  ::-webkit-scrollbar{
+    -webkit-appearance: none;
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+}
+
+.floating-cart{
+  z-index: 98;
+}
+
 .summary-title{
   background: $brand-green !important;
   min-height: 62px;
@@ -15,25 +106,6 @@
   float: right;
   color: $white;
   margin-top: $base-margin;
-}
-
-//cart notifcation style
-
-.summary-cart{
-  ul{
-    .summary-flash-notice{
-      color: $white;
-      background: $brand-blue-insurance;
-
-      p{
-        color: $white;
-      }
-    }
-
-    li{
-      padding: 8px;
-    }
-  }
 }
 
 @media screen and (max-width: 64em){
