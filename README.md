@@ -104,6 +104,34 @@ Custom Navigation yaml file used to set all navigation:
         target: "_blank"
 
 
+### Custom Navigation
+
+If you want to use custom navigation in an app using this gem, you can specify the location of the navigation.yml file when exposing navigation in your controller.
+
+Example:
+
+Instead of:
+
+```
+expose(:navigation) do
+  AmaLayout::Navigation.new(
+    user: current_user, current_url: request.url
+  ).decorate
+end
+```
+
+```
+expose(:navigation) do
+  AmaLayout::Navigation.new(
+    user: current_user, current_url: request.url,
+    nav_file_path: Rails.root.join("config", "ama_layout", "navigation.yml")
+  ).decorate
+end
+```
+
+This is useful for soft-launching applications.
+
+
 ### Layout
 
 The following layout example will give you:
