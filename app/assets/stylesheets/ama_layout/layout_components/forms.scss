@@ -231,7 +231,8 @@ input[type="checkbox"]:checked + label{
   background-position: center center;
 }
 
-.type-mc, .type-mastercard{
+.type-mc,
+.type-mastercard{
   background: url(image-path("cc-type-mc.png")) no-repeat;
   background-size: contain;
   background-position: center center;
