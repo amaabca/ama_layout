@@ -3,7 +3,12 @@ module AmaLayout
     include ActiveModel::Model
     include Draper::Decoratable
 
-    attr_accessor :user, :current_url
+    attr_accessor :user, :current_url, :nav_file_path
+
+    def initialize(args = {})
+      args = defaults.merge args
+      super
+    end
 
     cattr_accessor :member do
       "member"
@@ -26,8 +31,13 @@ module AmaLayout
 
   private
     def navigation_items
-      file = File.join Gem.loaded_specs["ama_layout"].full_gem_path, "lib", "ama_layout", "navigation.yml"
-      YAML.load ERB.new(File.read file).result
+      YAML.load ERB.new(File.read nav_file_path).result
+    end
+
+    def defaults
+      {
+        nav_file_path: File.join(Gem.loaded_specs["ama_layout"].full_gem_path, "lib", "ama_layout", "navigation.yml")
+      }
     end
   end
 end
