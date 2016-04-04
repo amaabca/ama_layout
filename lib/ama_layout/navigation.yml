@@ -45,7 +45,6 @@ member:
         link: "<%= Rails.configuration.youraccount_site %>/amainsider"
       - text: "Change Address"
         link: "<%= Rails.configuration.youraccount_site %>/membership_update/new"
-
 non-member:
   - text: "Account Dashboard"
     alt: "Back to my dashboard"
