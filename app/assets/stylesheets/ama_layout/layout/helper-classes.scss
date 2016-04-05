@@ -236,6 +236,10 @@
   background-color: $stone;
 }
 
+.light-greybg{
+  background-color: $ash;
+}
+
 .insurance-blue-bg{
   background-color: $brand-blue-insurance;
 }
@@ -250,6 +254,10 @@
 
 .rewards-green-bg{
   background-color: $brand-green;
+}
+
+.notice-orange-bg{
+  background-color: $notice-orange;
 }
 
 // On a coloured background, the child links should be white
@@ -413,8 +421,27 @@ button[disabled],
   font-size: 80%;
 }
 
+.italic{
+  font-style: italic;
+}
+
+.hint{
+  font-size: $base-font-size*0.75;
+  line-height: $base-font-size;
+  color: darken($smoke, 15%);
+  font-style: italic;
+}
+
 .green-text{
   color: $brand-green;
+}
+
+.orange-text{
+  color: $notice-orange;
+}
+
+.red-text{
+  color: $brand-red;
 }
 
 .small-text{

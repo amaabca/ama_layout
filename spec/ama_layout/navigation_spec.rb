@@ -4,6 +4,7 @@ describe AmaLayout::Navigation do
   let(:insurance_site) { "http://insurance.waffles.ca" }
   let(:membership_site) { "http://membership.waffles.ca" }
   let(:driveredonline_site) { "http://driveredonline.waffles.ca" }
+  let(:registries_site) { "http://registries.waffles.ca" }
 
   before(:each) do
     allow(Rails.configuration).to receive(:gatekeeper_site).and_return(gatekeeper_site)
@@ -11,6 +12,27 @@ describe AmaLayout::Navigation do
     allow(Rails.configuration).to receive(:insurance_site).and_return(insurance_site)
     allow(Rails.configuration).to receive(:membership_site).and_return(membership_site)
     allow(Rails.configuration).to receive(:driveredonline_site).and_return(driveredonline_site)
+    allow(Rails.configuration).to receive(:registries_site).and_return(registries_site)
+  end
+
+  describe "#nav_file_path" do
+    let(:file_path) { File.join(Gem.loaded_specs["ama_layout"].full_gem_path, "lib", "ama_layout", "navigation.yml") }
+
+    it "defaults to lib/ama_layout/navigation.yml" do
+      expect(subject.nav_file_path).to eq file_path
+    end
+
+    context "overridden file path" do
+      let(:file_path) do
+        File.join(Gem.loaded_specs["ama_layout"].full_gem_path, "spec", "ama_layout", "fixtures", "navigation.yml")
+      end
+      let(:user) { double("user", navigation: AmaLayout::Navigation.member) }
+      let(:subject) { described_class.new(user: user, nav_file_path: file_path) }
+
+      it "uses the overridden file path" do
+        expect(subject.items.first.text).to eq "Fixture"
+      end
+    end
   end
 
   describe "#items" do

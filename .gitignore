@@ -1,12 +1,14 @@
 .DS_Store
 .idea
-/.bundle/
+/.bundle
+/vendor/bundle
 /.yardoc
 /Gemfile.lock
 /_yardoc/
 /coverage/
 /doc/
 /pkg/
+/spec/internal/db/*.sqlite
 /spec/reports/
 /tmp/
 *.bundle
