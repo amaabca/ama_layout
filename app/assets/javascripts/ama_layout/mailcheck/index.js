@@ -1,3 +1,3 @@
 //= require ./mailcheck
-//= require ./autocorrect_email
+//= require ./email_suggestion
 //= require ./ready
