@@ -101,7 +101,7 @@
   }
 
   a{
-    padding: $base-margin*0;
+    padding: 0 0 $base-margin*2 0;
     font-size: $base-font-size*0.875;
   }
 }
@@ -170,7 +170,7 @@ ul.dropdown:not(.nested){
 }
 
 .dropdown{
-  .nested{
+  .nested:not(.waffles){
     margin-top: -1px;
     border-right: solid 1px darken($brand-blue-light, 5%);
     border-left: solid 1px darken($brand-blue-light, 5%);

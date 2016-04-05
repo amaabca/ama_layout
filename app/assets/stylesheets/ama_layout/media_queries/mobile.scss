@@ -5,9 +5,6 @@
 }
 
 @media screen and #{breakpoint(small only)}{
-  h4{
-    color: $brand-blue-light;
-  }
   .site-header{
     margin-bottom: $base-margin*4;
 

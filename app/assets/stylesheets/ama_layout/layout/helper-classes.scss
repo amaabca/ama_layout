@@ -297,6 +297,10 @@
   color: $white;
 }
 
+.expand{
+  @extend .expanded;
+}
+
 .emphasized,
 .emphasized:visited{
   @extend .base-button;

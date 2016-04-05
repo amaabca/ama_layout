@@ -64,3 +64,7 @@ hr{
 small{
   font-size: 80%;
 }
+
+dl dd{
+  margin-bottom: $base-margin*4;
+}

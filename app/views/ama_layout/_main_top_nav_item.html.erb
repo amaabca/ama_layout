@@ -1,5 +1,4 @@
-<li class="divider"></li>
-<li class="<%= nav_item.sub_nav_class %>">
-  <%= link_to nav_item.text, nav_item.link %>
+<li class="has-submenu <%= nav_item.sub_nav_class %>">
+  <%= link_to nav_item.text, nav_item.link, class: 'show-for-small-only' %>
   <%= nav_item.top_sub_nav %>
 </li>
