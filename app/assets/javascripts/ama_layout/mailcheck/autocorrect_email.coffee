@@ -61,9 +61,9 @@ class AMALayout.EmailSuggestion
         empty: (element) ->
           $('.email_hint').html ''
 
-    $(document).on 'click', '.email_hint .suggestion a.email_domain', =>
+    $(document).on 'click', '.email_hint .suggestion a.email_domain', (e) =>
       @trackUsage()
-      email_hint = $(this).parents('.email_hint')
+      email_hint = $(e.originalEvent.target).parents('.email_hint')
       email = $(email_hint).prevAll('input[type=email]:last')
       $(email).val $('.suggestion').first().text()
       $('.email_hint').remove()
