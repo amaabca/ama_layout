@@ -45,7 +45,9 @@ label{
 }
 
 p,
-li{
+li,
+select,
+label{
   font-size: $base-font-size*0.875;
   color: $charcoal;
   font-family: $font-family-sans-serif;

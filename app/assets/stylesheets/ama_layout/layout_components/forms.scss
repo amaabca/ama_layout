@@ -231,6 +231,43 @@ p.hint{
   font-style: italic;
 }
 
+/* The vendor prefixed placeholders have to be declared as separate selectors.
+When a browser doesn't understand a selector it invalidates the entire line */
+input::-webkit-input-placeholder{
+  color: darken($smoke, 5%);
+}
+
+input:-moz-placeholder{
+  color: darken($smoke, 5%);
+}
+
+input::-moz-placeholder{
+  color: darken($smoke, 5%);
+}
+
+input[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+textarea{
+  font-size: 0.875rem;
+  color: $charcoal;
+}
+
+select.has-placeholder:nth-child(1){
+  color: darken($smoke, 5%);
+}
+
 /* ------------- Error Messaging ------------- */
 span.error{
   display: block;
@@ -238,7 +275,6 @@ span.error{
   margin-top: -1px;
   margin-bottom: 1rem;
   font-size: 0.75rem;
-  font-weight: 600;
   background: $brand-red;
   color: $white;
 }
