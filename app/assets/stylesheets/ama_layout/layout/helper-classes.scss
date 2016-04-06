@@ -291,6 +291,10 @@
 }
 
 /* ==================== 9. Buttons ==================== */
+.button{
+  text-decoration: none;
+}
+
 .base-button{
   border-radius: $global-radius;
   @extend .button;
