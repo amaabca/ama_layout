@@ -1,0 +1,5 @@
+member:
+  - text: "Fixture"
+    alt: "A fixture"
+    link: "/"
+    icon: "fa-tachometer"

@@ -1,0 +1,135 @@
+/*Cart*/
+.summary-cart.active.summary_height{
+  min-height: 300px;
+}
+
+.summary-cart{
+  ::-webkit-scrollbar{
+    -webkit-appearance: none;
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+
+  .summary-cart-body{
+    background-color: $stone;
+    padding: $base-padding*2;
+    font-size: $base-font-size*0.875;
+    color: $charcoal;
+
+    ul{
+      list-style: none;
+      margin: 0;
+
+      li{
+        padding: 8px;
+      }
+
+      li:not(:nth-child(1)){
+        border-top: 1px solid $smoke;
+      }
+
+      .summary-flash-notice{
+        color: $white;
+        background: $brand-blue-insurance;
+
+        p,
+        a,
+        a:hover,
+        a:focus{
+          color: $white;
+        }
+
+        &:not(:nth-child(1)){
+          border-top: none;
+        }
+      }
+    }
+
+    .items{
+      overflow-y: scroll;
+      max-height: auto;
+    }
+  }
+}
+
+.floating-cart{
+  z-index: 98;
+}
+
+.summary-title{
+  background: $brand-green !important;
+  min-height: 62px;
+}
+
+.mobile-accordion-navigation{
+  @include accordion-navigation;
+}
+
+.accordion-icon{
+  width: 16px;
+  height: 16px;
+  display: block;
+  float: right;
+  color: $white;
+  margin-top: $base-margin;
+}
+
+
+.delete-icon{ //same one used in the cart and on info charts it lives outside of cart so it can be used other places
+  margin-top: $base-margin;
+  float: right;
+
+  .fa-times-circle-o{
+    font-size: $base-font-size*2;
+  }
+
+  a{
+    color: $slate;
+    text-decoration: none;
+
+    &:hover,
+    &:focus{
+      color: $charcoal;
+    }
+  }
+}
+
+@media screen and (max-width: 64em){
+  .mobile-accordion{
+    @include accordion-container;
+
+    .mobile-accordion-navigation{
+      @include accordion-navigation;
+    }
+
+    .content{
+      @include accordion-content;
+    }
+  }
+
+  span.item-num{
+    display: inline-block;
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 60px;
+    text-align: center;
+    line-height: 29px;
+    color: $white;
+    font-weight: bold;
+    margin-right: $base-margin*6;
+    background: lighten($brand-green, 5%);
+  }
+
+  .summary-cart{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+}
