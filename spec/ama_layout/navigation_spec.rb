@@ -59,9 +59,13 @@ describe AmaLayout::Navigation do
         expect(subject.items[3].link).to eq "#"
         expect(subject.items[3].icon).to eq "fa-usd"
 
-        expect(subject.items[4].text).to eq "My Account Settings"
+        expect(subject.items[4].text).to eq "My Registries"
         expect(subject.items[4].link).to eq "#"
-        expect(subject.items[4].icon).to eq "fa-cogs"
+        expect(subject.items[4].icon).to eq "fa-folder-open"
+
+        expect(subject.items[5].text).to eq "My Account Settings"
+        expect(subject.items[5].link).to eq "#"
+        expect(subject.items[5].icon).to eq "fa-cogs"
       end
 
       context "subnavs" do
@@ -74,6 +78,17 @@ describe AmaLayout::Navigation do
 
             expect(driver_education_subnav[1].text).to eq "New Driver Online Program"
             expect(driver_education_subnav[1].link).to eq "#{driveredonline_site}/dashboard"
+          end
+        end
+
+        context "registries" do
+          let(:registries_subnav) { subject.items[4].sub_nav }
+
+          it "returns the subnav items" do
+            expect(registries_subnav[0].text).to eq "Registries Overview"
+            expect(registries_subnav[0].link).to eq "#{registries_site}/"
+            expect(registries_subnav[1].text).to eq "Vehicle Registration Auto-Renew"
+            expect(registries_subnav[1].link).to eq "#{registries_site}/order/registrations/new"
           end
         end
       end
