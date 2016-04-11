@@ -67,7 +67,7 @@
 }
 
 .mobile-accordion-navigation{
-  @include accordion-navigation;
+  //@include accordion-navigation;
 }
 
 .accordion-icon{
@@ -101,14 +101,14 @@
 
 @media screen and (max-width: 64em){
   .mobile-accordion{
-    @include accordion-container;
+    //@include accordion-container;
 
     .mobile-accordion-navigation{
-      @include accordion-navigation;
+      //@include accordion-navigation;
     }
 
     .content{
-      @include accordion-content;
+      //@include accordion-content;
     }
   }
 

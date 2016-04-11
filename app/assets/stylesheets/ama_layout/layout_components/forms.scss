@@ -276,12 +276,16 @@ select.has-placeholder:nth-child(1){
 }
 
 /* ------------- Error Messaging ------------- */
+input + span.error,
+input + small.error{
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
 span.error,
 small.error{
   display: block;
   padding: 0.375rem 0.5625rem 0.5625rem;
-  margin-top: -1rem;
-  margin-bottom: 1rem;
   font-size: 0.75rem;
   background: $brand-red;
   color: $white;
