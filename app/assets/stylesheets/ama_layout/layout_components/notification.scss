@@ -9,25 +9,34 @@
   background-color: $brand-red;
 }
 
-.summary-cart {
-  ul {
-    .summary-flash-notice {
-      color: $white;
-      background: $brand-blue-insurance;
-
-      p{
-        color: $white;
-      }
-    }
-
-    .delete-icon{
-      margin-top: $base-margin;
-      float: right;
-    }
-    
-    li{
-      padding: 8px;
-    }
-  }
+//Status error classes
+.orange-warning-icon{
+  @extend .fa;
+  @extend .fa-exclamation-circle;
+  @extend .orange-text;
 }
 
+.white-warning-icon{
+  @extend .fa;
+  @extend .fa-exclamation-circle;
+  @extend .white-text;
+}
+
+.green-active-icon{
+  @extend .fa;
+  @extend .fa-check-circle;
+  @extend .green-text;
+}
+
+.white-active-icon{
+  @extend .fa;
+  @extend .fa-check-circle;
+  @extend .white-text;
+}
+
+.status-icon{
+  font-size: 2rem !important; //needs important to overwrite the .fa font size
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
