@@ -96,6 +96,10 @@
 }
 
 /*New Grid Block code for blue boxes*/
+.cta-margin{
+  margin: 0 $base-margin*2 0 $base-margin*2;
+}
+
 ul{
   li{
     .cta-box{
