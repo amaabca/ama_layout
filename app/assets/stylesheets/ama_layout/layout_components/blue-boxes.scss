@@ -100,6 +100,7 @@ ul{
   li{
     .cta-box{
       padding: 20px;
+      margin: 0 20px 0 20px;
 
       &.light-blue-bg:hover{
         background: lighten($brand-blue-light, 3%);
