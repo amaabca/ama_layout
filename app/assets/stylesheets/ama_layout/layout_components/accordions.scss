@@ -17,3 +17,30 @@
     color: $white;
   }
 }
+
+.accordion.secondary{
+  background: none;
+
+  a{
+    font-size: $base-font-size;
+  }
+
+  .accordion-content a{
+    font-size: $base-font-size*0.875;
+  }
+
+  .accordion-title{
+    background: $white;
+    color: $jet;
+
+    &:hover{
+      background: $stone;
+    }
+  }
+
+  .top-level,
+  .top-level:hover{
+    background: darken($stone, 5%);
+    color: $jet;
+  }
+}
