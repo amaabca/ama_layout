@@ -78,4 +78,4 @@ class AMALayout.EmailSuggestion
   trackUsage: () ->
     if window.dataLayer
       domain = $('.email_domain').text()
-      dataLayer.push({ "event" : "email-pick-#{domain}" })
+      dataLayer.push({ "email-pick" : domain })
