@@ -140,18 +140,30 @@ span.activepage{
 }
 
 /* Top-Bar Styles */
-.contain-to-grid .top-bar{
-  @extend .row;
-}
-
 .topbar-logo{
   width: 132px;
   padding: $base-padding $base-padding*2;
 }
 
 .top-bar{
+  height: 55px;
+
   a{
     text-decoration: none;
+  }
+
+  li:first-of-type{
+    @include breakpoint(small only){
+      margin-top: $base-margin*11; //keep this the same as the top-bar height
+    }
+  }
+}
+
+.sticky-container{
+  margin-bottom: $base-margin*6;
+
+  @include breakpoint(medium down){
+    margin-bottom: 0;
   }
 }
 

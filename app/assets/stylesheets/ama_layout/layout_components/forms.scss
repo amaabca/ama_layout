@@ -276,6 +276,7 @@ select.has-placeholder:nth-child(1){
 }
 
 /* ------------- Error Messaging ------------- */
+select + .error,
 input + span.error,
 input + small.error{
   margin-top: -1rem;
@@ -289,6 +290,7 @@ small.error{
   font-size: 0.75rem;
   background: $brand-red;
   color: $white;
+  margin-bottom: 1rem;
 }
 
 .error small.error,
