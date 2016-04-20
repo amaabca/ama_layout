@@ -35,6 +35,7 @@
 
       a{
         color: $white;
+        line-height: 1.25em;
       }
 
       &:hover{
@@ -70,6 +71,12 @@
         background: lighten($brand-blue-light, 3%);
       }
     }
+  }
+}
+
+.title-bar{
+  @include breakpoint (small only){
+    padding: 0 0.5rem;
   }
 }
 
