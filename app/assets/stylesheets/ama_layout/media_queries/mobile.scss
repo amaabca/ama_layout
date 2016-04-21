@@ -1,18 +1,4 @@
-@media screen and (max-width:640px){
-  .dashboard-nav{
-    margin-top: 0;
-  }
-}
-
 @media screen and #{breakpoint(small only)}{
-  .site-header{
-    margin-bottom: $base-margin*4;
-
-    img{
-      padding-left: $base-padding*4;
-    }
-  }
-
   .page-steps h3{
     color: $slate;
     font-style: italic;

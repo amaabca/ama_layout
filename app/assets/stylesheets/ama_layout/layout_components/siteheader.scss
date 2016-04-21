@@ -75,8 +75,7 @@
     color: $white;
   }
 
-  .menu-icon,
-  .title-bar-title{
+  .menu-icon{
     display: inline-block;
     vertical-align: middle;
   }
@@ -95,4 +94,8 @@
     top: 0;
     left: 0;
   }
+}
+
+.sticky{
+  width: 100%;
 }
