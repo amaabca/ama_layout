@@ -1,27 +1,21 @@
-.site-header{
-  width: 100%;
-  height: 50px;
-  background-color: $primary-color;
-  margin-bottom: $base-margin*6;
-  padding: 0;
-
-  a:hover{
-    color: $sky;
-    cursor: pointer;
-  }
-
-  img{
-    padding-top: $base-padding*2;
-  }
-}
-
 /* Styles for Top Bar, Title Bar */
+.topbar-logo{
+  width: 132px;
+  padding: 12px $base-padding*2;
+}
 
 .top-bar{
   margin-bottom: $base-margin*4;
 
   @include breakpoint(small only){
-    padding: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  a{
+    text-decoration: none;
+    color: $white;
+    font-weight: 600;
   }
 
   .is-drilldown{
@@ -29,15 +23,7 @@
   }
 
   ul{
-    font-weight: 600;
-
     li{
-
-      a{
-        color: $white;
-        line-height: 1.25em;
-      }
-
       &:hover{
         background: $brand-blue-light;
       }
@@ -50,7 +36,8 @@
   }
 
   .dropdown.menu > li.is-dropdown-submenu-parent > a{
-    padding-right: 76px;
+    //the width of the top-bar dropdown and its children on desktop
+    min-width: 200px;
 
     &:hover{
       background: lighten($brand-blue-light, 3%);
@@ -58,6 +45,7 @@
   }
 
   .submenu{
+    border: none;
 
     li{
       background: $brand-blue-light;
@@ -78,50 +66,33 @@
   @include breakpoint (small only){
     padding: 0 0.5rem;
   }
-}
 
-.menu-icon{
-  position: relative;
-  cursor: pointer;
-  width: 20px;
-  height: 16px;
-  color: $white;
-}
+  .menu-icon{
+    position: relative;
+    cursor: pointer;
+    width: 20px;
+    height: 16px;
+    color: $white;
+  }
 
-.menu-icon,
-.title-bar-title{
-  display: inline-block;
-  vertical-align: middle;
-}
+  .menu-icon,
+  .title-bar-title{
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-.menu-icon::after{
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: $white;
-  box-shadow: 0 7px 0 $white, 0 14px 0 $white; //This creates the menu icon
-}
+  .menu-icon::after{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: $white;
+    box-shadow: 0 7px 0 $white, 0 14px 0 $white; //This creates the menu icon
+  }
 
-.menu-icon.dark::after,
-.menu-icon::after{
-  content: '';
-  top: 0;
-  left: 0;
-}
-
-.dropdown.menu .submenu{
-  border: none;
-}
-
-.dropdown.menu .is-dropdown-submenu-parent.is-right-arrow>a::after{
-  border-color: $white transparent transparent;
-}
-
-.is-drilldown-submenu-parent>a::after{
-  border-color: transparent transparent transparent $white;
-}
-
-.js-drilldown-back::before{
-  border-color: transparent $white transparent transparent;
+  .menu-icon::after{
+    content: '';
+    top: 0;
+    left: 0;
+  }
 }

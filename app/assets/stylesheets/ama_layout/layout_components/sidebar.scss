@@ -139,51 +139,6 @@ span.activepage{
   color: $white;
 }
 
-/* Top-Bar Styles */
-.topbar-logo{
-  width: 132px;
-  padding: 12px $base-padding*2;
-}
-
-.top-bar{
-  @include breakpoint(small only){
-    top: 0px;
-    left: 0px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-  }
-
-  a{
-    text-decoration: none;
-  }
-}
-
-.dropdown-open-link{
-  min-width: 201px; //The 1 px accounts for the border on the dropdown
-}
-
-.top-bar-nav.fixed{
-  max-height: 50px;
-}
-
-.dropdown{
-  .nested{
-    margin-top: -1px;
-    border-right: solid 1px darken($brand-blue-light, 5%);
-    border-left: solid 1px darken($brand-blue-light, 5%);
-
-    li{
-      background: lighten($brand-blue-light, 3%);
-    }
-  }
-
-  .title.back{
-    a{
-      font-weight: bold;
-    }
-  }
-}
-
 .sub-nav{
   margin-left: -14px;
 }
