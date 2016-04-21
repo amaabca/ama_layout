@@ -1,24 +1,38 @@
-<div data-sticky-container>
-  <div class="title-bar sticky is-stuck" data-responsive-toggle="main-menu" data-hide-for="medium" data-sticky data-options="marginTop:0;" style="width:100%">
-    <button class="menu-icon" type="button" data-toggle></button>
-    <div class="title-bar-title">
-      <%= link_to(image_tag("AMA-Logo.svg", class: "topbar-logo"), "https://www.ama.ab.ca") %>
+<div class="top-bar-container" data-sticky-container>
+  <div class="sticky" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;"  style="width:100%;">
+    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">
+        <%= link_to(image_tag("AMA-Logo.svg", class: "topbar-logo"), "https://www.ama.ab.ca") %>
+      </div>
     </div>
-  </div>
-  <div class="top-bar" id="main-menu" data-sticky data-options="marginTop:0;" style="width:100%">
-    <div class="top-bar-left">
-        <%= link_to(image_tag("AMA-Logo.svg" , class: "topbar-logo show-for-medium"), "https://www.ama.ab.ca") %>
-    </div>
-    <div class="top-bar-right">
-      <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
-        <%= render partial: "ama_layout/main_top_nav_item", collection: navigation.items, as: :nav_item %>
-        <li><a href="<%= Rails.configuration.gatekeeper_site %>/help" target="_blank">Help</a></li>
-        <li><a href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a></li>
-        <%= navigation.top_nav %>
-        <li class="show-for-small-only"><a href="<%= Rails.configuration.amaabca_site %>">AMA Website</a></li>
-        <li class="show-for-small-only"><a href="http://amaroadreports.ca/">AMA Road Reports</a></li>
-        <li class="show-for-small-only"><a href="/logout">Sign Out</a></li>
-      </ul>
+    <div class="top-bar" id="main-menu">
+      <div class="top-bar-left">
+          <%= link_to(image_tag("AMA-Logo.svg" , class: "topbar-logo show-for-medium"), "https://www.ama.ab.ca") %>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+          <%= render partial: "ama_layout/main_top_nav_item", collection: navigation.items, as: :nav_item %>
+          <li><a href="<%= Rails.configuration.gatekeeper_site %>/help" target="_blank">Help</a></li>
+          <li><a href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a></li>
+          <%= navigation.top_nav %>
+          <li class="show-for-small-only"><a href="<%= Rails.configuration.amaabca_site %>">AMA Website</a></li>
+          <li class="show-for-small-only"><a href="http://amaroadreports.ca/">AMA Road Reports</a></li>
+          <li class="show-for-small-only"><a href="/logout">Sign Out</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
+<script>
+$( document ).ready(function() {
+  var ww = $( window ).width();
+  var smallBreakpoint = 640;
+  if (ww < smallBreakpoint){
+    var wh = $( window ).height();
+    $( ".top-bar" ).height(wh);
+  } else {
+    $( ".top-bar" ).height(55);
+  }
+});
+</script>

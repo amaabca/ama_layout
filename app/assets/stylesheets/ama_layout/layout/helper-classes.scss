@@ -48,10 +48,6 @@
   margin-bottom: $base-margin*4;
   background: $white;
   border: $base-border;
-
-  @include breakpoint(small only){
-    margin-top: $base-margin*11;
-  }
 }
 
 .content-block-bottom{
