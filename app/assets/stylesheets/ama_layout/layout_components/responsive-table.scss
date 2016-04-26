@@ -166,19 +166,24 @@ tfoot{
 }
 
 $use-respond-mixins: false !default;
+
 @mixin tablesaw-stack( $breakpoint: 40em ){
+  
   @if $use-respond-mixins{
     @include respond-max($breakpoint - .0625){
       @include tablesaw-stack-max;
     }
+
     @include respond-min($breakpoint){
       @include tablesaw-stack-min;
     }
   }
+
   @else{
     @media (max-width: ($breakpoint - .0625)){
       @include tablesaw-stack-max;
     }
+
     @media (min-width: $breakpoint){
       @include tablesaw-stack-min;
     }
@@ -187,9 +192,11 @@ $use-respond-mixins: false !default;
 
 .tablesaw-parent{
   @include tablesaw-stack(60em);
+
   table tr.even, table tr.alt, table tr:nth-of-type(even){
     background: darken($ash, 1%);
   }
+
   table{
     margin-bottom: 0;
   }

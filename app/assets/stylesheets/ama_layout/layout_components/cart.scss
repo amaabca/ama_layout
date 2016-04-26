@@ -57,17 +57,9 @@
   }
 }
 
-.floating-cart{
-  z-index: 98;
-}
-
 .summary-title{
   background: $brand-green !important;
   min-height: 62px;
-}
-
-.mobile-accordion-navigation{
-  //@include accordion-navigation;
 }
 
 .accordion-icon{
@@ -99,19 +91,7 @@
   }
 }
 
-@media screen and (max-width: 64em){
-  .mobile-accordion{
-    //@include accordion-container;
-
-    .mobile-accordion-navigation{
-      //@include accordion-navigation;
-    }
-
-    .content{
-      //@include accordion-content;
-    }
-  }
-
+@media screen and #{breakpoint(medium down)}{
   span.item-num{
     display: inline-block;
     float: right;

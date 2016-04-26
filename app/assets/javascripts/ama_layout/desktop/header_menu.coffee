@@ -1,4 +1,4 @@
-$(document).ready ->
+$(window).load ->
   ww = $(window).width()
   smallBreakpoint = 640
   if ww < smallBreakpoint
