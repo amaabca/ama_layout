@@ -106,4 +106,8 @@
 
 .sticky{
   width: 100%;
+
+  &.is-stuck{
+    z-index: 501;
+  }
 }
