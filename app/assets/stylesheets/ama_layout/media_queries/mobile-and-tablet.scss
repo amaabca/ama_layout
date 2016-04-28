@@ -1,4 +1,4 @@
-@media screen and (max-width: $medium-breakpoint){
+@media screen and #{breakpoint(medium down)}{
   .skip{
     margin-top: $base-margin*4;
   }

@@ -1,10 +1,24 @@
-.asset-link{
-  min-height: 50px;
-  background: $brand-blue-light !important;
-  margin-top: $base-margin*3;
+.accordion-title{
+  font-size: $base-font-size*1.375;
   text-decoration: none;
-  display: block;
 
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus{
+    color: $white;
+  }
+
+  .accordion-icon{
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: right;
+    color: $white;
+  }
+}
+
+.asset-link{
   h3,
   h5{
     color: $white;
@@ -14,11 +28,29 @@
   }
 }
 
-.accordion-icon{
-  width: 16px;
-  height: 16px;
-  display: block;
-  float: right;
-  color: $white;
-  margin-top: $base-margin;
+.accordion.secondary{
+  background: none;
+
+  a{
+    font-size: $base-font-size;
+  }
+
+  .accordion-content a{
+    font-size: $base-font-size*0.875;
+  }
+
+  .accordion-title{
+    background: $white;
+    color: $jet;
+
+    &:hover{
+      background: $stone;
+    }
+  }
+
+  .top-level,
+  .top-level:hover{
+    background: darken($stone, 5%);
+    color: $jet;
+  }
 }

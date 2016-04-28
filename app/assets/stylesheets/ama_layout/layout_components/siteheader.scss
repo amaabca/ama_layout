@@ -1,16 +1,113 @@
-.site-header{
-  width: 100%;
-  height: 50px;
-  background-color: $primary-color;
-  margin-bottom: $base-margin*6;
-  padding: 0;
+/* Styles for Top Bar, Title Bar */
+.topbar-logo{
+  width: 132px;
+  padding: 12px $base-padding*2;
+}
 
-  a:hover{
-    color: $sky;
-    cursor: pointer;
+.top-bar{
+  margin-bottom: $base-margin*4;
+
+  @include breakpoint(small only){
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 
-  img {
-    padding-top:$base-padding*2;
+  @include breakpoint(medium){
+    display: block;
+  }
+
+  a{
+    text-decoration: none;
+    color: $white;
+    font-weight: 600;
+  }
+
+  .is-drilldown{
+    background: $brand-blue-light;
+  }
+
+  ul{
+    li{
+      &:hover{
+        background: $brand-blue-light;
+      }
+
+      @include breakpoint(small only){
+        background: $brand-blue-light;
+        border-bottom: solid 1px darken($brand-blue-light, 5%);
+      }
+    }
+  }
+
+  .dropdown.menu > li.is-dropdown-submenu-parent > a{
+    //the width of the top-bar dropdown and its children on desktop
+    min-width: 200px;
+
+    &:hover{
+      background: lighten($brand-blue-light, 3%);
+    }
+  }
+
+  .submenu{
+    border: none;
+
+    li{
+      background: $brand-blue-light;
+      border-bottom: solid 1px darken($brand-blue-light, 5%);
+
+      &:nth-child(1){
+        border-top: solid 1px darken($brand-blue-light, 5%);
+      }
+
+      &:hover{
+        background: lighten($brand-blue-light, 3%);
+      }
+    }
+  }
+}
+
+.title-bar{
+  @include breakpoint (small only){
+    padding: 0 0.5rem;
+  }
+
+  @include breakpoint(medium) {
+    display: none;
+  }
+
+  .menu-icon{
+    position: relative;
+    cursor: pointer;
+    width: 20px;
+    height: 16px;
+    color: $white;
+  }
+
+  .menu-icon{
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .menu-icon::after{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: $white;
+    box-shadow: 0 7px 0 $white, 0 14px 0 $white; //This creates the menu icon
+  }
+
+  .menu-icon::after{
+    content: '';
+    top: 0;
+    left: 0;
+  }
+}
+
+.sticky{
+  width: 100%;
+
+  &.is-stuck{
+    z-index: 501;
   }
 }

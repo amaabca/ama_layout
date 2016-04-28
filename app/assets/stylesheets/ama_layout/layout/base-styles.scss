@@ -45,7 +45,9 @@ label{
 }
 
 p,
-li{
+li,
+select,
+label{
   font-size: $base-font-size*0.875;
   color: $charcoal;
   font-family: $font-family-sans-serif;
@@ -63,4 +65,8 @@ hr{
 
 small{
   font-size: 80%;
+}
+
+dl dd{
+  margin-bottom: $base-margin*4;
 }

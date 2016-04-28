@@ -77,8 +77,8 @@
     li:active{
       text-decoration: underline;
     }
-  } 
-    
+  }
+
 
   span{
     display: block;
@@ -101,7 +101,7 @@
   }
 
   a{
-    padding: $base-margin*0;
+    padding: 0 0 $base-margin*2 0;
     font-size: $base-font-size*0.875;
   }
 }
@@ -129,67 +129,15 @@ span.nav-icon{
   font-size: $base-font-size*1.5;
   color: $smoke;
   text-align: center;
+  @include breakpoint(small only){
+    margin: $base-margin*2 $base-margin $base-margin*2 0;
+    color: $white;
+  }
 }
 
 span.activepage{
   color: $white;
 }
-
-/* Top-Bar Styles */
-.contain-to-grid .top-bar{
-  @extend .row;
-}
-
-.title-area{
-  li.name{
-    img{
-      padding-top: $base-padding*2;
-      height: 35px;
-    }
-  }
-}
-
-.top-bar{
-  a{
-    text-decoration: none;
-  }
-}
-
-.dropdown-open-link{
-  min-width: 201px; //The 1 px accounts for the border on the dropdown
-}
-
-.top-bar-nav.fixed{
-  max-height: 50px;
-}
-
-ul.dropdown:not(.nested){
-  -webkit-box-shadow: 0px 8px -5px -5px rgba(50,50,50,0.5);
-  -moz-box-shadow: 0px 8px -5px -5px rgba(50,50,50,0.5);
-  box-shadow: 0px 8px 20px -5px rgba(50,50,50,0.5);
-  border-left: solid 1px darken($brand-blue-light, 5%);
-  border-right: solid 1px darken($brand-blue-light, 5%);
-  margin-top: -5px;
-}
-
-.dropdown{
-  .nested{
-    margin-top: -1px;
-    border-right: solid 1px darken($brand-blue-light, 5%);
-    border-left: solid 1px darken($brand-blue-light, 5%);
-
-    li{
-      background: lighten($brand-blue-light, 3%);
-    }
-  }
-
-  .title.back{
-    a{
-      font-weight: bold;
-    }
-  }
-}
-
 
 .sub-nav{
   margin-left: -14px;

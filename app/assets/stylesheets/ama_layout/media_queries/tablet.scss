@@ -1,4 +1,4 @@
-@media screen and (min-width: $small-breakpoint) and (max-width: $medium-breakpoint){
+@media screen and #{breakpoint(medium only)}{
   .main-content-container{
     padding: $base-padding*4 0 0;
   }

@@ -8,7 +8,7 @@ module AmaLayout
 
     def sign_out_link
       return "" unless user
-      h.content_tag :li do
+      h.content_tag :li, class: "show-for-small-only" do
         h.concat h.link_to "Sign Out", "/logout"
       end
     end

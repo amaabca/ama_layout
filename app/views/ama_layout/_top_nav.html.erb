@@ -1,12 +1,8 @@
-<li class="has-dropdown dropdown-open-link">
-  <a>My Online Account</a>
-  <ul class="dropdown">
-    <%= render partial: "ama_layout/main_top_nav_item", collection: navigation.items, as: :nav_item %>
-    <li class="divider"></li>
+<li class="has-submenu bb0">
+  <a class="show-for-medium">Online Account</a>
+  <ul class="submenu menu vertical">
     <li><a href="<%= Rails.configuration.amaabca_site %>">AMA Website</a></li>
-    <li class="divider"></li>
     <li><a href="http://amaroadreports.ca/">AMA Road Reports</a></li>
-    <li class="divider"></li>
     <li><a href="/logout">Sign Out</a></li>
   </ul>
 </li>

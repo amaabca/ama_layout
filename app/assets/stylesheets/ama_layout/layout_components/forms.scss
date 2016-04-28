@@ -106,7 +106,7 @@ input[type="checkbox"] + label{
 }
 
 input[type="radio"] + label{
-  margin: $base-margin 0;
+  margin-top: -1px;
 
   &:before{
     border-radius: 100%;
@@ -238,7 +238,61 @@ input[type="checkbox"]:checked + label{
   background-position: center center;
 }
 
+/* The vendor prefixed placeholders have to be declared as separate selectors.
+When a browser doesn't understand a selector it invalidates the entire line */
+input::-webkit-input-placeholder{
+  color: darken($smoke, 5%);
+}
+
+input:-moz-placeholder{
+  color: darken($smoke, 5%);
+}
+
+input::-moz-placeholder{
+  color: darken($smoke, 5%);
+}
+
+input[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+textarea{
+  font-size: 0.875rem;
+  color: $charcoal;
+}
+
+select.has-placeholder:nth-child(1){
+  color: darken($smoke, 5%);
+}
+
 /* ------------- Error Messaging ------------- */
+select + .error,
+input + span.error,
+input + small.error{
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+span.error,
+small.error{
+  display: block;
+  padding: 0.375rem 0.5625rem 0.5625rem;
+  font-size: 0.75rem;
+  background: $brand-red;
+  color: $white;
+  margin-bottom: 1rem;
+}
+
 .error small.error,
 small.error{
   background: $brand-red;

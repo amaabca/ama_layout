@@ -19,7 +19,6 @@ table.tablesaw{
 /* Structure */
 
 .tablesaw{
-  border: 1px solid $smoke;
   padding: 0;
 }
 
@@ -29,6 +28,8 @@ table.tablesaw{
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: .5em .7em;
+  font-size: $base-font-size*0.875;
+  color: $slate;
 }
 
 .tablesaw thead tr:first-child th{
@@ -36,19 +37,31 @@ table.tablesaw{
   padding-bottom: .7em;
 }
 
+thead,
+tbody,
+tfoot{
+  border: none;
+}
+
 /* Table rows have a gray bottom stroke by default */
 
 .tablesaw-stack tbody tr{
-  border-bottom: 1px solid $smoke;
+  border-bottom: 2px solid $stone;
 }
 
 .tablesaw-stack td .tablesaw-cell-label,
 .tablesaw-stack th .tablesaw-cell-label{
   display: none;
 }
+
 .tablesaw-stack thead{
-	background: lighten($smoke, 10%);
-	border-bottom: 1px solid $smoke;
+  background: darken($ash, 3%);
+  border-bottom: 2px solid darken($stone, 3%);
+
+  td,
+  th{
+    color: $charcoal;
+  }
 }
 
 /* Mobile first styles: Begin with the stacked presentation at narrow widths */
@@ -73,7 +86,7 @@ table.tablesaw{
   .tablesaw-stack th .tablesaw-cell-label{
     display: block;
     padding: 0 .6em 0 0;
-    width: 30%;
+    width: 45%;
     display: inline-block;
   }
 
@@ -102,24 +115,29 @@ table.tablesaw{
     display: none !important;
   }
 }
+
 @mixin tablesaw-stack-max{
   .tablesaw-stack thead td,
   .tablesaw-stack thead th{
     display: none;
   }
+
   .tablesaw-stack tbody td,
   .tablesaw-stack tbody th{
     clear: left;
     float: left;
     width: 100%;
   }
+
   .tablesaw-cell-label{
     vertical-align: top;
   }
+
   .tablesaw-cell-content{
-    max-width: 67%;
+    max-width: 55%;
     display: inline-block;
   }
+
   .tablesaw-stack td:empty,
   .tablesaw-stack th:empty{
     display: none;
@@ -130,6 +148,7 @@ table.tablesaw{
   .tablesaw-stack tr{
     display: table-row;
   }
+
   /* Show the table header rows */
   .tablesaw-stack td,
   .tablesaw-stack th,
@@ -138,6 +157,7 @@ table.tablesaw{
     display: table-cell;
     margin: 0;
   }
+
   /* Hide the labels in each cell */
   .tablesaw-stack td .tablesaw-cell-label,
   .tablesaw-stack th .tablesaw-cell-label{
@@ -146,19 +166,24 @@ table.tablesaw{
 }
 
 $use-respond-mixins: false !default;
+
 @mixin tablesaw-stack( $breakpoint: 40em ){
+
   @if $use-respond-mixins{
     @include respond-max($breakpoint - .0625){
       @include tablesaw-stack-max;
     }
+
     @include respond-min($breakpoint){
       @include tablesaw-stack-min;
     }
   }
+
   @else{
     @media (max-width: ($breakpoint - .0625)){
       @include tablesaw-stack-max;
     }
+
     @media (min-width: $breakpoint){
       @include tablesaw-stack-min;
     }
@@ -166,11 +191,15 @@ $use-respond-mixins: false !default;
 }
 
 .tablesaw-parent{
-  @include tablesaw-stack( 60em );
-	table tr.even, table tr.alt, table tr:nth-of-type(even){
-		background: darken($ash, 1%);
-	}
-	table{
-		margin-bottom: 0;
-	}
+  @include tablesaw-stack(60em);
+
+  table tr.even,
+  table tr.alt,
+  table tr:nth-of-type(even){
+    background: darken($ash, 1%);
+  }
+
+  table{
+    margin-bottom: 0;
+  }
 }

@@ -129,6 +129,10 @@
   text-align: right !important;
 }
 
+.relative{
+  position: relative;
+}
+
 /* ==================== 4. Margins ==================== */
 .m1{
   margin: $base-margin*4 !important;
@@ -227,6 +231,10 @@
   border-bottom: 0px !important;
 }
 
+.b0{
+  border: 0;
+}
+
 /* ==================== 6. Background Colours ==================== */
 .whitebg{
   background-color: $white;
@@ -299,10 +307,18 @@
 }
 
 /* ==================== 9. Buttons ==================== */
+.button{
+  text-decoration: none;
+}
+
 .base-button{
-  @extend .radius;
-  @extend .small;
+  border-radius: $global-radius;
+  @extend .button;
   color: $white;
+}
+
+.expand{
+  @extend .expanded;
 }
 
 .emphasized,
@@ -406,7 +422,6 @@ button[disabled],
   font-weight: bold;
   font-size: $base-font-size*0.875;
   color: $charcoal;
-  padding: $base-padding;
 }
 
 .brand-blue-dark-text{
