@@ -1,18 +1,6 @@
 /* ============== Base Page Layout Styles ================ */
-html, body{
-  height: auto !important;
-}
-
-html{
-  background: image-url('alberta-blur.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 body{
-  background: none;
+  background: $stone;
 }
 
 footer{
@@ -22,22 +10,29 @@ footer{
 }
 
 /* ============== Base Typography Styles ================ */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p{
-  font-family: $font-family-sans-serif;
-  margin-bottom: 0.2em;
-  margin-bottom: 0.2rem; //this is so headers have equal padding on bottom and top
+ul,
+ol,
+dl,
+blockquote,
+p,
+address,
+table,
+fieldset,
+figure,
+pre,
+button{
+  margin-bottom: 1rem;
+
+  /*
+  to only add the margin to elements that are NOT the last child
+  .section-content &:not(:last-child){
+    margin-bottom: 1rem;
+  }
+  */
 }
 
-h4{
-  margin-top: $base-margin*4;
-  margin-bottom: $base-margin*2;
-}
+
+
 
 label{
   font-family: $font-family-sans-serif;
@@ -49,13 +44,10 @@ li,
 select,
 label{
   font-size: $base-font-size*0.875;
-  color: $charcoal;
   font-family: $font-family-sans-serif;
 }
 
 a{
-  text-decoration: underline;
-  color: $secondary-color;
   font-size: $base-font-size*0.875;
 }
 
@@ -68,5 +60,5 @@ small{
 }
 
 dl dd{
-  margin-bottom: $base-margin*4;
+  margin-bottom: $base-margin;
 }

@@ -1,0 +1,47 @@
+.heading{
+  padding: $base-padding*.75 $base-padding;
+  color: $white;
+}
+
+.section-heading{
+  @extend .heading;
+  background: $brand-blue-light;
+}
+
+.section-half{
+  @extend .large-6;
+  @extend .column;
+}
+
+.section-content{
+  padding: $base-padding;
+  background: $white;
+  overflow: auto; //to account for floated buttons
+
+  &>*:last-child{
+    margin-bottom: 0;
+    /*override so that the last child element always has margin-bottom of zero
+    (because the container has bottom padding)
+    the alternative is to set the elements themselves to ONLY have bottom-margin
+    if they're not the :last-child, but Foundation adds bottom margin to everything by default
+    so we would have to change each element individually in the _settings file.
+    */
+  }
+}
+
+.link-list{
+  list-style-type: none;
+
+  &__item{
+    border-bottom: 2px solid $sky;
+    padding-bottom: $base-padding/2;
+
+    &:not(:first-child){
+      padding-top: $base-padding/2;
+    }
+  }
+
+    &__link{
+
+    }
+}

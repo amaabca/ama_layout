@@ -8,6 +8,7 @@ $notice-orange: #e7992b;
 // Blue tones - ordered from lightest to darkest
 $sky: #e2f4fc;
 $ocean: #8cceec;
+$cerulean: #2577be;
 $brand-blue-light: #00539b;
 $brand-blue-dark: #00205b;
 // Grey tones - ordered from lightest to darkest
@@ -24,10 +25,12 @@ $primary-color: $brand-blue-dark;
 $secondary-color: $brand-blue-light;
 // Fonts
 $font-family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
+$font-family-headings: "Open Sans Semi-Bold", Helvetica, Arial, sans-serif;
 $base-font-size: 1rem;
 // Spacing
-$base-margin: 5px;
-$base-padding: 5px;
+$base-margin: 0.9375rem;
+$base-padding: 0.9375rem;
+
 // Borders
 $base-border: 1px solid $smoke;
 //Radius

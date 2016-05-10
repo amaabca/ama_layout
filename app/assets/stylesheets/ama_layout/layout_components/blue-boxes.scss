@@ -18,7 +18,7 @@
 .icon-box{
   width: 100px;
   height: 80px;
-  margin: $base-margin*4 auto 0 auto;
+  margin: $base-margin auto 0 auto;
   background-repeat: no-repeat;
   background-position: center center;
   width: auto;
@@ -32,7 +32,7 @@
   text-align: center;
   color: $white;
   width: 90%;
-  margin: $base-margin*2 auto $base-margin*0 auto;
+  margin: $base-margin/2 auto 0 auto;
 }
 
 .quicklink-box{
@@ -88,7 +88,7 @@
 
 .quicklink-single-box{
   margin-left: 0;
-  margin-top: $base-margin*4;
+  margin-top: $base-margin;
 
   .outer-quicklink-box > a{
     font-size: $base-font-size;
@@ -97,7 +97,7 @@
 
 /*New Grid Block code for blue boxes*/
 .cta-margin{
-  margin: 0 $base-margin*2 0 $base-margin*2;
+  margin: 0 $base-margin/2;
 }
 
 ul{
@@ -118,7 +118,7 @@ ul{
 
 .icon-container{
   height: 80px;
-  margin: $base-margin*4 auto 0 auto;
+  margin: $base-margin auto 0 auto;
   background-repeat: no-repeat;
   background-position: center center;
   width: auto;
@@ -132,5 +132,5 @@ ul{
   text-align: center;
   color: $white;
   width: 90%;
-  margin: $base-margin*2 auto $base-margin*0 auto;
+  margin: $base-margin/2 auto 0 auto;
 }

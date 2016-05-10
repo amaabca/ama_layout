@@ -1,10 +1,62 @@
+.side-nav{
+  @extend .large-2, .medium-4, .column, .show-for-medium;
+  background: $white;
+
+  &__header{
+    @extend .heading;
+    background: $cerulean;
+  }
+
+  &__list{
+    list-style-type: none;
+    padding: $base-padding;
+  }
+
+    &__item{
+      margin-bottom: $base-margin;
+    }
+
+      &__link{
+        display: block;
+        font-weight: 600;
+        color: $jet;
+        margin-bottom: $base-margin/2;
+      }
+
+        &__child-list{
+          list-style-type: none;
+        }
+
+          &__child-item{
+            margin-bottom: $base-margin/2;
+          }
+
+            &__child-link{
+              color: $stormcloud;
+              font-size: rem-calc(12);
+
+              &:active,
+              &:hover,
+              &:focus{
+                color: $cerulean;
+              }
+
+              &--active-page{
+                font-weight: bold;
+                color: $cerulean;
+              }
+            }
+
+
+}
+
 .dashboard-title{
   font-size: $base-font-size*0.875;
   font-weight: normal;
   color: $charcoal;
   text-transform: uppercase;
   background: $white;
-  padding: $base-padding*3;
+  padding: $base-padding;
 }
 
 .dashboard-title{
@@ -17,9 +69,9 @@
   width: 100%;
   background: $white;
   display: block;
-  margin-top: $base-margin*2;
+  margin-top: $base-margin/2;
   text-transform: capitalize;
-  padding: $base-margin*0;
+  padding: 0;
   overflow: hidden;
 
   a{
@@ -32,7 +84,7 @@
     padding: 18px;
 
     span{
-      margin-top: $base-margin*3;
+      margin-top: $base-margin;
     }
 
     &.nav-open ~ .inner-nav{
@@ -93,7 +145,7 @@
   -moz-transition: max-height 0.15s ease-out;
   transition: max-height 0.15s ease-out;
   margin-left: 74px;
-  margin-top: -$base-margin*3;
+  margin-top: -15px;
   list-style: none;
 
   li{
@@ -101,7 +153,7 @@
   }
 
   a{
-    padding: 0 0 $base-margin*2 0;
+    padding: 0 0 $base-margin/2 0;
     font-size: $base-font-size*0.875;
   }
 }
@@ -113,10 +165,10 @@ a.activepage{
 
 .sidebar{
   @extend .white-trans;
-  padding: $base-padding*4;
+  padding: $base-padding;
 
   p{
-    margin-bottom: $base-margin*2;
+    margin-bottom: $base-margin/2;
   }
 }
 
@@ -124,13 +176,13 @@ span.nav-icon{
   width: 40px;
   height: 29px;
   float: left;
-  margin: $base-margin*2;
-  margin-top: $base-margin*4;
+  margin: $base-margin/2;
+  margin-top: $base-margin;
   font-size: $base-font-size*1.5;
   color: $smoke;
   text-align: center;
   @include breakpoint(small only){
-    margin: $base-margin*2 $base-margin $base-margin*2 0;
+    margin: $base-margin/2 $base-margin $base-margin/2 0;
     color: $white;
   }
 }
