@@ -1,11 +1,6 @@
-<div class="medium-4 large-3 columns show-for-medium pl0">
-  <div class="white-trans pb0">
-    <div class="large-12 fullwidth center">
-      <%= render partial: "ama_layout/main_nav_item", collection: navigation.items, as: :nav_item %>
-      <li class="dashboard-nav dashboard-title">
-        <span class="nav-icon fa fa-power-off"></span>
-        <%= link_to "Sign Out", "/logout" %>
-      </li>
-    </div>
-  </div>
-</div>
+<aside class="side-nav">
+  <h2 class="side-nav__header">Online Account</h2>
+  <ul class="side-nav__list">
+    <%= render partial: "ama_layout/main_nav_item", collection: navigation.items, as: :nav_item %>
+  </ul>
+</aside>

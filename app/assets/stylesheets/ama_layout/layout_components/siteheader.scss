@@ -1,12 +1,10 @@
 /* Styles for Top Bar, Title Bar */
 .topbar-logo{
   width: 132px;
-  padding: 12px $base-padding*2;
+  padding: 12px $base-padding/2;
 }
 
 .top-bar{
-  margin-bottom: $base-margin*4;
-
   @include breakpoint(small only){
     overflow-x: hidden;
     overflow-y: scroll;
@@ -18,7 +16,6 @@
 
   a{
     text-decoration: none;
-    color: $white;
     font-weight: 600;
   }
 
@@ -28,9 +25,6 @@
 
   ul{
     li{
-      &:hover{
-        background: $brand-blue-light;
-      }
 
       @include breakpoint(small only){
         background: $brand-blue-light;
@@ -41,18 +35,15 @@
 
   .dropdown.menu > li.is-dropdown-submenu-parent > a{
     //the width of the top-bar dropdown and its children on desktop
-    min-width: 200px;
-
-    &:hover{
-      background: lighten($brand-blue-light, 3%);
-    }
+    //min-width: 300px;
   }
 
   .submenu{
     border: none;
 
     li{
-      background: $brand-blue-light;
+      background: $cerulean;
+      color: $white;
       border-bottom: solid 1px darken($brand-blue-light, 5%);
 
       &:nth-child(1){
@@ -80,7 +71,6 @@
     cursor: pointer;
     width: 20px;
     height: 16px;
-    color: $white;
   }
 
   .menu-icon{
@@ -110,4 +100,9 @@
   &.is-stuck{
     z-index: 501;
   }
+}
+
+.page-header{
+  @extend .heading;
+  background: $brand-blue-light;
 }

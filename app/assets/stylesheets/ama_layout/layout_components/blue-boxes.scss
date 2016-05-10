@@ -1,13 +1,23 @@
 /*New Grid Block code for blue boxes*/
-
-.cta-btm-row{
-  margin-top: 0.9375rem*2;
+.icon-box{
+  width: 100px;
+  height: 80px;
+  margin: $base-margin auto 0 auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: auto;
+  text-align: center;
+  color: $white;
+  font-size: $base-font-size*5;
+  line-height: $base-font-size*5;
 }
 
-.cta-box{
-  min-height: 175px;
-  padding: $base-padding*2;
-
+.box-title{
+  text-align: center;
+  color: $white;
+  width: 90%;
+  margin: $base-margin/2 auto 0 auto;
+}
   a{
     text-decoration: none;
   }
@@ -25,16 +35,60 @@
   }
 }
 
-.cta-title{
-  text-align: center;
-  color: $white;
-  width: 100%;
-  margin: $base-margin*2 auto $base-margin*0 auto;
+.outer-quicklink-box:first-child:nth-last-child(2),
+.outer-quicklink-box:first-child:nth-last-child(2) ~ div,
+.outer-quicklink-box:first-child:nth-last-child(2) ~ li{
+  width: 49.2%;
+  margin-top: 1.5%;
+}
+
+.outer-quicklink-box:first-child:nth-last-child(3),
+.outer-quicklink-box:first-child:nth-last-child(3) ~ div,
+.outer-quicklink-box:first-child:nth-last-child(3) ~ li{
+  width: 23.5%;
+}
+
+.outer-quicklink-box:first-child:nth-last-child(4),
+.outer-quicklink-box:first-child:nth-last-child(4) ~ div,
+.outer-quicklink-box:first-child:nth-last-child(4) ~ li{
+  width: 24.2%;
+  margin-right: 0.8%;
+  margin-top: 0.8%;
+}
+
+.quicklink-single-box{
+  margin-left: 0;
+  margin-top: $base-margin;
+
+  .outer-quicklink-box > a{
+    font-size: $base-font-size;
+  }
+}
+
+/*New Grid Block code for blue boxes*/
+.cta-margin{
+  margin: 0 $base-margin/2;
+}
+
+ul{
+  li{
+    .cta-box{
+      padding: 20px;
+
+      &.light-blue-bg:hover{
+        background: lighten($brand-blue-light, 3%);
+      }
+
+      &.rewards-green-bg:hover{
+        background: lighten($brand-green, 3%);
+      }
+    }
+  }
 }
 
 .icon-container{
   height: 80px;
-  margin: $base-margin*3 auto 0 auto;
+  margin: $base-margin auto 0 auto;
   background-repeat: no-repeat;
   background-position: center center;
   width: auto;
@@ -43,9 +97,9 @@
   font-size: $base-font-size*4.5;
   line-height: $base-font-size*4.5;
 
-  @include breakpoint(small down){
-    height: 66px;
-    font-size: $base-font-size*4;
-    line-height: $base-font-size*4;
-  }
+.cta-title{
+  text-align: center;
+  color: $white;
+  width: 90%;
+  margin: $base-margin/2 auto 0 auto;
 }

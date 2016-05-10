@@ -38,7 +38,7 @@
   }
 
   .box2{
-    margin-top: $base-margin*2;
+    margin-top: $base-margin/2;
   }
 }
 
@@ -48,7 +48,7 @@
 }
 
 .radio-label{
-  padding: $base-padding*2;
+  padding: $base-padding/2;
   width: 100%;
 }
 
@@ -72,7 +72,7 @@ input[type="checkbox"] + label{
   width: 100%;
   position: relative;
   cursor: pointer;
-  padding: 0 $base-padding*2 0 $base-padding*2;
+  padding: 0 $base-padding/2 0 $base-padding/2;
 
   &:before{
     content: ' ';
@@ -324,7 +324,7 @@ small.error{
   color: $brand-red;
   display: none;
   font-size: 0.875em;
-  margin: -$base-padding*2 0 $base-padding*2;
+  margin: -$base-padding/2 0 $base-padding/2;
 }
 
 .email_domain{
