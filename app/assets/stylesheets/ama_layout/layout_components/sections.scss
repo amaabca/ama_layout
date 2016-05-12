@@ -29,19 +29,18 @@
   }
 }
 
-.link-list{
-  list-style-type: none;
+.page-container{
+  @extend .row, .expanded, .collapse, .off-canvas-content;
+  margin-top: $top-bar-height;
+  overflow-y: auto;
+  position: relative;
+}
 
-  &__item{
-    border-bottom: 2px solid $sky;
-    padding-bottom: $base-padding/2;
+.main-container{
+  @extend .large-10, .medium-8, .columns;
+  background: $stone;
+}
 
-    &:not(:first-child){
-      padding-top: $base-padding/2;
-    }
-  }
-
-    &__link{
-
-    }
+.off-canvas-content{
+  background: none; //override foundation's default which is white
 }
