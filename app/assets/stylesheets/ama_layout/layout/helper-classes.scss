@@ -319,12 +319,12 @@
     @extend .expanded;
   }
 
-  &--flat{
-    padding: 5px;
+  &--xlarge{
+    width: 100%;
   }
 }
 
-/*
+
 .button{
   text-decoration: none;
 }
@@ -399,7 +399,7 @@ button[disabled],
    background-color: lighten($brand-green, 10%);
   }
 }
-*/
+
 /* ==================== 10. Typography ==================== */
 .white-text{
   color: $white;

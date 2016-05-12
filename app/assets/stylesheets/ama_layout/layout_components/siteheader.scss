@@ -1,10 +1,20 @@
 /* Styles for Top Bar, Title Bar */
 .topbar-logo{
   width: 132px;
-  padding: 12px $base-padding/2;
+  padding: $base-padding*.75 0;
 }
 
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+}
 .top-bar{
+  padding: 0 $base-padding;
+  height: $top-bar-height;
+
   @include breakpoint(small only){
     overflow-x: hidden;
     overflow-y: scroll;
@@ -43,18 +53,30 @@
 
     li{
       background: $cerulean;
-      color: $white;
-      border-bottom: solid 1px darken($brand-blue-light, 5%);
 
       &:nth-child(1){
-        border-top: solid 1px darken($brand-blue-light, 5%);
+        margin-top: -$base-margin/2;
       }
 
       &:hover{
-        background: lighten($brand-blue-light, 3%);
+        background: lighten($cerulean, 5%);
       }
     }
+
+    a{
+      color: $white;
+    }
   }
+}
+
+.off-canvas-wrapper,
+.off-canvas-wrapper-inner,
+.page-container{
+  height: 100%;
+}
+
+.off-canvas-wrapper{
+  overflow: auto;
 }
 
 .title-bar{
@@ -83,8 +105,8 @@
     display: block;
     width: 100%;
     height: 2px;
-    background: $white;
-    box-shadow: 0 7px 0 $white, 0 14px 0 $white; //This creates the menu icon
+    background: $cerulean;
+    box-shadow: 0 7px 0 $cerulean, 0 14px 0 $cerulean; //This creates the menu icon
   }
 
   .menu-icon::after{
