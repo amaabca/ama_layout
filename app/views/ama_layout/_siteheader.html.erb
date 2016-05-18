@@ -1,15 +1,13 @@
 <div class="header">
-  <div class="title-bar show-for-small-only" data-responsive-toggle="main-menu" data-hide-for="medium">
-    <div class="title-bar-left">
-      <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
-      <%= link_to(image_tag("ama-logo-blue.svg", class: "topbar-logo"), "https://www.ama.ab.ca") %>
-    </div>
+  <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
+    <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
+    <%= link_to(image_tag("ama-logo-blue.svg", class: "title-bar__logo"), "https://www.ama.ab.ca") %>
   </div>
-  <div class="top-bar show-for-medium" id="main-menu">
+  <div class="top-bar" id="main-menu">
     <div class="top-bar-left">
-      <%= link_to(image_tag("ama-logo-blue.svg", class: "topbar-logo show-for-medium"), "https://www.ama.ab.ca") %>
+      <%= link_to(image_tag("ama-logo-blue.svg", class: "top-bar__logo"), "https://www.ama.ab.ca") %>
     </div>
-    <div class="top-bar-right hide-for-small-only">
+    <div class="top-bar-right">
       <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
         <li>
           <a href="<%= Rails.configuration.gatekeeper_site %>/help" target="_blank">Help</a>
@@ -33,21 +31,23 @@
   </div>
 </noscript>
 <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
-  <ul class="">
-    <h2 class="side-nav__header">Online Account</h2>
-    <%= render partial: "ama_layout/main_nav_item", collection: navigation.items, as: :nav_item %>
-    <li class="show-for-small-only">
-      <a href="<%= Rails.configuration.amaabca_site %>">AMA Website</a>
-    </li>
-    <li class="show-for-small-only">
-      <a href="http://amaroadreports.ca/">AMA Road Reports</a>
-    </li>
-    <li>
-      <a href="<%= Rails.configuration.gatekeeper_site %>/help" target="_blank">Help</a>
-    </li>
-    <li>
-      <a href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a>
-    </li>
-    <%= navigation.sign_out_link %>
-  </ul>
+  <h2 class="side-nav__header">Online Account</h2>
+  <div class="side-nav__content">
+    <ul class="side-nav__list">
+      <%= render partial: "ama_layout/main_nav_item", collection: navigation.items, as: :nav_item %>
+      <li class="side-nav__item">
+        <a class="side-nav__link" href="<%= Rails.configuration.amaabca_site %>">AMA Website</a>
+      </li>
+      <li class="side-nav__item">
+        <a class="side-nav__link" href="http://amaroadreports.ca/">AMA Road Reports</a>
+      </li>
+      <li class="side-nav__item">
+        <a class="side-nav__link" href="<%= Rails.configuration.gatekeeper_site %>/help" target="_blank">Help</a>
+      </li>
+      <li class="side-nav__item">
+        <a class="side-nav__link" href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a>
+      </li>
+      <%= navigation.sign_out_link %>
+    </ul>
+  </div>
 </div>
