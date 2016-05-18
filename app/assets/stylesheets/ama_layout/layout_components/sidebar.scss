@@ -1,194 +1,55 @@
 .side-nav{
-  @extend .large-2, .medium-4, .column, .show-for-medium;
   background: $white;
+  
+  @include grid-column(2,0);
+  @include show-for(large);
 
   &__header{
     @extend .heading;
     background: $cerulean;
   }
 
-  &__list{
-    list-style-type: none;
+  &__content{
     padding: $base-padding;
   }
 
-    &__item{
-      margin-bottom: $base-margin;
+    &__list{
+      list-style-type: none;
     }
 
-      &__link{
-        display: block;
-        font-weight: 600;
-        color: $jet;
-        margin-bottom: $base-margin/2;
+      &__item{
+        margin-bottom: $base-margin;
       }
 
-        &__child-list{
-          list-style-type: none;
+        &__link{
+          display: block;
+          font-weight: 600;
+          color: $jet;
+          margin-bottom: $base-margin/2;
         }
 
-          &__child-item{
-            margin-bottom: $base-margin/2;
+          &__child-list{
+            list-style-type: none;
           }
 
-            &__child-link{
-              color: $stormcloud;
-              font-size: rem-calc(12);
-
-              &:active,
-              &:hover,
-              &:focus{
-                color: $cerulean;
-              }
-
-              &--active-page{
-                font-weight: bold;
-                color: $cerulean;
-              }
+            &__child-item{
+              margin-bottom: $base-margin/2;
             }
-}
 
-.dashboard-title{
-  font-size: $base-font-size*0.875;
-  font-weight: normal;
-  color: $charcoal;
-  text-transform: uppercase;
-  background: $white;
-  padding: $base-padding;
-}
+              &__child-link{
+                color: $stormcloud;
+                font-size: rem-calc(12);
 
-.dashboard-title{
-  &:first-child{
-    @extend .mt0;
-  }
-}
+                &:active,
+                &:hover,
+                &:focus{
+                  $anchor-color: $cerulean;
+                  color: $anchor-color-hover;
+                }
 
-.dashboard-nav{
-  width: 100%;
-  background: $white;
-  display: block;
-  margin-top: $base-margin/2;
-  text-transform: capitalize;
-  padding: 0;
-  overflow: hidden;
-
-  a{
-    font-family: $font-family-sans-serif;
-    font-size: $base-font-size*1.125;
-    color: $charcoal;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    padding: 18px;
-
-    span{
-      margin-top: $base-margin;
-    }
-
-    &.nav-open ~ .inner-nav{
-      max-height: 200px;
-      visibility: visible;
-      opacity: 1;
-      margin-top: 0;
-
-      .sub-nav:active,
-      .sub-nav:focus{
-        text-decoration: underline;
-      }
-    }
-  }
-
-  &.activepage{
-    background: $brand-blue-light;
-
-    a{
-      color: $white;
-      max-height: inherit;
-    }
-
-    span.nav-icon{
-      color: $white;
-    }
-
-    .inner-nav{
-      max-height: 200px;
-      visibility: visible;
-      opacity: 1;
-      margin-top: 0;
-    }
-
-    a.sub-nav.activepage{
-      text-decoration: underline;
-    }
-  }
-
-  .inner-nav{
-    li:hover,
-    li:active{
-      text-decoration: underline;
-    }
-  }
-
-
-  span{
-    display: block;
-    font-size: $base-font-size*0.75;
-  }
-}
-
-.inner-nav{
-  visibility: hidden;
-  max-height: 0;
-  -webkit-transition: max-height 0.15s ease-out;
-  -moz-transition: max-height 0.15s ease-out;
-  transition: max-height 0.15s ease-out;
-  margin-left: 74px;
-  margin-top: -15px;
-  list-style: none;
-
-  li{
-    color: $white;
-  }
-
-  a{
-    padding: 0 0 $base-margin/2 0;
-    font-size: $base-font-size*0.875;
-  }
-}
-
-a.activepage{
-  background: $brand-blue-light;
-  color: $white;
-}
-
-.sidebar{
-  @extend .white-trans;
-  padding: $base-padding;
-
-  p{
-    margin-bottom: $base-margin/2;
-  }
-}
-
-span.nav-icon{
-  width: 40px;
-  height: 29px;
-  float: left;
-  margin: $base-margin/2;
-  margin-top: $base-margin;
-  font-size: $base-font-size*1.5;
-  color: $smoke;
-  text-align: center;
-  @include breakpoint(small only){
-    margin: $base-margin/2 $base-margin $base-margin/2 0;
-    color: $white;
-  }
-}
-
-span.activepage{
-  color: $white;
-}
-
-.sub-nav{
-  margin-left: -14px;
+                &--active-page{
+                  font-weight: bold;
+                  color: $cerulean;
+                }
+              }
 }

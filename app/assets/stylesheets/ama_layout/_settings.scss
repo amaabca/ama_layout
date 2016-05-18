@@ -89,11 +89,11 @@ $breakpoint-classes: (small medium large);
 
 // 3. The Grid
 // -----------
-
-$grid-row-width: $global-width;
+//change $grid-row-width to $global-width to give it a fixed width
+$grid-row-width: 100%;
 $grid-column-count: 12;
 $grid-column-gutter: (
-  small: 20px,
+  small: 30px,
   medium: 30px,
 );
 $grid-column-align-edge: true;
@@ -108,7 +108,7 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': 24,
+    'h1': 20,
     'h2': 20,
     'h3': 19,
     'h4': 18,
@@ -261,10 +261,10 @@ $buttongroup-expand-max: 6;
 // -----------
 
 $callout-background: $white;
-$callout-background-fade: 85%;
-$callout-border: 1px solid rgba($black, 0.25);
+$callout-background-fade: 0%;
+$callout-border: 0;
 $callout-margin: 0 0 1rem 0;
-$callout-padding: 1rem;
+$callout-padding: $base-padding;
 $callout-font-color: $body-font-color;
 $callout-font-color-alt: $body-background;
 $callout-radius: 0;
@@ -397,7 +397,7 @@ $meter-fill-bad: $alert-color;
 // --------------
 
 $offcanvas-size: 250px;
-$offcanvas-background: none;
+$offcanvas-background: $white;
 $offcanvas-zindex: -1;
 $offcanvas-transition-length: 0.5s;
 $offcanvas-transition-timing: ease;
@@ -536,11 +536,11 @@ $thumbnail-radius: $global-radius;
 
 $titlebar-background: $white;
 $titlebar-color: $cerulean;
-$titlebar-padding: 0.5rem;
+$titlebar-padding: 0;
 $titlebar-text-font-weight: bold;
 $titlebar-icon-color: $cerulean;
 $titlebar-icon-color-hover: $medium-gray;
-$titlebar-icon-spacing: 0.25rem;
+$titlebar-icon-spacing: 0;
 
 // 35. Tooltip
 // -----------

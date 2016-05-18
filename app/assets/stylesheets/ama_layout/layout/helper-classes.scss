@@ -320,10 +320,11 @@
   }
 
   &--xlarge{
+    @extend .button;
     width: 100%;
+    min-height: 161px;
   }
 }
-
 
 .button{
   text-decoration: none;

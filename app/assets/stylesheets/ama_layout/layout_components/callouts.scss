@@ -1,0 +1,19 @@
+.callout-box{
+  @include callout($stone);
+}
+
+.promo-block{
+  @include callout($stone);
+  @include show-for(medium);
+  position: relative;
+  overflow: auto;
+
+  &__divider{
+
+  }
+
+  &__item{
+    @include large-4;
+    text-align: center;
+  }
+}

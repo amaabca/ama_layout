@@ -1,3 +1,4 @@
+###
 class AMA.ContentToggler
   toggleContentOverflow: () ->
     if $('.off-canvas-wrapper .is-off-canvas-open').length > 0
@@ -8,5 +9,7 @@ class AMA.ContentToggler
 $(document).ready ->
   toggler =  new AMA.ContentToggler
   toggler.toggleContentOverflow()
-  $('[data-toggle="offCanvasLeft"]').click ->
-    toggler.toggleContentOverflow()
+  $(".menu-icon").click ->
+    if($(this).data('clicked', true))
+      toggler.toggleContentOverflow().delay(800)
+###

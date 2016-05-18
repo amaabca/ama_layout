@@ -3,15 +3,33 @@
   color: $white;
 }
 
+.section{
+  margin-bottom: $base-margin;
+}
 .section-heading{
   @extend .heading;
   background: $brand-blue-light;
 }
 
 .section-half{
-  @extend .large-6;
-  @extend .column;
+  @extend .section;
+  @include large-6;
 }
+
+.section-full{
+  @extend .section;
+  @include large-12;
+}
+
+.section-third{
+  @extend .section;
+  @include large-4;
+}
+.section-two-thirds{
+  @extend .section;
+  @include large-8;
+}
+
 
 .section-content{
   padding: $base-padding;
@@ -30,17 +48,17 @@
 }
 
 .page-container{
-  @extend .row, .expanded, .collapse, .off-canvas-content;
+  @include grid-row;
   margin-top: $top-bar-height;
-  overflow-y: auto;
   position: relative;
 }
 
 .main-container{
-  @extend .large-10, .medium-8, .columns;
+  // using grid-column in place of large-10 so that we can set the gutters to 0
+  @include grid-column(10,0);
   background: $stone;
-}
 
-.off-canvas-content{
-  background: none; //override foundation's default which is white
+  @include breakpoint(medium down){
+    @include grid-column(12,0);
+  }
 }
