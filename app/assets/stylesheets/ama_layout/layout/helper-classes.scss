@@ -370,6 +370,10 @@ button[disabled],
   }
 }
 
+.dark-blue-btn{
+  background: $brand-blue-dark;
+}
+
 .green-btn,
 .green-btn:visited{
   @extend .base-button;
