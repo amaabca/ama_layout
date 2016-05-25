@@ -68,3 +68,9 @@
 .icon-ama-card:before {
   content: "\6a";
 }
+
+.ama-icon{
+  &__medium{
+    font-size: 2.45rem;
+  }
+}
