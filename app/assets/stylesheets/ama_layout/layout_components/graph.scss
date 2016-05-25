@@ -115,19 +115,6 @@
   }
 }
 
-.tows-text{
-  @extend .white-text;
-  font-size: $base-font-size*3;
-  font-weight: bold;
-}
-
-.rsa-text{
-  @extend .white-text;
-  font-size: $base-font-size*1.2;
-  text-align: center;
-  margin: 25px auto;
-}
-
 .icon-rv{
   font-size: 2.25rem;
 }

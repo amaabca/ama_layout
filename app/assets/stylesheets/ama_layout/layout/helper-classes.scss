@@ -477,3 +477,9 @@ button[disabled],
   -ms-word-break: break-word;
   word-break: break-word;
 }
+
+.bold-large-text{
+  @extend .white-text;
+  font-size: $base-font-size*3;
+  font-weight: bold;
+}
