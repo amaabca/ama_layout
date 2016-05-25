@@ -1,9 +1,5 @@
 /*New Grid Block code for blue boxes*/
 
-.cta-margin{
-  margin: 0 $base-margin*2 0 $base-margin*2;
-}
-
 .cta-btm-row{
   margin-top: 0.9375rem*2;
 }
@@ -46,4 +42,10 @@
   color: $white;
   font-size: $base-font-size*4.5;
   line-height: $base-font-size*4.5;
+
+  @include breakpoint(small down){
+    height: 66px;
+    font-size: $base-font-size*4;
+    line-height: $base-font-size*4;
+  }
 }
