@@ -1,44 +1,16 @@
-//blue boxes
-/* Once the green card to update all the blue boxes in all the apps is complete, all the code in this file */
-/* up to my comment "New Grid Block code for blue boxes" can be deleted because it will no longer be needed. */
-/* March 31st, 2016 - SE */
-.outer-quicklink-box{
-  margin-right: 1.5%;
-  float: left;
+/*New Grid Block code for blue boxes*/
+
+.cta-btm-row{
+  margin-top: 0.9375rem*2;
+}
+
+.cta-box{
+  min-height: 175px;
+  padding: $base-padding*2;
 
   a{
     text-decoration: none;
   }
-
-  &:nth-last-child(1){
-    margin-right: 0;
-  }
-}
-
-.icon-box{
-  width: 100px;
-  height: 80px;
-  margin: $base-margin*4 auto 0 auto;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: auto;
-  text-align: center;
-  color: $white;
-  font-size: $base-font-size*5;
-  line-height: $base-font-size*5;
-}
-
-.box-title{
-  text-align: center;
-  color: $white;
-  width: 90%;
-  margin: $base-margin*2 auto $base-margin*0 auto;
-}
-
-.quicklink-box{
-  margin-top: 0;
-  padding-top: 1px;
-  min-height: 161px;
 
   &.light-blue-bg:hover{
     background: lighten($brand-blue-light, 3%);
@@ -47,90 +19,33 @@
   &.rewards-green-bg:hover{
     background: lighten($brand-green, 3%);
   }
-}
 
-.tab-title.active > a{
-  outline: none;
-}
-
-// For the quicklink boxes, get a count of how many boxes there are.
-// For example: for 2 boxes, check if the first box (first-child) is both the first and second-last(nth-last-child(2)).
-.outer-quicklink-box:first-child:nth-last-child(1){
-  width: 23.5%;
-  margin-left: 0;
-  margin-right: 1.5%;
-
-  &.fullwidth{
-    margin-top: 1.5%;
+  @include breakpoint(medium down){
+    margin: 0.625rem 0;
   }
-}
-
-.outer-quicklink-box:first-child:nth-last-child(2),
-.outer-quicklink-box:first-child:nth-last-child(2) ~ div,
-.outer-quicklink-box:first-child:nth-last-child(2) ~ li{
-  width: 49.2%;
-  margin-top: 1.5%;
-}
-
-.outer-quicklink-box:first-child:nth-last-child(3),
-.outer-quicklink-box:first-child:nth-last-child(3) ~ div,
-.outer-quicklink-box:first-child:nth-last-child(3) ~ li{
-  width: 23.5%;
-}
-
-.outer-quicklink-box:first-child:nth-last-child(4),
-.outer-quicklink-box:first-child:nth-last-child(4) ~ div,
-.outer-quicklink-box:first-child:nth-last-child(4) ~ li{
-  width: 24.2%;
-  margin-right: 0.8%;
-  margin-top: 0.8%;
-}
-
-.quicklink-single-box{
-  margin-left: 0;
-  margin-top: $base-margin*4;
-
-  .outer-quicklink-box > a{
-    font-size: $base-font-size;
-  }
-}
-
-/*New Grid Block code for blue boxes*/
-.cta-margin{
-  margin: 0 $base-margin*2 0 $base-margin*2;
-}
-
-ul{
-  li{
-    .cta-box{
-      padding: 20px;
-
-      &.light-blue-bg:hover{
-        background: lighten($brand-blue-light, 3%);
-      }
-
-      &.rewards-green-bg:hover{
-        background: lighten($brand-green, 3%);
-      }
-    }
-  }
-}
-
-.icon-container{
-  height: 80px;
-  margin: $base-margin*4 auto 0 auto;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: auto;
-  text-align: center;
-  color: $white;
-  font-size: $base-font-size*5;
-  line-height: $base-font-size*5;
 }
 
 .cta-title{
   text-align: center;
   color: $white;
-  width: 90%;
+  width: 100%;
   margin: $base-margin*2 auto $base-margin*0 auto;
+}
+
+.icon-container{
+  height: 80px;
+  margin: $base-margin*3 auto 0 auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: auto;
+  text-align: center;
+  color: $white;
+  font-size: $base-font-size*4.5;
+  line-height: $base-font-size*4.5;
+
+  @include breakpoint(small down){
+    height: 66px;
+    font-size: $base-font-size*4;
+    line-height: $base-font-size*4;
+  }
 }
