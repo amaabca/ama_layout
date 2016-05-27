@@ -356,3 +356,43 @@ input[type="url"]:-ms-input-placeholder,
 textarea{
   color: darken($stone, 10%);
 }
+
+
+.form-horizontal{
+  &__row{
+    @include grid-row-nest;
+    overflow: auto;
+  }
+
+    &__label-wrapper{
+      @include large-4;
+    }
+
+    &__input-wrapper{
+      @include large-8;
+
+      &--offset{
+        @extend .form-horizontal__input-wrapper;
+        @include large-offset-4;
+      }
+    }
+
+    &__select{
+      @include large-8;
+    }
+
+    &__toggle{
+      @include large-12;
+      margin-bottom: $base-margin;
+    }
+
+  &__notification{
+    @include large-8;
+  }
+
+  &__submit{
+    &--right{
+      @include large-4;
+    }
+  }
+}
