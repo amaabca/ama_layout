@@ -20,7 +20,8 @@ table,
 fieldset,
 figure,
 pre,
-button{
+button,
+[type='checkbox'] + label[for]{
   margin-bottom: 1rem;
 
   /*

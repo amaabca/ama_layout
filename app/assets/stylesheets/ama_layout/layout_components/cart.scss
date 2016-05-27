@@ -4,6 +4,8 @@
 }
 
 .summary-cart{
+  list-style-type: none;
+
   ::-webkit-scrollbar{
     -webkit-appearance: none;
     width: 7px;
@@ -16,10 +18,8 @@
   }
 
   .summary-cart-body{
-    background-color: $stone;
     padding: $base-padding/2;
     font-size: $base-font-size*0.875;
-    color: $charcoal;
 
     ul{
       list-style: none;
@@ -62,7 +62,7 @@
   min-height: 62px;
 }
 
-.accordion-icon{
+.summary-cart__accordion-toggle{
   width: 16px;
   height: 16px;
   display: block;

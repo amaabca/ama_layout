@@ -138,30 +138,35 @@
 }
 
 @mixin large-11{
+  @include small-12;
   @media #{$large-up}{
     @include grid-column(11);
   }
 }
 
 @mixin large-10{
+  @include small-12;
   @media #{$large-up}{
     @include grid-column(10);
   }
 }
 
 @mixin large-9{
+  @include small-12;
   @media #{$large-up}{
     @include grid-column(9);
   }
 }
 
 @mixin large-8{
+  @include small-12;
   @media #{$large-up}{
     @include grid-column(8);
   }
 }
 
 @mixin large-7{
+  @include small-12;
   @media #{$large-up}{
     @include grid-column(7);
   }
@@ -175,12 +180,14 @@
 }
 
 @mixin large-5{
+  @include small-12;
   @media #{$large-up}{
     @include grid-column(5);
   }
 }
 
 @mixin large-4{
+  @include small-12;
   @media #{$large-up}{
     @include grid-column(4);
   }
@@ -194,12 +201,14 @@
 }
 
 @mixin large-2{
+  @include small-12;
   @media #{$large-up}{
     @include grid-column(2);
   }
 }
 
 @mixin large-1{
+  @include small-12;
   @media #{$large-up}{
     @include grid-column(1);
   }
