@@ -254,6 +254,10 @@
   background-color: $notice-orange;
 }
 
+.red-bg{
+  background: $brand-red;
+}
+
 // On a coloured background, the child links should be white
 .insurance-blue-bg a,
 .light-blue-bg a,
@@ -389,6 +393,10 @@ button[disabled],
   }
 }
 
+.dark-blue-btn{
+  background: $brand-blue-dark;
+}
+
 .green-btn,
 .green-btn:visited{
   @extend .base-button;
@@ -487,4 +495,10 @@ button[disabled],
   word-wrap: break-word;
   -ms-word-break: break-word;
   word-break: break-word;
+}
+
+.bold-large-text{
+  @extend .white-text;
+  font-size: $base-font-size*3;
+  font-weight: bold;
 }
