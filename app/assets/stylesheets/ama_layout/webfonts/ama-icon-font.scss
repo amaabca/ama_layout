@@ -11,21 +11,8 @@
   font-style: normal;
 }
 
-[data-icon]:before {
-  font-family: "ama-icon-font" !important;
-  content: attr(data-icon);
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
+[class^="ama-icon-"]:before,
+[class*="ama-icon-"]:before {
   font-family: "ama-icon-font" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -37,34 +24,34 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-motorcycle:before {
+.ama-icon-motorcycle:before {
   content: "\61";
 }
-.icon-map-pin:before {
+.ama-icon-map-pin:before {
   content: "\62";
 }
-.icon-home:before {
+.ama-icon-home:before {
   content: "\63";
 }
-.icon-hospital:before {
+.ama-icon-hospital:before {
   content: "\64";
 }
-.icon-battery-power:before {
+.ama-icon-battery-power:before {
   content: "\65";
 }
-.icon-settings:before {
+.ama-icon-settings:before {
   content: "\66";
 }
-.icon-bicycle:before {
+.ama-icon-bicycle:before {
   content: "\67";
 }
-.icon-scooter:before {
+.ama-icon-scooter:before {
   content: "\68";
 }
-.icon-rv:before {
+.ama-icon-rv:before {
   content: "\69";
 }
-.icon-ama-card:before {
+.ama-icon-ama-card:before {
   content: "\6a";
 }
 
