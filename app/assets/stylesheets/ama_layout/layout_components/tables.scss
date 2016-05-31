@@ -1,0 +1,12 @@
+.table{
+  margin-bottom: $base-margin;
+
+  &__row{
+    @include grid-row-nest;
+    overflow: auto;
+  }
+
+    &__data{
+      display: block;
+    }
+}

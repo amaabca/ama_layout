@@ -23,7 +23,6 @@ pre,
 button,
 [type='checkbox'] + label[for]{
   margin-bottom: 1rem;
-
   /*
   to only add the margin to elements that are NOT the last child
   .section-content &:not(:last-child){
@@ -31,9 +30,6 @@ button,
   }
   */
 }
-
-
-
 
 label{
   font-family: $font-family-sans-serif;
@@ -43,7 +39,8 @@ label{
 p,
 li,
 select,
-label{
+label,
+span{
   font-size: $base-font-size*0.875;
   font-family: $font-family-sans-serif;
 }

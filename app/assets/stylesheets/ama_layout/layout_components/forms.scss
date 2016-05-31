@@ -357,7 +357,15 @@ textarea{
   color: darken($stone, 10%);
 }
 
+.form-container{
+  @include grid-row-nest;
+  @include large-9;
+  @include grid-column-end;
+}
 
+.button-row{
+  @include grid-row-nest;
+}
 .form-horizontal{
   &__row{
     @include grid-row-nest;
