@@ -12,9 +12,14 @@
   background: $brand-blue-light;
 }
 
+.section-heading--accordion{
+  @extend .heading;
+  overflow: auto;
+  display: block;
+}
+
 .section-heading--green{
   @extend .heading;
-  display: block;
   background: $brand-green;
 }
 
@@ -36,6 +41,7 @@
 .section-two-thirds{
   @extend .section;
   @include large-8;
+  @include grid-column-end;
 }
 
 

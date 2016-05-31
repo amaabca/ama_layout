@@ -17,60 +17,97 @@
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
   }
 
-  .summary-cart-body{
-    padding: $base-padding/2;
-    font-size: $base-font-size*0.875;
-
-    ul{
-      list-style: none;
-      margin: 0;
-
-      li{
-        padding: 8px;
-      }
-
-      li:not(:nth-child(1)){
-        border-top: 1px solid $smoke;
-      }
-
-      .summary-flash-notice{
-        color: $white;
-        background: $brand-blue-insurance;
-
-        p,
-        a,
-        a:hover,
-        a:focus{
-          color: $white;
-        }
-
-        &:not(:nth-child(1)){
-          border-top: none;
-        }
-      }
-    }
-
-    .items{
-      overflow-y: scroll;
-      max-height: auto;
-    }
+  &__title{
+    float: left;
+    color: $white;
   }
+
+  &__accordion-toggle{
+    @include hide-for(large);
+    width: 16px;
+    height: 16px;
+    float: right;
+    color: $white;
+    margin-top: $base-margin*0.6;
+  }
+
+  &__item-count{
+    @include hide-for(large);
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 60px;
+    text-align: center;
+    line-height: 30px;
+    color: $white;
+    font-weight: bold;
+    margin-right: $base-margin;
+    background: lighten($brand-green, 5%);
+  }
+
+  &__list{
+    margin-left: 0;
+    overflow-y: scroll;
+    max-height: auto;
+    list-style: none;
+    margin: 0;
+  }
+
+    &__list-item{
+      &:not(:nth-child(1)){
+        border-top: 1px solid $smoke;
+        padding: $base-padding/2 0;
+      }
+      &:nth-child(1){
+        padding-bottom: $base-padding;
+      }
+    }
+
+    &__submit{
+      list-style-type: none;
+      margin-left: 0;
+    }
+
+    &__remove{
+      float: right;
+
+      .fa-times-circle-o{
+        font-size: $base-font-size*2;
+      }
+    }
+
+      &__remove-link{
+        color: $slate;
+        text-decoration: none;
+
+        &:hover,
+        &:focus{
+          color: $charcoal;
+        }
+      }
+
+    .summary-flash-notice{
+      color: $white;
+      background: $brand-blue-insurance;
+
+      p,
+      a,
+      a:hover,
+      a:focus{
+        color: $white;
+      }
+
+      &:not(:nth-child(1)){
+        border-top: none;
+      }
+    }
+
 }
 
 .summary-title{
   background: $brand-green !important;
   min-height: 62px;
 }
-
-.summary-cart__accordion-toggle{
-  width: 16px;
-  height: 16px;
-  display: block;
-  float: right;
-  color: $white;
-  margin-top: $base-margin;
-}
-
 
 .delete-icon{ //same one used in the cart and on info charts it lives outside of cart so it can be used other places
   margin-top: $base-margin;
