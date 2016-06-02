@@ -33,9 +33,6 @@
 
 /* ------------- Custom Radio Button + Checkbox Styles  ------------- */
 .checkboxes{
-  label{
-    width: 100%;
-  }
 
   .box2{
     margin-top: $base-margin/2;
@@ -88,7 +85,7 @@ input[type="checkbox"] + label{
   }
 
   &:nth-child(2){
-    margin-top: -1px;
+    //margin-top: -1px;
   }
 
   .membership-card-header{
@@ -106,7 +103,7 @@ input[type="checkbox"] + label{
 }
 
 input[type="radio"] + label{
-  margin-top: -1px;
+  //margin-top: -1px;
 
   &:before{
     border-radius: 100%;
@@ -266,9 +263,9 @@ input[type='text'],
 [type='time'],
 [type='url'],
 [type='color'],
-textarea{
-  font-size: 0.875rem;
-  color: $charcoal;
+textarea,
+select{
+  margin-bottom: 0;
 }
 
 select.has-placeholder:nth-child(1){
@@ -288,8 +285,6 @@ select:focus{
 select + .error,
 input + span.error,
 input + small.error{
-  margin-top: -1rem;
-  margin-bottom: 1rem;
 }
 
 span.error,
@@ -299,7 +294,7 @@ small.error{
   font-size: 0.75rem;
   background: $brand-red;
   color: $white;
-  margin-bottom: 1rem;
+
 }
 
 .error small.error,
@@ -379,6 +374,7 @@ textarea{
   &__row{
     @include grid-row-nest;
     overflow: auto;
+    margin-bottom: $base-margin;
   }
 
     &__label-wrapper{
@@ -392,6 +388,20 @@ textarea{
         @extend .form-horizontal__input-wrapper;
         @include large-offset-4;
       }
+
+      &--small{
+        @include large-2;
+      }
+    }
+
+    &__input-hint{
+      @include large-5;
+      @extend .hint;
+    }
+
+    &__radio-wrapper{
+      @include large-8;
+      margin-bottom: $base-margin;
     }
 
     &__select{

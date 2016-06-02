@@ -9,4 +9,22 @@
     &__data{
       display: block;
     }
+
+  &__header{
+    @include show-for(large);
+
+    &--grey-bg{
+      @extend .table__header;
+      background: $stone;
+    }
+  }
+}
+
+.table-with-bg{
+  margin-bottom: $base-margin;
+
+  &__row{
+    @include grid-row;
+    overflow: auto;
+  }
 }

@@ -20,8 +20,7 @@ table,
 fieldset,
 figure,
 pre,
-button,
-[type='checkbox'] + label[for]{
+button{
   margin-bottom: 1rem;
   /*
   to only add the margin to elements that are NOT the last child
@@ -29,11 +28,6 @@ button,
     margin-bottom: 1rem;
   }
   */
-}
-
-label{
-  font-family: $font-family-sans-serif;
-  color: $charcoal;
 }
 
 p,
