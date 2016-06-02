@@ -40,3 +40,29 @@
   margin: 0 auto;
   display: block;
 }
+
+.notice{
+  color: $white;
+  padding: $base-padding;
+  margin-bottom: $base-margin;
+  overflow: auto;
+
+  &--warning{
+    @extend .notice;
+    background: $orange;
+  }
+
+  &__icon-wrapper{
+    @include small-2;
+  }
+
+    &__icon{
+      font-size: 2em;
+      width: 100%;
+      text-align: center;
+    }
+
+  &__text-wrapper{
+    @include small-10;
+  }
+}

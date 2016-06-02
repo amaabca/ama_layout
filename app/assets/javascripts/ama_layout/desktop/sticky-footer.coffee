@@ -7,7 +7,7 @@ $(window).bind
     clickChecker()
 
 adjustFooter = ->
-  $("footer").css({ 'margin-top': calcHeight() + 'px' })
+  $("footer").css({ 'margin-top': 0 + 'px' })
 
 clickChecker = ->
   checkClicks(".close-button", 250)
