@@ -2,6 +2,21 @@
   margin-bottom: $base-margin;
 
   &__row{
+    @include grid-row;
+    overflow: auto;
+    padding: $base-padding 0;
+
+    &--striped{
+      @extend .table__row;
+      border-bottom: 2px solid $stone;
+
+      &:first-of-type{
+        border-top: 2px solid $stone;
+      }
+    }
+  }
+
+  &__row-nested{
     @include grid-row-nest;
     overflow: auto;
   }
@@ -17,6 +32,20 @@
       @extend .table__header;
       background: $stone;
     }
+  }
+
+  &__col-title{
+    font-weight: 700;
+  }
+
+  &__col-title-link{
+    padding-left: $base-padding;
+  }
+
+  &__icon-checkmark{
+    @extend .fa;
+    @extend .fa-check-circle;
+    @extend .green-text;
   }
 }
 
