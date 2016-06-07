@@ -4,11 +4,11 @@
   &__row{
     @include grid-row;
     overflow: auto;
-    padding: $base-padding 0;
+    padding: $base-padding/2 0;
 
     &--striped{
       @extend .table__row;
-      border-bottom: 2px solid $stone;
+      border-bottom: 2px solid $ocean;
 
       &:first-of-type{
         border-top: 2px solid $stone;
