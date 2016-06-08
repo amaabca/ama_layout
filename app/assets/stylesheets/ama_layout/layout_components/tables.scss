@@ -8,12 +8,24 @@
 
     &--striped{
       @extend .table__row;
-      border-bottom: 2px solid $ocean;
+      border-bottom: 2px solid $stone;
 
       &:first-of-type{
         border-top: 2px solid $stone;
       }
     }
+
+    &--grey-bg{
+      @extend .table__row;
+      background: $stone;
+      padding: 0;
+      margin-top: 3px;
+    }
+  }
+
+  &__bg-spacing{
+    padding-top: $base-padding/2;
+    padding-bottom: $base-padding/2;
   }
 
   &__row-nested{
@@ -23,6 +35,14 @@
 
     &__data{
       display: block;
+
+      &--left{
+        float: left;
+      }
+
+      &--right{
+        float: right;
+      }
     }
 
   &__header{
@@ -35,11 +55,17 @@
   }
 
   &__col-title{
-    font-weight: 700;
+    font-weight: 600;
   }
 
   &__col-title-link{
     padding-left: $base-padding;
+  }
+
+  &__col-color{
+    &--green{
+      background: $brand-green;
+    }
   }
 
   &__icon-checkmark{
