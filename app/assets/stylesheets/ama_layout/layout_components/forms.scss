@@ -272,6 +272,15 @@ select.has-placeholder:nth-child(1){
   color: darken($smoke, 5%);
 }
 
+select:focus{
+  border: 1px solid #8a8a8a;
+  background-color: $white;
+  outline: none;
+  box-shadow: 0 0 5px #cacaca;
+  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+}
+
+
 /* ------------- Error Messaging ------------- */
 select + .error,
 input + span.error,
