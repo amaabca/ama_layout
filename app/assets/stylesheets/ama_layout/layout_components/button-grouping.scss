@@ -2,6 +2,10 @@
 .button-grouping{
   @include grid-row;
 
+  &--nested{
+    @include grid-row-nest;
+  }
+
   &__container{
     &--half{
       @include large-6;

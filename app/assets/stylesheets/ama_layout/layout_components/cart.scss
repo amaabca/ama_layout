@@ -5,6 +5,8 @@
 
 .summary-cart{
   list-style-type: none;
+  margin-bottom: 0;
+  position: relative;
 
   ::-webkit-scrollbar{
     -webkit-appearance: none;
@@ -22,7 +24,7 @@
     color: $white;
   }
 
-  &__accordion-toggle{
+  &__accordion-toggle-icon{
     @include hide-for(large);
     width: 16px;
     height: 16px;
@@ -45,21 +47,25 @@
     background: lighten($brand-green, 5%);
   }
 
+  &__content{
+    background: $white;
+    padding: $base-padding
+  }
+
   &__list{
     margin-left: 0;
     overflow-y: scroll;
     max-height: auto;
     list-style: none;
     margin: 0;
+    list-style-type: none;
   }
 
     &__list-item{
+      padding: $base-padding;
+
       &:not(:nth-child(1)){
         border-top: 1px solid $smoke;
-        padding: $base-padding/2 0;
-      }
-      &:nth-child(1){
-        padding-bottom: $base-padding;
       }
     }
 
