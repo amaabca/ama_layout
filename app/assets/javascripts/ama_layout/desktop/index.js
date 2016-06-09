@@ -8,4 +8,5 @@
 //= require ./sticky-footer
 //= require ./foundation-namespace
 //= require ./sidebar
+//= require ./cookie.ready
 //= require ../mailcheck/index
