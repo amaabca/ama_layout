@@ -59,6 +59,15 @@
     list-style: none;
     margin: 0;
     list-style-type: none;
+    overflow-y: scroll;
+
+    @include breakpoint(small){
+      max-height: 150px;
+    }
+
+    @include breakpoint(large){
+      max-height: 320px;
+    }
   }
 
     &__list-item{
