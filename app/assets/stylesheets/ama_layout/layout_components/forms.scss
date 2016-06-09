@@ -370,10 +370,12 @@ textarea{
 .button-row{
   @include grid-row-nest;
 }
+
 .form-horizontal{
   &__row{
     @include grid-row-nest;
     overflow: auto;
+    max-width: 1080px;
     margin-bottom: $base-margin;
   }
 
