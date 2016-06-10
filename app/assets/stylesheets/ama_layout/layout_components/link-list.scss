@@ -18,3 +18,11 @@
       }
     }
 }
+
+.link-list-horizontal{
+  list-style-type: none;
+
+  &__item{
+    display: inline;
+  }
+}
