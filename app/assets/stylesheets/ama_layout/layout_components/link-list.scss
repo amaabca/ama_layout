@@ -26,3 +26,29 @@
     display: inline;
   }
 }
+
+.icon-link-list{
+  list-style-type: none;
+
+  &__item{
+    padding: 0;
+    border-bottom: 1px solid #cccccc;
+    margin-top: 7.5px;
+  }
+
+  &__icon{
+    padding: 8.5px 13px;
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 1.875rem;
+    width: 57px;
+    display: inline-block;
+    background: $brand-blue-light;
+  }
+
+  &__link{
+    display: inline;
+  }
+}
