@@ -1,0 +1,8 @@
+.banner{
+	position: relative;
+
+	&--blue{
+		background: $brand-blue-insurance;
+		padding: 20px;
+	}
+}
