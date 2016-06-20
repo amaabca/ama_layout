@@ -12,12 +12,11 @@
     }
   }
 
-    &__link{
-      &--white{
-        color: $white;
-      }
+  &__link{
+    &--white{
+      color: $white;
     }
-
+  }
 }
 
 .link-list-horizontal{
