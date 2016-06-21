@@ -43,6 +43,10 @@
       &--right{
         float: right;
       }
+
+      &--hide-large{
+        @include hide-for(large);
+      }
     }
 
   &__header{

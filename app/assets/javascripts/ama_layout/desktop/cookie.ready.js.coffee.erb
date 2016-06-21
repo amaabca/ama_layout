@@ -1,0 +1,10 @@
+$ ->
+  if $(".javascript_errors").length > 0
+    if !navigator.cookieEnabled
+      $(".javascript_errors").html("<div class='large-12 columns text-center'>
+        <h3>Cookies are disabled</h3>
+        <h5>Cookies are required to access your AMA online account</h5>
+      </div>
+      <div class='fieldset text-center small mb1 block'>
+        <a href='http://www.whatarecookies.com/enable.asp' target='_blank'>Enable them</a> and <a href='/'>try again</a>
+      </div>").show()

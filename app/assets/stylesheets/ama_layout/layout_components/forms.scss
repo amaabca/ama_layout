@@ -56,9 +56,7 @@
 
 input[type="radio"],
 input[type="checkbox"]:not(.default){
-  position: absolute;
-  left: -9999px;
-  margin: 0;
+  display: none;
 }
 
 input[type="radio"] + label,
@@ -177,6 +175,10 @@ input[type="checkbox"]:checked + label{
   &:before{
     background: $brand-blue-light;
   }
+}
+
+input[type="checkbox"]{
+  display: none;
 }
 
 @keyframes checkbox{
@@ -365,15 +367,25 @@ textarea{
   @include grid-row-nest;
   @include large-9;
   @include grid-column-end;
+  overflow: auto;
 }
 
 .button-row{
-  @include grid-row-nest;
+  @include grid-row;
+  overflow: auto;
+
+  &--nested{
+    @include grid-row-nest;
+    overflow: auto;
+    clear: both;
+  }
 }
+
 .form-horizontal{
   &__row{
     @include grid-row-nest;
     overflow: auto;
+    max-width: 1080px;
     margin-bottom: $base-margin;
   }
 
@@ -391,6 +403,10 @@ textarea{
 
       &--small{
         @include large-2;
+      }
+
+      &--half-width{
+        @include large-4;
       }
     }
 
