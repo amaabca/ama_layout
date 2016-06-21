@@ -11,6 +11,7 @@
   //height: 100vh;
   z-index: 9999;
 }
+
 .top-bar{
   @extend .show-for-large;
   padding: 0 $base-padding;
@@ -89,7 +90,26 @@
 }
 
 .page-header{
-  @extend .heading;
-  background: $brand-blue-light;
   margin-bottom: $base-margin;
+  overflow: auto;
+  background: $brand-blue-light;
+
+  &__heading{
+    @extend .heading;
+    background: $brand-blue-light;
+
+    &--split{
+      @extend .page-header__heading;
+      @include small-6;
+    }
+  }
+
+  &__sub-text{
+    @extend .heading;
+    @include small-6;
+    background: $brand-blue-light;
+    font-style: italic;
+    font-size: 1.25rem;
+    text-align: right;
+  }
 }

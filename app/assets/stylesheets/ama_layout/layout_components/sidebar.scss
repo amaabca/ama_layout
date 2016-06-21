@@ -1,6 +1,5 @@
 .side-nav{
   background: $white;
-  
   @include grid-column(2,0);
   @include show-for(large);
 

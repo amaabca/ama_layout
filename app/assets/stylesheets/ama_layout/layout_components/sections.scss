@@ -5,6 +5,10 @@
 
 .section{
   margin-bottom: $base-margin;
+
+  &__sub-head{
+    margin-bottom: $base-margin;
+  }
 }
 
 .section-heading{
@@ -13,6 +17,11 @@
 
   &--no-bg{
     padding-bottom: $base-padding;
+  }
+
+  &--no-padding{
+    background: $brand-blue-light;
+    color: $white;
   }
 }
 
@@ -47,7 +56,6 @@
   @include large-8;
   @include grid-column-end;
 }
-
 
 .section-content{
   padding: $base-padding;

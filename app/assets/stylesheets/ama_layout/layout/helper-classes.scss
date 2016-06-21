@@ -313,6 +313,24 @@
     float: right;
   }
 
+  &--left{
+    @extend .button;
+    float: left;
+  }
+
+  &--de-emphasized{
+    @extend .button;
+    float: left;
+    $button-background: $slate;
+    background: $button-background;
+
+    &:hover,
+    &:active,
+    &:focus{
+      background: lighten($button-background, 10%);
+    }
+  }
+
   &--right{
     @extend .button;
     float: right;
@@ -328,10 +346,6 @@
     width: 100%;
     min-height: 161px;
   }
-}
-
-.button{
-  text-decoration: none;
 }
 
 .base-button{
@@ -461,6 +475,11 @@ button[disabled],
 
 .micetype{
   font-size: 80%;
+}
+
+.micetype--italic{
+  @extend .micetype;
+  font-style: italic;
 }
 
 .italic{
