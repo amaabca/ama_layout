@@ -1,3 +1,24 @@
+<div class="header">
+  <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
+    <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
+
+  </div>
+  <div class="top-bar" id="main-menu">
+    <div class="top-bar-left">
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+        <li>
+          <a href="<%= Rails.configuration.gatekeeper_site %>/help" target="_blank">Help</a>
+        </li>
+        <li>
+          <a href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a>
+        </li>
+        <%= navigation.top_nav %>
+      </ul>
+    </div>
+  </div>
+</div>
 <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
   <h2 class="side-nav__header">Online Account</h2>
   <div class="side-nav__content">
@@ -30,4 +51,3 @@
     </div>
   </div>
 </noscript>
-
