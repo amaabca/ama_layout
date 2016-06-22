@@ -11,11 +11,11 @@
       @include large-6;
     }
 
-    &--quarter{
-      @include large-3;
-      @include small-6;
-    }
+  &--quarter{
+    @include large-3;
+    @include small-6;
   }
+}
 
     &__button{
       @extend .button;
@@ -25,9 +25,25 @@
 
       &--green{
         @extend .button;
+        min-height: 170px;
         background-color: $brand-green;
         width: 100%;
-        padding: 45px 0 45px 0;
+
+        &:hover{
+          background: lighten($brand-green, 10%);
+        }
+      }
+
+      &--red{
+        @extend .button;
+        min-height: 170px;
+        background-color: $brand-red;
+        width: 100%;
+        padding: 1em 1.75em;
+
+        &:hover{
+          background: lighten($brand-red, 10%);
+        }
       }
     }
 

@@ -41,6 +41,11 @@
   background: $brand-green;
 }
 
+.section-quarter{
+  @extend .section;
+  @include large-3;
+}
+
 .section-half{
   @extend .section;
   @include large-6;
