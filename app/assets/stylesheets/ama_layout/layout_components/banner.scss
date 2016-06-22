@@ -3,24 +3,8 @@
 
 	&--blue{
 		background: $brand-blue-insurance;
-		padding: 20px;
+		padding: $base-padding;
 	}
-
-	&--red{
-		background: $brand-red;
-    padding: 30px 20px;
-    color: $white;
-	}
-
-  &__link{
-    text-align: center;
-    display: block;
-  
-    a{
-      color: $white;
-      text-decoration: underline;
-    }
-  }
 
   &__text{
     text-align: center;

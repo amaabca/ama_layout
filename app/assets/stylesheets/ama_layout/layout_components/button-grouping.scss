@@ -22,12 +22,14 @@
       min-height: 170px;
       position: relative;
       width: 100%;
+      padding: 2.5em 1.75em;
 
       &--green{
         @extend .button;
         min-height: 170px;
         background-color: $brand-green;
         width: 100%;
+        
 
         &:hover{
           background: lighten($brand-green, 10%);
@@ -39,7 +41,7 @@
         min-height: 170px;
         background-color: $brand-red;
         width: 100%;
-        padding: 1em 1.75em;
+        padding: 2.5em 1.75em;
 
         &:hover{
           background: lighten($brand-red, 10%);
@@ -59,5 +61,13 @@
 
         &__text{
           line-height: 1.5rem;
+          display: block;
+
+          &--large{
+            display: block;
+            line-height: 3.75rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+          }
         }
 }

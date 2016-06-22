@@ -32,13 +32,13 @@
 
   &__item{
     padding: 0;
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid $smoke;
     margin-top: 7.5px;
   }
 
   &__icon{
     padding: 8.5px 13px;
-    color: #ffffff;
+    color: $white;
     font-size: 1.2rem;
     text-align: center;
     vertical-align: middle;
