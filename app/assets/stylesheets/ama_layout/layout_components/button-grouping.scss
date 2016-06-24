@@ -65,9 +65,14 @@
 
           &--large{
             display: block;
-            line-height: 3.75rem;
+            line-height: 1.5rem;
             font-size: 2.5rem;
             font-weight: bold;
+          }
+
+          &--underline{
+            display: block;
+            text-decoration: underline;
           }
         }
 }
