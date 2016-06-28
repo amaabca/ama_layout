@@ -4,6 +4,16 @@
   &__close-btn{
     float: right;
   }
+
+  &--green{
+    @include callout($brand-green);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
+  &__sub-head{
+    color: $white;
+  }
 }
 
 .promo-block{

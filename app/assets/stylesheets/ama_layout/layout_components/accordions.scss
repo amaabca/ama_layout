@@ -55,3 +55,23 @@
     color: $jet;
   }
 }
+
+.accordion{
+  &__header{
+    background: $brand-blue-light;
+    overflow: auto;
+    display: block;
+  }
+
+  &__heading{
+    @extend .heading;
+    @include small-10;
+  }
+
+  &__toggle{
+    @include small-2;
+    text-align: right;
+    color: $white;
+    padding-top: $base-padding*1.25;
+  }
+}
