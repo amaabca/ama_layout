@@ -9,3 +9,9 @@ dialog .close-reveal-modal{
   font-weight: bold;
   cursor: pointer;
 }
+
+@include breakpoint(small only){
+  .reveal{
+    padding: $global-padding $global-padding 51px $global-padding; // 51 pixels to offset the height of the top bar
+  }
+}
