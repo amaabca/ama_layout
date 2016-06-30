@@ -22,6 +22,11 @@
       min-height: 170px;
       position: relative;
       width: 100%;
+
+      &--green{
+        @extend .button-grouping__button;
+        @extend .green-btn;
+      }
     }
 
       &__content{
@@ -36,5 +41,13 @@
 
         &__text{
           line-height: 1.5rem;
+          display: block;
+
+          &--large{
+            display: block;
+            line-height: 3.75rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+          }
         }
 }
