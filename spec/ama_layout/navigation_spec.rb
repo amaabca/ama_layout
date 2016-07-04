@@ -36,36 +36,30 @@ describe AmaLayout::Navigation do
   end
 
   describe "#items" do
+    let(:user_type) { "member" }
+    before(:each) do
+      subject.user = OpenStruct.new navigation: user_type
+    end
+    it "does not remove nil #navigation_items" do
+      expect(subject.items.collect {|i| i.alt }).to include nil
+    end
+
     context "member" do
-      before(:each) do
-        allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: "member"))
+      let(:user_type) { "member" }
+      it "displays links " do
+        expect(subject.items.collect {|i| i.link }).to eq subject.navigation_items[user_type].collect {|i| i["link"] }
       end
 
-      it "returns member navigation items" do
-        expect(subject.items[0].text).to eq "My Account Overview"
-        expect(subject.items[0].alt).to eq "Back to my dashboard"
-        expect(subject.items[0].link).to eq "#{gatekeeper_site}/"
-        expect(subject.items[0].icon).to eq "fa-tachometer"
+      it "contains text" do
+        expect(subject.items.collect {|i| i.text }).to eq subject.navigation_items[user_type].collect {|i| i["text"] }
+      end
 
-        expect(subject.items[1].text).to eq "My Membership"
-        expect(subject.items[1].link).to eq "#"
-        expect(subject.items[1].icon).to eq "fa-credit-card"
+      it "contains icons" do
+        expect(subject.items.collect {|i| i.icon }).to eq subject.navigation_items[user_type].collect {|i| i["icon"] }
+      end
 
-        expect(subject.items[2].text).to eq "My Driver Education"
-        expect(subject.items[2].link).to eq "#"
-        expect(subject.items[2].icon).to eq "fa-car"
-
-        expect(subject.items[3].text).to eq "My AMA Rewards"
-        expect(subject.items[3].link).to eq "#"
-        expect(subject.items[3].icon).to eq "fa-usd"
-
-        expect(subject.items[4].text).to eq "My Registries"
-        expect(subject.items[4].link).to eq "#"
-        expect(subject.items[4].icon).to eq "fa-folder-open"
-
-        expect(subject.items[5].text).to eq "My Account Settings"
-        expect(subject.items[5].link).to eq "#"
-        expect(subject.items[5].icon).to eq "fa-cogs"
+      it "contains alt text" do
+        expect(subject.items.collect {|i| i.alt }).to eq subject.navigation_items[user_type].collect {|i| i["alt"] }
       end
 
       context "subnavs" do
@@ -95,28 +89,22 @@ describe AmaLayout::Navigation do
     end
 
     context "non-member" do
-      before(:each) do
-        allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: "non-member"))
+      let(:user_type) { "non-member" }
+
+      it "displays links from YAML file" do
+        expect(subject.items.collect {|i| i.link }).to eq subject.navigation_items[user_type].collect {|i| i["link"] }
       end
 
-      it "returns non-member navigation items" do
-        expect(subject.items[0].text).to eq "Account Dashboard"
-        expect(subject.items[0].alt).to eq "Back to my dashboard"
-        expect(subject.items[0].link).to eq "#{gatekeeper_site}/"
-        expect(subject.items[0].icon).to eq "fa-tachometer"
+      it "contains text" do
+        expect(subject.items.collect {|i| i.text }).to eq subject.navigation_items[user_type].collect {|i| i["text"] }
+      end
 
-        expect(subject.items[1].text).to eq "Join AMA"
-        expect(subject.items[1].alt).to eq "Join AMA"
-        expect(subject.items[1].link).to eq membership_site
-        expect(subject.items[1].icon).to eq "fa-credit-card"
+      it "contains icons" do
+        expect(subject.items.collect {|i| i.icon }).to eq subject.navigation_items[user_type].collect {|i| i["icon"] }
+      end
 
-        expect(subject.items[2].text).to eq "Driver Education"
-        expect(subject.items[2].link).to eq "#"
-        expect(subject.items[2].icon).to eq "fa-car"
-
-        expect(subject.items[3].text).to eq "Change Email/Password"
-        expect(subject.items[3].link).to eq "#{gatekeeper_site}/user/edit"
-        expect(subject.items[3].icon).to eq "fa-cogs"
+      it "contains alt text" do
+        expect(subject.items.collect {|i| i.alt }).to eq subject.navigation_items[user_type].collect {|i| i["alt"] }
       end
 
       context "subnavs" do
@@ -135,23 +123,22 @@ describe AmaLayout::Navigation do
     end
 
     context "member-in-renewal" do
-      before(:each) do
-        allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: "member-in-renewal"))
+      let(:user_type) { "member-in-renewal" }
+
+      it "displays links from YAML file" do
+        expect(subject.items.collect {|i| i.link }).to eq subject.navigation_items[user_type].collect {|i| i["link"] }
       end
 
-      it "returns member-in-renewal navigation items" do
-        expect(subject.items[0].text).to eq "Account Dashboard"
-        expect(subject.items[0].alt).to eq "Back to my dashboard"
-        expect(subject.items[0].link).to eq "#{gatekeeper_site}/"
-        expect(subject.items[0].icon).to eq "fa-tachometer"
+      it "contains text" do
+        expect(subject.items.collect {|i| i.text }).to eq subject.navigation_items[user_type].collect {|i| i["text"] }
+      end
 
-        expect(subject.items[1].text).to eq "Renew"
-        expect(subject.items[1].link).to eq "#{youraccount_site}/renew"
-        expect(subject.items[1].icon).to eq "fa-credit-card"
+      it "contains icons" do
+        expect(subject.items.collect {|i| i.icon }).to eq subject.navigation_items[user_type].collect {|i| i["icon"] }
+      end
 
-        expect(subject.items[2].text).to eq "Driver Education"
-        expect(subject.items[2].link).to eq "#"
-        expect(subject.items[2].icon).to eq "fa-car"
+      it "contains alt text" do
+        expect(subject.items.collect {|i| i.alt }).to eq subject.navigation_items[user_type].collect {|i| i["alt"] }
       end
 
       context "subnavs" do
@@ -170,23 +157,22 @@ describe AmaLayout::Navigation do
     end
 
     context "member-in-renewal-late" do
-      before(:each) do
-        allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: "member-in-renewal-late"))
+      let(:user_type) { "member-in-renewal-late" }
+
+      it "displays links from YAML file" do
+        expect(subject.items.collect {|i| i.link }).to eq subject.navigation_items[user_type].collect {|i| i["link"] }
       end
 
-      it "returns member-in-renewal-late navigation items" do
-        expect(subject.items[0].text).to eq "Account Dashboard"
-        expect(subject.items[0].alt).to eq "Back to my dashboard"
-        expect(subject.items[0].link).to eq "#{gatekeeper_site}/"
-        expect(subject.items[0].icon).to eq "fa-tachometer"
+      it "contains text" do
+        expect(subject.items.collect {|i| i.text }).to eq subject.navigation_items[user_type].collect {|i| i["text"] }
+      end
 
-        expect(subject.items[1].text).to eq "Renew"
-        expect(subject.items[1].link).to eq "#{youraccount_site}/renew"
-        expect(subject.items[1].icon).to eq "fa-credit-card"
+      it "contains icons" do
+        expect(subject.items.collect {|i| i.icon }).to eq subject.navigation_items[user_type].collect {|i| i["icon"] }
+      end
 
-        expect(subject.items[2].text).to eq "Driver Education"
-        expect(subject.items[2].link).to eq "#"
-        expect(subject.items[2].icon).to eq "fa-car"
+      it "contains alt text" do
+        expect(subject.items.collect {|i| i.alt }).to eq subject.navigation_items[user_type].collect {|i| i["alt"] }
       end
 
       context "subnavs" do
