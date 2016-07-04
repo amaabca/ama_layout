@@ -56,7 +56,9 @@
 
 input[type="radio"],
 input[type="checkbox"]:not(.default){
-  display: none;
+  //display: none;
+  position: absolute;
+  left: -9999px;
 }
 
 input[type="radio"] + label,
@@ -275,10 +277,10 @@ select.has-placeholder:nth-child(1){
 }
 
 select:focus{
-  border: 1px solid #8a8a8a;
+  border: 2px solid $ocean;
   background-color: $white;
   outline: none;
-  box-shadow: 0 0 5px #cacaca;
+  box-shadow: 0;
   transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 }
 
@@ -370,11 +372,12 @@ textarea{
   @include grid-column-end;
   overflow: auto;
   max-width: 1080px;
+  display: block;
 }
 
-.button-row{
+.button__row{
   @include grid-row;
-  overflow: auto;
+  clear: both;
 
   &--nested{
     @include grid-row-nest;
@@ -409,7 +412,9 @@ textarea{
       &--half-width{
         @include large-4;
 
-      
+        @include breakpoint(medium down){
+          margin-bottom: 1rem;
+        }
       }
     }
 
