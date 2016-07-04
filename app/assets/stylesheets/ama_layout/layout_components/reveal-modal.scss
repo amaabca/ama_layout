@@ -9,3 +9,18 @@ dialog .close-reveal-modal{
   font-weight: bold;
   cursor: pointer;
 }
+
+.reveal-modal{
+  max-width: 960px;
+
+  a{
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+  @include breakpoint(small only) {
+    top: 50px !important;
+    min-height: 240px;
+    position: fixed;
+  }
+}

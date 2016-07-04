@@ -19,7 +19,7 @@ module AmaLayout
     end
 
     def active_class
-      "activepage" if active_link?
+      "side-nav__child-link--active-page" if active_link?
     end
 
   private

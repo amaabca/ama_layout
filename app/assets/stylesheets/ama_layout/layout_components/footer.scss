@@ -1,0 +1,31 @@
+.page-footer{
+  background: $brand-blue-light;
+
+  &__container{
+    @include grid-row;
+    max-width: 1180px;
+    padding-top: $base-padding*3;
+  }
+
+    &__col{
+      @include medium-6;
+      @include large-3;
+    }
+
+    &__col-header{
+      color: $white;
+      font-weight: 700;
+    }
+
+    &__list{
+      list-style-type: none;
+    }
+
+    &__link{
+      color: $white;
+    }
+}
+.racetrack{
+  background: $brand-blue-light image-url('footer-racetrack-big.png') no-repeat center $base-padding*3;
+  height: 160px;
+}

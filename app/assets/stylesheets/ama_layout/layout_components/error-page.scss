@@ -5,8 +5,8 @@
 .error-pg-width{
   max-width: 650px !important;
   margin: 0 auto !important;
-  padding-left: $base-padding*2;
-  padding-right: $base-padding*2;
+  padding-left: $base-padding/2;
+  padding-right: $base-padding/2;
 }
 
 .error-pg-mb{
@@ -16,7 +16,7 @@
 .error-pg-num{
   min-width: 50%;
   min-height: 80px;
-  padding-top: $base-padding*2;
+  padding-top: $base-padding/2;
 }
 
 .error-pg-num-border{

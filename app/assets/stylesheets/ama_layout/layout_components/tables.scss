@@ -1,0 +1,89 @@
+.table{
+  margin-bottom: $base-margin;
+
+  &__row{
+    @include grid-row;
+    overflow: auto;
+    padding: $base-padding/2 0;
+
+    &--striped{
+      @extend .table__row;
+      border-bottom: 2px solid $stone;
+
+      &:first-of-type{
+        border-top: 2px solid $stone;
+      }
+    }
+
+    &--grey-bg{
+      @extend .table__row;
+      background: $stone;
+      padding: 0;
+      margin-top: 3px;
+    }
+  }
+
+  &__bg-spacing{
+    padding-top: $base-padding/2;
+    padding-bottom: $base-padding/2;
+  }
+
+  &__row-nested{
+    @include grid-row-nest;
+    overflow: auto;
+  }
+
+    &__data{
+      display: block;
+
+      &--left{
+        float: left;
+      }
+
+      &--right{
+        float: right;
+      }
+
+      &--hide-large{
+        @include hide-for(large);
+      }
+    }
+
+  &__header{
+    @include show-for(large);
+
+    &--grey-bg{
+      @extend .table__header;
+      background: $stone;
+    }
+  }
+
+  &__col-title{
+    font-weight: 600;
+  }
+
+  &__col-title-link{
+    padding-left: $base-padding;
+  }
+
+  &__col-color{
+    &--green{
+      background: $brand-green;
+    }
+  }
+
+  &__icon-checkmark{
+    @extend .fa;
+    @extend .fa-check-circle;
+    @extend .green-text;
+  }
+}
+
+.table-with-bg{
+  margin-bottom: $base-margin;
+
+  &__row{
+    @include grid-row;
+    overflow: auto;
+  }
+}

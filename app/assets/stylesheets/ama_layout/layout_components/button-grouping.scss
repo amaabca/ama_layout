@@ -1,0 +1,78 @@
+/* button-group is a foundation element, so to avoid style conflicts ours are called button-groupings */
+.button-grouping{
+  @include grid-row;
+
+  &--nested{
+    @include grid-row-nest;
+  }
+
+  &__container{
+    &--half{
+      @include large-6;
+    }
+
+  &--quarter{
+    @include large-3;
+    @include small-6;
+  }
+}
+
+    &__button{
+      @extend .button;
+      min-height: 170px;
+      position: relative;
+      width: 100%;
+      padding: 2.5em 1.75em;
+
+      &--green{
+        @extend .button;
+        min-height: 170px;
+        background-color: $brand-green;
+        width: 100%;
+        
+
+        &:hover{
+          background: lighten($brand-green, 10%);
+        }
+      }
+
+      &--red{
+        @extend .button;
+        min-height: 170px;
+        background-color: $brand-red;
+        width: 100%;
+        padding: 2.5em 1.75em;
+
+        &:hover{
+          background: lighten($brand-red, 10%);
+        }
+      }
+    }
+
+      &__content{
+        @include absolute-center;
+        width: 90%;
+      }
+
+        &__icon{
+          font-size: 5rem;
+          padding-bottom: $base-padding;
+        }
+
+        &__text{
+          line-height: 1.5rem;
+          display: block;
+
+          &--large{
+            display: block;
+            line-height: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+          }
+
+          &--underline{
+            display: block;
+            text-decoration: underline;
+          }
+        }
+}

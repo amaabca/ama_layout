@@ -7,11 +7,12 @@ $(window).bind
     clickChecker()
 
 adjustFooter = ->
-  $("footer").css({ 'margin-top': calcHeight() + 'px' })
+  $("footer").css({ 'margin-top': 0 + 'px' })
 
 clickChecker = ->
   checkClicks(".close-button", 250)
   checkClicks("a.asset-link.clearfix", 1)
+  checkClicks("#use-new-card", 250)
 
 checkClicks = (tag_to_check, delay) ->
   $(tag_to_check).click ->

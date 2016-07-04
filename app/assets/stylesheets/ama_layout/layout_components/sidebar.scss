@@ -1,144 +1,54 @@
-.dashboard-title{
-  font-size: $base-font-size*0.875;
-  font-weight: normal;
-  color: $charcoal;
-  text-transform: uppercase;
+.side-nav{
   background: $white;
-  padding: $base-padding*3;
-}
+  @include grid-column(2,0);
+  @include show-for(large);
 
-.dashboard-title{
-  &:first-child{
-    @extend .mt0;
+  &__header{
+    @extend .heading;
+    background: $cerulean;
   }
-}
 
-.dashboard-nav{
-  width: 100%;
-  background: $white;
-  display: block;
-  margin-top: $base-margin*2;
-  text-transform: capitalize;
-  padding: $base-margin*0;
-  overflow: hidden;
+  &__content{
+    padding: $base-padding;
+  }
 
-  a{
-    font-family: $font-family-sans-serif;
-    font-size: $base-font-size*1.125;
-    color: $charcoal;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    padding: 18px;
-
-    span{
-      margin-top: $base-margin*3;
+    &__list{
+      list-style-type: none;
     }
 
-    &.nav-open ~ .inner-nav{
-      max-height: 200px;
-      visibility: visible;
-      opacity: 1;
-      margin-top: 0;
-
-      .sub-nav:active,
-      .sub-nav:focus{
-        text-decoration: underline;
+      &__item{
+        margin-bottom: $base-margin;
       }
-    }
-  }
 
-  &.activepage{
-    background: $brand-blue-light;
+        &__link{
+          display: block;
+          font-weight: 600;
+          color: $jet;
+          margin-bottom: $base-margin/2;
+        }
 
-    a{
-      color: $white;
-      max-height: inherit;
-    }
+          &__child-list{
+            list-style-type: none;
+          }
 
-    span.nav-icon{
-      color: $white;
-    }
+            &__child-item{
+              margin-bottom: $base-margin/2;
+            }
 
-    .inner-nav{
-      max-height: 200px;
-      visibility: visible;
-      opacity: 1;
-      margin-top: 0;
-    }
+              &__child-link{
+                color: $stormcloud;
+                font-size: rem-calc(12);
 
-    a.sub-nav.activepage{
-      text-decoration: underline;
-    }
-  }
+                &:active,
+                &:hover,
+                &:focus{
+                  $anchor-color: $cerulean;
+                  color: $anchor-color-hover;
+                }
 
-  .inner-nav{
-    li:hover,
-    li:active{
-      text-decoration: underline;
-    }
-  }
-
-
-  span{
-    display: block;
-    font-size: $base-font-size*0.75;
-  }
-}
-
-.inner-nav{
-  visibility: hidden;
-  max-height: 0;
-  -webkit-transition: max-height 0.15s ease-out;
-  -moz-transition: max-height 0.15s ease-out;
-  transition: max-height 0.15s ease-out;
-  margin-left: 74px;
-  margin-top: -$base-margin*3;
-  list-style: none;
-
-  li{
-    color: $white;
-  }
-
-  a{
-    padding: 0 0 $base-margin*2 0;
-    font-size: $base-font-size*0.875;
-  }
-}
-
-a.activepage{
-  background: $brand-blue-light;
-  color: $white;
-}
-
-.sidebar{
-  @extend .white-trans;
-  padding: $base-padding*4;
-
-  p{
-    margin-bottom: $base-margin*2;
-  }
-}
-
-span.nav-icon{
-  width: 40px;
-  height: 29px;
-  float: left;
-  margin: $base-margin*2;
-  margin-top: $base-margin*4;
-  font-size: $base-font-size*1.5;
-  color: $smoke;
-  text-align: center;
-  @include breakpoint(small only){
-    margin: $base-margin*2 $base-margin $base-margin*2 0;
-    color: $white;
-  }
-}
-
-span.activepage{
-  color: $white;
-}
-
-.sub-nav{
-  margin-left: -14px;
+                &--active-page{
+                  font-weight: bold;
+                  color: $cerulean;
+                }
+              }
 }

@@ -1,11 +1,8 @@
-<div class="medium-4 large-3 columns show-for-medium pl0">
-  <div class="white-trans pb0">
-    <div class="large-12 fullwidth center">
+<aside class="side-nav" data-equalizer-watch="page-container-equalize">
+  <h2 class="side-nav__header">Online Account</h2>
+  <div class="side-nav__content">
+    <ul class="side-nav__list">
       <%= render partial: "ama_layout/main_nav_item", collection: navigation.items, as: :nav_item %>
-      <li class="dashboard-nav dashboard-title">
-        <span class="nav-icon fa fa-power-off"></span>
-        <%= link_to "Sign Out", "/logout" %>
-      </li>
-    </div>
+    </ul>
   </div>
-</div>
+</aside>
