@@ -1,5 +1,5 @@
 .accordion-title{
-  font-size: $base-font-size*1.375;
+  @extend .heading;
   text-decoration: none;
 
   &:hover,
@@ -15,17 +15,6 @@
     display: block;
     float: right;
     color: $white;
-  }
-}
-
-.asset-link{
-  h2,
-  h3,
-  h5{
-    color: $white;
-    font-size: $base-font-size*1.4;
-    line-height: 21px;
-    float: left;
   }
 }
 
