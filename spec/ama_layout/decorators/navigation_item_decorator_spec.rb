@@ -72,7 +72,7 @@ describe AmaLayout::NavigationItemDecorator do
       it "return the class" do
         navigation_item.current_url = "othersite.com"
         navigation_item.sub_nav = items
-        expect(navigation_item_presenter.active_class).to eq "activepage"
+        expect(navigation_item_presenter.active_class).to eq "side-nav__child-link--active-page"
       end
     end
 
