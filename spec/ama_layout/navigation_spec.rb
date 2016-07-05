@@ -36,32 +36,31 @@ describe AmaLayout::Navigation do
   end
 
   describe "#items" do
-    let(:user_type) { "member" }
     before(:each) do
-      subject.user = OpenStruct.new navigation: user_type
+      subject.user = OpenStruct.new navigation: "member"
     end
+
     it "does not remove nil #navigation_items" do
       expect(subject.items.collect {|i| i.alt }).to include nil
     end
 
+    it "displays links " do
+      expect(subject.items.collect {|i| i.link }).to eq subject.navigation_items[subject.user.navigation].collect {|i| i["link"] }
+    end
+
+    it "contains text" do
+      expect(subject.items.collect {|i| i.text }).to eq subject.navigation_items[subject.user.navigation].collect {|i| i["text"] }
+    end
+
+    it "contains icons" do
+      expect(subject.items.collect {|i| i.icon }).to eq subject.navigation_items[subject.user.navigation].collect {|i| i["icon"] }
+    end
+
+    it "contains alt text" do
+      expect(subject.items.collect {|i| i.alt }).to eq subject.navigation_items[subject.user.navigation].collect {|i| i["alt"] }
+    end
+
     context "member" do
-      let(:user_type) { "member" }
-      it "displays links " do
-        expect(subject.items.collect {|i| i.link }).to eq subject.navigation_items[user_type].collect {|i| i["link"] }
-      end
-
-      it "contains text" do
-        expect(subject.items.collect {|i| i.text }).to eq subject.navigation_items[user_type].collect {|i| i["text"] }
-      end
-
-      it "contains icons" do
-        expect(subject.items.collect {|i| i.icon }).to eq subject.navigation_items[user_type].collect {|i| i["icon"] }
-      end
-
-      it "contains alt text" do
-        expect(subject.items.collect {|i| i.alt }).to eq subject.navigation_items[user_type].collect {|i| i["alt"] }
-      end
-
       context "subnavs" do
         context "driver education" do
           let(:driver_education_subnav) { subject.items[2].sub_nav }
@@ -89,24 +88,6 @@ describe AmaLayout::Navigation do
     end
 
     context "non-member" do
-      let(:user_type) { "non-member" }
-
-      it "displays links from YAML file" do
-        expect(subject.items.collect {|i| i.link }).to eq subject.navigation_items[user_type].collect {|i| i["link"] }
-      end
-
-      it "contains text" do
-        expect(subject.items.collect {|i| i.text }).to eq subject.navigation_items[user_type].collect {|i| i["text"] }
-      end
-
-      it "contains icons" do
-        expect(subject.items.collect {|i| i.icon }).to eq subject.navigation_items[user_type].collect {|i| i["icon"] }
-      end
-
-      it "contains alt text" do
-        expect(subject.items.collect {|i| i.alt }).to eq subject.navigation_items[user_type].collect {|i| i["alt"] }
-      end
-
       context "subnavs" do
         context "driver education" do
           let(:driver_education_subnav) { subject.items[2].sub_nav }
@@ -123,24 +104,6 @@ describe AmaLayout::Navigation do
     end
 
     context "member-in-renewal" do
-      let(:user_type) { "member-in-renewal" }
-
-      it "displays links from YAML file" do
-        expect(subject.items.collect {|i| i.link }).to eq subject.navigation_items[user_type].collect {|i| i["link"] }
-      end
-
-      it "contains text" do
-        expect(subject.items.collect {|i| i.text }).to eq subject.navigation_items[user_type].collect {|i| i["text"] }
-      end
-
-      it "contains icons" do
-        expect(subject.items.collect {|i| i.icon }).to eq subject.navigation_items[user_type].collect {|i| i["icon"] }
-      end
-
-      it "contains alt text" do
-        expect(subject.items.collect {|i| i.alt }).to eq subject.navigation_items[user_type].collect {|i| i["alt"] }
-      end
-
       context "subnavs" do
         context "driver education" do
           let(:driver_education_subnav) { subject.items[2].sub_nav }
@@ -157,24 +120,6 @@ describe AmaLayout::Navigation do
     end
 
     context "member-in-renewal-late" do
-      let(:user_type) { "member-in-renewal-late" }
-
-      it "displays links from YAML file" do
-        expect(subject.items.collect {|i| i.link }).to eq subject.navigation_items[user_type].collect {|i| i["link"] }
-      end
-
-      it "contains text" do
-        expect(subject.items.collect {|i| i.text }).to eq subject.navigation_items[user_type].collect {|i| i["text"] }
-      end
-
-      it "contains icons" do
-        expect(subject.items.collect {|i| i.icon }).to eq subject.navigation_items[user_type].collect {|i| i["icon"] }
-      end
-
-      it "contains alt text" do
-        expect(subject.items.collect {|i| i.alt }).to eq subject.navigation_items[user_type].collect {|i| i["alt"] }
-      end
-
       context "subnavs" do
         context "driver education" do
           let(:driver_education_subnav) { subject.items[2].sub_nav }
