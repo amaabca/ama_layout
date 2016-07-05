@@ -7,13 +7,24 @@
   }
 
   &__container{
+    &--full{
+      @include large-12;
+    }
+
     &--half{
+      // use with half-small to also have half width buttons on small screens
       @include large-6;
     }
 
   &--quarter{
     @include large-3;
     @include small-6;
+
+    &--half-small{
+      @include breakpoint(medium down) {
+        @include small-6;
+      }
+    }
   }
 }
 
@@ -29,7 +40,7 @@
         min-height: 170px;
         background-color: $brand-green;
         width: 100%;
-        
+
 
         &:hover{
           background: lighten($brand-green, 10%);
@@ -57,6 +68,10 @@
         &__icon{
           font-size: 5rem;
           padding-bottom: $base-padding;
+          //Below: For the icons that are background images
+          height: 80px;
+          background-repeat: no-repeat;
+          background-position: center center;
         }
 
         &__text{
@@ -75,4 +90,21 @@
             text-decoration: underline;
           }
         }
+}
+
+/* Non Font Awesome/Symbolicon Icons */
+#card-icon{
+  background-image: asset-url("card-icon.png");
+}
+
+#coverage-icon{
+  background-image: asset-url("coverage-icon.png");
+}
+
+#family-icon{
+  background-image: asset-url("family-icon.png");
+}
+
+#laptop-icon{
+  background-image: asset-url("laptop-icon.png");
 }

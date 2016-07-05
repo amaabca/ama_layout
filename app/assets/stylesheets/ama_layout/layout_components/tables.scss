@@ -50,7 +50,7 @@
     }
 
   &__header{
-    @include show-for(large);
+    @include show-for(medium);
 
     &--grey-bg{
       @extend .table__header;

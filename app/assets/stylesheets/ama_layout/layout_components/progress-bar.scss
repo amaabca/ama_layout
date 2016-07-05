@@ -82,7 +82,15 @@
     }
   }
 
+
   &--selected:after{
     border-color: transparent transparent transparent $cerulean;
   }
+}
+
+.progress-bar--completed:after{
+  border-color: transparent transparent transparent $brand-blue-dark;
+}
+.progress-bar--completed:before{
+  background: $cerulean;
 }
