@@ -16,9 +16,10 @@
       @include large-6;
     }
 
-  &--quarter{
-    @include large-3;
-    @include small-6;
+    &--quarter{
+      @include large-3;
+      @include small-6;
+    }
 
     &--half-small{
       @include breakpoint(medium down) {
@@ -26,7 +27,6 @@
       }
     }
   }
-}
 
     &__button{
       @extend .button;

@@ -409,7 +409,7 @@
 }
 
 @mixin large-offset-1{
-	@media #{$large-up}{
+  @media #{$large-up}{
      @include grid-column-offset(1);
   }
 }

@@ -1,13 +1,12 @@
 .banner{
-	position: relative; /* This is needed for the positioning of the close icon on the blue banners*/
+  position: relative; /* This is needed for the positioning of the close icon on the blue banners*/
 
-	&--blue{
-		background: $brand-blue-insurance;
-		padding: $base-padding;
-	}
+  &--blue{
+    background: $brand-blue-insurance;
+    padding: $base-padding;
+  }
 
   &__text{
     text-align: center;
   }
-  
 }
