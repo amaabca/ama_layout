@@ -180,7 +180,7 @@ input[type="checkbox"]:checked + label{
 }
 
 input[type="checkbox"]{
-  display: none;
+  visibility: hidden;
 }
 
 @keyframes checkbox{
