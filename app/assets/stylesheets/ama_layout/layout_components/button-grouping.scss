@@ -21,8 +21,12 @@
       @include small-6;
     }
 
+    &--third{
+      @include large-4;
+    }
+
     &--half-small{
-      @include breakpoint(medium down) {
+      @include breakpoint(medium down){
         @include small-6;
       }
     }
@@ -30,6 +34,7 @@
 
     &__button{
       @extend .button;
+      margin-bottom: 0; //assuming the button lives within a container, which causes 2 sets of margins
       min-height: 170px;
       position: relative;
       width: 100%;
@@ -40,7 +45,6 @@
         min-height: 170px;
         background-color: $brand-green;
         width: 100%;
-
 
         &:hover{
           background: lighten($brand-green, 10%);
@@ -68,19 +72,20 @@
         &__icon{
           font-size: 5rem;
           padding-bottom: $base-padding;
-          //Below: For the icons that are background images
+        }
+
+        &__bg-icon{
           height: 80px;
           background-repeat: no-repeat;
           background-position: center center;
         }
 
         &__text{
-          line-height: 1.5rem;
+          line-height: 1rem;
           display: block;
 
           &--large{
             display: block;
-            line-height: 1.5rem;
             font-size: 2.5rem;
             font-weight: bold;
           }

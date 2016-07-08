@@ -361,8 +361,7 @@ input[type="number"]:-ms-input-placeholder,
 input[type="search"]:-ms-input-placeholder,
 input[type="tel"]:-ms-input-placeholder,
 input[type="time"]:-ms-input-placeholder,
-input[type="url"]:-ms-input-placeholder,
-textarea{
+input[type="url"]:-ms-input-placeholder{
   color: darken($stone, 10%);
 }
 
@@ -389,7 +388,7 @@ textarea{
 .form-horizontal{
   &__row{
     @include grid-row-nest;
-    overflow: auto;
+    @include clearfix;
     margin-bottom: $base-margin;
   }
 
@@ -411,16 +410,25 @@ textarea{
 
       &--half-width{
         @include large-4;
-
-        @include breakpoint(medium down){
-          margin-bottom: 1rem;
+        @include breakpoint(medium down) {
+          margin-bottom: $base-margin;
         }
       }
     }
 
+    &__error-wrapper{
+      @include large-8;
+      @extend .error;
+    }
+
     &__input-hint{
-      @include large-5;
+      @include large-6;
       @extend .hint;
+
+      &--white{
+        @extend .form-horizontal__input-hint;
+        color: $white;
+      }
     }
 
     &__radio-wrapper{
