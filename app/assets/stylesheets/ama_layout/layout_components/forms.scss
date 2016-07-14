@@ -376,7 +376,7 @@ input[type="url"]:-ms-input-placeholder{
 
 .button__row{
   @include grid-row;
-  clear: both;
+  @include clearfix;
 
   &--nested{
     @include grid-row-nest;

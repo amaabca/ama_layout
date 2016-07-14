@@ -92,12 +92,18 @@
 .section-third{
   @extend .section;
   @include large-4;
+  @include clearfix;
 }
 
 .section-two-thirds{
   @extend .section;
   @include large-8;
   @include grid-column-end;
+  @include clearfix;
+
+  &:last-child:not(.section-content){
+    margin-bottom: 0;
+  }
 }
 
 .section-centered{
@@ -107,7 +113,7 @@
     @include large-centered;
 
     &:last-child:not(:first-child){
-      float:none;
+      float: none;
     }
   }
 }
@@ -115,7 +121,6 @@
 .section-content{
   padding: $base-padding;
   background: $white;
-
   @include clearfix;
 
   &>*:last-child{
@@ -126,6 +131,11 @@
     if they're not the :last-child, but Foundation adds bottom margin to everything by default
     so we would have to change each element individually in the _settings file.
     */
+
+    &>*:last-child{
+      margin-bottom: 0;
+      /* the same as above, but for nested elements within sections */
+    }
   }
 
   &--grey-bg{
@@ -165,6 +175,7 @@
   // using grid-column in place of large-10 so that we can set the gutters to 0
   @include grid-column(10,0);
   background: $stone;
+  @include clearfix;
 
   @include breakpoint(medium down){
     @include grid-column(12,0);
