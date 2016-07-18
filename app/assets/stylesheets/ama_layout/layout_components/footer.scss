@@ -1,3 +1,22 @@
+// Sticky footer setup
+// See: https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+#top{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.page-container{
+  flex: 1;
+}
+
+@media #{$large-up} {
+  .off-canvas-wrapper{
+    overflow-x: visible;
+  }
+}
+
+// Footer styles
 .page-footer{
   background: $brand-blue-light;
 
@@ -25,6 +44,7 @@
       color: $white;
     }
 }
+
 .racetrack{
   background: $brand-blue-light image-url('footer-racetrack-big.png') no-repeat center $base-padding*3;
   height: 160px;
