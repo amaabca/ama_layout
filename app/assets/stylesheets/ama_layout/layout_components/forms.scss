@@ -56,7 +56,9 @@
 
 input[type="radio"],
 input[type="checkbox"]:not(.default){
-  display: none;
+  //display: none;
+  position: absolute;
+  left: -9999px;
 }
 
 input[type="radio"] + label,
@@ -178,7 +180,7 @@ input[type="checkbox"]:checked + label{
 }
 
 input[type="checkbox"]{
-  display: none;
+  visibility: hidden;
 }
 
 @keyframes checkbox{
@@ -275,10 +277,10 @@ select.has-placeholder:nth-child(1){
 }
 
 select:focus{
-  border: 1px solid #8a8a8a;
+  border: 2px solid $ocean;
   background-color: $white;
   outline: none;
-  box-shadow: 0 0 5px #cacaca;
+  box-shadow: 0;
   transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 }
 
@@ -292,6 +294,7 @@ input + small.error{
 span.error,
 small.error{
   display: block;
+  clear: both;
   padding: 0.375rem 0.5625rem 0.5625rem;
   font-size: 0.75rem;
   background: $brand-red;
@@ -358,8 +361,7 @@ input[type="number"]:-ms-input-placeholder,
 input[type="search"]:-ms-input-placeholder,
 input[type="tel"]:-ms-input-placeholder,
 input[type="time"]:-ms-input-placeholder,
-input[type="url"]:-ms-input-placeholder,
-textarea{
+input[type="url"]:-ms-input-placeholder{
   color: darken($stone, 10%);
 }
 
@@ -368,11 +370,13 @@ textarea{
   @include large-9;
   @include grid-column-end;
   overflow: auto;
+  max-width: 1080px;
+  display: block;
 }
 
-.button-row{
+.button__row{
   @include grid-row;
-  overflow: auto;
+  @include clearfix;
 
   &--nested{
     @include grid-row-nest;
@@ -384,8 +388,7 @@ textarea{
 .form-horizontal{
   &__row{
     @include grid-row-nest;
-    overflow: auto;
-    max-width: 1080px;
+    @include clearfix;
     margin-bottom: $base-margin;
   }
 
@@ -407,17 +410,34 @@ textarea{
 
       &--half-width{
         @include large-4;
+        @include breakpoint(medium down) {
+          margin-bottom: $base-margin;
+        }
       }
     }
 
+    &__error-wrapper{
+      @include large-8;
+      @extend .error;
+    }
+
     &__input-hint{
-      @include large-5;
+      @include large-6;
       @extend .hint;
+
+      &--white{
+        @extend .form-horizontal__input-hint;
+        color: $white;
+      }
     }
 
     &__radio-wrapper{
       @include large-8;
       margin-bottom: $base-margin;
+
+      &--full{
+        margin-bottom: $base-margin;
+      }
     }
 
     &__select{

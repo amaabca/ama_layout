@@ -4,6 +4,49 @@
   &__close-btn{
     float: right;
   }
+
+  &--green{
+    @include callout($brand-green);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
+  &--ins-blue{
+    @include callout($brand-blue-insurance);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
+  &__sub-head{
+    color: $white;
+  }
+
+  &__image-container{
+    @include large-2;
+  }
+
+  &__image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__content{
+    @include large-10;
+  }
+
+  &__link{
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover{
+      color: $ash;
+    }
+  }
+
+    &__heading{
+
+    }
 }
 
 .promo-block{

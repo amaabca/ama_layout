@@ -7,7 +7,12 @@
   }
 
   &__container{
+    &--full{
+      @include large-12;
+    }
+
     &--half{
+      // use with half-small to also have half width buttons on small screens
       @include large-6;
     }
 
@@ -15,39 +20,96 @@
       @include large-3;
       @include small-6;
     }
+
+    &--third{
+      @include large-4;
+    }
+
+    &--half-small{
+      @include breakpoint(medium down){
+        @include small-6;
+      }
+    }
   }
 
     &__button{
       @extend .button;
+      margin-bottom: 0; //assuming the button lives within a container, which causes 2 sets of margins
       min-height: 170px;
       position: relative;
       width: 100%;
+      padding: 2.5em 1.75em;
 
       &--green{
-        @extend .button-grouping__button;
-        @extend .green-btn;
+        @extend .button;
+        min-height: 170px;
+        background-color: $brand-green;
+        width: 100%;
+
+        &:hover{
+          background: lighten($brand-green, 10%);
+        }
+      }
+
+      &--red{
+        @extend .button;
+        min-height: 170px;
+        background-color: $brand-red;
+        width: 100%;
+        padding: 2.5em 1.75em;
+
+        &:hover{
+          background: lighten($brand-red, 10%);
+        }
       }
     }
 
-      &__content{
-        @include absolute-center;
-        width: 90%;
+    &__content{
+      @include absolute-center;
+      width: 90%;
+    }
+
+      &__icon{
+        font-size: 5rem;
+        padding-bottom: $base-padding;
       }
 
-        &__icon{
-          font-size: 5rem;
-          padding-bottom: $base-padding;
-        }
+      &__bg-icon{
+        height: 80px;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
 
-        &__text{
-          line-height: 1.5rem;
+      &__text{
+        line-height: 1rem;
+        display: block;
+
+        &--large{
           display: block;
-
-          &--large{
-            display: block;
-            line-height: 3.75rem;
-            font-size: 2.5rem;
-            font-weight: bold;
-          }
+          font-size: 2.5rem;
+          font-weight: bold;
         }
+
+        &--underline{
+          display: block;
+          text-decoration: underline;
+        }
+      }
+}
+
+/* Non Font Awesome/Symbolicon Icons */
+#card-icon{
+  background-image: asset-url("card-icon.png");
+}
+
+#coverage-icon{
+  background-image: asset-url("coverage-icon.png");
+}
+
+#family-icon{
+  background-image: asset-url("family-icon.png");
+}
+
+#laptop-icon{
+  background-image: asset-url("laptop-icon.png");
 }

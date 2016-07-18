@@ -19,6 +19,10 @@
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
   }
 
+  &__container{
+    float: right;
+  }
+
   &__title{
     float: left;
     color: $white;
@@ -49,7 +53,8 @@
 
   &__content{
     background: $white;
-    padding: $base-padding
+    padding: $base-padding;
+    @include clearfix;
   }
 
   &__list{
@@ -121,7 +126,6 @@
 
 .summary-title{
   background: $brand-green !important;
-  min-height: 62px;
 }
 
 .delete-icon{ //same one used in the cart and on info charts it lives outside of cart so it can be used other places
@@ -143,7 +147,7 @@
 }
 
 @media screen and #{breakpoint(medium down)}{
-  span.item-num{
+  .item-num{
     display: inline-block;
     float: right;
     width: 30px;

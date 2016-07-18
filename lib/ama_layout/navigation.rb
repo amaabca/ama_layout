@@ -29,10 +29,11 @@ module AmaLayout
       end
     end
 
-  private
     def navigation_items
       YAML.load ERB.new(File.read nav_file_path).result
     end
+
+  private
 
     def defaults
       {
