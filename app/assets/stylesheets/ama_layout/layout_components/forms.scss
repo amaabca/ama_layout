@@ -54,6 +54,13 @@
   width: 100%;
 }
 
+input[type="radio"]
++ label{
+  hr{
+    margin: 0;
+  }
+}
+
 input[type="radio"],
 input[type="checkbox"]:not(.default){
   //display: none;
@@ -116,8 +123,9 @@ input[type="radio"] + label{
 }
 
 input[type="radio"]:checked + label{
+  color: $stormcloud;
   background-color: $sky;
-  border: 1px solid $ocean;
+  border: 2px solid darken($sky, 10%);
 
   &:before{
     content: '';
@@ -141,13 +149,13 @@ input[type="radio"]:checked + label{
   }
 
   &>hr{
-    border: solid $ocean;
-    border-width: 1px 0 0;
+    border: solid darken($sky, 10%);
+    border-width: 2px 0 0;
     height: 0;
   }
 
   .membership-card-header{
-    border-bottom: 1px solid $ocean;
+    border-bottom: 2px solid darken($sky, 10%);
     background: darken($sky, 4%);
   }
 }
@@ -336,15 +344,15 @@ small.error{
 /* ------------- Moneris ------------- */
 #monerisFrameSurround iframe,
 #monerisFrameSurround object,
-#monerisFrameSurround embed {
+#monerisFrameSurround embed{
   width: 100%;
 }
 
-.iframe-error {
-  margin-top: -8px !important;
+.iframe-error{
+  margin-top: -6px !important;
 }
 
-form.moneris {
+form.moneris{
   display: none;
 }
 
