@@ -95,12 +95,7 @@ ul{
   }
 }
 
-.cta-title{
-  text-align: center;
-  color: $white;
-  width: 100%;
-  margin: $base-margin*2 auto $base-margin*0 auto;
-}
+
 
 .icon-container{
   height: 80px;
@@ -121,8 +116,8 @@ ul{
   margin: $base-margin/2 auto 0 auto;
 
   @include breakpoint(small down){
-    height: 66px;
-    font-size: $base-font-size*4;
-    line-height: $base-font-size*4;
+    height: 1.5em;
+    font-size: $base-font-size;
+    line-height: $base-font-size;
   }
 }
