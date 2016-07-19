@@ -496,7 +496,6 @@ button[disabled],
 .hint{
   font-size: $base-font-size*0.85;
   line-height: $base-font-size;
-  //color: foreground($section-bg-color);
   color: darken($smoke, 15%);
   font-style: italic;
 

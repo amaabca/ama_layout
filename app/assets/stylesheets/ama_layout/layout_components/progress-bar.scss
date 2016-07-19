@@ -70,13 +70,13 @@
       border-style: solid;
       border-width: 35px;
     }
-
-    &.completed:after{
+    
+    &--completed:after{
       background: $brand-blue-light;
       border-color: transparent transparent transparent $brand-blue-dark;
     }
 
-    &.very-completed:after{
+    &--very-completed:after{
       background: transparent;
       border-color: transparent transparent transparent $brand-blue-dark;
     }
