@@ -146,7 +146,7 @@
 
   &--smoke-bg{
     padding: $base-padding;
-    background: lighten($smoke, 2%);
+    background: $smoke;
   }
 
   &--blue-bg{
