@@ -10,7 +10,7 @@
   flex: 1;
 }
 
-@media #{$large-up} {
+@media #{$large-up}{
   .off-canvas-wrapper{
     overflow-x: visible;
   }
@@ -26,23 +26,23 @@
     padding-top: $base-padding*3;
   }
 
-    &__col{
-      @include medium-6;
-      @include large-3;
-    }
+  &__col{
+    @include medium-6;
+    @include large-3;
+  }
 
-    &__col-header{
-      color: $white;
-      font-weight: 700;
-    }
+  &__col-header{
+    color: $white;
+    font-weight: 700;
+  }
 
-    &__list{
-      list-style-type: none;
-    }
+  &__list{
+    list-style-type: none;
+  }
 
-    &__link{
-      color: $white;
-    }
+  &__link{
+    color: $white;
+  }
 }
 
 .racetrack{
