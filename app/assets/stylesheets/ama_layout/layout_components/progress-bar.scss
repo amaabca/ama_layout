@@ -70,19 +70,27 @@
       border-style: solid;
       border-width: 35px;
     }
-
-    &.completed:after{
+    
+    &--completed:after{
       background: $brand-blue-light;
       border-color: transparent transparent transparent $brand-blue-dark;
     }
 
-    &.very-completed:after{
+    &--very-completed:after{
       background: transparent;
       border-color: transparent transparent transparent $brand-blue-dark;
     }
   }
 
+
   &--selected:after{
     border-color: transparent transparent transparent $cerulean;
   }
+}
+
+.progress-bar--completed:after{
+  border-color: transparent transparent transparent $brand-blue-dark;
+}
+.progress-bar--completed:before{
+  background: $cerulean;
 }

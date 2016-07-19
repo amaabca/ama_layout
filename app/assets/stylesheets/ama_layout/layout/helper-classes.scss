@@ -54,6 +54,7 @@
 
 .image-callout{
   border: $base-border;
+  margin-bottom: $base-margin;
 }
 
 .fullwidth{
@@ -318,6 +319,11 @@
     float: left;
   }
 
+  &--right{
+    @extend .button;
+    float: right;
+  }
+
   &--de-emphasized{
     @extend .button;
     float: left;
@@ -329,11 +335,6 @@
     &:focus{
       background: lighten($button-background, 10%);
     }
-  }
-
-  &--right{
-    @extend .button;
-    float: right;
   }
 
   &--expand{
@@ -493,10 +494,15 @@ button[disabled],
 }
 
 .hint{
-  font-size: $base-font-size*0.75;
+  font-size: $base-font-size*0.85;
   line-height: $base-font-size;
   color: darken($smoke, 15%);
   font-style: italic;
+
+  &--white{
+    @extend .hint;
+    color: $white;
+  }
 }
 
 .green-text{

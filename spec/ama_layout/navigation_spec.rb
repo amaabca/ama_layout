@@ -36,6 +36,7 @@ describe AmaLayout::Navigation do
   end
 
   describe "#items" do
+
     let(:user_type) { "member" }
     before(:each) do
       subject.user = OpenStruct.new navigation: user_type
@@ -62,6 +63,7 @@ describe AmaLayout::Navigation do
         expect(subject.items.collect {|i| i.alt }).to eq subject.navigation_items[user_type].collect {|i| i["alt"] }
       end
 
+    context "member" do
       context "subnavs" do
         context "driver education" do
           let(:driver_education_subnav) { subject.items[2].sub_nav }
@@ -89,6 +91,7 @@ describe AmaLayout::Navigation do
     end
 
     context "non-member" do
+
       let(:user_type) { "non-member" }
 
       it "displays links from YAML file" do
@@ -123,6 +126,7 @@ describe AmaLayout::Navigation do
     end
 
     context "member-in-renewal" do
+
       let(:user_type) { "member-in-renewal" }
 
       it "displays links from YAML file" do
@@ -157,6 +161,7 @@ describe AmaLayout::Navigation do
     end
 
     context "member-in-renewal-late" do
+
       let(:user_type) { "member-in-renewal-late" }
 
       it "displays links from YAML file" do
