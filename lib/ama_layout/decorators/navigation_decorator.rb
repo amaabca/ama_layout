@@ -6,6 +6,10 @@ module AmaLayout
       object.items.map { |i| i.decorate }
     end
 
+    def display_name_text
+      (display_email? && email || "Welcome, #{display_name}").truncate(30)
+    end
+
     def sign_out_link
       return "" unless user
       h.content_tag :li, class: "side-nav__item" do
