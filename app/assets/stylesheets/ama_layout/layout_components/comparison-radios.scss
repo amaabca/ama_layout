@@ -102,7 +102,13 @@
     }
 }
 
-.comparison-radios__radio-third input[type="radio"]:checked label .comparison-radios__panel{
-  border-top: 2px solid darken($sky, 10%);
-  border-bottom: 2px solid darken($sky, 10%);
+.comparison-radios__radio-third{
+  input[type="radio"]:checked{
+    label{
+      .comparison-radios__panel{
+        border-top: 2px solid darken($sky, 10%);
+        border-bottom: 2px solid darken($sky, 10%);
+      }
+    }
+  }
 }

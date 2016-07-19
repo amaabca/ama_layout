@@ -70,27 +70,68 @@
       border-style: solid;
       border-width: 35px;
     }
-    
-    &--completed:after{
+
+    &--selected:after{
+      content: '';
+      color: $white;
+      position: absolute;
+      right: 0;
+      border-color: transparent transparent transparent $cerulean;
+      border-style: solid;
+      border-width: 35px;
+    }
+
+    &--selected:before{
+      content: '';
+      color: $white;
+      position: absolute;
+      right: -4px; //this controls the thickness of the arrow
+      border-color: transparent transparent transparent $white;
       background: $brand-blue-light;
+      border-style: solid;
+      border-width: 35px;
+    }
+
+    &--completed:after{
+      content: '';
+      color: $white;
+      position: absolute;
+      right: 0;
       border-color: transparent transparent transparent $brand-blue-dark;
+      border-style: solid;
+      border-width: 35px;
+    }
+
+    &--completed:before{
+      content: '';
+      color: $white;
+      position: absolute;
+      right: -4px; //this controls the thickness of the arrow
+      border-color: transparent transparent transparent $white;
+      background: $cerulean;
+      border-style: solid;
+      border-width: 35px;
     }
 
     &--very-completed:after{
-      background: transparent;
+      content: '';
+      color: $white;
+      position: absolute;
+      right: 0;
       border-color: transparent transparent transparent $brand-blue-dark;
+      border-style: solid;
+      border-width: 35px;
+    }
+
+    &--very-completed:before{
+      content: '';
+      color: $white;
+      position: absolute;
+      right: -4px; //this controls the thickness of the arrow
+      border-color: transparent transparent transparent $white;
+      background: $brand-blue-dark;
+      border-style: solid;
+      border-width: 35px;
     }
   }
-
-
-  &--selected:after{
-    border-color: transparent transparent transparent $cerulean;
-  }
-}
-
-.progress-bar--completed:after{
-  border-color: transparent transparent transparent $brand-blue-dark;
-}
-.progress-bar--completed:before{
-  background: $cerulean;
 }
