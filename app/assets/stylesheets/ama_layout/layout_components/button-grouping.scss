@@ -45,6 +45,7 @@
         min-height: 170px;
         background-color: $brand-green;
         width: 100%;
+        position: relative;
 
         &:hover{
           background: lighten($brand-green, 10%);
