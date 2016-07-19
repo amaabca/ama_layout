@@ -1,11 +1,6 @@
 //= require ../ama_layout_namespace
-//= require ./drop_down
-//= require ./toggle_menu
-//= require ./ready
-//= require foundation
+//= require ./foundation-custom
 //= require ./foundation-ready
 //= require ./foundation-equalizer-reflow
-//= require ./foundation-namespace
-//= require ./sidebar
 //= require ./cookie.ready
 //= require ../mailcheck/index
