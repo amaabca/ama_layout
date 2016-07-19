@@ -1,3 +1,7 @@
+.off-canvas{
+  height: 100%;
+}
+
 .side-nav{
   background: $white;
   @include grid-column(2,0);

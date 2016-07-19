@@ -5,7 +5,6 @@
 //= require foundation
 //= require ./foundation-ready
 //= require ./foundation-equalizer-reflow
-//= require ./sticky-footer
 //= require ./foundation-namespace
 //= require ./sidebar
 //= require ./cookie.ready
