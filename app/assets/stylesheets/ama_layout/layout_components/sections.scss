@@ -144,6 +144,11 @@
     color: $white;
   }
 
+  &--smoke-bg{
+    padding: $base-padding;
+    background: $smoke;
+  }
+
   &--blue-bg{
     padding: $base-padding;
     background: $brand-blue-light;
@@ -154,7 +159,6 @@
       color: $white;
     }
   }
-
 }
 
 @function set-hint-color($color) {
