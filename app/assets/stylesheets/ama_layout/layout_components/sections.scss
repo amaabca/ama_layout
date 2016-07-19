@@ -171,7 +171,6 @@
 
 .page-container{
   @include grid-row;
-  margin-top: $top-bar-height;
   position: relative;
 }
 
