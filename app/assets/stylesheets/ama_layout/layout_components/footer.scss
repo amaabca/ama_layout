@@ -10,6 +10,21 @@
   flex: 1;
 }
 
+// Spacer for the side-nav with a white background
+.pad{
+  @include breakpoint(medium down){
+    display: none;
+  }
+
+  height: 100%;
+  width: 16.67%;
+  position: absolute;
+
+  &.white{
+    background-color: $white;
+  }
+}
+
 // Footer styles
 .page-footer{
   background: $brand-blue-light;
