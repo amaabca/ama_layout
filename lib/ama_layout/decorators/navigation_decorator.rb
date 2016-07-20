@@ -7,7 +7,7 @@ module AmaLayout
     end
 
     def display_name_text
-      (display_email? && email || "Welcome, #{display_name}").truncate(30)
+      name_or_email.truncate(30)
     end
 
     def sign_out_link
@@ -23,6 +23,10 @@ module AmaLayout
 
     def sidebar
       h.render partial: "ama_layout/sidebar", locals: { navigation: self } if items.any?
+    end
+
+    def name_or_email
+      display_name.present? ? "Welcome, #{display_name.titleize}" : email
     end
   end
 end

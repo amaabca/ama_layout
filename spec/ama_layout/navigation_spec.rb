@@ -35,37 +35,6 @@ describe AmaLayout::Navigation do
     end
   end
 
-  describe "#display_name" do
-    let(:email) { "test@test.com" }
-    let(:user) { OpenStruct.new(email: email) }
-
-    context "when a display name is set" do
-      let(:name) { 'Test' }
-      let(:subject) { described_class.new(user: user, display_name: name) }
-
-      it "returns a name" do
-        expect(subject.display_name).to eq name
-      end
-    end
-
-    context "with a lowercased name" do
-      let(:name) { 'bob p.' }
-      let(:subject) { described_class.new(user: user, display_name: name) }
-
-      it "titlizes the name" do
-        expect(subject.display_name).to eq name.titleize
-      end
-    end
-
-    context "display name is not set" do
-      let(:subject) { described_class.new(user: user) }
-
-      it "returns the user's email" do
-        expect(subject.display_name).to eq email
-      end
-    end
-  end
-
   describe "#items" do
     before(:each) do
       subject.user = OpenStruct.new navigation: "member"
