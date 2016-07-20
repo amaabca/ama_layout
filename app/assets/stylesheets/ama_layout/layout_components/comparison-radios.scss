@@ -1,12 +1,3 @@
-@mixin best-value-ribbon{
-  &:nth-of-type(1),
-  &:nth-of-type(3){
-    .comparison-radios__ribbon{ //only display the ribbon for the middle radio
-      display: none;
-    }
-  }
-}
-
 .comparison-radios{
   &__wrapper{
     @include grid-row-nest;
@@ -16,12 +7,17 @@
 
   &__radio-half{
     @include medium-6;
-    @include best-value-ribbon;
   }
 
   &__radio-third{
     @include medium-4;
-    @include best-value-ribbon;
+
+    &:nth-of-type(1),
+    &:nth-of-type(3){
+      .comparison-radios__ribbon{ //only display the ribbon for the middle radio
+        display: none;
+      }
+    }
   }
 
   &--vertical{
@@ -106,13 +102,11 @@
     }
 }
 
-.comparison-radios__radio-third{
   input[type="radio"]:checked{
-    label{
+    &~label{
       .comparison-radios__panel{
         border-top: 2px solid darken($sky, 10%);
         border-bottom: 2px solid darken($sky, 10%);
       }
     }
   }
-}

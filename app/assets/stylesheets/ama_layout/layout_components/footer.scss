@@ -3,16 +3,13 @@
 #top{
   display: flex;
   flex-direction: column;
-  min-height: 100%;
-}
-
-.page-container{
-  flex: 1;
+  min-height: 100vh;
 }
 
 @media #{$large-up}{
   .off-canvas-wrapper{
     overflow-x: visible;
+    //flex: 1;
   }
 }
 

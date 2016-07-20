@@ -30,7 +30,7 @@
 
   &__row-nested{
     @include grid-row-nest;
-    overflow: auto;
+    @include clearfix;
   }
 
     &__data{
