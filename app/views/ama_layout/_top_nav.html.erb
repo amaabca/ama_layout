@@ -1,8 +1,8 @@
 <li class="has-submenu">
-  <a>Welcome, %%BATMAN%%</a>
+  <%= link_to navigation.display_name_text, '#' %>
   <ul class="submenu menu vertical">
-    <li><a href="<%= Rails.configuration.amaabca_site %>">AMA Website</a></li>
+    <li><%= link_to 'AMA Website', Rails.configuration.amaabca_site %></li>
     <li><a href="http://amaroadreports.ca/">AMA Road Reports</a></li>
-    <li><a href="/logout">Sign Out</a></li>
+    <%= navigation.sign_out_link %>
   </ul>
 </li>
