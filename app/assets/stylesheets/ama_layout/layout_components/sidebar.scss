@@ -1,11 +1,21 @@
-.off-canvas{
-  height: 100%;
-}
-
 .side-nav{
   background: $white;
   @include grid-column(2,0);
   @include show-for(large);
+
+  &__spacer{
+    @include breakpoint(medium down){
+      display: none;
+    }
+    @include large-2;
+    height: 100%;
+    position: absolute;
+
+    &--white{
+      @extend .side-nav__spacer;
+      background-color: $white;
+    }
+  }
 
   &__header{
     @extend .heading;
