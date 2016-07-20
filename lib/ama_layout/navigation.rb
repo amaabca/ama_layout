@@ -3,7 +3,7 @@ module AmaLayout
     include ActiveModel::Model
     include Draper::Decoratable
 
-    attr_accessor :user, :current_url, :nav_file_path
+    attr_accessor :user, :current_url, :nav_file_path, :display_name
 
     def initialize(args = {})
       args = defaults.merge args
@@ -31,6 +31,10 @@ module AmaLayout
 
     def navigation_items
       YAML.load ERB.new(File.read nav_file_path).result
+    end
+
+    def email
+      user.email
     end
 
   private
