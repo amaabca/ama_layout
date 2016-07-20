@@ -1,16 +1,13 @@
 // Sticky footer setup
 // See: https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
-#top{
+.off-canvas-wrapper{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-@media #{$large-up}{
-  .off-canvas-wrapper{
-    overflow-x: visible;
-    //flex: 1;
-  }
+.off-canvas-wrapper-inner{
+  flex: 1;
 }
 
 // Footer styles
