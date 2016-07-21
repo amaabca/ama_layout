@@ -299,7 +299,6 @@ input + span.error,
 input + small.error{
 }
 
-span.error,
 small.error{
   display: block;
   clear: both;
@@ -307,7 +306,15 @@ small.error{
   font-size: 0.75rem;
   background: $brand-red;
   color: $white;
+}
 
+.error__page-error{
+  @extend small.error;
+  margin-bottom: $base-margin;
+}
+
+.error__input-error{
+  @extend .error;
 }
 
 .error small.error,
@@ -322,10 +329,6 @@ small.error{
 
 .error-message{
   background: $brand-red;
-}
-
-.join-birthdate small.error{
-  margin-top: $base-margin*8;
 }
 
 .email_hint{

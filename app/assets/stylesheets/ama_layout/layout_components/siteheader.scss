@@ -16,6 +16,7 @@
   @extend .show-for-large;
   padding: 0 $base-padding;
   height: $top-bar-height;
+  background: $white;
 
   &__logo{
     @extend .logo;
