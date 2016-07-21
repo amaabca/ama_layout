@@ -1,6 +1,7 @@
 //= require foundation.core.js
 //= require foundation.abide.js
 //= require foundation.accordion.js
+//= require foundation.drilldown.js
 //= require foundation.dropdown.js
 //= require foundation.dropdownMenu.js
 //= require foundation.equalizer.js
