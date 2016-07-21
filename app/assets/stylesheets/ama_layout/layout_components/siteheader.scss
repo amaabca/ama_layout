@@ -1,6 +1,6 @@
 /* Styles for Top Bar, Title Bar */
 .logo{
-  width: 132px;
+  width: 131px;
   padding: $base-padding*.75 0;
 }
 
@@ -16,6 +16,7 @@
   @extend .show-for-large;
   padding: 0 $base-padding;
   height: $top-bar-height;
+  background: $white;
 
   &__logo{
     @extend .logo;

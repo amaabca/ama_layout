@@ -1,8 +1,8 @@
 .comparison-radios{
   &__wrapper{
     @include grid-row-nest;
+    @include clearfix;
     margin-bottom: $base-margin;
-    overflow: auto;
   }
 
   &__radio-half{
@@ -84,7 +84,6 @@
   }
 
   &__image{
-    height: 125px;
     margin-bottom: $base-margin;
   }
 
