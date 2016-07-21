@@ -95,6 +95,11 @@
   @include clearfix;
 }
 
+.section-quarter{
+  @extend .section;
+  @include large-3;
+}
+
 .section-two-thirds{
   @extend .section;
   @include large-8;
