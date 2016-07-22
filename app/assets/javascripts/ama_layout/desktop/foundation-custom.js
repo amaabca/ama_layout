@@ -1,6 +1,7 @@
 //= require foundation.core.js
 //= require foundation.abide.js
 //= require foundation.accordion.js
+//= require foundation.drilldown.js
 //= require foundation.dropdown.js
 //= require foundation.dropdownMenu.js
 //= require foundation.equalizer.js
@@ -8,6 +9,7 @@
 //= require foundation.responsiveMenu.js
 //= require foundation.responsiveToggle.js
 //= require foundation.reveal.js
+//= require foundation.tabs.js
 //= require foundation.toggler.js
 //= require foundation.tooltip.js
 //= require foundation.util.box.js

@@ -11,6 +11,12 @@
     color: $white;
   }
 
+  &--red{
+    @include callout($brand-red);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
   &--ins-blue{
     @include callout($brand-blue-insurance);
     margin-bottom: $base-margin;

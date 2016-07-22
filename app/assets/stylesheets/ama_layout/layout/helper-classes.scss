@@ -498,6 +498,7 @@ button[disabled],
   line-height: $base-font-size;
   color: darken($smoke, 15%);
   font-style: italic;
+  display: block;
 
   &--white{
     @extend .hint;
