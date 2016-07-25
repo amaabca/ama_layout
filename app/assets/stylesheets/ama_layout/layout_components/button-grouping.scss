@@ -58,6 +58,8 @@
       background-color: $brand-red;
       width: 100%;
       padding: 2.5em 1.75em;
+      position: relative;
+      margin-bottom: 0;
 
       &:hover{
         background: lighten($brand-red, 10%);
