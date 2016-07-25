@@ -5,4 +5,18 @@
     display: inline-block;
     font-size: 0.75rem;
   }
+
+  &__link{
+    &--disabled{
+      @extend .disabled;
+      pointer-events: none;
+    }
+  }
+
+  li:not(:last-child)::after{
+    content: '>';
+    top: 0;
+    font-size: 125%;
+    color: $stormcloud;
+  }
 }
