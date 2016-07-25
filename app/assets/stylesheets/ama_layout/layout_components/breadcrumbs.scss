@@ -6,12 +6,14 @@
     font-size: 0.75rem;
   }
 
-  a.disabled{
-    pointer-events: none;
-    color: $stormcloud;
+  &__link{
+    &--disabled{
+      @extend .disabled;
+      pointer-events: none;
+    }
   }
 
-  li:not(:last-child)::after {
+  li:not(:last-child)::after{
     content: '>';
     top: 0;
     font-size: 125%;
