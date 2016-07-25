@@ -5,4 +5,16 @@
     display: inline-block;
     font-size: 0.75rem;
   }
+
+  a.disabled{
+    pointer-events: none;
+    color: $stormcloud;
+  }
+
+  li:not(:last-child)::after {
+    content: '>';
+    top: 0;
+    font-size: 125%;
+    color: $stormcloud;
+  }
 }
