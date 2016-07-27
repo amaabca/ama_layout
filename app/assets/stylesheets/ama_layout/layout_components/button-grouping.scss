@@ -1,6 +1,7 @@
 /* button-group is a foundation element, so to avoid style conflicts ours are called button-groupings */
 .button-grouping{
   @include grid-row;
+  @include clearfix;
 
   &--nested{
     @include grid-row-nest;
@@ -43,6 +44,7 @@
       &--green{
         @extend .button;
         min-height: 170px;
+        margin-bottom: 0;
         background-color: $brand-green;
         width: 100%;
 
