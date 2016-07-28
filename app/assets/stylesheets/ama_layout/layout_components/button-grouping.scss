@@ -19,7 +19,7 @@
 
     &--quarter{
       @include large-3;
-      @include small-6;
+      @include small-12;
     }
 
     &--third{
@@ -33,70 +33,69 @@
     }
   }
 
-    &__button{
-      @extend .button;
-      margin-bottom: 0; //assuming the button lives within a container, which causes 2 sets of margins
-      min-height: 170px;
-      position: relative;
-      width: 100%;
-      padding: 2.5em 1.75em;
+  &__button{
+    @extend .button;
+    margin-bottom: 0; //assuming the button lives within a container, which causes 2 sets of margins
+    min-height: 170px;
+    position: relative;
+    width: 100%;
+    padding: 2.5em 1.75em;
 
-      &--green{
-        @extend .button;
-        min-height: 170px;
-        margin-bottom: 0;
-        background-color: $brand-green;
-        width: 100%;
+    &--green{
+      @extend .button-grouping__button;
+      background-color: $brand-green;
 
-        &:hover{
-          background: lighten($brand-green, 10%);
-        }
-      }
-
-      &--red{
-        @extend .button;
-        min-height: 170px;
-        background-color: $brand-red;
-        width: 100%;
-        padding: 2.5em 1.75em;
-
-        &:hover{
-          background: lighten($brand-red, 10%);
-        }
+      &:hover{
+        background: lighten($brand-green, 10%);
       }
     }
 
-      &__content{
-        @include absolute-center;
-        width: 90%;
+    &--red{
+      @extend .button;
+      min-height: 170px;
+      background-color: $brand-red;
+      width: 100%;
+      padding: 2.5em 1.75em;
+      position: relative;
+      margin-bottom: 0;
+
+      &:hover{
+        background: lighten($brand-red, 10%);
       }
+    }
+  }
 
-        &__icon{
-          font-size: 5rem;
-          padding-bottom: $base-padding;
-        }
+  &__content{
+    @include absolute-center;
+    width: 90%;
+  }
 
-        &__bg-icon{
-          height: 80px;
-          background-repeat: no-repeat;
-          background-position: center center;
-        }
+  &__icon{
+    font-size: 5rem;
+    padding-bottom: $base-padding;
+  }
 
-        &__text{
-          line-height: 1rem;
-          display: block;
+  &__bg-icon{
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 
-          &--large{
-            display: block;
-            font-size: 2.5rem;
-            font-weight: bold;
-          }
+  &__text{
+    line-height: 1rem;
+    display: block;
 
-          &--underline{
-            display: block;
-            text-decoration: underline;
-          }
-        }
+    &--large{
+      display: block;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    &--underline{
+      display: block;
+      text-decoration: underline;
+    }
+  }
 }
 
 /* Non Font Awesome/Symbolicon Icons */
