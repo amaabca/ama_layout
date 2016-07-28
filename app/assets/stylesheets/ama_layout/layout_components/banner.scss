@@ -6,6 +6,11 @@
     padding: $base-padding;
   }
 
+  &--red{
+    background: $brand-red;
+    padding: $base-padding;
+  }
+
   &__text{
     text-align: center;
   }
