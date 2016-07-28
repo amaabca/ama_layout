@@ -227,6 +227,12 @@ input[type="checkbox"]{
   float: right;
 }
 
+.datetime{
+  &.month, &.day, &.year{
+    margin-bottom: $base-margin;
+  }
+}
+
 /*-------------- Credit Card images ---------- */
 .cc-type{
   width: 38px;
