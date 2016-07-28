@@ -27,6 +27,7 @@
 
 .section-nested{
   @include grid-row-nest;
+  @include clearfix;
 }
 
 .section-heading{

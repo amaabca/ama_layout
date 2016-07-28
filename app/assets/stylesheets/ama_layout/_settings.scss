@@ -510,10 +510,10 @@ $show-header-for-stacked: false;
 // --------
 
 $tab-margin: 0;
-$tab-background: $white;
-$tab-background-active: $light-gray;
-$tab-item-font-size: $base-font-size;
-$tab-item-background-hover: $white;
+$tab-background: $stone;
+$tab-background-active: lighten($button-background, 10%);
+$tab-item-font-size: $base-font-size*0.875;
+$tab-item-background-hover: lighten($button-background, 10%);
 $tab-item-padding: 0;
 $tab-expand-max: 6;
 $tab-content-background: $white;

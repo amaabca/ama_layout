@@ -31,7 +31,7 @@
 
   .accordion-title{
     background: $white;
-    color: $jet;
+    color: $slate;
 
     &:hover{
       background: $stone;
@@ -41,7 +41,7 @@
   .top-level,
   .top-level:hover{
     background: darken($stone, 5%);
-    color: $jet;
+    color: $slate;
   }
 }
 
@@ -63,4 +63,12 @@
     color: $white;
     padding-top: $base-padding*1.25;
   }
+}
+
+// Foundation sets a border-radius by default,
+// and there doesn't seem to be an override in the settings file
+.accordion-item:first-child > :first-child,
+.accordion-item:first-child > :last-child,
+:last-child:not(.is-active) > .accordion-title{
+  border-radius: 0;
 }
