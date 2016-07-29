@@ -130,8 +130,8 @@ $header-margin-bottom: 0;
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
-$paragraph-lineheight: 1.6;
-$paragraph-margin-bottom: 0;
+$paragraph-lineheight: 1.5;
+$paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;
 $code-font-family: $font-family-monospace;
@@ -142,10 +142,10 @@ $code-padding: rem-calc(2 5 1);
 $anchor-color: $cerulean;
 $anchor-color-hover: scale-color($anchor-color, $lightness: 24%);
 $anchor-text-decoration: none;
-$anchor-text-decoration-hover: none;
+$anchor-text-decoration-hover: underline;
 $hr-width: $grid-row-width;
 $hr-border: 2px solid $stone;
-$hr-margin: rem-calc(20) auto;
+$hr-margin: $base-margin auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
 $list-style-type: disc;
@@ -221,10 +221,10 @@ $badge-font-size: 0.6rem;
 // 10. Breadcrumbs
 // ---------------
 
-$breadcrumbs-margin: 0 0 $global-margin 0;
-$breadcrumbs-item-font-size: rem-calc(11);
-$breadcrumbs-item-color: $primary-color;
-$breadcrumbs-item-color-current: $black;
+$breadcrumbs-margin: 0 0 $base-margin 0;
+$breadcrumbs-item-font-size: rem-calc(12);
+$breadcrumbs-item-color: $cerulean;
+$breadcrumbs-item-color-current: $stormcloud;
 $breadcrumbs-item-color-disabled: $stormcloud;
 $breadcrumbs-item-margin: 0.75rem;
 $breadcrumbs-item-uppercase: false;

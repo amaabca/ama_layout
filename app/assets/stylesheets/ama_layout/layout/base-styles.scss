@@ -8,7 +8,6 @@ ul,
 ol,
 dl,
 blockquote,
-p,
 address,
 table,
 fieldset,
@@ -31,18 +30,6 @@ label,
 span{
   font-size: $base-font-size*0.875;
   font-family: $font-family-sans-serif;
-}
-
-a{
-  font-size: $base-font-size*0.875;
-}
-
-hr{
-  margin: $base-margin 0;
-}
-
-small{
-  font-size: 80%;
 }
 
 dl dd{
