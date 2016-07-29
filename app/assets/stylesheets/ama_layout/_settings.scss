@@ -45,7 +45,7 @@
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 14px;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
@@ -60,8 +60,8 @@ $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #ffffff;
-$body-background: $white;
-$body-font-color: $stormcloud;
+$body-background: $stone;
+$body-font-color: $slate;
 $body-font-family: 'Open Sans', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: $base-margin;
@@ -131,7 +131,7 @@ $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
 $paragraph-lineheight: 1.5;
-$paragraph-margin-bottom: 1rem;
+$paragraph-margin-bottom: $base-margin;
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;
 $code-font-family: $font-family-monospace;
@@ -243,8 +243,8 @@ $button-color-alt: $black;
 $button-radius: $global-radius;
 $button-sizes: (
   tiny: 0.6rem,
-  small: 0.75rem,
-  default: 0.9rem,
+  small: 0.85rem,
+  default: 1rem,
   large: 1.25rem,
 );
 $button-opacity-disabled: 0.25;

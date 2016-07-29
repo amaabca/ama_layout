@@ -40,10 +40,6 @@
   }
 }
 
-.page-steps{
-  text-align: right;
-}
-
 .content-block{
   margin-bottom: $base-margin;
 }
@@ -310,6 +306,13 @@
   &--green{
     @extend .button;
     $button-background: $brand-green;
+    background: $button-background;
+    float: right;
+  }
+
+  &--dark-blue{
+    @extend .button;
+    $button-background: $brand-blue-dark;
     background: $button-background;
     float: right;
   }

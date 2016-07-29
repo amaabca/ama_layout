@@ -1,24 +1,4 @@
 @media screen and #{breakpoint(small only)}{
-  .page-steps h3{
-    color: $slate;
-    font-style: italic;
-    font-size: $base-font-size;
-    margin: $base-margin/2 0 0;
-    text-align: right;
-  }
-
-  label.inline{
-    margin: 0;
-  }
-
-  .membership-card-radio,
-  .membership-card-radio-plus-primary,
-  .membership-card-label{
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   .cart-totals{
     text-align: left;
   }

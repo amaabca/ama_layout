@@ -60,6 +60,8 @@
 
   &__col-title{
     font-weight: 600;
+    font-size: rem-calc(16);
+    color: $slate;
   }
 
   &__col-title--small{
