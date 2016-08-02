@@ -24,7 +24,15 @@ module AmaLayout
 
   private
     def active_link?
-      sub_nav.map(&:link).push(link).include? current_url
+      sub_nav.map(&:link).push(link).include? current_url_without_query
+    end
+
+    def current_url_without_query
+      uri = URI.parse(current_url)
+      uri.query = nil
+      uri.to_s
+    rescue URI::InvalidURIError => e
+      current_url
     end
   end
 end
