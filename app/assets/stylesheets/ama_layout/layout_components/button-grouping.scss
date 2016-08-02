@@ -35,7 +35,7 @@
 
   &__button{
     @extend .button;
-    margin-bottom: 0; //assuming the button lives within a container, which causes 2 sets of margins
+    //margin-bottom: 0; //assuming the button lives within a container, which causes 2 sets of margins
     min-height: 170px;
     position: relative;
     width: 100%;

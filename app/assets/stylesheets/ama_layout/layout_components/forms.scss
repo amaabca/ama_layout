@@ -54,8 +54,7 @@
   width: 100%;
 }
 
-input[type="radio"]
-+ label{
+input[type="radio"] + label{
   hr{
     margin: 0;
   }
@@ -63,7 +62,6 @@ input[type="radio"]
 
 input[type="radio"],
 input[type="checkbox"]:not(.default){
-  //display: none;
   position: absolute;
   left: -9999px;
 }
@@ -91,10 +89,6 @@ input[type="checkbox"] + label{
     border: $base-border;
   }
 
-  &:nth-child(2){
-    //margin-top: -1px;
-  }
-
   .membership-card-header{
     border-bottom: $base-border;
     background: darken($ash, 4%);
@@ -110,8 +104,6 @@ input[type="checkbox"] + label{
 }
 
 input[type="radio"] + label{
-  //margin-top: -1px;
-
   &:before{
     border-radius: 100%;
   }
@@ -300,16 +292,11 @@ select:focus{
 
 
 /* ------------- Error Messaging ------------- */
-select + .error,
-input + span.error,
-input + small.error{
-}
-
 small.error{
   display: block;
   clear: both;
   padding: 0.375rem 0.5625rem 0.5625rem;
-  font-size: 0.75rem;
+  font-size: $base-font-size;
   background: $brand-red;
   color: $white;
 }
@@ -410,61 +397,61 @@ input[type="url"]:-ms-input-placeholder{
     margin-bottom: $base-margin;
   }
 
-    &__label-wrapper{
+  &__label-wrapper{
+    @include large-4;
+  }
+
+  &__input-wrapper{
+    @include large-8;
+
+    &--offset{
+      @extend .form-horizontal__input-wrapper;
+      @include large-offset-4;
+    }
+
+    &--small{
+      @include large-2;
+    }
+
+    &--half-width{
       @include large-4;
-    }
-
-    &__input-wrapper{
-      @include large-8;
-
-      &--offset{
-        @extend .form-horizontal__input-wrapper;
-        @include large-offset-4;
-      }
-
-      &--small{
-        @include large-2;
-      }
-
-      &--half-width{
-        @include large-4;
-        @include breakpoint(medium down) {
-          margin-bottom: $base-margin;
-        }
-      }
-    }
-
-    &__error-wrapper{
-      @include large-8;
-      @extend .error;
-    }
-
-    &__input-hint{
-      @include large-6;
-      @extend .hint;
-
-      &--white{
-        @extend .form-horizontal__input-hint;
-        color: $white;
-      }
-    }
-
-    &__radio-wrapper{
-      @include large-8;
-      margin-bottom: $base-margin;
-
-      &--full{
+      @include breakpoint(medium down){
         margin-bottom: $base-margin;
       }
     }
+  }
 
-    &__select{
-      @include large-8;
-    }
+  &__error-wrapper{
+    @include large-8;
+    @extend .error;
+  }
 
-    &__toggle{
-      @include large-12;
+  &__input-hint{
+    @include large-6;
+    @extend .hint;
+
+    &--white{
+      @extend .form-horizontal__input-hint;
+      color: $white;
     }
+  }
+
+  &__radio-wrapper{
+    @include large-8;
+    margin-bottom: $base-margin;
+
+    &--full{
+      margin-bottom: $base-margin;
+    }
+  }
+
+  &__select{
+    @include large-8;
+  }
+
+  &__toggle{
+    @include large-12;
+  }
 
   &__notification{
     @include large-8;

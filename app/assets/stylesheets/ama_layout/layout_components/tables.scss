@@ -33,21 +33,21 @@
     @include clearfix;
   }
 
-    &__data{
-      display: block;
+  &__data{
+    display: block;
 
-      &--left{
-        float: left;
-      }
-
-      &--right{
-        float: right;
-      }
-
-      &--hide-large{
-        @include hide-for(large);
-      }
+    &--left{
+      float: left;
     }
+
+    &--right{
+      float: right;
+    }
+
+    &--hide-large{
+      @include hide-for(large);
+    }
+  }
 
   &__header{
     @include show-for(medium);

@@ -7,6 +7,7 @@
     @include breakpoint(medium down){
       display: none;
     }
+
     @include large-2;
     height: 100%;
     position: absolute;
@@ -27,43 +28,43 @@
     padding: $base-padding;
   }
 
-    &__list{
-      list-style-type: none;
+  &__list{
+    list-style-type: none;
+  }
+
+  &__item{
+    margin-bottom: $base-margin;
+  }
+
+  &__link{
+    display: block;
+    font-weight: 600;
+    color: $jet;
+    margin-bottom: $base-margin/2;
+  }
+
+  &__child-list{
+    list-style-type: none;
+  }
+
+  &__child-item{
+    margin-bottom: $base-margin/2;
+  }
+
+  &__child-link{
+    color: $stormcloud;
+    font-size: rem-calc(12);
+
+    &:active,
+    &:hover,
+    &:focus{
+      $anchor-color: $cerulean;
+      color: $anchor-color-hover;
     }
 
-      &__item{
-        margin-bottom: $base-margin;
-      }
-
-        &__link{
-          display: block;
-          font-weight: 600;
-          color: $jet;
-          margin-bottom: $base-margin/2;
-        }
-
-          &__child-list{
-            list-style-type: none;
-          }
-
-            &__child-item{
-              margin-bottom: $base-margin/2;
-            }
-
-              &__child-link{
-                color: $stormcloud;
-                font-size: rem-calc(12);
-
-                &:active,
-                &:hover,
-                &:focus{
-                  $anchor-color: $cerulean;
-                  color: $anchor-color-hover;
-                }
-
-                &--active-page{
-                  font-weight: bold;
-                  color: $cerulean;
-                }
-              }
+    &--active-page{
+      font-weight: bold;
+      color: $cerulean;
+    }
+  }
 }
