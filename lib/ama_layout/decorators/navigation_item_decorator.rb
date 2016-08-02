@@ -28,10 +28,8 @@ module AmaLayout
     end
 
     def current_url_without_query
-      uri = URI.parse(current_url)
-      uri.query = nil
-      uri.to_s
-    rescue URI::InvalidURIError => e
+      URI.parse(current_url).tap { |uri| uri.query = nil }.to_s
+    rescue URI::InvalidURIError
       current_url
     end
   end
