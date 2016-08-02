@@ -62,6 +62,7 @@
 
   &__content{
     @include absolute-center;
+    -webkit-transform: translateX(-50%) translateY(-50%);
     width: 90%;
   }
 
