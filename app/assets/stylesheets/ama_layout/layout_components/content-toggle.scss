@@ -1,0 +1,15 @@
+.content-toggle{
+  &__bg{
+    background-color: $stone;
+    padding: $base-padding;
+    margin-bottom: $base-margin;
+  }
+
+  &__close{
+    @extend .fa;
+    @extend .fa-close;
+    color: $charcoal;
+    cursor: pointer;
+    float: right;
+  }
+}

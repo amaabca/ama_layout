@@ -15,7 +15,7 @@
 
 /* ==================== 1. Main Layout Elements ==================== */
 .main-wrapper{
- margin: $base-margin auto;
+  margin: $base-margin auto;
 }
 
 .page-wrapper{
@@ -38,10 +38,6 @@
   h5{
     color: $slate;
   }
-}
-
-.page-steps{
-  text-align: right;
 }
 
 .content-block{
@@ -310,6 +306,13 @@
   &--green{
     @extend .button;
     $button-background: $brand-green;
+    background: $button-background;
+    float: right;
+  }
+
+  &--dark-blue{
+    @extend .button;
+    $button-background: $brand-blue-dark;
     background: $button-background;
     float: right;
   }
