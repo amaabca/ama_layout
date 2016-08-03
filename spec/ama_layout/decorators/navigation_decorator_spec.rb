@@ -17,6 +17,43 @@ describe AmaLayout::NavigationDecorator do
     allow(Rails.configuration).to receive(:registries_site).and_return(registries_site)
   end
 
+  describe "#display_name_text" do
+    let(:user) { OpenStruct.new(email: 'john.doe@test.com') }
+
+    context "name is provided" do
+      let(:name) { "John D" }
+      let(:nav) { AmaLayout::Navigation.new(user: user, display_name: name).decorate }
+
+      it "has a welcome message" do
+        expect(nav.display_name_text).to eq "Welcome, John D"
+      end
+
+      context "long name given" do
+        let(:name) { "A Really Really Really Really Long Name" }
+
+        it "trucates to a total of 30 characters" do
+          expect(nav.display_name_text).to eq "Welcome, #{name.titleize}".truncate(30)
+        end
+      end
+    end
+
+    context "name is not provided" do
+      let(:nav) { AmaLayout::Navigation.new(user: user).decorate }
+
+      it "returns the user's email address" do
+        expect(nav.display_name_text).to eq user.email
+      end
+
+      context "a really long email" do
+        let(:user) { OpenStruct.new(email: 'areallyreallyreallylongemail@test.com') }
+
+        it "trucates to a total of 30 characters" do
+          expect(nav.display_name_text).to eq user.email.truncate(30)
+        end
+      end
+    end
+  end
+
   describe "#items" do
     before(:each) do
       allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: "member"))

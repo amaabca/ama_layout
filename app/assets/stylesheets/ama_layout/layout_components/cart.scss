@@ -4,6 +4,10 @@
 }
 
 .summary-cart{
+  list-style-type: none;
+  margin-bottom: 0;
+  position: relative;
+
   ::-webkit-scrollbar{
     -webkit-appearance: none;
     width: 7px;
@@ -15,65 +19,115 @@
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
   }
 
-  .summary-cart-body{
-    background-color: $stone;
-    padding: $base-padding*2;
-    font-size: $base-font-size*0.875;
-    color: $charcoal;
+  &__container{
+    float: right;
+  }
 
-    ul{
-      list-style: none;
-      margin: 0;
+  &__title{
+    float: left;
+    color: $white;
+  }
 
-      li{
-        padding: 8px;
-      }
+  &__accordion-toggle-icon{
+    @include hide-for(large);
+    width: 16px;
+    height: 16px;
+    float: right;
+    color: $white;
+    margin-top: $base-margin*0.6;
+  }
 
-      li:not(:nth-child(1)){
-        border-top: 1px solid $smoke;
-      }
+  &__item-count{
+    @include hide-for(large);
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 60px;
+    text-align: center;
+    line-height: 30px;
+    color: $white;
+    font-weight: bold;
+    margin-right: $base-margin;
+    background: lighten($brand-green, 5%);
+  }
 
-      .summary-flash-notice{
-        color: $white;
-        background: $brand-blue-insurance;
+  &__content{
+    background: $white;
+    padding: $base-padding;
+    @include clearfix;
+  }
 
-        p,
-        a,
-        a:hover,
-        a:focus{
-          color: $white;
-        }
+  &__list{
+    margin-left: 0;
+    overflow-y: scroll;
+    max-height: auto;
+    list-style: none;
+    margin: 0;
+    list-style-type: none;
+    overflow-y: scroll;
 
-        &:not(:nth-child(1)){
-          border-top: none;
-        }
-      }
+    @include breakpoint(small){
+      max-height: 150px;
     }
 
-    .items{
-      overflow-y: scroll;
-      max-height: auto;
+    @include breakpoint(large){
+      max-height: 320px;
+    }
+  }
+
+  &__list-item{
+    padding: $base-padding;
+
+    &:not(:nth-child(1)){
+      border-top: 1px solid $smoke;
+    }
+  }
+
+  &__submit{
+    list-style-type: none;
+    margin-left: 0;
+  }
+
+  &__remove{
+    float: right;
+
+    .fa-times-circle-o{
+      font-size: $base-font-size*2;
+    }
+  }
+
+  &__remove-link{
+    color: $slate;
+    text-decoration: none;
+
+    &:hover,
+    &:focus{
+      color: $charcoal;
+    }
+  }
+
+  .summary-flash-notice{
+    color: $white;
+    background: $brand-blue-insurance;
+
+    p,
+    a,
+    a:hover,
+    a:focus{
+      color: $white;
+    }
+
+    &:not(:nth-child(1)){
+      border-top: none;
     }
   }
 }
 
 .summary-title{
   background: $brand-green !important;
-  min-height: 62px;
 }
-
-.accordion-icon{
-  width: 16px;
-  height: 16px;
-  display: block;
-  float: right;
-  color: $white;
-  margin-top: $base-margin;
-}
-
 
 .delete-icon{ //same one used in the cart and on info charts it lives outside of cart so it can be used other places
-  margin-top: $base-margin;
   float: right;
 
   .fa-times-circle-o{
@@ -92,7 +146,7 @@
 }
 
 @media screen and #{breakpoint(medium down)}{
-  span.item-num{
+  .item-num{
     display: inline-block;
     float: right;
     width: 30px;
@@ -111,5 +165,6 @@
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 1;
   }
 }

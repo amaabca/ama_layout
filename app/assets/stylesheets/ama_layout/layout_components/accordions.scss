@@ -1,5 +1,5 @@
 .accordion-title{
-  font-size: $base-font-size*1.375;
+  @extend .heading;
   text-decoration: none;
 
   &:hover,
@@ -18,16 +18,6 @@
   }
 }
 
-.asset-link{
-  h3,
-  h5{
-    color: $white;
-    font-size: $base-font-size*1.4;
-    line-height: 21px;
-    float: left;
-  }
-}
-
 .accordion.secondary{
   background: none;
 
@@ -36,12 +26,12 @@
   }
 
   .accordion-content a{
-    font-size: $base-font-size*0.875;
+    font-size: $base-font-size;
   }
 
   .accordion-title{
     background: $white;
-    color: $jet;
+    color: $slate;
 
     &:hover{
       background: $stone;
@@ -51,6 +41,34 @@
   .top-level,
   .top-level:hover{
     background: darken($stone, 5%);
-    color: $jet;
+    color: $slate;
   }
+}
+
+.accordion{
+  &__header{
+    background: $brand-blue-light;
+    overflow: auto;
+    display: block;
+  }
+
+  &__heading{
+    @extend .heading;
+    @include small-10;
+  }
+
+  &__toggle{
+    @include small-2;
+    text-align: right;
+    color: $white;
+    padding-top: $base-padding*1.25;
+  }
+}
+
+// Foundation sets a border-radius by default,
+// and there doesn't seem to be an override in the settings file
+.accordion-item:first-child > :first-child,
+.accordion-item:first-child > :last-child,
+:last-child:not(.is-active) > .accordion-title{
+  border-radius: 0;
 }

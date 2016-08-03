@@ -1,53 +1,6 @@
 @media screen and #{breakpoint(small only)}{
-  .page-steps h3{
-    color: $slate;
-    font-style: italic;
-    font-size: $base-font-size;
-    margin: $base-margin*2 0 0;
-    text-align: right;
-  }
-
-  input[type="text"],
-  input[type="password"],
-  input[type="date"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="month"],
-  input[type="week"],
-  input[type="email"],
-  input[type="number"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="time"],
-  input[type="url"],
-  input[type="color"],
-  textarea{
-    margin: 0 0 0.5em 0;
-    margin: 0 0 0.5rem 0;
-  }
-
-  label.inline{
-    margin: 0;
-  }
-
-  h4{
-    margin-top: $base-margin*6;
-  }
-
-  .membership-card-radio,
-  .membership-card-radio-plus-primary,
-  .membership-card-label{
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   .cart-totals{
     text-align: left;
-  }
-
-  footer{
-    margin-top: $base-margin*4;
   }
 
   %white-trans{
@@ -57,7 +10,7 @@
   %inputs-thirds{
     max-width: 100%;
     float: none;
-    margin: $base-margin*2 0;
+    margin: $base-margin/2 0;
   }
 
   .credit-card-year{
@@ -76,6 +29,6 @@
 
   .hour,
   .minute{
-    margin: $base-margin*2 0;
+    margin: $base-margin/2 0;
   }
 }

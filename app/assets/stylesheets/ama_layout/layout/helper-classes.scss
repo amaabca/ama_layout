@@ -15,7 +15,7 @@
 
 /* ==================== 1. Main Layout Elements ==================== */
 .main-wrapper{
- margin: $base-margin*4 auto;
+  margin: $base-margin auto;
 }
 
 .page-wrapper{
@@ -32,7 +32,7 @@
 .section-title{
   @extend .page-title;
   border: 0;
-  padding: $base-padding*2;
+  padding: $base-padding/2;
   background-color: $stone;
 
   h5{
@@ -40,14 +40,8 @@
   }
 }
 
-.page-steps{
-  text-align: right;
-}
-
 .content-block{
-  margin-bottom: $base-margin*4;
-  background: $white;
-  border: $base-border;
+  margin-bottom: $base-margin;
 }
 
 .content-block-bottom{
@@ -56,6 +50,7 @@
 
 .image-callout{
   border: $base-border;
+  margin-bottom: $base-margin;
 }
 
 .fullwidth{
@@ -64,7 +59,7 @@
 
 /* ==================== 2. Panels ==================== */
 .panel-box{
-  padding: $base-padding*4;
+  padding: $base-padding;
 
   h4, p{
     color: $white;
@@ -83,11 +78,11 @@
 .panel-title{
   @extend .page-title;
   border: 0px;
-  padding: $base-padding*2;
+  padding: $base-padding/2;
 
   h5{
     color: $jet;
-    padding-left: $base-padding*2;
+    padding-left: $base-padding/2;
   }
 }
 
@@ -135,23 +130,23 @@
 
 /* ==================== 4. Margins ==================== */
 .m1{
-  margin: $base-margin*4 !important;
+  margin: $base-margin !important;
 }
 
 .mt1{
-  margin-top: $base-margin*4 !important;
+  margin-top: $base-margin !important;
 }
 
 .mr1{
-  margin-right: $base-margin*4 !important;
+  margin-right: $base-margin !important;
 }
 
 .mb1{
-  margin-bottom: $base-margin*4 !important;
+  margin-bottom: $base-margin !important;
 }
 
 .ml1{
-  margin-left: $base-margin*4 !important;
+  margin-left: $base-margin !important;
 }
 
 .m0{
@@ -163,7 +158,7 @@
 }
 
 .mr0{
-  margin-right: 0px !important;
+  margin-right: 0 !important;
 }
 
 .mb0{
@@ -171,40 +166,28 @@
 }
 
 .ml0{
-  margin-left: 0px !important;
-}
-
-.mt25{
-  margin-top: 25px;
-}
-
-.bmt{
-  margin-top: $base-margin;
-}
-
-.bmb{
-  margin-bottom: $base-margin;
+  margin-left: 0 !important;
 }
 
 /* ==================== 5. Padding ==================== */
 .p1{
-  padding: $base-padding*4 !important;
+  padding: $base-padding !important;
 }
 
 .pt1 {
-  padding-top: $base-margin*4 !important;
+  padding-top: $base-margin !important;
 }
 
 .pr1 {
-  padding-right: $base-margin*4 !important;
+  padding-right: $base-margin !important;
 }
 
 .pb1 {
-  padding-bottom: $base-margin*4 !important;
+  padding-bottom: $base-margin !important;
 }
 
 .pl1 {
-  padding-left: $base-margin*4 !important;
+  padding-left: $base-margin !important;
 }
 
 .p0{
@@ -228,7 +211,7 @@
 }
 
 .bb0{
-  border-bottom: 0px !important;
+  border-bottom: 0 !important;
 }
 
 .b0{
@@ -264,8 +247,8 @@
   background-color: $brand-green;
 }
 
-.notice-orange-bg{
-  background-color: $notice-orange;
+.orange-bg{
+  background-color: $orange;
 }
 
 .red-bg{
@@ -292,7 +275,7 @@
   margin: 0;
 
   li{
-    padding: $base-padding*3 $base-padding*2 $base-padding*2 $base-padding*2;
+    padding: $base-padding $base-padding/2 $base-padding/2 $base-padding/2;
     border-bottom: $base-border;
 
     .table-value{
@@ -313,6 +296,60 @@
 /* ==================== 9. Buttons ==================== */
 .button{
   text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus{
+    background: lighten($button-background, 10%);
+  }
+
+  &--green{
+    @extend .button;
+    $button-background: $brand-green;
+    background: $button-background;
+    float: right;
+  }
+
+  &--dark-blue{
+    @extend .button;
+    $button-background: $brand-blue-dark;
+    background: $button-background;
+    float: right;
+  }
+
+  &--left{
+    @extend .button;
+    float: left;
+  }
+
+  &--right{
+    @extend .button;
+    float: right;
+  }
+
+  &--de-emphasized{
+    @extend .button;
+    float: left;
+    $button-background: $slate;
+    background: $button-background;
+
+    &:hover,
+    &:active,
+    &:focus{
+      background: lighten($button-background, 10%);
+    }
+  }
+
+  &--expand{
+    @extend .button;
+    @extend .expanded;
+  }
+
+  &--xlarge{
+    @extend .button;
+    width: 100%;
+    min-height: 161px;
+  }
 }
 
 .base-button{
@@ -394,6 +431,12 @@ button[disabled],
 .white-text{
   color: $white;
 
+  &--lrg{
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
   >a{
     color: $white;
   }
@@ -419,7 +462,7 @@ button[disabled],
   font-weight: normal;
   color: $slate;
   text-transform: uppercase;
-  padding: $base-padding*2 $base-padding*0 $base-padding*2 $base-padding*2;
+  padding: $base-padding/2 $base-padding*0 $base-padding/2 $base-padding/2;
 }
 
 .uppercase{
@@ -430,6 +473,7 @@ button[disabled],
   font-weight: bold;
   font-size: $base-font-size*0.875;
   color: $charcoal;
+  padding-bottom: $base-padding;
 }
 
 .brand-blue-dark-text{
@@ -444,15 +488,26 @@ button[disabled],
   font-size: 80%;
 }
 
+.micetype--italic{
+  @extend .micetype;
+  font-style: italic;
+}
+
 .italic{
   font-style: italic;
 }
 
 .hint{
-  font-size: $base-font-size*0.75;
+  font-size: $base-font-size*0.85;
   line-height: $base-font-size;
   color: darken($smoke, 15%);
   font-style: italic;
+  display: block;
+
+  &--white{
+    @extend .hint;
+    color: $white;
+  }
 }
 
 .green-text{
@@ -460,7 +515,7 @@ button[disabled],
 }
 
 .orange-text{
-  color: $notice-orange;
+  color: $orange;
 }
 
 .red-text{

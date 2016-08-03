@@ -1,0 +1,14 @@
+button.disabled,
+button[disabled],
+.button.disabled,
+.button[disabled]{
+  background-color: lighten($secondary-color, 10%);
+  border-color: none;
+
+  &:hover,
+  &:active,
+  &:focus{
+    background-color: lighten($secondary-color, 10%);
+    border-color: none;
+  }
+}

@@ -1,7 +1,7 @@
 describe AmaLayout::NavigationItemDecorator do
   let(:navigation_item) { FactoryGirl.build(:navigation_item) }
   let(:navigation_item_presenter) { navigation_item.decorate }
-  let(:items) { [{ text: "Othersite Overview", link: "othersite.com"}] }
+  let(:items) { [{ text: "Othersite Overview", link: "http://othersite.com"}] }
 
   describe "#sub_nav" do
     before(:each) do
@@ -68,11 +68,26 @@ describe AmaLayout::NavigationItemDecorator do
   end
 
   describe "#active_class" do
-    context "with active_link" do
-      it "return the class" do
+    context "#current_url is an invalid URI" do
+      it "fails silently" do
         navigation_item.current_url = "othersite.com"
         navigation_item.sub_nav = items
-        expect(navigation_item_presenter.active_class).to eq "activepage"
+        expect(navigation_item_presenter.active_class).to eq nil
+      end
+    end
+
+    context "with active_link" do
+      it "return the class" do
+        navigation_item.current_url = "http://othersite.com"
+
+        navigation_item.sub_nav = items
+        expect(navigation_item_presenter.active_class).to eq "side-nav__child-link--active-page"
+      end
+
+      it "ignores query string parameters" do
+        navigation_item.current_url = "http://othersite.com?foo=bar"
+        navigation_item.sub_nav = items
+        expect(navigation_item_presenter.active_class).to eq "side-nav__child-link--active-page"
       end
     end
 

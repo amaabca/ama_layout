@@ -10,6 +10,21 @@ dialog .close-reveal-modal{
   cursor: pointer;
 }
 
+.reveal-modal{
+  max-width: 960px;
+
+  a{
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+  @include breakpoint(small only){
+    top: 50px !important;
+    min-height: 240px;
+    position: fixed;
+  }
+}
+
 @include breakpoint(small only){
   .reveal{
     padding: $global-padding $global-padding 51px $global-padding; // 51 pixels to offset the height of the top bar
