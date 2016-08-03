@@ -8,7 +8,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-  //height: 100vh;
   z-index: 9999;
 }
 
@@ -47,15 +46,6 @@
   which causes issues with the cart's window.scrollTop in webkit
   So if something blows up with off-canvas, start by deleting this.  */
   backface-visibility: visible;
-}
-.off-canvas-wrapper,
-.off-canvas-wrapper-inner,
-.page-container{
-  /* height: 100%; */
-}
-
-.off-canvas-wrapper{
-  /* overflow: auto; */
 }
 
 .top-nav-offset{

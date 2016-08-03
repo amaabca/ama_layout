@@ -92,22 +92,22 @@
     list-style-type: none;
   }
 
-    &__list-item{
-      padding-bottom: $base-padding;
-    }
+  &__list-item{
+    padding-bottom: $base-padding;
+  }
 
-    &__ribbon{
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
+  &__ribbon{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
-  input[type="radio"]:checked{
-    &~label{
-      .comparison-radios__panel{
-        border-top: 2px solid darken($sky, 10%);
-        border-bottom: 2px solid darken($sky, 10%);
-      }
+input[type="radio"]:checked{
+  &~label{
+    .comparison-radios__panel{
+      border-top: 2px solid darken($sky, 10%);
+      border-bottom: 2px solid darken($sky, 10%);
     }
   }
+}
