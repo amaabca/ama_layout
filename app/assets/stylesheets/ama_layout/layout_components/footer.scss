@@ -3,11 +3,11 @@ $footer-push-small: 617px;
 $footer-push-medium: 432px;
 $footer-push-large: 329px;
 
-html, body, .off-canvas-wrapper{
+html, body{
   height: 100%;
 }
 
-.off-canvas-wrapper-inner{
+.off-canvas-wrapper{
   min-height: 100%;
   @include breakpoint(small only){
     margin-bottom: -$footer-push-small;
