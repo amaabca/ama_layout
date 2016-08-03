@@ -1,13 +1,33 @@
 // Sticky footer setup
-// See: https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
-.off-canvas-wrapper{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+$footer-push-small: 594px;
+$footer-push-medium: 419px;
+$footer-push-large: 321px;
 
-.off-canvas-wrapper-inner{
-  flex: 1;
+.off-canvas-wrapper{
+  min-height: 100%;
+  @include breakpoint(small only){
+    margin-bottom: -$footer-push-small;
+  }
+  @include breakpoint(medium only){
+    margin-bottom: -$footer-push-medium;
+  }
+  @include breakpoint(large up){
+    margin-bottom: -$footer-push-large;
+  }
+
+  &:after{
+    content: "";
+    display: block;
+    @include breakpoint(small only){
+      height: $footer-push-small;
+    }
+    @include breakpoint(medium only){
+      height: $footer-push-medium;
+    }
+    @include breakpoint(large up){
+      height: $footer-push-large;
+    }
+  }
 }
 
 // Footer styles
