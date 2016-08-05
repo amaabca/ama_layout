@@ -33,6 +33,7 @@ $footer-push-large: 321px;
 // Footer styles
 .page-footer{
   background: $brand-blue-light;
+  position: relative;
 
   &__container{
     @include grid-row;

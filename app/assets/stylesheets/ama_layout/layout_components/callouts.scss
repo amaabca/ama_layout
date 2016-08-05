@@ -49,10 +49,6 @@
       color: $ash;
     }
   }
-
-    &__heading{
-
-    }
 }
 
 .promo-block{
@@ -96,11 +92,11 @@
     }
   }
 
-    &__icon{
-      color: $white;
-      font-size: 3.5rem;
-      text-align: center;
-      width: 100%;
-      margin-top: 28px;
-    }
+  &__icon{
+    color: $white;
+    font-size: 3.5rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 28px;
+  }
 }
