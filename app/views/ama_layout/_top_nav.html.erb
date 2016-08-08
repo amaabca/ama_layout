@@ -1,6 +1,9 @@
 <li class="has-submenu">
-  <%= link_to navigation.display_name_text, '#' %>
+  <%= link_to navigation.display_name_text, '#', class: 'no-underline' %>
   <ul class="submenu menu vertical">
+    <li>
+      <%= link_to 'Online Account', Rails.configuration.gatekeeper_site %>
+    </li>
     <li><%= link_to 'AMA Website', Rails.configuration.amaabca_site %></li>
     <li><a href="http://amaroadreports.ca/">AMA Road Reports</a></li>
     <%= navigation.sign_out_link %>

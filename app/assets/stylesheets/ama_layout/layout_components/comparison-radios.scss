@@ -101,6 +101,10 @@
     top: 0;
     right: 0;
   }
+
+  &__divider{
+    margin-bottom: 0;
+  }
 }
 
 input[type="radio"]:checked{
