@@ -14,6 +14,12 @@ member:
         link: "<%= Rails.configuration.youraccount_site %>/billing"
       - text: "Print/Request New Card"
         link: "<%= Rails.configuration.youraccount_site %>/membership"
+  - text: "My Roadside Assistance"
+    link: "<%= Rails.configuration.automotive_site %>/"
+    icon: "fa-car"
+    sub_nav:
+      - text: "Automotive Overview"
+        link: "<%= Rails.configuration.automotive_site %>/"
   - text: "My Driver Education"
     link: "<%= Rails.configuration.driveredonline_site %>/"
     icon: "fa-car"
