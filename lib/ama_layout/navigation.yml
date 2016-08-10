@@ -18,7 +18,7 @@ member:
     link: "<%= Rails.configuration.automotive_site %>/"
     icon: "fa-car"
     sub_nav:
-      - text: "Automotive Overview"
+      - text: "Roadside Assistance Overview"
         link: "<%= Rails.configuration.automotive_site %>/"
   - text: "My Driver Education"
     link: "<%= Rails.configuration.driveredonline_site %>/"
