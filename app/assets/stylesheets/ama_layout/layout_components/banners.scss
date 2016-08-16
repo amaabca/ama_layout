@@ -1,0 +1,42 @@
+.banner{
+  position: relative; /* This is needed for the positioning of the close icon on the blue banners*/
+  margin-bottom: $base-margin;
+
+  &>:last-child{
+    margin-bottom: 0;
+  }
+
+  &--blue{
+    @extend .banner;
+    background: $brand-blue-insurance;
+    padding: $base-padding;
+  }
+
+  &--red{
+    @extend .banner;
+    background: $brand-red;
+    padding: $base-padding;
+  }
+
+  &__title,
+  &__text{
+    color: $white;
+  }
+
+  &__link{
+    @extend .link--white;
+  }
+
+  &__close{
+    @extend .fa;
+    @extend .fa-times-circle;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    &--white{
+      @extend .banner__close;
+      color: $white;
+    }
+  }
+}

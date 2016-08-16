@@ -5,12 +5,15 @@ $footer-push-large: 321px;
 
 .off-canvas-wrapper{
   min-height: 100%;
+
   @include breakpoint(small only){
     margin-bottom: -$footer-push-small;
   }
+
   @include breakpoint(medium only){
     margin-bottom: -$footer-push-medium;
   }
+
   @include breakpoint(large up){
     margin-bottom: -$footer-push-large;
   }
@@ -18,12 +21,15 @@ $footer-push-large: 321px;
   &:after{
     content: "";
     display: block;
+
     @include breakpoint(small only){
       height: $footer-push-small;
     }
+
     @include breakpoint(medium only){
       height: $footer-push-medium;
     }
+    
     @include breakpoint(large up){
       height: $footer-push-large;
     }
