@@ -34,7 +34,6 @@
 
   &--de-emphasized{
     @extend .button;
-    float: left;
     $button-background: $slate;
     background: $button-background;
 
