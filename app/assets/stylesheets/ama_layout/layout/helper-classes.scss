@@ -537,4 +537,9 @@ button[disabled],
   @extend .white-text;
   font-size: $base-font-size*3;
   font-weight: bold;
+
+  &--green{
+    @extend .bold-large-text;
+    color: $brand-green;
+  }
 }
