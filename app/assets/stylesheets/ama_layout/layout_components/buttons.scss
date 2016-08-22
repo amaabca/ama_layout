@@ -1,3 +1,75 @@
+.button{
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus{
+    background: lighten($button-background, 10%);
+  }
+
+  &--green{
+    @extend .button;
+    $button-background: $brand-green;
+    background: $button-background;
+    float: right;
+
+    &:hover,
+    &:active,
+    &:focus{
+      background: lighten($button-background, 10%);
+    }
+  }
+
+  &--dark-blue{
+    @extend .button;
+    $button-background: $brand-blue-dark;
+    background: $button-background;
+
+    &:hover,
+    &:active,
+    &:focus{
+      background: lighten($button-background, 10%);
+    }
+  }
+
+  &--de-emphasized{
+    @extend .button;
+    $button-background: $slate;
+    background: $button-background;
+
+    &:hover,
+    &:active,
+    &:focus{
+      background: lighten($button-background, 10%);
+    }
+  }
+
+  &--left{
+    @extend .button;
+    float: left;
+  }
+
+  &--right{
+    @extend .button;
+    float: right;
+  }
+
+  &--center{
+    @extend .button;
+    float: none;
+  }
+
+  &--expand{
+    @extend .button;
+    @extend .expanded;
+  }
+
+  &--small{
+    @extend .button;
+    @extend .small;
+  }
+}
+
 button.disabled,
 button[disabled],
 .button.disabled,
