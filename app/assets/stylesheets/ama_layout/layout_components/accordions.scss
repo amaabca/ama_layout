@@ -50,28 +50,11 @@
     background: $brand-blue-light;
     overflow: auto;
     display: block;
-
-    &--transparent{
-      @extend .accordion__header;
-      background:transparent;
-    }
   }
 
   &__heading{
     @extend .heading;
     @include small-10;
-  }
-
-  &__heading-bg{
-    @extend .accordion__heading;
-    background: $brand-blue-light;
-    width: 97%;
-  }
-
-  &__heading--left-margin{
-    @extend .accordion__heading;
-    margin-left: 20px;
-    padding: 0 !important;
   }
 
   &__toggle{
@@ -80,20 +63,96 @@
     color: $white;
     padding-top: $base-padding*1.25;
   }
+}
+
+.accordion-multi-state{
+  @extend .accordion;
+  background: transparent;
+
+  &__header{
+    @extend .accordion__header;
+    background: transparent;
+  }
+
+  &__heading-bg{
+    @extend .accordion__heading;
+    padding: 0.63rem 1rem !important;
+    width: 97%;
+
+    &--active{
+      @extend .accordion-multi-state__heading-bg;
+      background: $brand-blue-light;
+    }
+
+    &--inactive{
+      @extend .accordion-multi-state__heading-bg;
+      background: $stone;
+
+      .accordion-multi-state__heading{
+        color: $slate;
+      }
+    }
+
+    &--complete{
+      @extend .accordion-multi-state__heading-bg;
+      background: $brand-green;
+    }
+
+    &--error{
+      @extend .accordion-multi-state__heading-bg;
+      background: $brand-red;
+    }
+  }
+
+  &__heading{
+    @extend .accordion__heading;
+    margin-left: 10px;
+    padding: 0 !important;
+  }
 
   &__icon{
-    width: 42px;
-    height: 42px;
-    border: 2px solid blue;
+    @extend .fa;
+    width: 39px;
+    height: 39px;
+    border: 2px solid $brand-blue-light;
     display: inline-block;
     border-radius: 100%;
     position: absolute;
     background: white;
-  }
 
-  &--transparent{
-    @extend .accordion;
-    background: transparent;
+    &:before{
+      @include vertical-center;
+      width: 100%;
+      text-align: center;
+      font-size: 22px;
+    }
+
+    &--active{
+      @extend .accordion-multi-state__icon;
+      @extend .fa-check;
+      color: $stone;
+    }
+
+    &--inactive{
+      @extend .accordion-multi-state__icon;
+      border: 2px solid $stone;
+    }
+
+    &--complete{
+      @extend .accordion-multi-state__icon;
+      @extend .fa-check;
+      border: 2px solid $brand-green;
+      background: $brand-green;
+      color: $white;
+    }
+
+    &--error{
+      @extend .accordion-multi-state__icon;
+      @extend .fa-close;
+      border: 2px solid $brand-red;
+      background: $brand-red;
+      color: $white;
+    }
   }
 }
 

@@ -135,3 +135,44 @@
     }
   }
 }
+
+.progress-bar-vertical{
+  list-style: none;
+  position: relative;
+
+  &__guide{
+    height: 100%;
+    position: absolute;
+    width: 2px;
+    background-color: $stone;
+    left: 17px;
+  }
+
+  &__step{
+    position: relative;
+    margin-bottom: $base-margin;
+
+    &__icon{
+      width: 37px;
+      height: 37px;
+      border-radius: 100%;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 23px;
+      text-align: center;
+      background-color: $stone;
+
+      &--active{
+        @extend .progress-bar-vertical__step__icon;
+        background-color: $brand-blue-light;
+        color: white;
+      }
+    }
+  }
+
+  &__content{
+    @include vertical-center;
+    margin-left: $base-margin*1.5;
+    line-height: 16px;
+  }
+}
