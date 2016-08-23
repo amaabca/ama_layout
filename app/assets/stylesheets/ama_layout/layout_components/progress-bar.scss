@@ -150,22 +150,39 @@
 
   &__step{
     position: relative;
-    margin-bottom: $base-margin;
+    margin-bottom: $base-margin*1.4;
 
     &__icon{
       width: 37px;
       height: 37px;
       border-radius: 100%;
       display: inline-block;
-      font-weight: bold;
+      font-weight: 700;
       font-size: 23px;
       text-align: center;
       background-color: $stone;
+      position: relative;
 
       &--active{
         @extend .progress-bar-vertical__step__icon;
         background-color: $brand-blue-light;
         color: white;
+      }
+
+      &--complete{
+        @extend .fa;
+        @extend .fa-check;
+        @extend .progress-bar-vertical__step__icon;
+        background-color: $cerulean;
+        color: white;
+        font-weight: normal;
+
+        &:before{
+          @include vertical-center;
+          left: 0;
+          width: 100%;
+        }
+
       }
     }
   }
