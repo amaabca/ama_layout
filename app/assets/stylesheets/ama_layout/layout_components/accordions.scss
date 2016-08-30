@@ -67,7 +67,12 @@
 
 .accordion-multi-state{
   @extend .accordion;
+  margin-bottom: $base-margin;
   background: transparent;
+
+  .accordion-item{
+    margin-bottom: $base-margin;
+  }
 
   &__header{
     @extend .accordion__header;
@@ -77,7 +82,7 @@
   &__heading-bg{
     @extend .accordion__heading;
     padding: 0.63rem 1rem !important;
-    width: 97%;
+    width: calc(100% - 20px);
 
     &--active{
       @extend .accordion-multi-state__heading-bg;
