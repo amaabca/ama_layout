@@ -150,19 +150,21 @@ input[type="checkbox"]{
   }
 }
 
-.month,
-.year{
-  @extend %inputs-thirds;
-}
+.date{
+  .month,
+  .year {
+    @extend %inputs-thirds;
+  }
 
-.day{
-  @extend %inputs-thirds;
-  margin: 0 5%;
-}
+  .day {
+    @extend %inputs-thirds;
+    margin: 0 5%;
+  }
 
-.hour,
-.minute{
-  @extend %inputs-halves;
+  .hour,
+  .minute {
+    @extend %inputs-halves;
+  }
 }
 
 .minute{
