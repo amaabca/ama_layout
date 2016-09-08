@@ -166,8 +166,45 @@
     }
   }
 
+  &--cerulean-bg{
+    padding: $base-padding;
+    background: $cerulean;
+    color: $white;
+    @include clearfix;
+
+    label{
+      color: $white;
+    }
+  }
+
   &--grey-border{
     border: 2px solid $stone;
+  }
+}
+
+.section-content-half{
+  @extend .section;
+  @include medium-6;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.side-arrow{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+
+  @include breakpoint(small down){
+    top: 100%;
+    left: 0%;
+    height: 30%;
+    background-color: $white;
+  }
+}
+
+.mobile-arrow-margin{
+  @include breakpoint(small down){
+    margin-top: 50px;
   }
 }
 
