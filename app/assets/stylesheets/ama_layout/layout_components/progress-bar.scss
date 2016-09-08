@@ -193,3 +193,57 @@
     line-height: 16px;
   }
 }
+
+.progress-bar-horizontal{
+  list-style: none;
+  position: relative;
+
+  &__step{
+    position: relative;
+    margin-bottom: $base-margin*1.4;
+    margin-right: $base-margin;
+    float: left;
+
+    &__icon{
+      width: 33px;
+      height: 33px;
+      border-radius: 100%;
+      display: block;
+      margin: 0 auto;
+      font-weight: 700;
+      font-size: 21px;
+      text-align: center;
+      background-color: $stone;
+      position: relative;
+
+      &--active{
+        @extend .progress-bar-horizontal__step__icon;
+        background-color: $brand-blue-light;
+        color: white;
+      }
+
+      &--complete{
+        @extend .fa;
+        @extend .fa-check;
+        @extend .progress-bar-horizontal__step__icon;
+        background-color: $cerulean;
+        color: white;
+        font-weight: normal;
+
+        &:before{
+          @include vertical-center;
+          left: 0;
+          width: 100%;
+        }
+
+      }
+    }
+  }
+
+  &__content{
+    line-height: 16px;
+    text-align: center;
+    margin-bottom: $base-margin*0.5;
+    display: block
+  }
+}

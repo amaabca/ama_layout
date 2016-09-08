@@ -104,11 +104,14 @@
 .section-two-thirds{
   @extend .section;
   @include large-8;
-  @include grid-column-end;
   @include clearfix;
 
   &:last-child:not(.section-content){
     margin-bottom: 0;
+  }
+
+  @include breakpoint(medium down){
+    float: none;
   }
 }
 
