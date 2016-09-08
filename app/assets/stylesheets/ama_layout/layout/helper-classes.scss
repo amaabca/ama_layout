@@ -535,21 +535,66 @@ button[disabled],
 
 .semi-bold{
   font-weight: 600;
+
+  &--small{
+    @extend .semi-bold;
+    font-size: $base-font-size*0.75;
+  }
+
+  &--medium{
+    @extend .semi-bold;
+    font-size: $base-font-size*1.3;
+  }
+
+  &--large{
+    @extend .semi-bold;
+    font-size: $base-font-size*1.85;
+  }
+
+  &--x-large{
+    @extend .semi-bold;
+    font-size: $base-font-size*3;
+  }
 }
 
-.semi-bold--medium{
-  @extend .semi-bold;
-  font-size: $base-font-size*1.3;
-}
-
-.semi-bold--26px{
-  @extend .semi-bold;
-  font-size: $base-font-size*1.75;
-}
-
-.bold--medium{
+.bold{
   font-weight: 700;
-  font-size: $base-font-size*1.3;
+
+  &--small{
+    @extend .bold;
+    font-size: $base-font-size*0.75;
+  }
+
+  &--medium{
+    @extend .bold;
+    font-size: $base-font-size*1.3;
+  }
+
+  &--large{
+    @extend .bold;
+    font-size: $base-font-size*1.85;
+  }
+
+  &--x-large{
+    @extend .bold;
+    font-size: $base-font-size*3;
+
+    &--green{
+      @extend .bold--x-large;
+      color: $brand-green
+    }
+
+    &--no-lineheight{
+      @extend .bold--x-large;
+      line-height: 0;
+      margin-bottom: $base-margin*1.65;
+      margin-top: $base-margin*1.65;
+    }
+
+    sup{
+      font-size: 63%;
+    }
+  }
 }
 
 .bold-large-text{
@@ -571,6 +616,5 @@ button[disabled],
 
   sup{
     font-size: 63%;
-    top: -0.6;
   }
 }

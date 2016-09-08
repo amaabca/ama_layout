@@ -189,25 +189,6 @@
   margin-bottom: 0;
 }
 
-.side-arrow{
-  position: absolute;
-  z-index: 1;
-  top: 0;
-
-  @include breakpoint(small down){
-    top: 100%;
-    left: 0%;
-    height: 30%;
-    background-color: $white;
-  }
-}
-
-.mobile-arrow-margin{
-  @include breakpoint(small down){
-    margin-top: 50px;
-  }
-}
-
 @function set-hint-color($color) {
   @if (lightness($color) > 50) {
     @return $smoke; // Lighter backgorund, return dark color
