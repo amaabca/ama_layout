@@ -606,15 +606,4 @@ button[disabled],
     @extend .bold-large-text;
     color: $brand-green;
   }
-
-  &--no-lineheight{
-    @extend .bold-large-text;
-    line-height: 0;
-    margin-bottom: $base-margin*1.65;
-    margin-top: $base-margin*1.65;
-  }
-
-  sup{
-    font-size: 63%;
-  }
 }
