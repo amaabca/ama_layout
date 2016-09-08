@@ -150,6 +150,7 @@ input[type="checkbox"]{
   }
 }
 
+// Scoped to avoid collisions with foundations datepicker
 .date{
   .month,
   .year {
