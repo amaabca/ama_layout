@@ -197,12 +197,35 @@
 .progress-bar-horizontal{
   list-style: none;
   position: relative;
+  max-width: 372px;
+  margin: 0 auto;
+  @include clearfix;
+
+  @include breakpoint(medium only){
+    max-width: 511px;
+  }
+
+  &__guide{
+    width: 100%;
+    position: absolute;
+    height: 2px;
+    background-color: $stone;
+    top: 50%;
+  }
 
   &__step{
     position: relative;
     margin-bottom: $base-margin*1.4;
-    margin-right: $base-margin;
+    margin-right: $base-margin*1.66;
     float: left;
+
+    @include breakpoint(medium only){
+      margin-right: 10%;
+    }
+
+    &:last-of-type{
+      margin-right: 0;
+    }
 
     &__icon{
       width: 33px;
@@ -215,6 +238,12 @@
       text-align: center;
       background-color: $stone;
       position: relative;
+
+      @include breakpoint(medium only){
+        width: 40px;
+        height: 40px;
+        font-size: 26px;
+      }
 
       &--active{
         @extend .progress-bar-horizontal__step__icon;
