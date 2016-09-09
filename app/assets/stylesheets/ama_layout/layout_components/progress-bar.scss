@@ -202,7 +202,7 @@
   @include clearfix;
 
   @include breakpoint(medium only){
-    max-width: 511px;
+    max-width: 546px;
   }
 
   &__guide{
@@ -210,17 +210,16 @@
     position: absolute;
     height: 2px;
     background-color: $stone;
-    top: 50%;
+    top: 70%;
   }
 
   &__step{
     position: relative;
-    margin-bottom: $base-margin*1.4;
     margin-right: $base-margin*1.66;
     float: left;
 
     @include breakpoint(medium only){
-      margin-right: 10%;
+      margin-right: 9%;
     }
 
     &:last-of-type{
@@ -240,8 +239,8 @@
       position: relative;
 
       @include breakpoint(medium only){
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         font-size: 26px;
       }
 
@@ -272,7 +271,7 @@
   &__content{
     line-height: 16px;
     text-align: center;
-    margin-bottom: $base-margin*0.5;
+    margin-bottom: $base-margin*0.65;
     display: block
   }
 }
