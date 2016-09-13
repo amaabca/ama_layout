@@ -5,6 +5,10 @@
     margin-bottom: $base-margin;
   }
 
+  &__radio-full{
+    @include medium-12;
+  }
+
   &__radio-half{
     @include medium-6;
   }
