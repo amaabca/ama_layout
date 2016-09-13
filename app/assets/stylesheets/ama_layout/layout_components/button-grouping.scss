@@ -76,6 +76,11 @@
     background-position: center center;
   }
 
+  &__title{
+    font-weight: bold;
+    margin-bottom: $base-margin;
+  }
+
   &__text{
     line-height: 1rem;
     display: block;
