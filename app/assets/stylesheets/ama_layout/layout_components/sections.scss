@@ -104,6 +104,7 @@
 .section-two-thirds{
   @extend .section;
   @include large-8;
+  @include grid-column-end;
   @include clearfix;
 
   &:last-child:not(.section-content){
@@ -156,6 +157,11 @@
   &--smoke-bg{
     padding: $base-padding;
     background: lighten($smoke, 5%);
+  }
+
+  &--ash-bg{
+    padding: $base-padding;
+    background: $ash;
   }
 
   &--blue-bg{

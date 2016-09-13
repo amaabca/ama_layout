@@ -242,12 +242,13 @@
         width: 50px;
         height: 50px;
         font-size: 26px;
+        line-height: 50px;
       }
 
       &--active{
         @extend .progress-bar-horizontal__step__icon;
         background-color: $brand-blue-light;
-        color: white;
+        color: $white;
       }
 
       &--complete{
@@ -255,7 +256,7 @@
         @extend .fa-check;
         @extend .progress-bar-horizontal__step__icon;
         background-color: $cerulean;
-        color: white;
+        color: $white;
         font-weight: normal;
 
         &:before{
@@ -269,7 +270,7 @@
   }
 
   &__content{
-    line-height: 16px;
+    line-height: $base-font-size*1.5;
     text-align: center;
     margin-bottom: $base-margin*0.65;
     display: block
