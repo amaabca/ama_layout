@@ -64,7 +64,7 @@ describe AmaLayout::Navigation do
 
     context "member" do
       context "subnavs" do
-        context "registries" do
+        context "automotive" do
           let(:automotive_subnav) { subject.items[2].sub_nav }
 
           it "returns the subnav items" do
