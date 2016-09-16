@@ -225,47 +225,47 @@
     &:last-of-type{
       margin-right: 0;
     }
+  }
 
-    &__icon{
-      width: 33px;
-      height: 33px;
-      border-radius: 100%;
-      display: block;
-      margin: 0 auto;
-      font-weight: 700;
-      font-size: 21px;
-      text-align: center;
-      background-color: $stone;
-      position: relative;
+  &__icon{
+    width: 33px;
+    height: 33px;
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: 21px;
+    text-align: center;
+    background-color: $stone;
+    position: relative;
 
-      @include breakpoint(medium only){
-        width: 50px;
-        height: 50px;
-        font-size: 26px;
-        line-height: 50px;
+    @include breakpoint(medium only){
+      width: 50px;
+      height: 50px;
+      font-size: 26px;
+      line-height: 50px;
+    }
+
+    &--active{
+      @extend .progress-bar-horizontal__icon;
+      background-color: $brand-blue-light;
+      color: $white;
+    }
+
+    &--complete{
+      @extend .fa;
+      @extend .fa-check;
+      @extend .progress-bar-horizontal__icon;
+      background-color: $cerulean;
+      color: $white;
+      font-weight: normal;
+
+      &:before{
+        @include vertical-center;
+        left: 0;
+        width: 100%;
       }
 
-      &--active{
-        @extend .progress-bar-horizontal__icon;
-        background-color: $brand-blue-light;
-        color: $white;
-      }
-
-      &--complete{
-        @extend .fa;
-        @extend .fa-check;
-        @extend .progress-bar-horizontal__icon;
-        background-color: $cerulean;
-        color: $white;
-        font-weight: normal;
-
-        &:before{
-          @include vertical-center;
-          left: 0;
-          width: 100%;
-        }
-
-      }
     }
   }
 
