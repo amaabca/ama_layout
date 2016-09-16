@@ -165,7 +165,7 @@
     position: relative;
 
     &--active{
-      @extend .progress-bar-vertical__step__icon;
+      @extend .progress-bar-vertical__icon;
       background-color: $brand-blue-light;
       color: white;
     }
@@ -173,7 +173,7 @@
     &--complete{
       @extend .fa;
       @extend .fa-check;
-      @extend .progress-bar-vertical__step__icon;
+      @extend .progress-bar-vertical__icon;
       background-color: $cerulean;
       color: white;
       font-weight: normal;
@@ -246,7 +246,7 @@
       }
 
       &--active{
-        @extend .progress-bar-horizontal__step__icon;
+        @extend .progress-bar-horizontal__icon;
         background-color: $brand-blue-light;
         color: $white;
       }
@@ -254,7 +254,7 @@
       &--complete{
         @extend .fa;
         @extend .fa-check;
-        @extend .progress-bar-horizontal__step__icon;
+        @extend .progress-bar-horizontal__icon;
         background-color: $cerulean;
         color: $white;
         font-weight: normal;
