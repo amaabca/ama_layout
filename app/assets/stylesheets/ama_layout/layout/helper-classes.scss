@@ -583,13 +583,12 @@ button[disabled],
       @extend .bold--x-large;
       color: $brand-green
     }
+  }
 
-    &--no-lineheight{
-      @extend .bold--x-large;
-      line-height: 0;
-      margin-bottom: $base-margin*1.65;
-      margin-top: $base-margin*1.65;
-    }
+  &--no-lineheight{
+    line-height: 0;
+    margin-bottom: $base-margin*1.65;
+    margin-top: $base-margin*1.65;
   }
 }
 
