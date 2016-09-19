@@ -197,7 +197,7 @@
 .progress-bar-horizontal{
   list-style: none;
   position: relative;
-  max-width: 372px;
+  max-width: 292px;
   margin: 0 auto;
   @include clearfix;
 
@@ -215,7 +215,7 @@
 
   &__step{
     position: relative;
-    margin-right: $base-margin*1.66;
+    margin-right: $base-margin*0.65;
     float: left;
 
     @include breakpoint(medium only){
@@ -273,6 +273,10 @@
     line-height: $base-font-size*1.5;
     text-align: center;
     margin-bottom: $base-margin*0.65;
-    display: block
+    display: block;
+    font-size: $base-font-size*0.9;
+    @include breakpoint(medium only){
+      font-size: $base-font-size;
+    }
   }
 }
