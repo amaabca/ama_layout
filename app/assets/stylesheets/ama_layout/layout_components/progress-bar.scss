@@ -149,6 +149,7 @@
   }
 
   &__step{
+    @extend .clearfix;
     position: relative;
     margin-bottom: $base-margin*1.4;
   }
@@ -163,6 +164,7 @@
     text-align: center;
     background-color: $stone;
     position: relative;
+    float: left;
 
     &--active{
       @extend .progress-bar-vertical__icon;
@@ -188,9 +190,16 @@
   }
 
   &__content{
-    @include vertical-center;
+    position: relative;
+    float: left;
     margin-left: $base-margin*1.5;
     line-height: 16px;
+  }
+
+  &__content-remove{
+    line-height: 23px;
+    float: right;
+    margin-left: $base-margin*1.5;
   }
 }
 
