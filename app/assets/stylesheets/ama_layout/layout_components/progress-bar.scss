@@ -244,6 +244,7 @@
     text-align: center;
     background-color: $stone;
     position: relative;
+    line-height: 37px;
 
     @include breakpoint(medium only){
       width: 50px;
