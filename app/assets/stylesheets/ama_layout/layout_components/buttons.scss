@@ -44,6 +44,26 @@
     }
   }
 
+  &--cancel{
+    @extend .button--de-emphasized;
+
+    // Expand buttons on medium down
+    @include breakpoint(medium down){
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &--confirm{
+    @extend .button;
+
+    // Expand buttons on medium down
+    @include breakpoint(medium down){
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
   &--left{
     @extend .button;
     float: left;
