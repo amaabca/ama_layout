@@ -64,6 +64,15 @@
     @extend .expanded;
   }
 
+  &--expand-medium-down{
+    @extend .button;
+
+    @include breakpoint(medium down){
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
   &--small{
     @extend .button;
     @extend .small;

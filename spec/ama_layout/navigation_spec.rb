@@ -5,6 +5,7 @@ describe AmaLayout::Navigation do
   let(:membership_site) { "http://membership.waffles.ca" }
   let(:driveredonline_site) { "http://driveredonline.waffles.ca" }
   let(:registries_site) { "http://registries.waffles.ca" }
+  let(:automotive_site) { "http://automotive.waffles.ca"}
 
   before(:each) do
     allow(Rails.configuration).to receive(:gatekeeper_site).and_return(gatekeeper_site)
@@ -13,6 +14,7 @@ describe AmaLayout::Navigation do
     allow(Rails.configuration).to receive(:membership_site).and_return(membership_site)
     allow(Rails.configuration).to receive(:driveredonline_site).and_return(driveredonline_site)
     allow(Rails.configuration).to receive(:registries_site).and_return(registries_site)
+    allow(Rails.configuration).to receive(:automotive_site).and_return(automotive_site)
   end
 
   describe "#nav_file_path" do
@@ -62,8 +64,17 @@ describe AmaLayout::Navigation do
 
     context "member" do
       context "subnavs" do
+        context "automotive" do
+          let(:automotive_subnav) { subject.items[2].sub_nav }
+
+          it "returns the subnav items" do
+            expect(automotive_subnav[0].text).to eq "Roadside Assistance Overview"
+            expect(automotive_subnav[0].link).to eq "#{automotive_site}/"
+          end
+        end
+
         context "driver education" do
-          let(:driver_education_subnav) { subject.items[2].sub_nav }
+          let(:driver_education_subnav) { subject.items[3].sub_nav }
 
           it "return the subnav items" do
             expect(driver_education_subnav[0].text).to eq "Driver Education Overview"
@@ -75,7 +86,7 @@ describe AmaLayout::Navigation do
         end
 
         context "registries" do
-          let(:registries_subnav) { subject.items[4].sub_nav }
+          let(:registries_subnav) { subject.items[5].sub_nav }
 
           it "returns the subnav items" do
             expect(registries_subnav[0].text).to eq "Registries Overview"
@@ -90,6 +101,9 @@ describe AmaLayout::Navigation do
     context "non-member" do
       context "subnavs" do
         context "driver education" do
+          before(:each) do
+            subject.user = OpenStruct.new navigation: "non-member"
+          end
           let(:driver_education_subnav) { subject.items[2].sub_nav }
 
           it "return the subnav items" do
@@ -106,6 +120,9 @@ describe AmaLayout::Navigation do
     context "member-in-renewal" do
       context "subnavs" do
         context "driver education" do
+          before(:each) do
+            subject.user = OpenStruct.new navigation: "member-in-renewal"
+          end
           let(:driver_education_subnav) { subject.items[2].sub_nav }
 
           it "return the subnav items" do
@@ -122,6 +139,9 @@ describe AmaLayout::Navigation do
     context "member-in-renewal-late" do
       context "subnavs" do
         context "driver education" do
+          before(:each) do
+            subject.user = OpenStruct.new navigation: "member-in-renewal-late"
+          end
           let(:driver_education_subnav) { subject.items[2].sub_nav }
 
           it "return the subnav items" do
