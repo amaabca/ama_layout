@@ -1,0 +1,9 @@
+.hero{
+  &--cerulean{
+    background: $cerulean;
+  }
+
+  &__heading{
+    color: $white;
+  }
+}
