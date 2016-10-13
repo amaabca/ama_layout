@@ -397,6 +397,15 @@ input[type="url"]:-ms-input-placeholder{
     margin-bottom: $base-margin;
   }
 
+  &__conditional-row{
+    @extend .form-horizontal__row;
+
+    &--hidden{
+      display: none;
+    }
+    display: block;
+  }
+
   &__label-wrapper{
     @include large-4;
   }
