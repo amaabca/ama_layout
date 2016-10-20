@@ -1,0 +1,100 @@
+.feature{
+  &__container{
+    background: $white;
+  }
+
+  &__section-title{
+    @extend .wisdom-script;
+    text-align: center;
+    font-size: $base-font-size*2.857;
+
+    @include breakpoint(medium down){
+      margin-top: $base-margin*2;
+    }
+  }
+
+  &__item{
+    padding: $base-padding*2 0;
+    text-align: center;
+  }
+
+  &__image{
+    margin: 0 auto $base-margin auto;
+    width: 415px;
+    height: 219px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 100%;
+    background-position: center;
+  }
+
+  &__content{
+    @include breakpoint(large){
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
+
+#feature__image{
+  &--devices{
+    background-image: url(devices.png);
+  }
+
+  &--membership{
+    background-image: url(membership.png);
+  }
+
+  &--vrar{
+    background-image: url(vrar.png);
+  }
+
+  &--automotive{
+    background-image: url(automotive.png);
+  }
+
+  &--rewards{
+    background-image: url(rewards.png);
+  }
+
+  &--subscriptions{
+    background-image: url(subscriptions.png);
+  }
+
+  &--gift-cards{
+    background-image: url(gift-card.png);
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi){
+  #feature__image{
+    &--devices{
+      background-image: url(devices2x.png);
+    }
+
+    &--feature--membership{
+      background-image: url(membership2x.png);
+    }
+
+    &--vrar{
+      background-image: url(vrar2x.png);
+    }
+
+    &--automotive{
+      background-image: url(automotive2x.png);
+    }
+
+    &--rewards{
+      background-image: url(rewards2x.png);
+    }
+
+    &--subscriptions{
+      background-image: url(subscriptions2x.png);
+    }
+
+    &--gift-cards{
+      background-image: url(gift-card2x.png);
+    }
+  }
+}
