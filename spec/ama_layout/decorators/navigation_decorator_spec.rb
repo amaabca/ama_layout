@@ -119,4 +119,12 @@ describe AmaLayout::NavigationDecorator do
       end
     end
   end
+
+  context "account toggle" do
+    it "in ama_layout it renders a blank partial" do
+      allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: "member"))
+      allow_any_instance_of(Draper::HelperProxy).to receive(:render).and_return "render"
+      expect(navigation_presenter.account_toggle).to eq "render"
+    end
+  end
 end
