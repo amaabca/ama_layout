@@ -26,6 +26,10 @@
     background-size: contain;
     max-width: 100%;
     background-position: center;
+    
+    @include breakpoint(small only){
+      max-width: 90%;
+    }
   }
 
   &__content{
@@ -38,31 +42,31 @@
 
 #feature__image{
   &--devices{
-    background-image: url(devices.png);
+    background-image: asset-url(devices);
   }
 
   &--membership{
-    background-image: url(membership.png);
+    background-image: asset-url(membership);
   }
 
   &--vrar{
-    background-image: url(vrar.png);
+    background-image: asset-url(vrar);
   }
 
   &--automotive{
-    background-image: url(automotive.png);
+    background-image: asset-url(automotive);
   }
 
   &--rewards{
-    background-image: url(rewards.png);
+    background-image: asset-url(rewards);
   }
 
   &--subscriptions{
-    background-image: url(subscriptions.png);
+    background-image: asset-url(subscriptions);
   }
 
   &--gift-cards{
-    background-image: url(gift-card.png);
+    background-image: asset-url(gift-card);
   }
 }
 
@@ -70,31 +74,31 @@
 (min-resolution: 192dpi){
   #feature__image{
     &--devices{
-      background-image: url(devices2x.png);
+      background-image: asset-url(devices2x);
     }
 
     &--feature--membership{
-      background-image: url(membership2x.png);
+      background-image: asset-url(membership2x);
     }
 
     &--vrar{
-      background-image: url(vrar2x.png);
+      background-image: asset-url(vrar2x);
     }
 
     &--automotive{
-      background-image: url(automotive2x.png);
+      background-image: asset-url(automotive2x);
     }
 
     &--rewards{
-      background-image: url(rewards2x.png);
+      background-image: asset-url(rewards2x);
     }
 
     &--subscriptions{
-      background-image: url(subscriptions2x.png);
+      background-image: asset-url(subscriptions2x);
     }
 
     &--gift-cards{
-      background-image: url(gift-card2x.png);
+      background-image: asset-url(gift-card2x);
     }
   }
 }
