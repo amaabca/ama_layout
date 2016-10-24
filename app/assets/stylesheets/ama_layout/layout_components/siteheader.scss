@@ -2,9 +2,9 @@
 .logo{
   width: 131px;
   padding: $base-padding*.75 0;
-  
+
   @include breakpoint(large){
-    padding: $base-padding*.75 0 $base-padding*.75 1rem;
+    padding: $base-padding*.75 0 $base-padding*.75 $base-padding;
   }
 }
 

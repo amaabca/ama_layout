@@ -1,4 +1,12 @@
 .hero{
+  &--grey{
+    margin: 100px auto;
+
+    @include breakpoint(medium down){
+      margin-top: $base-margin;
+    }
+  }
+
   &--cerulean{
     background: $cerulean;
     width: 100%;
