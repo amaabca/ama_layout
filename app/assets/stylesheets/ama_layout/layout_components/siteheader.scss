@@ -2,6 +2,10 @@
 .logo{
   width: 131px;
   padding: $base-padding*.75 0;
+
+  @include breakpoint(large){
+    padding: $base-padding*.75 0 $base-padding*.75 $base-padding;
+  }
 }
 
 .header{
@@ -13,12 +17,28 @@
 
 .top-bar{
   @extend .show-for-large;
-  padding: 0 $base-padding;
   height: $top-bar-height;
   background: $white;
 
   &__logo{
     @extend .logo;
+  }
+
+  &__item{
+    @include breakpoint(large){
+      height: $top-bar-height;
+
+      &--highlighted{
+        @extend .top-bar__item;
+        background: $brand-blue-light;
+      }
+    }
+  }
+
+  &__link--highlighted{
+    @include breakpoint(large){
+      color: $white;
+    }
   }
 
   .submenu{
