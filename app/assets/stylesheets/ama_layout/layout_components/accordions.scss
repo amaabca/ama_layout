@@ -150,16 +150,16 @@
       @extend .accordion-multi-state__icon;
       @extend .fa-check;
       border: 2px solid $brand-green;
-      background: $brand-green;
-      color: $white;
+      background: $white;
+      color: $brand-green;
     }
 
     &--error{
       @extend .accordion-multi-state__icon;
       @extend .fa-close;
       border: 2px solid $brand-red;
-      background: $brand-red;
-      color: $white;
+      background: $white;
+      color: $brand-red;
     }
   }
 }
