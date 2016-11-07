@@ -345,6 +345,13 @@
     @extend .expanded;
   }
 
+  &--mobile-expand{
+    @include breakpoint(small down){
+      @extend .button;
+      @extend .expanded;
+    }
+  }
+
   &--xlarge{
     @extend .button;
     width: 100%;
