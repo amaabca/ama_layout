@@ -1,6 +1,5 @@
 /*
 
-1. Main Layout Elements
 2. Panels
 3. Positioning
 4. Margins
@@ -8,72 +7,15 @@
 6. Background & Text Colours
 7. Lists
 8. Links
-9. Buttons
 10. Typography
 
 */
-
-/* ==================== 1. Main Layout Elements ==================== */
-.main-wrapper{
-  margin: $base-margin auto;
-}
-
-.page-wrapper{
-  border: $base-border;
-  background-color: $white;
-}
-
 .page-title{
   background: $ash;
   border-bottom: $base-border;
   padding: $base-padding 0;
 }
-
-.section-title{
-  @extend .page-title;
-  border: 0;
-  padding: $base-padding/2;
-  background-color: $stone;
-
-  h5{
-    color: $slate;
-  }
-}
-
-.content-block{
-  margin-bottom: $base-margin;
-}
-
-.content-block-bottom{
-  margin-top: $base-margin*8;
-}
-
-.image-callout{
-  border: $base-border;
-  margin-bottom: $base-margin;
-}
-
-.fullwidth{
-  width: 100% !important;
-}
-
 /* ==================== 2. Panels ==================== */
-.panel-box{
-  padding: $base-padding;
-
-  h4, p{
-    color: $white;
-    margin-top: 0;
-  }
-}
-
-.panel-box-confirmation{
-  background: $green;
-}
-
-.panel-box-error{
-  background: $brand-red;
-}
 
 .panel-title{
   @extend .page-title;
@@ -293,146 +235,6 @@
   line-height: 1.3rem !important;
 }
 
-/* ==================== 9. Buttons ==================== */
-.button{
-  text-decoration: none;
-
-  &:hover,
-  &:active,
-  &:focus{
-    background: lighten($button-background, 10%);
-  }
-
-  &--green{
-    @extend .button;
-    $button-background: $brand-green;
-    background: $button-background;
-    float: right;
-  }
-
-  &--dark-blue{
-    @extend .button;
-    $button-background: $brand-blue-dark;
-    background: $button-background;
-    float: right;
-  }
-
-  &--left{
-    @extend .button;
-    float: left;
-  }
-
-  &--right{
-    @extend .button;
-    float: right;
-  }
-
-  &--de-emphasized{
-    @extend .button;
-    float: left;
-    $button-background: $slate;
-    background: $button-background;
-
-    &:hover,
-    &:active,
-    &:focus{
-      background: lighten($button-background, 10%);
-    }
-  }
-
-  &--expand{
-    @extend .button;
-    @extend .expanded;
-  }
-
-  &--mobile-expand{
-    @include breakpoint(small down){
-      @extend .button;
-      @extend .expanded;
-    }
-  }
-
-  &--xlarge{
-    @extend .button;
-    width: 100%;
-    min-height: 161px;
-  }
-}
-
-.base-button{
-  border-radius: $global-radius;
-  @extend .button;
-  color: $white;
-}
-
-.expand{
-  @extend .expanded;
-}
-
-.emphasized,
-.emphasized:visited{
-  @extend .base-button;
-  background: $secondary-color;
-
-  &:hover,
-  &:active,
-  &:focus{
-   background-color: lighten($secondary-color, 10%);
-  }
-}
-
-button.disabled,
-button[disabled],
-.button.disabled,
-.button[disabled]{
-  background-color: lighten($secondary-color, 10%);
-  border-color: none;
-
-  &:hover,
-  &:active,
-  &:focus{
-    background-color: lighten($secondary-color, 10%);
-    border-color: none;
-  }
-}
-
-.de-emphasized, .de-emphasized:visited{
-  @extend .base-button;
-  background: $slate;
-
-  &:hover,
-  &:active,
-  &:focus{
-   background-color: lighten($slate, 10%);
-  }
-}
-
-.red-btn{
-  @extend .base-button;
-  background: $brand-red;
-
-  &:hover,
-  &:active,
-  &:focus{
-   background-color: lighten($brand-red, 10%);
-  }
-}
-
-.dark-blue-btn{
-  background: $brand-blue-dark;
-}
-
-.green-btn,
-.green-btn:visited{
-  @extend .base-button;
-  background: $brand-green;
-
-  &:hover,
-  &:active,
-  &:focus{
-   background-color: lighten($brand-green, 10%);
-  }
-}
 
 /* ==================== 10. Typography ==================== */
 .white-text{
@@ -530,7 +332,7 @@ button[disabled],
 }
 
 .small-text{
-  font-size: $base-font-size*0.75;
+  font-size: $base-font-size*0.85;
 }
 
 .word-wrap{

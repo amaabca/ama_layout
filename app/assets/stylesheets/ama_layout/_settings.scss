@@ -378,7 +378,7 @@ $mediaobject-image-width-stacked: 100%;
 
 $menu-margin: 0;
 $menu-margin-nested: 1rem;
-$menu-item-padding: 1.2rem 1rem;
+$menu-item-padding: 1.2rem 2rem;
 $menu-item-color-active: $cerulean;
 $menu-item-background-active: map-get($foundation-palette, primary);
 $menu-icon-spacing: 0.25rem;
@@ -456,7 +456,7 @@ $reveal-max-width: $global-width;
 $reveal-padding: 0;
 $reveal-border: 1px solid $medium-gray;
 $reveal-radius: $global-radius;
-$reveal-zindex: 1005;
+$reveal-zindex: 10000;
 $reveal-overlay-background: rgba($black, 0.45);
 
 // 29. Slider
