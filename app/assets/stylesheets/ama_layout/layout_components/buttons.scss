@@ -77,7 +77,8 @@
     @extend .button;
 
     @include breakpoint(small down){
-      @extend .expanded;
+      display: block;
+      margin: 0 auto;
     }
   }
 
