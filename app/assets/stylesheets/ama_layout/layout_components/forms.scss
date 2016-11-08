@@ -9,6 +9,27 @@
   float: left;
 }
 
+/* ------------- BEM Checkboxes ------------- */
+.checkbox-wrapper{
+  &__third{
+    @include large-4;
+  }
+  &__full{
+    @include large-12;
+  }
+  &__label{
+    display: inline-block;
+    width: 85%;
+    margin-left: 40px;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    padding: 0.5em 0.5em 0.5em 3em;
+
+  }
+}
+
+
 /* ------------- Custom Radio Button + Checkbox Styles  ------------- */
 input[type="radio"],
 input[type="checkbox"]:not(.default){
