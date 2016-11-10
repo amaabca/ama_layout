@@ -14,7 +14,7 @@
 
   &__label{
     position: absolute;
-    font-size: 8px;
+    font-size: $base-font-size*0.6;
     color: $charcoal;
     text-transform: uppercase;
   }
@@ -36,7 +36,7 @@
   }
 
   &__membership-number{
-    font-size: 22px;
+    font-size: $base-font-size*1.6;
     left: 15px;
     top: 75px;
   }
@@ -47,13 +47,12 @@
   }
 
   &__expiry{
-    font-size: 14px;
     left: 15px;
     top: 117px;
   }
 
   &__name{
-    font-size: 17px;
+    font-size: $base-font-size*1.2;
     left: 15px;
     top: 150px;
     text-transform: uppercase;
