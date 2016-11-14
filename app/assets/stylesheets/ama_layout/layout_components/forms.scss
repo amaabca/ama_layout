@@ -46,6 +46,16 @@ input[type="checkbox"] + label,
   }
 }
 
+.form__label-bg{
+  background: $ash;
+  border: $base-border;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  padding: 0 $base-padding/2 0 $base-padding/2;
+}
+
 .checkbox-label{
   display: inline-block;
   width: 85%;
