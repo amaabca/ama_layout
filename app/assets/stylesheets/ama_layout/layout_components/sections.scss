@@ -201,6 +201,7 @@
 .content-container{
   &--vertical{
     @include vertical-center;
+    width: 100%;
   }
 }
 
