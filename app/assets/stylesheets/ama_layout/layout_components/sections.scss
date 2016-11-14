@@ -198,6 +198,12 @@
   margin-bottom: 0;
 }
 
+.content-container{
+  &--vertical{
+    @include vertical-center;
+  }
+}
+
 @function set-hint-color($color) {
   @if (lightness($color) > 50) {
     @return $smoke; // Lighter backgorund, return dark color
