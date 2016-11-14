@@ -9,15 +9,26 @@
   float: left;
 }
 
+/* ------------- BEM Radio Buttons ------------- */
+.radio--label{
+  display: inline-block;
+  width: 85%;
+  margin-top: 9px;
+  margin-left: 32px;
+}
+
 /* ------------- BEM Checkboxes ------------- */
 .checkbox-wrapper{
   &__third{
     @include large-4;
   }
+  &__half{
+    @include large-6;
+  }
   &__full{
     @include large-12;
   }
-  &__label{
+  &__content{
     display: inline-block;
     width: 85%;
     margin-left: 40px;
@@ -26,9 +37,12 @@
     position: relative;
     padding: 0.5em 0.5em 0.5em 3em;
 
+    &--label{
+      font-size: 1em;
+      font-weight: 700;
+    }
   }
 }
-
 
 /* ------------- Custom Radio Button + Checkbox Styles  ------------- */
 input[type="radio"],
