@@ -1,6 +1,10 @@
 .table{
   margin-bottom: $base-margin;
 
+  &--grey-bg{
+    background: $stone;
+  }
+
   &__row{
     @include grid-row;
     overflow: auto;
