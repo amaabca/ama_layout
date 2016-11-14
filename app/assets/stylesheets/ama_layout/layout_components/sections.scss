@@ -110,6 +110,10 @@
   &:last-child:not(.section-content){
     margin-bottom: 0;
   }
+
+  @include breakpoint(medium down){
+    float: none;
+  }
 }
 
 .section-centered{
@@ -155,6 +159,11 @@
     background: lighten($smoke, 5%);
   }
 
+  &--ash-bg{
+    padding: $base-padding;
+    background: $ash;
+  }
+
   &--blue-bg{
     padding: $base-padding;
     background: $brand-blue-light;
@@ -166,9 +175,27 @@
     }
   }
 
+  &--cerulean-bg{
+    padding: $base-padding;
+    background: $cerulean;
+    color: $white;
+    @include clearfix;
+
+    label{
+      color: $white;
+    }
+  }
+
   &--grey-border{
     border: 2px solid $stone;
   }
+}
+
+.section-content-half{
+  @extend .section;
+  @include medium-6;
+  position: relative;
+  margin-bottom: 0;
 }
 
 @function set-hint-color($color) {

@@ -1,20 +1,3 @@
-.icon-group{
-  font-size: 1.75rem;
-  line-height: 3rem;
-  display: block;
-  text-align: center;
-
-  &__blue-icon{
-    color: $brand-blue-light;
-    font-size: 1.75rem;
-  }
-
-  &__grey-icon{
-    color: $smoke;
-    font-size: 1.75rem;
-  }
-}
-
 .graph{
   width: 100%;
   height: 50px;
@@ -80,7 +63,6 @@
     position: absolute;
     left: 20%;
     width: 80%;
-    font-size: .85rem;
     text-align: center;
     z-index: 5;
     @include vertical-center;
@@ -104,10 +86,6 @@
     text-align: center;
     color: $slate;
     margin-top: $base-margin;
-
-    strong{
-      font-size: 0.85rem;
-    }
 
     p{
       @extend .small-text;

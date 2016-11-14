@@ -68,6 +68,12 @@
     color: $slate;
   }
 
+  &__col-title--medium{
+    font-weight: 600;
+    font-size: 1rem;
+    color: $slate;
+  }
+
   &__col-title--small{
     font-weight: 600;
     font-size: 0.875rem;
@@ -88,6 +94,11 @@
     @extend .fa-check-circle;
     @extend .green-text;
   }
+}
+
+.table--ash-bg{
+  margin-bottom: $base-margin;
+  background-color: $ash;
 }
 
 .table-with-bg{

@@ -18,15 +18,24 @@
   }
 }
 
+.accordion-secondary{
+  &--header{
+    font-size: $base-font-size;
+  }
+
+  &--heading{
+
+  }
+}
 .accordion.secondary{
   background: none;
 
   a{
-    font-size: $base-font-size;
+    font-size: $global-font-size;
   }
 
   .accordion-content a{
-    font-size: $base-font-size;
+    font-size: $global-font-size;
   }
 
   .accordion-title{
@@ -59,6 +68,8 @@
 
   &__toggle{
     @include small-2;
+    @extend .fa;
+    @extend .fa-arrows-v;
     text-align: right;
     color: $white;
     padding-top: $base-padding*1.25;
@@ -67,17 +78,23 @@
 
 .accordion-multi-state{
   @extend .accordion;
+  margin-bottom: $base-margin;
   background: transparent;
+
+  .accordion-item{
+    margin-bottom: $base-margin;
+  }
 
   &__header{
     @extend .accordion__header;
     background: transparent;
+    position: relative;
   }
 
   &__heading-bg{
     @extend .accordion__heading;
     padding: 0.63rem 1rem !important;
-    width: 97%;
+    width: calc(100% - 20px);
 
     &--active{
       @extend .accordion-multi-state__heading-bg;
@@ -107,6 +124,7 @@
   &__heading{
     @extend .accordion__heading;
     margin-left: 10px;
+    font-size: 1rem;
     padding: 0 !important;
   }
 
@@ -119,6 +137,7 @@
     border-radius: 100%;
     position: absolute;
     background: white;
+    @include vertical-center;
 
     &:before{
       @include vertical-center;
@@ -142,16 +161,16 @@
       @extend .accordion-multi-state__icon;
       @extend .fa-check;
       border: 2px solid $brand-green;
-      background: $brand-green;
-      color: $white;
+      background: $white;
+      color: $brand-green;
     }
 
     &--error{
       @extend .accordion-multi-state__icon;
       @extend .fa-close;
       border: 2px solid $brand-red;
-      background: $brand-red;
-      color: $white;
+      background: $white;
+      color: $brand-red;
     }
   }
 }

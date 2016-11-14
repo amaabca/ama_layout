@@ -1,25 +1,3 @@
-.membership-card-radio{
-  text-align:center;
-  padding: 0;
-  width: 32%;
-
-  &.columns{
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-.membership-card-radio-plus-primary{
-  text-align: center;
-  padding: 0;
-  width: 49%;
-
-  &.columns{
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
 /* ------------- Input Styles  ------------- */
 %inputs-thirds{
   max-width: 30%;
@@ -32,34 +10,6 @@
 }
 
 /* ------------- Custom Radio Button + Checkbox Styles  ------------- */
-.checkboxes{
-
-  .box2{
-    margin-top: $base-margin/2;
-  }
-}
-
-.checkbox-content{
-  display: inline;
-  padding-left: $base-padding*8;
-}
-
-.radio-label{
-  padding: $base-padding/2;
-  width: 100%;
-}
-
-.radio-options{
-  padding: 0;
-  width: 100%;
-}
-
-input[type="radio"] + label{
-  hr{
-    margin: 0;
-  }
-}
-
 input[type="radio"],
 input[type="checkbox"]:not(.default){
   position: absolute;
@@ -67,7 +17,8 @@ input[type="checkbox"]:not(.default){
 }
 
 input[type="radio"] + label,
-input[type="checkbox"] + label{
+input[type="checkbox"] + label,
+.form__label--unselected{
   background: $ash;
   border: $base-border;
   margin: 0;
@@ -93,6 +44,21 @@ input[type="checkbox"] + label{
     border-bottom: $base-border;
     background: darken($ash, 4%);
   }
+}
+
+.form__label-bg{
+  background: $ash;
+  border: $base-border;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  padding: 0 $base-padding/2 0 $base-padding/2;
+}
+
+.form__label-addon{
+  @extend .form__label-bg;
+  border-top: 0;
 }
 
 .checkbox-label{
@@ -200,19 +166,22 @@ input[type="checkbox"]{
   }
 }
 
-.month,
-.year{
-  @extend %inputs-thirds;
-}
+// Scoped to avoid collisions with foundations datepicker
+.date{
+  .month,
+  .year {
+    @extend %inputs-thirds;
+  }
 
-.day{
-  @extend %inputs-thirds;
-  margin: 0 5%;
-}
+  .day {
+    @extend %inputs-thirds;
+    margin: 0 5%;
+  }
 
-.hour,
-.minute{
-  @extend %inputs-halves;
+  .hour,
+  .minute {
+    @extend %inputs-halves;
+  }
 }
 
 .minute{
@@ -395,6 +364,15 @@ input[type="url"]:-ms-input-placeholder{
     @include grid-row-nest;
     @include clearfix;
     margin-bottom: $base-margin;
+  }
+
+  &__conditional-row{
+    @extend .form-horizontal__row;
+
+    &--hidden{
+      display: none;
+    }
+    display: block;
   }
 
   &__label-wrapper{

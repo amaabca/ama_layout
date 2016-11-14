@@ -5,8 +5,18 @@
     margin-bottom: $base-margin;
   }
 
+  &__radio-full{
+    @include medium-12;
+  }
+
   &__radio-half{
     @include medium-6;
+
+    &:nth-of-type(2){
+      .comparison-radios__ribbon{ //only display the ribbon for the first radio
+        display: none;
+      }
+    }
   }
 
   &__radio-third{
@@ -100,6 +110,10 @@
     position: absolute;
     top: 0;
     right: 0;
+  }
+
+  &__divider{
+    margin-bottom: 0;
   }
 }
 
