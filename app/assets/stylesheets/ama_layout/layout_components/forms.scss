@@ -19,15 +19,19 @@
 
 /* ------------- BEM Checkboxes ------------- */
 .checkbox-wrapper{
+
   &__third{
     @include large-4;
   }
+
   &__half{
     @include large-6;
   }
+
   &__full{
     @include large-12;
   }
+
   &__content{
     display: inline-block;
     width: 85%;
