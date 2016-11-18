@@ -2,6 +2,7 @@
   position: relative; /* This is needed for the positioning of the close icon on the blue banners*/
   margin-bottom: $base-margin;
 
+
   &>:last-child{
     margin-bottom: 0;
   }
@@ -27,14 +28,15 @@
     @include grid-row;
     @include clearfix;
 
-    &--quarter{
-      @include large-3;
+    &--two{
+      @include large-2;
       @include small-12;
     }
 
-    &--three-quarter{
-      @include large-9;
+    &--ten{
+      @include large-10;
       @include small-12;
+      margin-top: 30px;
     }
   }
 
