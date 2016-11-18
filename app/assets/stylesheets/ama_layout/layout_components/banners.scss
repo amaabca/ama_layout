@@ -27,12 +27,12 @@
     @include grid-row;
     @include clearfix;
 
-    &--two{
+    &--image{
       @include large-2;
       @include small-12;
     }
 
-    &--ten{
+    &--content{
       @include large-10;
       @include small-12;
       margin-top: 30px;
