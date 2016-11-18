@@ -23,6 +23,21 @@
     color: $white;
   }
 
+  &__container{
+    @include grid-row;
+    @include clearfix;
+
+    &--quarter{
+      @include large-3;
+      @include small-12;
+    }
+
+    &--three-quarter{
+      @include large-9;
+      @include small-12;
+    }
+  }
+
   &__link{
     @extend .link--white;
   }
