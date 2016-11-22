@@ -70,6 +70,13 @@
   position: relative;
 }
 
+.z-index{
+  &--2{
+    z-index: 2;
+    position: relative;
+  }
+}
+
 /* ==================== 4. Margins ==================== */
 .m1{
   margin: $base-margin !important;
