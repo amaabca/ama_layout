@@ -48,6 +48,12 @@
       float: right;
     }
 
+    &--center{
+      @extend .table__data;
+      text-align: center;
+      clear: both;
+    }
+
     &--hide-large{
       @include hide-for(large);
     }
