@@ -387,6 +387,7 @@
   &--x-large{
     @extend .bold;
     font-size: $x-large-font-size;
+    line-height: $x-large-font-size;
 
     &--green{
       @extend .bold--x-large;
