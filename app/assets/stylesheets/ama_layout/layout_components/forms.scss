@@ -18,17 +18,17 @@
 }
 
 /* ------------- BEM Checkboxes ------------- */
-.checkbox-wrapper{
+.checkbox{
 
-  &__third{
+  &--third{
     @include large-4;
   }
 
-  &__half{
+  &--half{
     @include large-6;
   }
 
-  &__full{
+  &--full{
     @include large-12;
   }
 
