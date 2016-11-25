@@ -28,9 +28,14 @@
     @include clearfix;
   }
 
-  &__image{
+  &__image-container{
     @include large-2;
     @include small-12;
+  }
+
+  &__image{
+    display: block;
+    margin: 0 auto;
   }
 
   &__content-container{
@@ -39,7 +44,13 @@
   }
 
   &__content{
-      @include vertical-center;
+    position: relative;
+
+   &--vertical-center{    
+     @include breakpoint(large){
+       @include vertical-center;
+    }
+   }
   }
 
   &__link{
