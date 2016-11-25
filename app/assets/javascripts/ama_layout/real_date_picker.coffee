@@ -1,4 +1,4 @@
-class AMA.RealDatePicker
+class AMALayout.RealDatePicker
   constructor: () ->
     @setDefaultDays()
     @addEvents()
@@ -32,4 +32,4 @@ class AMA.RealDatePicker
     container.find('.day :nth-child(1)').prop('selected', true)
 
 $(document).ready ->
-  new AMA.RealDatePicker()
+  new AMALayout.RealDatePicker()
