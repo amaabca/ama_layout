@@ -1,8 +1,8 @@
-describe "AMA.RealDatePicker", ->
+describe "AMALayout.RealDatePicker", ->
   beforeEach ->
     this.fixtures = fixture.load("real_date_picker.html", false)
     jasmine.Ajax.install()
-    new AMA.RealDatePicker()
+    new AMALayout.RealDatePicker()
 
   afterEach ->
     jasmine.Ajax.uninstall()
