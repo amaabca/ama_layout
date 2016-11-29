@@ -8,10 +8,10 @@ class AMALayout.RealDatePicker
 
   addEvents: () ->
     $('select.month').on 'change', (event) =>
-      @limitDaysInMonth $(event.target).parent()
+      @limitDaysInMonth $(event.currentTarget).parent()
 
     $('select.year').on 'change', (event) =>
-      @limitDaysInMonth $(event.target).parent()
+      @limitDaysInMonth $(event.currentTarget).parent()
 
   limitDaysInMonth: (container) ->
     year = container.find('.year').val()
