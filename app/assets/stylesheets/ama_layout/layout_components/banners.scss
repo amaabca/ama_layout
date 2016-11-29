@@ -23,6 +23,36 @@
     color: $white;
   }
 
+  &__container{
+    @include grid-row;
+    @include clearfix;
+  }
+
+  &__image-container{
+    @include large-2;
+    @include small-12;
+  }
+
+  &__image{
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__content-container{
+    @include large-10;
+    @include small-12;
+  }
+
+  &__content{
+    position: relative;
+
+   &--vertical-center{    
+     @include breakpoint(large){
+       @include vertical-center;
+    }
+   }
+  }
+
   &__link{
     @extend .link--white;
   }
