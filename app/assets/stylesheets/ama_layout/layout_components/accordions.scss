@@ -59,11 +59,28 @@
     background: $brand-blue-light;
     overflow: auto;
     display: block;
+
+    &--transparent{
+      @extend .accordion__header;
+      background:transparent;
+    }
   }
 
   &__heading{
     @extend .heading;
     @include small-10;
+  }
+
+  &__heading-bg{
+    @extend .accordion__heading;
+    background: $brand-blue-light;
+    width: 97%;
+  }
+
+  &__heading--left-margin{
+    @extend .accordion__heading;
+    margin-left: 20px;
+    padding: 0 !important;
   }
 
   &__toggle{
@@ -73,6 +90,21 @@
     text-align: right;
     color: $white;
     padding-top: $base-padding*1.25;
+  }
+
+  &__icon{
+    width: 42px;
+    height: 42px;
+    border: 2px solid blue;
+    display: inline-block;
+    border-radius: 100%;
+    position: absolute;
+    background: white;
+  }
+
+  &--transparent{
+    @extend .accordion;
+    background: transparent;
   }
 }
 
