@@ -272,7 +272,6 @@
         left: 0;
         width: 100%;
       }
-
     }
   }
 
@@ -282,7 +281,7 @@
     margin-bottom: $base-margin*0.65;
     display: block;
     font-size: $base-font-size*0.85;
-    
+
     @include breakpoint(medium only){
       font-size: $base-font-size;
     }
