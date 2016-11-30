@@ -399,11 +399,11 @@ input[type="url"]:-ms-input-placeholder{
 
   &__conditional-row{
     @extend .form-horizontal__row;
-
+    display: block;
+    
     &--hidden{
       display: none;
     }
-    display: block;
   }
 
   &__label-wrapper{

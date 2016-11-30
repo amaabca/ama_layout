@@ -81,7 +81,7 @@
   margin-bottom: $base-margin;
   background: transparent;
 
-  .accordion-item{
+  .accordion-item{ //this is a foundation class needed for accordions to work. We only want to modify the margin for multi-state which is why it is nested.
     margin-bottom: $base-margin;
   }
 
@@ -92,8 +92,9 @@
   }
 
   &__heading-bg{
-    @extend .accordion__heading;
-    padding: 0.63rem 1rem !important;
+    @include small-10;
+    color: $white;
+    padding: 0.63rem $base-padding;
     width: calc(100% - 20px);
 
     &--active{
@@ -122,10 +123,10 @@
   }
 
   &__heading{
-    @extend .accordion__heading;
-    margin-left: 10px;
-    font-size: 1rem;
-    padding: 0 !important;
+    color: $white;
+    margin-left: $base-margin*0.75;
+    font-size: $base-font-size;
+    padding: 0;
   }
 
   &__icon{
@@ -139,7 +140,7 @@
     background: white;
     @include vertical-center;
 
-    &:before{
+    &::before{
       @include vertical-center;
       width: 100%;
       text-align: center;

@@ -52,7 +52,7 @@
       display: none;
     }
 
-    &:after{
+    &::after{
       content: '';
       position: absolute;
       right: 0;
@@ -61,7 +61,7 @@
       border-width: 35px;
     }
 
-    &:before{
+    &::before{
       content: '';
       position: absolute;
       right: -4px; //this controls the thickness of the arrow
@@ -71,7 +71,7 @@
       border-width: 35px;
     }
 
-    &--selected:after{
+    &--selected::after{
       content: '';
       color: $white;
       position: absolute;
@@ -92,7 +92,7 @@
       border-width: 35px;
     }
 
-    &--completed:after{
+    &--completed::after{
       content: '';
       color: $white;
       position: absolute;
@@ -113,7 +113,7 @@
       border-width: 35px;
     }
 
-    &--very-completed:after{
+    &--very-completed::after{
       content: '';
       color: $white;
       position: absolute;
@@ -123,7 +123,7 @@
       border-width: 35px;
     }
 
-    &--very-completed:before{
+    &--very-completed::before{
       content: '';
       color: $white;
       position: absolute;
@@ -169,7 +169,7 @@
     &--active{
       @extend .progress-bar-vertical__icon;
       background-color: $brand-blue-light;
-      color: white;
+      color: $white;
     }
 
     &--complete{
@@ -177,10 +177,10 @@
       @extend .fa-check;
       @extend .progress-bar-vertical__icon;
       background-color: $cerulean;
-      color: white;
+      color: $white;
       font-weight: normal;
 
-      &:before{
+      &::before{
         @include vertical-center;
         left: 0;
         width: 100%;
@@ -209,7 +209,6 @@
   margin: 0 auto;
   display: table;
   width: 100%;
-
   @include clearfix;
 
   @include breakpoint(medium only){
@@ -268,7 +267,7 @@
       color: $white;
       font-weight: normal;
 
-      &:before{
+      &::before{
         @include vertical-center;
         left: 0;
         width: 100%;
@@ -283,6 +282,7 @@
     margin-bottom: $base-margin*0.65;
     display: block;
     font-size: $base-font-size*0.85;
+    
     @include breakpoint(medium only){
       font-size: $base-font-size;
     }

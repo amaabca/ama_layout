@@ -179,11 +179,6 @@
     padding: $base-padding;
     background: $cerulean;
     color: $white;
-    @include clearfix;
-
-    label{
-      color: $white;
-    }
   }
 
   &--grey-border{
