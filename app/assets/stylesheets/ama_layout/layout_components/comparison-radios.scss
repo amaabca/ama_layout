@@ -34,7 +34,7 @@
     text-align: center;
   }
 
-  &__radio-btn--centered{
+  &__radio-btn--centered input[type="radio"] + label{
     padding: 0 0 21px 0;
 
     &:before{
