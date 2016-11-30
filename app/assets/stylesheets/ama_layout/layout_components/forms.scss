@@ -48,7 +48,8 @@ input[type="checkbox"]:not(.default){
 }
 
 input[type="radio"] + label,
-input[type="checkbox"] + label{
+input[type="checkbox"] + label,
+.form__label--unselected{
   background: $ash;
   border: $base-border;
   margin: 0;
@@ -74,6 +75,21 @@ input[type="checkbox"] + label{
     border-bottom: $base-border;
     background: darken($ash, 4%);
   }
+}
+
+.form__label-bg{
+  background: $ash;
+  border: $base-border;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  padding: 0 $base-padding/2 0 $base-padding/2;
+}
+
+.form__label-addon{
+  @extend .form__label-bg;
+  border-top: 0;
 }
 
 .checkbox-label{
@@ -379,6 +395,15 @@ input[type="url"]:-ms-input-placeholder{
     @include grid-row-nest;
     @include clearfix;
     margin-bottom: $base-margin;
+  }
+
+  &__conditional-row{
+    @extend .form-horizontal__row;
+    display: block;
+    
+    &--hidden{
+      display: none;
+    }
   }
 
   &__label-wrapper{

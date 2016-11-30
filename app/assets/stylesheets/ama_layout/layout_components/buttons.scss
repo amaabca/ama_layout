@@ -73,6 +73,16 @@
     }
   }
 
+  &--expand-small-down{
+    @extend .button;
+
+    @include breakpoint(small down){
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
   &--small{
     @extend .button;
     @extend .small;
