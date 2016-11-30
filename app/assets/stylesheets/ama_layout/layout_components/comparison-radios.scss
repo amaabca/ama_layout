@@ -34,8 +34,10 @@
     text-align: center;
   }
 
-  &__radio-btn--centered input[type="radio"] + label{
-    padding: 0 0 21px 0;
+  &__radio-btn--centered {
+    input[type="radio"] + label{
+      padding: 0 0 21px 0;
+    }
 
     &:before{
       top: 100%;
@@ -49,6 +51,10 @@
       margin-top: -27px;
       left: 50%;
       margin-left: -4px;
+    }
+
+    input[type="radio"]:checked + label{
+      padding: 0 0 46px 0;
     }
   }
 
