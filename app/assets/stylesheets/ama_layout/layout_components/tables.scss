@@ -1,6 +1,10 @@
 .table{
   margin-bottom: $base-margin;
 
+  &--ash-bg{
+    background: $ash;
+  }
+
   &__row{
     @include grid-row;
     overflow: auto;
@@ -44,6 +48,12 @@
       float: right;
     }
 
+    &--center{
+      @extend .table__data;
+      text-align: center;
+      clear: both;
+    }
+
     &--hide-large{
       @include hide-for(large);
     }
@@ -62,11 +72,17 @@
     font-weight: 600;
     font-size: rem-calc(16);
     color: $slate;
-  }
 
-  &__col-title--small{
-    font-weight: 600;
-    font-size: 0.875rem;
+    &--medium{
+      font-weight: 600;
+      font-size: $base-font-size;
+      color: $slate;
+    }
+
+    &--small{
+      font-weight: 600;
+      font-size: $base-font-size*0.875;
+    }
   }
 
   &__col-title-link{
