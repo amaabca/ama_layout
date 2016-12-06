@@ -45,6 +45,14 @@
         left: 50%;
         margin-left: -12px;
       }
+
+      &:after{
+        top: 100%;
+        margin-top: -27px;
+        left: 50%;
+        margin-left: -4px;
+        display: none;
+      }
     }
 
     input[type="radio"]:checked + label{
