@@ -35,20 +35,35 @@
   }
 
   &__radio-btn--centered{
-    padding: 0 0 21px 0;
 
-    &:before{
-      top: 100%;
-      margin-top: -35px;
-      left: 50%;
-      margin-left: -12px;
+    input[type="radio"] + label{
+      padding: 0 0 46px 0;
+
+      &::before{
+        top: 100%;
+        margin-top: -35px;
+        left: 50%;
+        margin-left: -12px;
+      }
+
+      &::after{
+        top: 100%;
+        margin-top: -27px;
+        left: 50%;
+        margin-left: -4px;
+        display: none;
+      }
     }
 
-    &:after{
-      top: 100%;
-      margin-top: -27px;
-      left: 50%;
-      margin-left: -4px;
+    input[type="radio"]:checked + label{
+      padding: 0 0 46px 0;
+
+      &::after{
+        top: 100%;
+        margin-top: -27px;
+        left: 50%;
+        margin-left: -4px;
+      }
     }
   }
 
