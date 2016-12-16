@@ -25,6 +25,15 @@
   }
 }
 
+.section-scroll{
+  overflow: auto;
+  height: 500px;
+  padding: 0 $base-padding*4;
+  margin-bottom: $base-margin*4;
+  border: 1px solid $stone;
+  clear:both;
+}
+
 .section-nested{
   @include grid-row-nest;
   @include clearfix;
