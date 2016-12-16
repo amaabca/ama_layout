@@ -1,0 +1,22 @@
+.map-full-page{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+
+  /*this corrects the scroll bar on weather infowindows */
+  div > div > div > div > div > div > div > div > div{
+    overflow: hidden!important;
+  }
+
+  &__location-icon{
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+  }
+}
