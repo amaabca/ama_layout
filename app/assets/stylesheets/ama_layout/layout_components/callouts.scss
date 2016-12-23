@@ -39,6 +39,12 @@
 
   &__content{
     @include large-10;
+
+    &--vertical-center{
+      @include breakpoint(large){
+        @include vertical-center;
+     }
+    }
   }
 
   &__link{
