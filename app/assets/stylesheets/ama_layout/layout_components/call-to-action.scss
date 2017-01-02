@@ -1,0 +1,44 @@
+.call-to-action{
+
+  &__container{
+    @include grid-row;
+    @include clearfix;
+  }
+
+  &__sub-head{
+    margin-bottom: $base-margin;
+    color: $charcoal;
+    clear: both;
+  }
+
+  &__image-container{
+    @include large-1;
+    @include small-3;
+  }
+
+  &__image{
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__content-container{
+    @include large-3;
+    @include small-9;
+
+  }
+
+  &__content{
+    position: relative;
+  }
+}
+
+.mobile-center{
+  @include breakpoint(small only){
+    position: relative;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-40%, -50%);
+    margin-top: 70px;
+    margin-bottom: -50px;
+  }
+}

@@ -9,6 +9,7 @@
     @include callout($brand-green);
     margin-bottom: $base-margin;
     color: $white;
+    padding: $base-padding;
   }
 
   &--red{
@@ -23,22 +24,32 @@
     color: $white;
   }
 
+  &__container{
+    @include grid-row;
+    @include clearfix;
+  }
+
   &__sub-head{
     color: $white;
   }
 
   &__image-container{
-    @include large-2;
+    @include large-1;
+    @include small-4;
   }
 
   &__image{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+  }
+
+  &__content-container{
+    @include large-11;
+    @include small-8;
   }
 
   &__content{
-    @include large-10;
+    position: relative;
   }
 
   &__link{
