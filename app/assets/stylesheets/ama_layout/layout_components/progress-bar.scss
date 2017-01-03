@@ -32,6 +32,10 @@
     color: $white;
     overflow: hidden;
     padding: 6px 0;
+
+    &:last-child:not(:first-child){
+      float: none;
+    }
   }
     &__section-title{
 
