@@ -5,20 +5,47 @@
   }
 
   &__item{
-    margin: 1px 0px ;
+    @include clearfix;
+    margin: 1px 0;
     border-top: 0;
     border-bottom: 0;
     border-left: 0;
-    color: #555555;
+    border-radius: 0;
     display: block;
-    font-size: 14px;
-    height: 40px;
+    height: inherit;
     line-height: 1;
-    border-image: none;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
-    padding: 0px;
-    background-color: #fff;
-    text-transform: capitalize;
-    text-align: left;
+    padding: 0;
+    background-color: $white;
+    color: $cerulean;
+    position: relative;
+
+    &:nth-child(even){
+      background-color: $ash;
+    }
+
+    &.visible{
+      background-color: $brand-blue-light;
+      color: $white;
+
+      .option-toggle__item-icon{
+        background-color: $brand-blue-light;
+      }
+    }
+  }
+
+  &__item-label{
+    display: block;
+    float: left;
+    margin: 0 0 0 65px;
+    line-height: 24px;
+    @include vertical-center;
+  }
+
+  &__item-icon{
+    background-color: transparent;
+    width: auto;
+    height: 100%;
+    float: left;
+    padding: 4px;
   }
 }

@@ -74,6 +74,16 @@
   background: $brand-green;
 }
 
+.section-heading--orange{
+  @extend .heading;
+  background: $orange;
+}
+
+.section-heading--yellow{
+  @extend .heading;
+  background: $canary-yellow;
+}
+
 .section-quarter{
   @extend .section;
   @include large-3;

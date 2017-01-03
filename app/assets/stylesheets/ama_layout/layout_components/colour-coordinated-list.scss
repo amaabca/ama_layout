@@ -1,0 +1,11 @@
+.colour-coordinated-list{
+  margin: $base-margin*0.9375 $base-margin*0.45;
+  padding: $base-padding*0.45 $base-padding*0.9375;
+  list-style-type: none;
+
+  &.good { border-left: 9px solid $brand-green; }
+  &.fair { border-left: 9px solid $orange; }
+  &.poor { border-left: 9px solid  $brand-red; }
+  &.unreported { border-left: 9px solid $smoke; }
+  &.closed { border-left: 9px solid  $black; }
+}
