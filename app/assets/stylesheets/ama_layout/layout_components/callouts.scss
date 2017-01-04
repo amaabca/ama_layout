@@ -35,7 +35,7 @@
 
   &__image-container{
     @include large-1;
-    @include small-4;
+    @include small-12;
   }
 
   &__image{
@@ -45,7 +45,7 @@
 
   &__content-container{
     @include large-11;
-    @include small-8;
+    @include small-12;
   }
 
   &__content{
