@@ -1,16 +1,17 @@
 .receipt-summary{
+
   &__image-container{
     @include medium-3;
     margin-bottom: $base-margin;
+  }
 
-    &__image{
-      margin-bottom: $base-margin;
+  &__image{
+    margin-bottom: $base-margin;
 
-      @include breakpoint(small){
-        display: block;
-        margin-right: auto;
-        margin-left: auto;
-      }
+    @include breakpoint(small){
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
     }
   }
 
