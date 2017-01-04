@@ -9,7 +9,6 @@
     @include callout($brand-green);
     margin-bottom: $base-margin;
     color: $white;
-    padding: $base-padding;
   }
 
   &--red{
@@ -46,10 +45,6 @@
   &__content-container{
     @include large-11;
     @include small-12;
-  }
-
-  &__content{
-    position: relative;
   }
 
   &__link{

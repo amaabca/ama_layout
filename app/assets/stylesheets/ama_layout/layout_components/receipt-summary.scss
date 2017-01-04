@@ -6,9 +6,8 @@
   }
 
   &__image{
-    margin-bottom: $base-margin;
 
-    @include breakpoint(small){
+    @include breakpoint(small only){
       display: block;
       margin-right: auto;
       margin-left: auto;
@@ -18,5 +17,9 @@
   &__content-container{
     @include medium-9;
     margin-bottom: $base-margin;
+
+    @include breakpoint(small only){
+      margin-left: $base-margin;
+    }
   }
 }

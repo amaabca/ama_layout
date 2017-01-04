@@ -5,12 +5,6 @@
     @include clearfix;
   }
 
-  &__sub-head{
-    margin-bottom: $base-margin;
-    color: $charcoal;
-    clear: both;
-  }
-
   &__image-container{
     @include large-1;
     @include small-3;
@@ -24,9 +18,5 @@
   &__content-container{
     @include large-3;
     @include small-9;
-  }
-
-  &__content{
-    position: relative;
   }
 }
