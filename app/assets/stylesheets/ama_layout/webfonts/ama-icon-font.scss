@@ -23,6 +23,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 .ama-icon-motorcycle:before {
   content: "\61";
 }
@@ -52,6 +53,21 @@
 }
 .ama-icon-ama-card:before {
   content: "\6a";
+}
+.ama-icon-traffic-cone:before {
+  content: "\6b";
+}
+.ama-icon-stoplight:before {
+  content: "\6c";
+}
+.ama-icon-restroom:before {
+  content: "\6d";
+}
+.ama-icon-caa:before {
+  content: "\6f";
+}
+.ama-icon-towtruck:before {
+  content: "\6e";
 }
 
 .ama-icon{
