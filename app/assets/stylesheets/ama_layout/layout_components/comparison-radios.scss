@@ -117,7 +117,9 @@
       color: $white;
       margin-bottom: $base-margin;
       position: relative;
+    }
 
+    &--mobile-split{
       @include breakpoint(small only){
         float: left;
         width: 25%;
