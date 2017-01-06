@@ -136,6 +136,32 @@
   &__divider{
     margin-bottom: 0;
   }
+
+  &--disabled{
+    input[type="radio"]:checked + label{
+      background-color: lighten($sky, 4%);
+      border: 2px solid lighten(#b4e2f7, 12%);
+      color: lighten($stormcloud, 30%);
+
+      &:before{
+        border: 2px solid lighten($brand-blue-light, 55%);
+      }
+
+      &:after{
+        background-color: lighten($brand-blue-light, 55%);
+      }
+    }
+
+    input [type="radio"] + label {
+      border: 2px solid lighten(#b4e2f7, 6%);
+    }
+
+
+    [type='radio'] + label[for]{
+      cursor: not-allowed;
+      color: lighten($stormcloud, 30%);
+    }
+  }
 }
 
 input[type="radio"]:checked{
