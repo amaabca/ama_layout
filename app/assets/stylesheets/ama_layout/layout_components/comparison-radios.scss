@@ -140,7 +140,7 @@
   &--disabled{
     input[type="radio"]:checked + label{
       background-color: lighten($sky, 4%);
-      border: 2px solid lighten(#b4e2f7, 12%);
+      border: 2px solid lighten($dark-sky, 12%);
       color: lighten($stormcloud, 30%);
 
       &:before{
@@ -153,7 +153,7 @@
     }
 
     input [type="radio"] + label {
-      border: 2px solid lighten(#b4e2f7, 6%);
+      border: 2px solid lighten($dark-sky, 6%);
     }
 
 
