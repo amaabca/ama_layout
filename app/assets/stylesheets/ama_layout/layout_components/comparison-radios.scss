@@ -293,9 +293,35 @@
 
   &__divider{
     margin-bottom: 0;
-
+    
     @include breakpoint(small only){
       display: none;
+    }
+  }
+
+  &--disabled{
+    input[type="radio"]:checked + label{
+      background-color: lighten($sky, 4%);
+      border: 2px solid lighten($dark-sky, 12%);
+      color: lighten($stormcloud, 30%);
+
+      &:before{
+        border: 2px solid lighten($brand-blue-light, 55%);
+      }
+
+      &:after{
+        background-color: lighten($brand-blue-light, 55%);
+      }
+    }
+
+    input [type="radio"] + label{
+      border: 2px solid lighten($dark-sky, 6%);
+    }
+
+
+    [type='radio'] + label[for]{
+      cursor: not-allowed;
+      color: lighten($stormcloud, 30%);
     }
   }
 }
