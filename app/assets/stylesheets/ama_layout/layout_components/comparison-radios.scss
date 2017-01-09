@@ -130,6 +130,7 @@
 
   &__title-content{
     @include breakpoint(small only){
+      -webkit-transform: translate(-50%, -50%);
       @include absolute-center;
       font-size: 4.5vw;
     }
