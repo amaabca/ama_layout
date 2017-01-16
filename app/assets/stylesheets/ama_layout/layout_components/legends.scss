@@ -68,9 +68,36 @@
   background-color: $white;
   color: #848181;
   position: absolute;
-  top: 145px;
+  bottom: 145px;
   right: 0;
   z-index: 5;
+
+  @include breakpoint(small down){
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+
+    .legend__icon{
+      float: none;
+      margin: 0 auto 6px auto;
+      display: block;
+    }
+
+    .legend__text{
+      float: none;
+    }
+
+    .legend__key-identifier{
+      float: left;
+      margin-right: $base-margin*0.75;
+    }
+
+    .legend__keys{
+      @include clearfix;
+      width: auto;
+      margin: 0 auto;
+    }
+  }
 
   &.visible{
     display: block;
