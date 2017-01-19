@@ -6,6 +6,7 @@ describe AmaLayout::Navigation do
   let(:driveredonline_site) { "http://driveredonline.waffles.ca" }
   let(:registries_site) { "http://registries.waffles.ca" }
   let(:automotive_site) { "http://automotive.waffles.ca"}
+  let(:travel_site) { "http://travel.waffles.ca"}
 
   before(:each) do
     allow(Rails.configuration).to receive(:gatekeeper_site).and_return(gatekeeper_site)
@@ -15,6 +16,7 @@ describe AmaLayout::Navigation do
     allow(Rails.configuration).to receive(:driveredonline_site).and_return(driveredonline_site)
     allow(Rails.configuration).to receive(:registries_site).and_return(registries_site)
     allow(Rails.configuration).to receive(:automotive_site).and_return(automotive_site)
+    allow(Rails.configuration).to receive(:travel_site).and_return(travel_site)
   end
 
   describe "#nav_file_path" do
