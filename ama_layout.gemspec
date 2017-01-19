@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", ">= 4.2"
   spec.add_dependency "sass-rails", "~> 5.0"
   spec.add_dependency "font-awesome-sass", "4.7.0"
-  spec.add_dependency "draper", "~> 2.1"
+  spec.add_dependency "draper", ">= 2.1"
   spec.add_dependency "browser", "~> 2.0"
   spec.add_dependency "breadcrumbs_on_rails", "~> 3.0.1"
   spec.add_development_dependency "bundler", "~> 1.11"
