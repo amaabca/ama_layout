@@ -116,16 +116,4 @@ describe AmaLayoutPathHelper do
       expect(helper.driveredonline_path).to eq "#{driveredonline_site}"
     end
   end
-
-  describe "#travel_path" do
-    it "returns the travel path" do
-      expect(helper.travel_path).to eq "#{travel_site}"
-    end
-  end
-
-  describe "#travel_contest_path" do
-    it "returns the travel contest path" do
-      expect(helper.travel_path).to eq "#{travel_site}/travel-promotions-contests/pin-and-win/dashboard"
-    end
-  end
 end
