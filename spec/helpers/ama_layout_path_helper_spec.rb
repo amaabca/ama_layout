@@ -4,6 +4,7 @@ describe AmaLayoutPathHelper do
   let(:insurance_site) { "http://insurance.waffles.ca" }
   let(:membership_site) { "http://membership.waffles.ca" }
   let(:driveredonline_site) { "http://driveredonline.waffles.ca" }
+  let(:travel_site) { "http://travel.waffles.ca" }
 
   before(:each) do
     allow(Rails.configuration).to receive(:gatekeeper_site).and_return(gatekeeper_site)
@@ -11,6 +12,7 @@ describe AmaLayoutPathHelper do
     allow(Rails.configuration).to receive(:insurance_site).and_return(insurance_site)
     allow(Rails.configuration).to receive(:membership_site).and_return(membership_site)
     allow(Rails.configuration).to receive(:driveredonline_site).and_return(driveredonline_site)
+    allow(Rails.configuration).to receive(:travel_site).and_return(travel_site)
   end
 
   describe "#gatekeeper_profile_path" do
@@ -112,6 +114,18 @@ describe AmaLayoutPathHelper do
   describe "#driveredonline_path" do
     it "returns the driveredonile path" do
       expect(helper.driveredonline_path).to eq "#{driveredonline_site}"
+    end
+  end
+
+  describe "#travel_path" do
+    it "returns the travel path" do
+      expect(helper.travel_path).to eq "#{travel_site}"
+    end
+  end
+
+  describe "#travel_contest_path" do
+    it "returns the travel contest path" do
+      expect(helper.travel_path).to eq "#{travel_site}/travel-promotions-contests/pin-and-win/dashboard"
     end
   end
 end
