@@ -32,11 +32,11 @@
     width: 100%;
     position: relative;
     padding: 0.5em 0.5em 0.5em 3em;
-  }
 
-  &__label{
-    font-size: $base-font-size;
-    font-weight: 700;
+    &--label{
+      font-size: 1em;
+      font-weight: 700;
+    }
   }
 }
 
