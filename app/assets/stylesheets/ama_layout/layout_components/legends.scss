@@ -54,6 +54,11 @@
       @extend .legend__icon;
       background-color: $canary-yellow;
     }
+
+    &--black{
+      @extend .legend__icon;
+      background-color: $black;
+    }
   }
 
   &__text{

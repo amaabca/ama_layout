@@ -6,11 +6,6 @@
   right: 0;
   height: 100vh;
 
-  /*this corrects the scroll bar on weather infowindows */
-  div > div > div > div > div > div > div > div > div{
-    overflow: hidden!important;
-  }
-
   &__location-icon{
     position: fixed;
     left: 10px;

@@ -103,3 +103,41 @@ button[disabled],
     border-color: none;
   }
 }
+
+.button-toggle{
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+
+  &--fixed{
+    @extend .button-toggle;
+    position: relative;
+    top: 20px
+  }
+
+  &__option{
+    width: 50%;
+    border: 2px solid $cerulean;
+    float: left;
+    background: $white;
+    color: $slate;
+    padding: $base-padding*0.45;
+    text-align: center;
+
+    &--right{
+      @extend .button-toggle__option;
+      border-radius: 0 5px 5px 0;
+      margin-left: -1px;
+    }
+
+    &--left{
+      @extend .button-toggle__option;
+      border-radius: 5px 0 0 5px;
+    }
+
+    &--active{
+      background: $cerulean;
+      color: $white;
+    }
+  }
+}
