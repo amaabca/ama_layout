@@ -1,7 +1,7 @@
 .legend{
   &__header{
     background-color: $cerulean;
-    color: white;
+    color: $white;
     padding: $base-padding*0.6;
   }
 
@@ -28,8 +28,8 @@
 
   &__icon{
     height: 12px;
-    width:12px;
-    float:left;
+    width: 12px;
+    float: left;
     margin-right: $base-margin*0.45;
     margin-top: $base-margin*0.2;
     border-radius: 100%;
@@ -87,7 +87,7 @@
   display: none;
   width: 160px;
   background-color: $white;
-  color: #848181;
+  color: $slate;
   position: absolute;
   bottom: 145px;
   right: 0;

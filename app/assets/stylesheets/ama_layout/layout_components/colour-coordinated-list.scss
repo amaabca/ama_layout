@@ -3,7 +3,7 @@
   padding: $base-padding*0.45 $base-padding*0.9375;
   list-style-type: none;
 
-  &.good{
+  &.good{ //I will be making a bug for the devs to change the way the JS uses these classes so we can rename to something a bit better -KR
     border-left: 9px solid $brand-green;
   }
 
@@ -14,7 +14,7 @@
   &.poor{
     border-left: 9px solid  $brand-red;
   }
-  
+
   &.unreported{
     border-left: 9px solid $smoke;
   }
