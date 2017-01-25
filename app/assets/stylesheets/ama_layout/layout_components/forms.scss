@@ -408,6 +408,13 @@ input[type="url"]:-ms-input-placeholder{
 
   &__label-wrapper{
     @include large-4;
+
+    &--disabled{
+      label{
+        @extend .form-horizontal__label-wrapper;
+        color: lighten($slate, 30%);
+      }
+    }
   }
 
   &__input-wrapper{

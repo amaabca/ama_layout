@@ -1,3 +1,39 @@
+.notice--flash{
+  padding: $base-padding/2 $base-padding;
+  background-color: $brand-blue-insurance;
+  color: $white;
+  -webkit-animation: noticeFade 8s;
+  -moz-animation: noticeFade 8s;
+  -o-animation: noticeFade 8s;
+   animation: noticeFade 8s;
+   opacity: 0;
+}
+
+@keyframes noticeFade{
+  0%   { opacity:0; }
+  10%  { opacity:1; }
+  90%  { opacity:1; }
+  100% { opacity:0; }
+}
+@-o-keyframes noticeFade{
+  0%   { opacity:0; }
+  10%  { opacity:1; }
+  90%  { opacity:1; }
+  100% { opacity:0; }
+}
+@-moz-keyframes noticeFade{
+  0%   { opacity:0; }
+  10%  { opacity:1; }
+  90%  { opacity:1; }
+  100% { opacity:0; }
+}
+@-webkit-keyframes noticeFade{
+  0%   { opacity:0; }
+  10%  { opacity:1; }
+  90%  { opacity:1; }
+  100% { opacity:0; }
+}
+
 .notice_notification{
   padding: $base-padding/2 $base-padding;
   background-color: $brand-blue-insurance;
