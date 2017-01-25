@@ -18,11 +18,12 @@
 
   &__keys{
     list-style: none;
+    margin-bottom: 0;
   }
 
   &__key-identifier{
     @include clearfix;
-    margin-top: $base-margin*0.5;
+    margin-top: $base-margin*0.4;
   }
 
   &__icon{
@@ -45,7 +46,7 @@
       background-color: $brand-green;
     }
 
-    &--red{
+    &--darkred{
       @extend .legend__icon;
       background-color: $dark-red;
     }
@@ -55,15 +56,30 @@
       background-color: $canary-yellow;
     }
 
+    &--red{
+      @extend .legend__icon;
+      background-color: $brand-red;
+    }
+
     &--black{
       @extend .legend__icon;
       background-color: $black;
     }
   }
 
+  &__icon--rect{
+    height: 25px;
+    width: 3.5px;
+    float: left;
+    border-radius: 0;
+    margin-right: $base-margin*0.45;
+    margin-top: 0;
+  }
+
   &__text{
     float: left;
-    font-size: $base-font-size*0.875;
+    font-size: $base-font-size*0.8;
+    line-height: 1.3rem;
   }
 }
 
@@ -86,6 +102,11 @@
       float: none;
       margin: 0 auto 6px auto;
       display: block;
+
+      &--rect{
+        height: 3.5px;
+        width: 27px;
+      }
     }
 
     .legend__text{
@@ -94,7 +115,8 @@
 
     .legend__key-identifier{
       float: left;
-      margin-right: $base-margin*0.75;
+      margin-right: $base-margin*0.45;
+      text-align: center;
     }
 
     .legend__keys{
