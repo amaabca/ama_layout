@@ -89,12 +89,13 @@
   background-color: $white;
   color: $slate;
   position: absolute;
-  bottom: 145px;
+  top: 145px;
   right: 0;
   z-index: 5;
 
   @include breakpoint(small down){
-    bottom: 0;
+    bottom: 30px;
+    top: auto;
     width: 100%;
     position: fixed;
 

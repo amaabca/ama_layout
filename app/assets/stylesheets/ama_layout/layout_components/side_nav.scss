@@ -67,6 +67,6 @@
 .side-nav-overlay{
   @extend .side-nav;
   z-index: 1000;
-  position: relative;
+  position: absolute;
   min-width: 300px;
 }

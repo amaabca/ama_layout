@@ -111,8 +111,10 @@ button[disabled],
 
   &--fixed{
     @extend .button-toggle;
-    position: relative;
-    top: 20px
+    position: fixed;
+    top: 70px;
+    width: 95%;
+    left: 2.5%;
   }
 
   &__option{
