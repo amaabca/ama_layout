@@ -109,10 +109,10 @@ button[disabled],
   margin: 0 auto;
   display: block;
 
-  &--fixed{
+  &--absolute{
     @extend .button-toggle;
-    position: fixed;
-    top: 70px;
+    position: absolute;
+    top: 15px;
     width: 95%;
     left: 2.5%;
   }
