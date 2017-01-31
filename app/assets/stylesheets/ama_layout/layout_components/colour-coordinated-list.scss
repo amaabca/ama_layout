@@ -1,6 +1,6 @@
 .colour-coordinated-list{
-  margin: $base-margin*0.9375 $base-margin*0.45;
-  padding: $base-padding*0.45 $base-padding*0.9375;
+  margin: $base-margin $base-margin*0.5;
+  padding: $base-padding*0.5 $base-padding;
   list-style-type: none;
 
   &.good{ //I will be making a bug for the devs to change the way the JS uses these classes so we can rename to something a bit better -KR

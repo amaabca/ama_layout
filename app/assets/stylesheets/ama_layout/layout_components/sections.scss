@@ -30,8 +30,7 @@
   height: 500px;
   padding: 0 $base-padding*4;
   margin-bottom: $base-margin*4;
-  border: 1px solid $stone;
-  clear:both;
+  border: $base-border;
 }
 
 .section-nested{
@@ -81,7 +80,7 @@
 
 .section-heading--yellow{
   @extend .heading;
-  background: $canary-yellow;
+  background: $canary;
 }
 
 .section-quarter{

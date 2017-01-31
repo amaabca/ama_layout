@@ -29,11 +29,6 @@
     color: $white;
   }
 
-  &__text--center{
-    @extend .banner__text;
-    text-align: center;
-  }
-
   &__container{
     @include grid-row;
     @include clearfix;

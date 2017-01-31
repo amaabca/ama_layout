@@ -8,11 +8,6 @@
   &__content-container{
     background-color: $white;
     padding: $base-padding*0.6;
-
-    &.visible{
-      display: block;
-      clear: both;
-    }
   }
 
   &__keys{
@@ -33,7 +28,6 @@
     margin-top: $base-margin*0.2;
     border-radius: 100%;
     -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
 
     &--grey{
       @extend .legend__icon;
@@ -47,12 +41,12 @@
 
     &--darkred{
       @extend .legend__icon;
-      background-color: $dark-red;
+      background-color: $sangria;
     }
 
     &--yellow{
       @extend .legend__icon;
-      background-color: $canary-yellow;
+      background-color: $canary;
     }
 
     &--red{

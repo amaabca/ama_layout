@@ -1,10 +1,12 @@
 .option-toggle{
+  &__list{
+    list-style: none;
+    margin-bottom: 0;
+  }
+
   &__item{
     @include clearfix;
     margin: 1px 0;
-    display: block;
-    height: inherit;
-    line-height: 1;
     background-color: $white;
     color: $cerulean;
     position: relative;
@@ -13,7 +15,7 @@
       background-color: $ash;
     }
 
-    &.visible{
+    &.visible{ //this class isn't BEM because of the old JS in RR - KR
       background-color: $brand-blue-light;
       color: $white;
 
@@ -25,20 +27,17 @@
   }
 
   &__item-label{
-    display: block;
-    float: left;
-    margin: 0 0 0 65px;
+    margin: 0 0 0 $base-margin;
     line-height: 24px;
     @include vertical-center;
   }
 
   &__item-icon-container{
-    display: inline-block;
     background-color: transparent;
-    width: 50px;
+    width: 60px;
     height: 50px;
     float: left;
-    padding: 4px;
+    padding: $base-padding*1.5;
     position: relative;
   }
 
@@ -46,6 +45,7 @@
     color: $cerulean;
     width: 100%;
     font-size: $base-font-size*1.75;
+    left: 0;
     text-align: center;
     @include vertical-center;
   }
