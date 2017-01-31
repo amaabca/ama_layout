@@ -23,6 +23,21 @@ dialog .close-reveal-modal{
     min-height: 240px;
     position: fixed;
   }
+
+  &__close{
+    position: absolute;
+    color: $slate;
+    right: 1rem;
+    top: 0.5rem;
+    font-size: 2em;
+    line-height: 1;
+    cursor: pointer;
+
+    &--white{
+      @extend .reveal-modal__close;
+      color: $white;
+    }
+  }
 }
 
 @include breakpoint(small only){
