@@ -3,9 +3,7 @@
 @import "siteheader";
 @import "banners";
 @import "breadcrumbs";
-@import "buttons/button-grouping";
-@import "buttons/buttons";
-@import "buttons/button-toggle";
+@import "buttons/index";
 @import "callouts";
 @import "cart";
 @import "comparison-radios";
@@ -30,7 +28,7 @@
 @import "side_nav";
 @import "tables";
 @import "maps";
-@import "legends";
+@import "legends/index";
 @import "option-toggle";
 @import "colour-coordinated-list";
 @import "call-to-action";
