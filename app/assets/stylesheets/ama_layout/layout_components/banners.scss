@@ -52,7 +52,7 @@
   &__content{
     position: relative;
 
-   &--vertical-center{
+    &--vertical-center{
      @include breakpoint(large){
        @include vertical-center;
     }
