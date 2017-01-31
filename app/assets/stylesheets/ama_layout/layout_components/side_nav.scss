@@ -62,11 +62,11 @@
       color: $cerulean;
     }
   }
-}
 
-.side-nav-overlay{
-  @extend .side-nav;
-  z-index: 1000;
-  position: absolute;
-  min-width: 300px;
+  &--overlay{
+    @extend .side-nav;
+    z-index: 1000;
+    position: absolute;
+    min-width: 300px;
+  }
 }

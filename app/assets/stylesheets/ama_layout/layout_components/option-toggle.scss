@@ -26,13 +26,13 @@
     }
   }
 
-  &__item-label{
+  &__label{
     margin: 0 0 0 $base-margin;
     line-height: 24px;
     @include vertical-center;
   }
 
-  &__item-icon-container{
+  &__icon-container{
     background-color: transparent;
     width: 60px;
     height: 50px;
@@ -41,7 +41,7 @@
     position: relative;
   }
 
-  &__item-icon{
+  &__icon{
     color: $cerulean;
     width: 100%;
     font-size: $base-font-size*1.75;
