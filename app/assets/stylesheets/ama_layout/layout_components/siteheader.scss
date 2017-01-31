@@ -13,6 +13,12 @@
   top: 0;
   width: 100%;
   z-index: 9999;
+
+  &--absolute-mobile{
+    @include breakpoint(medium down){
+      position: absolute;
+    }
+  }
 }
 
 .top-bar{
