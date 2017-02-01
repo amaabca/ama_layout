@@ -2,6 +2,10 @@
   background: $white;
   @include grid-column(2,0);
 
+  @include breakpoint(medium down){
+    display: none;
+  }
+
   &__spacer{
     @include large-2;
     height: 100%;
@@ -11,6 +15,13 @@
     &--white{
       @extend .side-nav__spacer;
       background-color: $white;
+    }
+
+    &--show-for-medium{
+      @extend .side-nav__spacer;
+      @include breakpoint(medium down){
+        display: block;
+      }
     }
   }
 

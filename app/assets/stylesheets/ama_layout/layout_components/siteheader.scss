@@ -28,6 +28,11 @@
 
   &__logo{
     @extend .logo;
+
+    &--roadreports{
+      @extend .logo;
+      width: 260px;
+    }
   }
 
   &__item{
@@ -88,6 +93,11 @@
   &__logo{
     @extend .logo;
     @include horizontal-center;
+
+    &--roadreports{
+      @extend .logo;
+      width: 260px;
+    }
   }
 }
 
