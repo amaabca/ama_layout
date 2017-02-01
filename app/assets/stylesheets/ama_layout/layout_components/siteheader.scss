@@ -96,6 +96,7 @@
 
     &--roadreports{
       @extend .logo;
+      @include horizontal-center;
       width: 260px;
     }
   }
