@@ -12,6 +12,8 @@ dialog .close-reveal-modal{
 
 .reveal-modal{
   max-width: 960px;
+  position: relative;
+  margin: 0 auto;
 
   a{
     text-decoration: none;
@@ -21,7 +23,6 @@ dialog .close-reveal-modal{
   @include breakpoint(small only){
     top: 50px !important;
     min-height: 240px;
-    position: fixed;
   }
 
   &__close{
