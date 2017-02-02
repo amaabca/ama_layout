@@ -27,8 +27,8 @@
   &--scroll{
     overflow: auto;
     height: 500px;
-    padding: 0 $base-padding*4;
-    margin-bottom: $base-margin*4;
+    padding: 0 $base-padding;
+    margin-bottom: $base-margin;
     border: $base-border;
   }
 }

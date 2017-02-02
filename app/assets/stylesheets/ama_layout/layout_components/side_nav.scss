@@ -79,5 +79,9 @@
     z-index: 1000;
     position: absolute;
     min-width: 300px;
+
+    @include breakpoint(medium down){
+      position: relative;
+    }
   }
 }
