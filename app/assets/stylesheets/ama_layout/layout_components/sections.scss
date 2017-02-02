@@ -30,6 +30,10 @@
     padding: 0 $base-padding;
     margin-bottom: $base-margin;
     border: $base-border;
+
+    @include breakpoint(small down){
+      height: 350px;
+    }
   }
 }
 
