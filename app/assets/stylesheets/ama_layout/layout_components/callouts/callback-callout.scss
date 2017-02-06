@@ -1,0 +1,14 @@
+.callback-callout{
+  width: 55%;
+  float: left;
+
+  @include breakpoint(small down){
+    width: 100%;
+    float: none;
+    margin-top: 25px;
+  }
+
+  &--confirmation{
+    padding:0px $base-padding 0px 70px;
+  }
+}
