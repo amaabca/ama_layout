@@ -481,9 +481,25 @@ input[type="url"]:-ms-input-placeholder{
     @include large-8;
   }
 
+  &__input{
+    &--inline{
+      @include small-8;
+    }
+  }
+
+  &__label{
+    &--white{
+      color: $white;
+    }
+  }
+
   &__submit{
     &--right{
       @include large-4;
+    }
+
+    &--inline{
+      @include small-4;
     }
   }
 }

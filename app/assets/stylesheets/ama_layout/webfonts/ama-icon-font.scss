@@ -23,35 +23,64 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ama-icon-motorcycle:before {
+
+.ama-icon-motorcycle:before{
   content: "\61";
 }
-.ama-icon-map-pin:before {
+
+.ama-icon-map-pin:before{
   content: "\62";
 }
-.ama-icon-home:before {
+
+.ama-icon-home:before{
   content: "\63";
 }
-.ama-icon-hospital:before {
+
+.ama-icon-hospital:before{
   content: "\64";
 }
-.ama-icon-battery-power:before {
+
+.ama-icon-battery-power:before{
   content: "\65";
 }
-.ama-icon-settings:before {
+
+.ama-icon-settings:before{
   content: "\66";
 }
-.ama-icon-bicycle:before {
+
+.ama-icon-bicycle:before{
   content: "\67";
 }
-.ama-icon-scooter:before {
+
+.ama-icon-scooter:before{
   content: "\68";
 }
-.ama-icon-rv:before {
+
+.ama-icon-rv:before{
   content: "\69";
 }
-.ama-icon-ama-card:before {
+
+.ama-icon-ama-card:before{
   content: "\6a";
+}
+.ama-icon-traffic-cone:before{
+  content: "\6b";
+}
+
+.ama-icon-stoplight:before{
+  content: "\6c";
+}
+
+.ama-icon-restroom:before{
+  content: "\6d";
+}
+
+.ama-icon-caa:before{
+  content: "\6f";
+}
+
+.ama-icon-towtruck:before{
+  content: "\6e";
 }
 
 .ama-icon{
