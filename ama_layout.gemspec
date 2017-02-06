@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["michael.beuken@gmail.com", "ruben.a.estevez@gmail.com", "jorbabe@gmail.com", "mathieu.gilbert@ama.ab.ca", "ryan.michael.jones@gmail.com", "darko.dosenovic@ama.ab.ca", "jonathan.weyermann@ama.ab.ca", "adam.melnyk@ama.ab.ca", "kayt.campbell@ama.ab.ca", "kathleen.robertson@ama.ab.ca", "jesse.doyle@ama.ab.ca"]
   spec.summary       = %q{.ama.ab.ca site layouts}
   spec.description   = %q{.ama.ab.ca site layouts}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/amaabca"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -19,14 +19,19 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "foundation-rails", "~> 6.2.4.0"
-  spec.add_dependency "rails", "~> 4.2"
+  spec.add_dependency "rails", ">= 4.2"
   spec.add_dependency "sass-rails", "~> 5.0"
   spec.add_dependency "font-awesome-sass", "4.7.0"
-  spec.add_dependency "draper", "~> 2.1"
+  # Sigh ... SEE: https://github.com/drapergem/draper/issues/697
+  if Gem::Specification.find { |s| s.name == 'rails' }.version < Gem::Version.new('5.0.0')
+    spec.add_dependency "draper", "~> 2"
+  else
+    spec.add_dependency "draper", ">= 3.0.0.pre1"
+  end
   spec.add_dependency "browser", "~> 2.0"
   spec.add_dependency "breadcrumbs_on_rails", "~> 3.0.1"
   spec.add_development_dependency "bundler", "~> 1.11"
-  spec.add_development_dependency "rake", "~> 11.0"
+  spec.add_development_dependency "rake", ">= 11.0"
   spec.add_development_dependency "rspec-rails"
   spec.add_development_dependency "factory_girl"
   spec.add_development_dependency "simplecov"
