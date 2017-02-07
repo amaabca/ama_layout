@@ -22,7 +22,8 @@
     text-align: center;
 
     &--confirmation{
-      padding: 0 $base-padding 0 70px;
+      @include clearfix;
+      padding: 0 $base-padding*1.5 0 65px;
 
       @include breakpoint(small down){
         padding: $base-padding;
