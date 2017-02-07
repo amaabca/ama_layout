@@ -56,25 +56,3 @@
     }
   }
 }
-
-.callout{
-  &__side-arrow{ //this works best if it's a class on a svg element.
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 50%;
-
-    @include breakpoint(small down){
-      top: 100%;
-      left: 0%;
-      height: 30%;
-      background-color: $white;
-    }
-
-    &--mobile-spacing{
-      @include breakpoint(small down){
-        margin-top: 50px;
-      }
-    }
-  }
-}
