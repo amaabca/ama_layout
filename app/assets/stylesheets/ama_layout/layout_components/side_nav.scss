@@ -1,13 +1,12 @@
 .side-nav{
   background: $white;
   @include grid-column(2,0);
-  @include show-for(large);
+
+  @include breakpoint(medium down){
+    display: none;
+  }
 
   &__spacer{
-    @include breakpoint(medium down){
-      display: none;
-    }
-
     @include large-2;
     height: 100%;
     position: absolute;
@@ -16,6 +15,13 @@
     &--white{
       @extend .side-nav__spacer;
       background-color: $white;
+    }
+
+    &--show-for-medium{
+      @extend .side-nav__spacer;
+      @include breakpoint(medium down){
+        display: block;
+      }
     }
   }
 
@@ -65,6 +71,17 @@
     &--active-page{
       font-weight: bold;
       color: $cerulean;
+    }
+  }
+
+  &--overlay{
+    @extend .side-nav;
+    z-index: 1000;
+    position: absolute;
+    min-width: 300px;
+
+    @include breakpoint(medium down){
+      position: relative;
     }
   }
 }
