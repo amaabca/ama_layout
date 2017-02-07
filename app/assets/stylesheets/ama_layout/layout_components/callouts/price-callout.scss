@@ -23,12 +23,9 @@
       background-color: $white;
     }
   }
-
+  
   &__content{
     @include absolute-center;
+    text-align: center;
   }
-}
-
-.callback-callout--confirmation{
-  padding:0px 15px 0px 70px;
 }
