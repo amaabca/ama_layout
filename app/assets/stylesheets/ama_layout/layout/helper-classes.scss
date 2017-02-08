@@ -219,14 +219,15 @@
 }
 
 .vr{
-  &--desktop{
-    background-color: $stone;
-    width: 2px;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
+  width: 2px;
+  background-color: $stone;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
 
+  &--horizontal-mobile{
+    @extend .vr;
     @include breakpoint(small down){
       width: 100%;
       height: 2px;
