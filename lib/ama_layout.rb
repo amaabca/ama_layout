@@ -1,5 +1,6 @@
 require "ama_layout/version"
 require "rails/all"
+require "foundation-rails"
 require "draper"
 require "browser"
 require "breadcrumbs_on_rails"
