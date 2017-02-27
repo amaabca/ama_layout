@@ -1,8 +1,5 @@
 require "ama_layout/version"
 require "rails/all"
-require "foundation-rails"
-require "sass-rails"
-require "font-awesome-sass"
 require "draper"
 require "browser"
 require "breadcrumbs_on_rails"
