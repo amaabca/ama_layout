@@ -1,6 +1,6 @@
 # AmaLayout
 
-The AmaLayout gem is used to add a standard layout and style to .ama.ab.ca sites.
+The AmaLayout gem is used to add a standard layout to .ama.ab.ca sites.
 
 ## Installation
 
@@ -148,21 +148,11 @@ The following layout example will give you:
       <%= render "ama_layout/footer" %>
     </body>
 
-### Stylesheets
-
-Add the following to your application.scss
-
-    @import "ama_layout/application";
-
 ### Javascript
 
 Add the following to your application.js
 
     //= require ama_layout/desktop
-
-### Mobile Layouts
-
-There is no need for you to set any specific code, values,... for mobile views.
 
 ## Contributing
 
