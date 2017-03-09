@@ -53,4 +53,8 @@ module AmaLayoutContentHelper
   def alert(alert)
     render "ama_layout/alert" if alert
   end
+
+  def success(success)
+    render "ama_layout/success" if success
+  end
 end
