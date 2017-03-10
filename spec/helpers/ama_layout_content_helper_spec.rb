@@ -120,9 +120,11 @@ describe AmaLayoutContentHelper do
   end
 
   describe "#notice" do
+    let(:message) { "This is a notice." }
+
     it "renders the notice partial if a notice is present" do
-      expect(helper).to receive(:render).with "ama_layout/notice"
-      helper.notice("This is a notice.")
+      expect(helper).to receive(:render).with "ama_layout/notice", locals: { message: message }
+      helper.notice(message)
     end
 
     it "does not render the notice partial if a notice is not present" do
@@ -131,13 +133,28 @@ describe AmaLayoutContentHelper do
   end
 
   describe "#alert" do
+    let(:message) { "This is an alert." }
+
     it "renders the alert partial if a alert is present" do
-      expect(helper).to receive(:render).with "ama_layout/alert"
-      helper.alert("This is an alert.")
+      expect(helper).to receive(:render).with "ama_layout/alert", locals: { message: message }
+      helper.alert(message)
     end
 
     it "does not render the alert partial if a alert is not present" do
       expect(helper.notice(nil)).to be_nil
+    end
+  end
+
+  describe "#success_message" do
+    let(:message) { "This is a success message" }
+
+    it "renders the success partial if a success message is present" do
+      expect(helper).to receive(:render).with "ama_layout/success", locals: { message: message }
+      helper.success_message(message)
+    end
+
+    it "does not render the success partial if the success message is not present" do
+      expect(helper.success_message(nil)).to be_nil
     end
   end
 end
