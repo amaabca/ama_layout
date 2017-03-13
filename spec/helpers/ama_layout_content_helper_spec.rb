@@ -123,7 +123,7 @@ describe AmaLayoutContentHelper do
     let(:message) { "This is a notice." }
 
     it "renders the notice partial if a notice is present" do
-      expect(helper).to receive(:render).with "ama_layout/notice", locals: { message: message }
+      expect(helper).to receive(:render).with partial: "ama_layout/notice", locals: { message: message }
       helper.notice(message)
     end
 
@@ -136,7 +136,7 @@ describe AmaLayoutContentHelper do
     let(:message) { "This is an alert." }
 
     it "renders the alert partial if a alert is present" do
-      expect(helper).to receive(:render).with "ama_layout/alert", locals: { message: message }
+      expect(helper).to receive(:render).with partial: "ama_layout/alert", locals: { message: message }
       helper.alert(message)
     end
 
@@ -149,7 +149,7 @@ describe AmaLayoutContentHelper do
     let(:message) { "This is a success message" }
 
     it "renders the success partial if a success message is present" do
-      expect(helper).to receive(:render).with "ama_layout/success", locals: { message: message }
+      expect(helper).to receive(:render).with partial: "ama_layout/success", locals: { message: message }
       helper.success_message(message)
     end
 
