@@ -47,10 +47,14 @@ module AmaLayoutContentHelper
   end
 
   def notice(notice)
-    render "ama_layout/notice" if notice
+    render partial: "ama_layout/notice", locals: { message: notice } if notice
   end
 
   def alert(alert)
-    render "ama_layout/alert" if alert
+    render partial: "ama_layout/alert", locals: { message: alert } if alert
+  end
+
+  def success_message(success)
+    render partial: "ama_layout/success", locals: { message: success } if success
   end
 end
