@@ -50,9 +50,6 @@ member:
         link: "<%= Rails.configuration.registries_site %>/order/registrations/new"
   - text: "My Travel"
     link: "<%= Rails.configuration.travel_site %>"
-    sub_nav:
-      - text: "Pin & Win Contest"
-        link: "<%= Rails.configuration.travel_site %>/travel-promotions-contests/pin-and-win/dashboard"
   - text: "My Account Settings"
     link: "<%= Rails.configuration.gatekeeper_site %>/user/edit"
     icon: "fa-cogs"
