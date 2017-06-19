@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'breadcrumbs_on_rails', '~> 3.0.1'
   spec.add_dependency 'redis-rails'
   spec.add_development_dependency 'bundler', '~> 1.11'
-  spec.add_development_dependency 'rake', '~> 11.0'
+  spec.add_development_dependency 'rake', '>= 11.0'
   spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'factory_girl'
   spec.add_development_dependency 'simplecov'

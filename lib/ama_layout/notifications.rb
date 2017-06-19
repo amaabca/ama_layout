@@ -20,7 +20,7 @@ module AmaLayout
 
     module InstanceMethods
       def notifications
-        @notifications ||= NotificationSet.new _store, _foreign_key
+        @notifications ||= NotificationSet.new(_store, _foreign_key)
       end
 
       def notifications=(other)
@@ -52,7 +52,7 @@ module AmaLayout
       end
 
       def _notification_foreign_key
-        @_notification_foreign_key || Proc.new { |m| m.id }
+        @_notification_foreign_key || Proc.new(&:id)
       end
 
       def _notification_store

@@ -1,10 +1,15 @@
 module AmaLayout
   module Notifications
     class RedisStore < AbstractStore
+      delegate :clear, to: :base
+
       attr_accessor :base
 
       def initialize(opts = {})
-        self.base = ActiveSupport::Cache.lookup_store(:redis_store, opts)
+        self.base = ActiveSupport::Cache.lookup_store(
+          :redis_store,
+          opts.merge(raw: true)
+        )
       end
 
       def get(key, opts = {})
@@ -16,7 +21,7 @@ module AmaLayout
       end
 
       def set(key, value, opts = {})
-        base.write(key, value, opts)
+        base.write(key, value, opts) == 'OK'
       end
 
       def delete(key, opts = {})
