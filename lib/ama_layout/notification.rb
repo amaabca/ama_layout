@@ -1,6 +1,6 @@
 module AmaLayout
   class Notification
-    TYPES = %i(notice warning alert).freeze
+    TYPES = %i[notice warning alert].freeze
     FORMAT_VERSION = '1.0.0'.freeze
 
     # NOTE: The following attributes are designed to be immutable - you need
@@ -11,12 +11,13 @@ module AmaLayout
     def initialize(args = {})
       args = args.with_indifferent_access
       @id = args[:id]
-      @type = args.fetch(:type, TYPES.first)
+      @type = args.fetch(:type, :notice).to_sym
       @header = args.fetch(:header)
       @content = args.fetch(:content)
       @created_at = parse_time(args.fetch(:created_at))
       @version = args.fetch(:version, FORMAT_VERSION)
       self.active = args.fetch(:active)
+      invalid_type! if TYPES.exclude?(type)
     end
 
     def <=>(other)
@@ -52,6 +53,10 @@ module AmaLayout
     end
 
     private
+
+    def invalid_type!
+      raise ArgumentError, "invalid notification type: #{type}"
+    end
 
     def parse_time(time)
       time.is_a?(String) ? Time.zone.parse(time) : time

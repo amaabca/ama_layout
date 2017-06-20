@@ -80,7 +80,10 @@ module AmaLayout
 
     def serialize(data)
       data.inject({}) do |hash, element|
-        hash[element.digest] = element.to_h
+        # if there is already a dismissed notification, ignore it
+        if !hash.key?(element.digest)
+          hash[element.digest] = element.to_h
+        end
         hash
       end
     end
