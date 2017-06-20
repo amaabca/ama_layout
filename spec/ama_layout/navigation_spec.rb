@@ -139,11 +139,21 @@ describe AmaLayout::Navigation do
     end
 
     context "member-in-renewal-late" do
+      before(:each) do
+        subject.user = OpenStruct.new navigation: "member-in-renewal-late"
+      end
+
+      context "main nav" do
+        it "return the main nav items" do
+          expect(subject.items[0].text).to eq "Account Dashboard"
+          expect(subject.items[0].link).to eq "#{gatekeeper_site}/"
+          expect(subject.items[1].text).to eq "Renew"
+          expect(subject.items[1].link).to eq "#{youraccount_site}/renew"
+        end
+      end
+
       context "subnavs" do
         context "driver education" do
-          before(:each) do
-            subject.user = OpenStruct.new navigation: "member-in-renewal-late"
-          end
           let(:driver_education_subnav) { subject.items[2].sub_nav }
 
           it "return the subnav items" do
@@ -158,11 +168,21 @@ describe AmaLayout::Navigation do
     end
 
     context "member-with-outstanding-balance" do
+      before(:each) do
+        subject.user = OpenStruct.new navigation: "member-with-outstanding-balance"
+      end
+
+      context "main nav" do
+        it "return the main nav items" do
+          expect(subject.items[0].text).to eq "Account Dashboard"
+          expect(subject.items[0].link).to eq "#{gatekeeper_site}/"
+          expect(subject.items[1].text).to eq "Pay Outstanding Balance"
+          expect(subject.items[1].link).to eq "#{youraccount_site}/renew"
+        end
+      end
+
       context "subnavs" do
         context "driver education" do
-          before(:each) do
-            subject.user = OpenStruct.new navigation: "member-with-outstanding-balance"
-          end
           let(:driver_education_subnav) { subject.items[2].sub_nav }
 
           it "return the subnav items" do
