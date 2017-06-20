@@ -1,6 +1,10 @@
 module AmaLayout
   class Notification
-    TYPES = %i(notice warning alert).freeze
+    TYPES = {
+      notice: 0,
+      warning: 10,
+      alert: 20
+    }.freeze
     FORMAT_VERSION = '1.0.0'.freeze
 
     # NOTE: The following attributes are designed to be immutable - you need
