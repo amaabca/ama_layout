@@ -22,6 +22,9 @@ module AmaLayout
     cattr_accessor :member_in_renewal_late do
       "member-in-renewal-late"
     end
+    cattr_accessor :member_in_renewal_late do
+      "member-with-outstanding-balance"
+    end
 
     def items
       navigation_items.fetch(user.try(:navigation), []).map do |n|
