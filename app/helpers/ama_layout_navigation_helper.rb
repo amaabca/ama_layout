@@ -1,12 +1,12 @@
 module AmaLayoutNavigationHelper
 
   def navigation
-    binding.pry
+    return AmaLayout::Navigation.non_member unless member?
     case
-    when in_renewal?
-      AmaLayout::Navigation.member_in_renewal
     when in_renewal_late?
       AmaLayout::Navigation.member_in_renewal_late
+    when in_renewal?
+      AmaLayout::Navigation.member_in_renewal
     else
       AmaLayout::Navigation.member
     end
@@ -15,12 +15,10 @@ module AmaLayoutNavigationHelper
   private
 
   def in_renewal?
-    binding.pry
     in_renewal
   end
 
   def in_renewal_late?
-    binding.pry
     status == "AL"
   end
 end
