@@ -38,6 +38,22 @@ describe AmaLayout::Notification do
         expect(subject.created_at).to eq(Time.zone.parse(time))
       end
     end
+
+    context 'with an invalid type attribute' do
+      let(:parameters) do
+        {
+          type: :invalid,
+          header: 'test',
+          content: 'test',
+          created_at: Time.current,
+          active: true
+        }
+      end
+
+      it 'raises ArgumentError' do
+        expect { described_class.new(parameters) }.to raise_error(ArgumentError)
+      end
+    end
   end
 
   describe '#<=>' do
