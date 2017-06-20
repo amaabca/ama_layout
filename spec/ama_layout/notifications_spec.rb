@@ -1,5 +1,5 @@
 describe AmaLayout::Notifications do
-  let(:redis) do
+  let(:store) do
     AmaLayout::Notifications::RedisStore.new(
       db: 4,
       namespace: 'test_notifications',
@@ -9,22 +9,25 @@ describe AmaLayout::Notifications do
   let(:json) do
     <<-JSON
     {
-      "02ac263cea5660e9f9020cb46e93772ed7755f2a60c40ad8961d2a15c1f99e6f": {
-      "type": "notice",
-      "header": "test",
-      "content": "test",
-      "created_at": "2017-06-19T11:26:57.730-06:00",
-      "active": true,
-      "version": "1.0.0"
+      "8ca9f850c18acc17643038b2341bee3ede8a24c0f3e92f56f2109ce49fdcb616": {
+        "type": "notice",
+        "header": "test",
+        "content": "test",
+        "created_at": "2017-06-19T06:00:00.000Z",
+        "active": true,
+        "lifespan": 31557600,
+        "version": "1.0.0"
       }
     }
     JSON
   end
 
   around(:each) do |example|
-    redis.clear
-    example.run
-    redis.clear
+    Timecop.freeze(Time.zone.local(2017, 6, 19)) do
+      store.clear
+      example.run
+      store.clear
+    end
   end
 
   context 'when including module' do
@@ -80,10 +83,10 @@ describe AmaLayout::Notifications do
 
         describe '#notifications' do
           before(:each) do
-            redis.set("users/#{subject.my_id}", json)
+            store.set(subject.my_id, json)
           end
 
-          it 'fetches notifications from redis' do
+          it 'fetches notifications from data store' do
             expect(subject.notifications.size).to eq(1)
           end
         end

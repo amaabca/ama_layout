@@ -9,12 +9,15 @@ describe AmaLayout::Notification do
   end
 
   describe '#initialize' do
+    let(:lifespan) { 1.day }
+
     subject do
       described_class.new(
         header: 'test',
         'content': 'test',
         'active': true,
-        'created_at': time
+        'created_at': time,
+        'lifespan': lifespan
       )
     end
 
@@ -36,6 +39,15 @@ describe AmaLayout::Notification do
 
       it 'parses the string as a time' do
         expect(subject.created_at).to eq(Time.zone.parse(time))
+      end
+    end
+
+    context 'with an Integer/Fixnum lifespan attribute' do
+      let(:time) { Time.current }
+      let(:lifespan) { 3600 }
+
+      it 'parses the integer to a duration of seconds' do
+        expect(subject.lifespan).to eq(lifespan.seconds)
       end
     end
 
