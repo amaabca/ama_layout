@@ -47,6 +47,10 @@ module AmaLayout
       save
     end
 
+    def destroy!
+      data_store.delete(key) && reload!
+    end
+
     def each(&block)
       active.each do |notification|
         block.call(notification)
@@ -86,7 +90,8 @@ module AmaLayout
 
     def reload!
       @all = nil
-      active
+      self.base = fetch
+      all
       self
     end
 

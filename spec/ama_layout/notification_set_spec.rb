@@ -158,6 +158,33 @@ describe AmaLayout::NotificationSet do
     end
   end
 
+  describe '#destroy' do
+    context 'when data is removed' do
+      before(:each) do
+        subject.create(header: 'test', content: 'test', lifespan: 1.day)
+      end
+
+      it 'returns a NotificationSet instance' do
+        expect(subject.destroy!).to be_a(described_class)
+      end
+
+      it 'removes the notifications from the data store' do
+        subject.destroy!
+        expect(store.get(store_key)).to be nil
+      end
+
+      it 'returns an empty set' do
+        expect(subject.destroy!).to be_empty
+      end
+    end
+
+    context 'when data is not removed' do
+      it 'returns false' do
+        expect(subject.destroy!).to be false
+      end
+    end
+  end
+
   describe '#find' do
     context 'when id is not preset' do
       it 'returns nil' do
