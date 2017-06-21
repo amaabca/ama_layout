@@ -7,6 +7,7 @@ describe AmaLayout::NotificationSet do
     )
   end
   let(:key) { 1 }
+  let(:duration) { AmaLayout::Notification::DEFAULT_LIFESPAN.to_i }
   let(:store_key) { key.to_s }
   let(:json) do
     <<-JSON
@@ -17,7 +18,7 @@ describe AmaLayout::NotificationSet do
         "content": "test",
         "created_at": "2017-06-19T06:00:00.000Z",
         "active": true,
-        "lifespan": 31557600,
+        "lifespan": #{duration},
         "version": "1.0.0"
       }
     }
@@ -32,7 +33,7 @@ describe AmaLayout::NotificationSet do
         "content": "stale",
         "created_at": "2012-06-19T06:00:00.000Z",
         "active": true,
-        "lifespan": 31557600,
+        "lifespan": #{duration},
         "version": "1.0.0"
       }
     }
