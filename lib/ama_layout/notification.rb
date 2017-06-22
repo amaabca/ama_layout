@@ -73,12 +73,11 @@ module AmaLayout
       time.is_a?(String) ? Time.zone.parse(time) : time
     end
 
-
     def parse_duration(duration)
       if duration.is_a?(ActiveSupport::Duration)
         duration
       else
-        duration.public_send(:seconds)
+        duration.seconds
       end
     end
   end
