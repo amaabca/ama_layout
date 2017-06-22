@@ -51,13 +51,5 @@ describe AmaLayoutNavigationHelper do
         expect(subject.navigation).to eq 'member-in-renewal-late'
       end
     end
-
-    context 'member has outstanding balance' do
-      subject { FactoryGirl.create(:user, :outstanding_balance) }
-
-      it 'shows outstanding-balance sidebar menu' do
-        expect(subject.navigation).to eq 'member-with-outstanding-balance'
-      end
-    end
   end
 end
