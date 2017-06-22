@@ -18,10 +18,9 @@ module AmaLayout
   #
   class NotificationSet
     include Enumerable
-
     attr_accessor :base, :data_store, :key
 
-    delegate :first, :last, :size, :[], :empty?, :any?, to: :active
+    delegate :each, :first, :last, :size, :[], :empty?, :any?,  to: :active
 
     def initialize(data_store, key)
       self.data_store = data_store
@@ -49,12 +48,6 @@ module AmaLayout
 
     def destroy!
       data_store.delete(key) && reload!
-    end
-
-    def each(&block)
-      active.each do |notification|
-        block.call(notification)
-      end
     end
 
     def find(digest)
@@ -96,8 +89,7 @@ module AmaLayout
     end
 
     def base_notifications
-      base
-        .inject([]) { |m, (k, v)| m << Notification.new(v.merge(id: k)) }
+      base.map { |k, v| Notification.new(v.merge(id: k)) }
     end
 
     def serialize(data)

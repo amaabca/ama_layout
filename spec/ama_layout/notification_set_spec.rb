@@ -109,20 +109,6 @@ describe AmaLayout::NotificationSet do
     end
   end
 
-  describe '#each' do
-    before(:each) do
-      store.set(store_key, json)
-    end
-
-    it 'iterates the array' do
-      output = []
-      subject.each do |element|
-        output << element
-      end
-      expect(output).to_not be_empty
-    end
-  end
-
   describe '#create' do
     it 'returns the NotificationSet instance' do
       expect(subject.create(header: 'test', content: 'test')).to be_a(described_class)
