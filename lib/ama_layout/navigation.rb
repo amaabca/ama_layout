@@ -23,10 +23,6 @@ module AmaLayout
       "member-in-renewal-late"
     end
 
-    cattr_accessor :member_with_outstanding_balance do
-      "member-with-outstanding-balance"
-    end
-
     def items
       navigation_items.fetch(user.try(:navigation), []).map do |n|
         NavigationItem.new n.merge({ current_url: current_url})
