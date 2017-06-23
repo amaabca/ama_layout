@@ -1,15 +1,16 @@
-require "simplecov"
-require "factory_girl"
-require "ama_layout"
-require "pry"
-require "rspec/rails"
-require "combustion"
+require 'simplecov'
+require 'factory_girl'
+require 'ama_layout'
+require 'pry'
+require 'rspec/rails'
+require 'combustion'
+require 'timecop'
 
-ENV["RAILS_ENV"] ||= "test"
+ENV['RAILS_ENV'] ||= 'test'
 
 Combustion.initialize! :all
 
-Dir["./spec/support/**/*.rb"].sort.each { |file| require file }
+Dir['./spec/support/**/*.rb'].sort.each { |file| require file }
 
 FactoryGirl.find_definitions
 
