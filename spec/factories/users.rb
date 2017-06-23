@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :user, class: OpenStruct do
+  factory :user, class: Class.new(OpenStruct) do
     in_renewal false
     member_type 'P'
     renew_type 'R'
