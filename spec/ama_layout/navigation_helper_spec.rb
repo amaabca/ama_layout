@@ -1,9 +1,9 @@
-describe AmaLayoutNavigationHelper do
+describe AmaLayout::NavigationHelper do
   subject { FactoryGirl.create(:user) }
 
   describe '#navigation' do
     before(:each) do
-      subject.class.include(AmaLayoutNavigationHelper).new
+      subject.class.include(AmaLayout::NavigationHelper).new
     end
 
     context 'non-member' do
