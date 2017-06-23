@@ -1,16 +1,14 @@
 FactoryGirl.define do
   factory :user, class: OpenStruct do
-    member true
     in_renewal false
     member_type 'P'
     renew_type 'R'
     status 'A'
-    coverage 'BASIC'
-    renew_date 3.months.from_now
     has_outstanding_balance false
+    member? true
 
     trait :non_member do
-      member false
+      member? false
     end
 
     trait :with_accr do
@@ -23,7 +21,6 @@ FactoryGirl.define do
 
     trait :in_renewal do
       in_renewal true
-      renew_date 15.days.from_now
     end
 
     trait :in_renewal_late do

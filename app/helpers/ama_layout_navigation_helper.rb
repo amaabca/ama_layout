@@ -1,11 +1,11 @@
 module AmaLayoutNavigationHelper
 
-  def navigation
-    return AmaLayout::Navigation.non_member unless member?
+  def navigation(user)
+    return AmaLayout::Navigation.non_member unless _member?(user.member?)
     case
-    when in_renewal_late?
+    when _in_renewal_late?(user.status)
       AmaLayout::Navigation.member_in_renewal_late
-    when in_renewal?
+    when _in_renewal?(user.in_renewal)
       AmaLayout::Navigation.member_in_renewal
     else
       AmaLayout::Navigation.member
@@ -14,15 +14,15 @@ module AmaLayoutNavigationHelper
 
   private
 
-  def member?
+  def _member?(member)
     member
   end
 
-  def in_renewal?
+  def _in_renewal?(in_renewal)
     in_renewal
   end
 
-  def in_renewal_late?
+  def _in_renewal_late?(status)
     status == "AL"
   end
 end
