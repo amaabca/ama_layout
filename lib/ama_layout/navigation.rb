@@ -13,14 +13,21 @@ module AmaLayout
     cattr_accessor :member do
       "member"
     end
+
     cattr_accessor :non_member do
       "non-member"
     end
+
     cattr_accessor :member_in_renewal do
       "member-in-renewal"
     end
+
     cattr_accessor :member_in_renewal_late do
       "member-in-renewal-late"
+    end
+
+    cattr_accessor :member_with_outstanding_balance do
+      "member-with-outstanding-balance"
     end
 
     def items

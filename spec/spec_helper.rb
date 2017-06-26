@@ -6,7 +6,7 @@ require 'rspec/rails'
 require 'combustion'
 require 'timecop'
 
-ENV['RAILS_ENV'] ||= 'test'
+ENV['RAILS_ENV'] = 'test'
 
 Combustion.initialize! :all
 
