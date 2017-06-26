@@ -124,9 +124,35 @@ describe AmaLayout::Navigation do
 
       context "subnavs" do
         context "driver education" do
-          before(:each) do
-            subject.user = OpenStruct.new navigation: "member-in-renewal-late"
+          let(:driver_education_subnav) { subject.items[2].sub_nav }
+
+          it "return the subnav items" do
+            expect(driver_education_subnav[0].text).to eq "Driver Education Overview"
+            expect(driver_education_subnav[0].link).to eq "#{driveredonline_site}/"
+
+            expect(driver_education_subnav[1].text).to eq "New Driver Online Program"
+            expect(driver_education_subnav[1].link).to eq "#{driveredonline_site}/dashboard"
           end
+        end
+      end
+    end
+
+    context "member-with-outstanding-balance" do
+      before(:each) do
+        subject.user = OpenStruct.new navigation: "member-with-outstanding-balance"
+      end
+
+      context "main nav" do
+        it "return the main nav items" do
+          expect(subject.items[0].text).to eq "Account Dashboard"
+          expect(subject.items[0].link).to eq "#{gatekeeper_site}/"
+          expect(subject.items[1].text).to eq "Pay Outstanding Balance"
+          expect(subject.items[1].link).to eq "#{youraccount_site}/renew"
+        end
+      end
+
+      context "subnavs" do
+        context "driver education" do
           let(:driver_education_subnav) { subject.items[2].sub_nav }
 
           it "return the subnav items" do
