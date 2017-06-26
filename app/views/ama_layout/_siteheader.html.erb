@@ -2,6 +2,10 @@
   <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
     <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
     <%= link_to(image_tag("ama-logo.png", class: "title-bar__logo"), "https://www.ama.ab.ca") %>
+    <a href="#" data-toggle="offCanvasRight">
+      <i class="fa fa-lg fa-bell notification__icon"></i>
+      <%= navigation.notification_badge %>
+    </a>
   </div>
   <div class="top-bar" id="main-menu">
     <div class="top-bar-left">
@@ -43,6 +47,11 @@
       <%= navigation.sign_out_link %>
     </ul>
   </div>
+</div>
+<div class="off-canvas position-right right-sidebar__bg" id="offCanvasRight" data-off-canvas>
+   <div class="section-full">
+     <h1>Notification Centre</h1>
+   </div>
 </div>
 
 <div class="javascript_errors error_notification" hidden></div>

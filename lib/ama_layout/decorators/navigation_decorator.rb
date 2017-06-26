@@ -41,7 +41,7 @@ module AmaLayout
 
     def notification_badge
       if notifications? && user.notifications.size > 0
-        h.content_tag :span, user.notifications.size, class: 'notification__badge'
+        h.content_tag :div, user.notifications.size, class: 'notification__badge'
       end
     end
 
