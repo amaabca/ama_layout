@@ -32,5 +32,23 @@ module AmaLayout
     def account_toggle
       h.render partial: "account_toggle"
     end
+
+    def notifications
+      if notifications?
+        h.render 'ama_layout/notifications', notifications: user.notifications, navigation: self
+      end
+    end
+
+    def notification_badge
+      if notifications? && user.notifications.size > 0
+        h.content_tag :span, user.notifications.size, class: 'notification__badge'
+      end
+    end
+
+    private
+
+    def notifications?
+      user.present?
+    end
   end
 end
