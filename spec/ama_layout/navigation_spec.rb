@@ -66,37 +66,7 @@ describe AmaLayout::Navigation do
 
     context "member" do
       context "subnavs" do
-        context "automotive" do
-          let(:automotive_subnav) { subject.items[2].sub_nav }
-
-          it "returns the subnav items" do
-            expect(automotive_subnav[0].text).to eq "Roadside Assistance Overview"
-            expect(automotive_subnav[0].link).to eq "#{automotive_site}/"
-          end
-        end
-
-        context "driver education" do
-          let(:driver_education_subnav) { subject.items[3].sub_nav }
-
-          it "return the subnav items" do
-            expect(driver_education_subnav[0].text).to eq "Driver Education Overview"
-            expect(driver_education_subnav[0].link).to eq "#{driveredonline_site}/"
-
-            expect(driver_education_subnav[1].text).to eq "New Driver Online Program"
-            expect(driver_education_subnav[1].link).to eq "#{driveredonline_site}/dashboard"
-          end
-        end
-
-        context "registries" do
-          let(:registries_subnav) { subject.items[5].sub_nav }
-
-          it "returns the subnav items" do
-            expect(registries_subnav[0].text).to eq "Registries Overview"
-            expect(registries_subnav[0].link).to eq "#{registries_site}/"
-            expect(registries_subnav[1].text).to eq "Vehicle Registration Auto-Renew"
-            expect(registries_subnav[1].link).to eq "#{registries_site}/order/registrations/new"
-          end
-        end
+        include_examples "member_navigation"
       end
     end
 
@@ -121,18 +91,18 @@ describe AmaLayout::Navigation do
 
     context "member-in-renewal" do
       context "subnavs" do
-        context "driver education" do
-          before(:each) do
-            subject.user = OpenStruct.new navigation: "member-in-renewal"
-          end
-          let(:driver_education_subnav) { subject.items[2].sub_nav }
+        before(:each) do
+          subject.user = OpenStruct.new navigation: "member-in-renewal"
+        end
 
-          it "return the subnav items" do
-            expect(driver_education_subnav[0].text).to eq "Driver Education Overview"
-            expect(driver_education_subnav[0].link).to eq "#{driveredonline_site}/"
+        include_examples "member_navigation"
 
-            expect(driver_education_subnav[1].text).to eq "New Driver Online Program"
-            expect(driver_education_subnav[1].link).to eq "#{driveredonline_site}/dashboard"
+        context "membership" do
+          let(:membership_subnav) { subject.items[1].sub_nav }
+
+          it "has the correct subnav items" do
+            expect(membership_subnav[1].text).to eq "Renew Membership"
+            expect(membership_subnav[1].link).to eq "#{membership_site}/renews/new"
           end
         end
       end
@@ -148,7 +118,7 @@ describe AmaLayout::Navigation do
           expect(subject.items[0].text).to eq "Account Dashboard"
           expect(subject.items[0].link).to eq "#{gatekeeper_site}/"
           expect(subject.items[1].text).to eq "Renew"
-          expect(subject.items[1].link).to eq "#{youraccount_site}/renew"
+          expect(subject.items[1].link).to eq "#{membership_site}/renews/new"
         end
       end
 
