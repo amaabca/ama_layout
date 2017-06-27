@@ -9,10 +9,11 @@ describe AmaLayout::NotificationSet do
   let(:key) { 1 }
   let(:duration) { AmaLayout::Notification::DEFAULT_LIFESPAN.to_i }
   let(:store_key) { key.to_s }
+  let(:digest) { '8ca9f850c18acc17643038b2341bee3ede8a24c0f3e92f56f2109ce49fdcb616' }
   let(:json) do
     <<-JSON
     {
-      "8ca9f850c18acc17643038b2341bee3ede8a24c0f3e92f56f2109ce49fdcb616": {
+      "#{digest}": {
         "type": "notice",
         "header": "test",
         "content": "test",
@@ -133,13 +134,45 @@ describe AmaLayout::NotificationSet do
       end
 
       it 'does not overwrite the notification' do
-        expect(subject).to be_empty # we have only non-active notifications
+        expect(subject.active).to be_empty
       end
 
       it 'still has the dismissed notification in the data store' do
         data = JSON.parse(store.get(store_key))
         notification = data.values.first
         expect(data.values.first['active']).to be false
+      end
+    end
+  end
+
+  describe '#delete' do
+    before(:each) do
+      store.set(store_key, json)
+    end
+
+    context 'with an array as an argument' do
+      it 'deletes the notification from the data store' do
+        data = subject.delete([digest])
+        expect(data).to be_a(described_class)
+        expect(data).to be_empty
+        expect(store.get(store_key)).to eq('{}')
+      end
+
+      it 'returns falsey if notthing is deleted' do
+        expect(subject.delete(['missing'])).to be_falsey
+      end
+    end
+
+    context 'with string arguments' do
+      it 'deletes the notification from the data store' do
+        data = subject.delete(digest)
+        expect(data).to be_a(described_class)
+        expect(data).to be_empty
+        expect(store.get(store_key)).to eq('{}')
+      end
+
+      it 'returns falsey if nothing is deleted' do
+        expect(subject.delete('missing')).to be_falsey
       end
     end
   end
@@ -200,7 +233,7 @@ describe AmaLayout::NotificationSet do
       expect(subject.last.active?).to be true
       subject.last.dismiss!
       subject.save
-      expect(subject).to be_empty
+      expect(subject.active).to be_empty
     end
 
     it 'returns the NotificationSet instance' do
