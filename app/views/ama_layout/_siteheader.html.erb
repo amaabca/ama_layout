@@ -48,10 +48,51 @@
     </ul>
   </div>
 </div>
-<div class="off-canvas position-right right-sidebar__bg" id="offCanvasRight" data-off-canvas>
-   <div class="section-full">
-     <h1>Notification Centre</h1>
-   </div>
+<div class="off-canvas position-right right-sidebar__bg" id="offCanvasRight" data-off-canvas >
+  <div class="row column right-sidebar__header-bg">
+    <h2 class="mt1">Notification Centre</h2>
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="row column">
+    <p class="mt1">Most Recent Notifications</p>
+  </div>
+  <div class="row right-sidebar__notice--active">
+    <div class="small-2 column">
+      <div class="right-sidebar__notice-icon--red">
+        <i class="fa fa-exclamation-triangle right-sidebar__notice-icon"></i>
+      </div>
+    </div>
+    <div class="small-10 column">
+      <p class="bold">Your membership is past due.</p>
+      <p>Your membership expired on July 1, 2017.
+      <a href="#">Renew Now</a> to avoid penalties.</p>
+      <p class="micetype">17 seconds ago</p>
+    </div>
+  </div>
+  <div class="row right-sidebar__notice--inactive">
+    <div class="small-2 column">
+      <div class="right-sidebar__notice-icon--orange">
+        <i class="fa fa-exclamation right-sidebar__notice-icon"></i>
+      </div>
+    </div>
+    <div class="small-10 column">
+      <p class="bold">Your membership is up for renewal.</p>
+      <p>Your membership will expire on July 1, 2017.
+      <a href="#">Renew Now.</a></p>
+      <p class="micetype">35 days ago</p>
+    </div>
+  </div>
+  <div class="row column">
+    <p class="mt1">Did You Know?</p>
+    <div class="section-content">
+      <p class="bold">Renew Your Membership Automatically</p>
+      <p>You can sign up for automatic membership renewal to have your membership
+      renewed automatically every year. We will simply send you a receipt when it's all done, and you can unsubscribe at any time.</p>
+      <div class="button--right">Sign up now</div>
+    </div>
+  </div>
 </div>
 
 <div class="javascript_errors error_notification" hidden></div>
