@@ -40,8 +40,15 @@ module AmaLayout
     end
 
     def notification_badge
-      if notifications? && user.notifications.size > 0
-        h.content_tag :div, user.notifications.size, class: 'notification__badge'
+      if badge?
+        h.content_tag(
+          :div,
+          notification_count,
+          class: 'notification__badge',
+          data: {
+            notification_count: true
+          }
+        )
       end
     end
 
@@ -49,6 +56,14 @@ module AmaLayout
 
     def notifications?
       user.present?
+    end
+
+    def notification_count
+      notifications? && user.notifications.active.size || 0
+    end
+
+    def badge?
+      notification_count > 0
     end
   end
 end
