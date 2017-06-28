@@ -6,7 +6,7 @@ require 'rspec/rails'
 require 'combustion'
 require 'timecop'
 
-ENV['RAILS_ENV'] ||= 'test'
+ENV['RAILS_ENV'] = 'test'
 
 Combustion.initialize! :all
 
@@ -16,12 +16,6 @@ FactoryGirl.find_definitions
 
 ActionView::TestCase::TestController.instance_eval do
   helper Rails.application.routes.url_helpers
-end
-
-ActionView::TestCase::TestController.class_eval do
-  def _routes
-    Rails.application.routes
-  end
 end
 
 Draper::ViewContext.test_strategy :fast

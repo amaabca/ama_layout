@@ -7,8 +7,17 @@ describe AmaLayout::NavigationDecorator do
   let(:membership_site) { "http://membership.waffles.ca" }
   let(:driveredonline_site) { "http://driveredonline.waffles.ca" }
   let(:registries_site) { "http://registries.waffles.ca" }
-  let(:automotive_site) { "http://automotive.waffles.ca"}
-  let(:travel_site) { "http://travel.waffles.ca"}
+  let(:automotive_site) { "http://automotive.waffles.ca" }
+  let(:travel_site) { "http://travel.waffles.ca" }
+  let(:notification) do
+    AmaLayout::Notification.new(
+      type: :warning,
+      header: 'test',
+      content: 'test',
+      created_at: DateTime.current,
+      active: true
+    )
+  end
 
   before(:each) do
     allow(Rails.configuration).to receive(:gatekeeper_site).and_return(gatekeeper_site)
@@ -127,6 +136,30 @@ describe AmaLayout::NavigationDecorator do
       allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: "member"))
       allow_any_instance_of(Draper::HelperProxy).to receive(:render).and_return "render"
       expect(navigation_presenter.account_toggle).to eq "render"
+    end
+  end
+
+  describe '#notifications' do
+    let(:notifications) { [notification] }
+    let(:user) { OpenStruct.new(navigation: 'member', notifications: notifications) }
+    let(:navigation) { FactoryGirl.build :navigation, user: user }
+    subject { described_class.new(navigation) }
+
+    it 'renders the content to the page' do
+      expect(subject.h).to receive(:render).once.and_return true
+      expect(subject.notifications).to be true
+    end
+  end
+
+  describe '#notification_badge' do
+    let(:user) { OpenStruct.new(navigation: 'member', notifications: notifications) }
+    let(:notifications) { OpenStruct.new(active: [notification]) }
+    let(:navigation) { FactoryGirl.build :navigation, user: user }
+    subject { described_class.new(navigation) }
+
+    it 'returns a div with the count of active notifications' do
+      expect(subject.notification_badge).to include('div')
+      expect(subject.notification_badge).to include('1')
     end
   end
 end

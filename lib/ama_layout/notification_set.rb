@@ -20,7 +20,7 @@ module AmaLayout
     include Enumerable
     attr_accessor :base, :data_store, :key
 
-    delegate :each, :first, :last, :size, :[], :empty?, :any?,  to: :active
+    delegate :each, :first, :last, :size, :[], :empty?, :any?,  to: :all
 
     def initialize(data_store, key)
       self.data_store = data_store
@@ -48,6 +48,15 @@ module AmaLayout
 
     def destroy!
       data_store.delete(key) && reload!
+    end
+
+    def delete(*digests)
+      digests = Array.wrap(digests.flatten)
+      delta = all.reject { |n| digests.include?(n.digest) }
+      if delta != all
+        @all = delta
+        save
+      end
     end
 
     def find(digest)
