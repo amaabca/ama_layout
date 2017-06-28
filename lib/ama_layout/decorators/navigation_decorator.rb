@@ -41,7 +41,14 @@ module AmaLayout
 
     def notification_badge
       if badge?
-        h.content_tag :span, notification_count, class: 'notification__badge'
+        h.content_tag(
+          :span,
+          notification_count,
+          class: 'notification__badge',
+          data: {
+            notification_count: true
+          }
+        )
       end
     end
 

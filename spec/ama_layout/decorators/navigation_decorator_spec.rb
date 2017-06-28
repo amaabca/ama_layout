@@ -158,7 +158,8 @@ describe AmaLayout::NavigationDecorator do
     subject { described_class.new(navigation) }
 
     it 'returns a span with the count of active notifications' do
-      expect(subject.notification_badge).to eq('<span class="notification__badge">1</span>')
+      expect(subject.notification_badge).to include('span')
+      expect(subject.notification_badge).to include('1')
     end
   end
 end
