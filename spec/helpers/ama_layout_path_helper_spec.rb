@@ -111,6 +111,12 @@ describe AmaLayoutPathHelper do
     end
   end
 
+  describe "#membership_payment_path" do
+    it "returns the membership payment path" do
+      expect(helper.membership_payment_path).to eq "#{membership_site}/membership/payments/new"
+    end
+  end
+
   describe "#driveredonline_path" do
     it "returns the driveredonile path" do
       expect(helper.driveredonline_path).to eq "#{driveredonline_site}"
