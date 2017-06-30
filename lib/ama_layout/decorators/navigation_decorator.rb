@@ -59,10 +59,10 @@ module AmaLayout
     end
 
     def notifications_heading
-      if user.notifications.size > 0
+      if user.notifications.any?
         h.content_tag :p, 'Most Recent Notifications', class: 'mt1'
       else
-        h.content_tag(:p, 'No Recent Notifications', class: 'mt1 italic')
+        h.content_tag :p, 'No Recent Notifications', class: 'mt1 italic'
       end
     end
 
