@@ -5,8 +5,9 @@ module AmaLayout
   # The raw serialization format is JSON as follows (keys are SHA256 hashes):
   #
   # {
-  #   "8ca9f850c18acc17643038b2341bee3ede8a24c0f3e92f56f2109ce49fdcb616": {
+  #   "57107043eab0f60a37f7735307dc6fc6709d04eec2dbeea8c284958057af9b77": {
   #     "type": "notice",
+  #     "brand": "membership",
   #     "header": "test",
   #     "content": "test",
   #     "created_at": "2017-06-19T11:26:57.730-06:00",

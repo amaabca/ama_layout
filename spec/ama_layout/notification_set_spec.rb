@@ -7,9 +7,20 @@ describe AmaLayout::NotificationSet do
     )
   end
   let(:key) { 1 }
-  let(:duration) { AmaLayout::Notification::DEFAULT_LIFESPAN.to_i }
+  let(:duration) { AmaLayout::Notification::DEFAULT_LIFESPAN }
   let(:store_key) { key.to_s }
-  let(:digest) { '8ca9f850c18acc17643038b2341bee3ede8a24c0f3e92f56f2109ce49fdcb616' }
+  let(:digest) { base_notification.digest }
+  let(:base_notification) do
+    AmaLayout::Notification.new(
+      type: :notice,
+      header: 'test',
+      content: 'test',
+      lifespan: duration,
+      version: '1.0.0',
+      created_at: Time.zone.local(2017, 06, 19),
+      active: true
+    )
+  end
   let(:json) do
     <<-JSON
     {
@@ -51,7 +62,7 @@ describe AmaLayout::NotificationSet do
     end
   end
 
-  describe '#intialize' do
+  describe '#initialize' do
     context 'with valid JSON in data store' do
       before(:each) do
         store.set(store_key, notification)
@@ -147,7 +158,7 @@ describe AmaLayout::NotificationSet do
 
   describe '#delete' do
     before(:each) do
-      store.set(store_key, json)
+      subject.create(base_notification.to_h)
     end
 
     context 'with an array as an argument' do
@@ -158,7 +169,7 @@ describe AmaLayout::NotificationSet do
         expect(store.get(store_key)).to eq('{}')
       end
 
-      it 'returns falsey if notthing is deleted' do
+      it 'returns falsey if nothing is deleted' do
         expect(subject.delete(['missing'])).to be_falsey
       end
     end
