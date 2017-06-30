@@ -42,7 +42,7 @@ module AmaLayout
     def notification_badge
       if badge?
         h.content_tag(
-          :span,
+          :div,
           notification_count,
           class: 'notification__badge',
           data: {

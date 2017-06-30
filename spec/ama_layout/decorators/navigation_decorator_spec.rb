@@ -157,8 +157,8 @@ describe AmaLayout::NavigationDecorator do
     let(:navigation) { FactoryGirl.build :navigation, user: user }
     subject { described_class.new(navigation) }
 
-    it 'returns a span with the count of active notifications' do
-      expect(subject.notification_badge).to include('span')
+    it 'returns a div with the count of active notifications' do
+      expect(subject.notification_badge).to include('div')
       expect(subject.notification_badge).to include('1')
     end
   end
