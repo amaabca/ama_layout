@@ -52,7 +52,25 @@ module AmaLayout
       end
     end
 
+    def notification_sidebar
+      if notifications?
+        h.render 'ama_layout/notification_sidebar', navigation: self, notifications: decorated_notifications
+      end
+    end
+
+    def notifications_heading
+      if user.notifications.any?
+        h.content_tag :p, 'Most Recent Notifications', class: 'mt1'
+      else
+        h.content_tag :p, 'No Recent Notifications', class: 'mt1 italic'
+      end
+    end
+
     private
+
+    def decorated_notifications
+      AmaLayout::NotificationDecorator.decorate_collection(user.notifications)
+    end
 
     def notifications?
       user.present?

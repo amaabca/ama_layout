@@ -1,0 +1,21 @@
+<div class="off-canvas position-right right-sidebar" id="offCanvasRight" data-off-canvas>
+  <div class="row column right-sidebar__header">
+    <h2 class="mt1">Notification Centre</h2>
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="row column">
+    <%= navigation.notifications_heading %>
+  </div>
+  <%= render partial: 'ama_layout/notification', collection: notifications %>
+  <div class="row column">
+    <p class="mt1">Did You Know?</p>
+    <div class="section-content">
+      <p class="bold">Renew Your Membership Automatically</p>
+      <p>You can sign up for automatic membership renewal to have your membership
+      renewed automatically every year. We will simply send you a receipt when it's all done, and you can unsubscribe at any time.</p>
+      <%= link_to 'Sign up now', "#{Rails.configuration.membership_site}/accr_renews/new", class: 'button--right button--expand-small-down' %>
+    </div>
+  </div>
+</div>
