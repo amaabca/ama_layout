@@ -139,27 +139,52 @@ describe AmaLayout::NavigationDecorator do
     end
   end
 
-  describe '#notifications' do
-    let(:notifications) { [notification] }
+  context 'notification center' do
+    let(:any?) { true }
     let(:user) { OpenStruct.new(navigation: 'member', notifications: notifications) }
+    let(:notifications) { OpenStruct.new(active: [notification], all: [notification], any?: any?) }
     let(:navigation) { FactoryGirl.build :navigation, user: user }
     subject { described_class.new(navigation) }
 
-    it 'renders the content to the page' do
-      expect(subject.h).to receive(:render).once.and_return true
-      expect(subject.notifications).to be true
+    describe '#notifications' do
+      it 'renders the content to the page' do
+        expect(subject.h).to receive(:render).once.and_return true
+        expect(subject.notifications).to be true
+      end
     end
-  end
 
-  describe '#notification_badge' do
-    let(:user) { OpenStruct.new(navigation: 'member', notifications: notifications) }
-    let(:notifications) { OpenStruct.new(active: [notification]) }
-    let(:navigation) { FactoryGirl.build :navigation, user: user }
-    subject { described_class.new(navigation) }
+    describe '#notification_badge' do
+      it 'returns a div with the count of active notifications' do
+        expect(subject.notification_badge).to include('div')
+        expect(subject.notification_badge).to include('1')
+      end
+    end
 
-    it 'returns a div with the count of active notifications' do
-      expect(subject.notification_badge).to include('div')
-      expect(subject.notification_badge).to include('1')
+    describe '#notification_sidebar' do
+      it 'renders content to the page' do
+        expect(subject.h).to receive(:render).once.and_return true
+        expect(subject.notification_sidebar).to be true
+      end
+    end
+
+    describe '#notifications_heading' do
+      context 'when notifications are present' do
+        it 'returns the correct heading' do
+          expect(subject.notifications_heading).to include('Most Recent Notifications')
+        end
+      end
+
+      context 'when notifications are not present' do
+        let(:any?) { false }
+
+        it 'returns the correct heading' do
+          expect(subject.notifications_heading).to include('No Recent Notifications')
+        end
+
+        it 'italicizes the message' do
+          expect(subject.notifications_heading).to include('italic')
+        end
+      end
     end
   end
 end
