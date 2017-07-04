@@ -34,16 +34,16 @@ module AmaLayout
     end
 
     def notifications
-      if notifications?
+      if user
         h.render 'ama_layout/notifications', notifications: user.notifications, navigation: self
       end
     end
 
     def notification_badge
-      if badge?
+      if new_notifications?
         h.content_tag(
           :div,
-          notification_count,
+          active_notification_count,
           class: 'notification__badge',
           data: {
             notification_count: true
@@ -53,7 +53,7 @@ module AmaLayout
     end
 
     def notification_sidebar
-      if notifications?
+      if user
         h.render 'ama_layout/notification_sidebar', navigation: self, notifications: decorated_notifications
       end
     end
@@ -72,16 +72,12 @@ module AmaLayout
       AmaLayout::NotificationDecorator.decorate_collection(user.notifications)
     end
 
-    def notifications?
-      user.present?
+    def active_notification_count
+      user && user.notifications.active.size || 0
     end
 
-    def notification_count
-      notifications? && user.notifications.active.size || 0
-    end
-
-    def badge?
-      notification_count > 0
+    def new_notifications?
+      active_notification_count > 0
     end
   end
 end
