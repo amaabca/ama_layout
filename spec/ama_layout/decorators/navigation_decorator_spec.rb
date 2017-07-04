@@ -9,15 +9,6 @@ describe AmaLayout::NavigationDecorator do
   let(:registries_site) { "http://registries.waffles.ca" }
   let(:automotive_site) { "http://automotive.waffles.ca" }
   let(:travel_site) { "http://travel.waffles.ca" }
-  let(:notification) do
-    AmaLayout::Notification.new(
-      type: :warning,
-      header: 'test',
-      content: 'test',
-      created_at: DateTime.current,
-      active: true
-    )
-  end
 
   before(:each) do
     allow(Rails.configuration).to receive(:gatekeeper_site).and_return(gatekeeper_site)
@@ -140,11 +131,25 @@ describe AmaLayout::NavigationDecorator do
   end
 
   context 'notification center' do
-    let(:any?) { true }
-    let(:user) { OpenStruct.new(navigation: 'member', notifications: notifications) }
-    let(:notifications) { OpenStruct.new(active: [notification], all: [notification], any?: any?) }
+    let(:store) do
+      AmaLayout::Notifications::RedisStore.new(
+        db: 4,
+        namespace: 'test_notifications',
+        host: 'localhost'
+      )
+    end
+    let(:notification_set) { AmaLayout::NotificationSet.new(store, 1) }
+    let(:user) { OpenStruct.new(navigation: 'member', notifications: notification_set) }
     let(:navigation) { FactoryGirl.build :navigation, user: user }
     subject { described_class.new(navigation) }
+
+    around(:each) do |example|
+      Timecop.freeze(Time.zone.local(2017, 6, 19)) do
+        store.clear
+        example.run
+        store.clear
+      end
+    end
 
     describe '#notifications' do
       it 'renders the content to the page' do
@@ -154,9 +159,59 @@ describe AmaLayout::NavigationDecorator do
     end
 
     describe '#notification_badge' do
-      it 'returns a div with the count of active notifications' do
-        expect(subject.notification_badge).to include('div')
-        expect(subject.notification_badge).to include('1')
+      context 'with 1 active notification' do
+        before(:each) do
+          user.notifications.create(
+            type: :warning,
+            header: 'test',
+            content: 'test'
+          )
+        end
+
+        it 'returns a div with the count of active notifications' do
+          expect(subject.notification_badge).to include('div')
+          expect(subject.notification_badge).to include('1')
+        end
+      end
+
+      context 'with only inactive notifications' do
+        before(:each) do
+          user.notifications.create(
+            type: :warning,
+            header: 'test',
+            content: 'test'
+          )
+          user.notifications.first.dismiss!
+          user.notifications.save
+        end
+
+        it 'does not return the badge markup' do
+          expect(subject.notification_badge).to be nil
+        end
+      end
+
+      context 'with only active and inactive notifications' do
+        before(:each) do
+          user.notifications.create(
+            type: :warning,
+            header: 'test',
+            content: 'test'
+          )
+          2.times do |i|
+            user.notifications.create(
+              type: :notice,
+              header: i,
+              content: i
+            )
+          end
+          user.notifications.first.dismiss!
+          user.notifications.save
+        end
+
+        it 'returns a div with the count of active notifications' do
+          expect(subject.notification_badge).to include('div')
+          expect(subject.notification_badge).to include('2')
+        end
       end
     end
 
@@ -169,14 +224,20 @@ describe AmaLayout::NavigationDecorator do
 
     describe '#notifications_heading' do
       context 'when notifications are present' do
+        before(:each) do
+          user.notifications.create(
+            type: :warning,
+            header: 'test',
+            content: 'test'
+          )
+        end
+
         it 'returns the correct heading' do
           expect(subject.notifications_heading).to include('Most Recent Notifications')
         end
       end
 
       context 'when notifications are not present' do
-        let(:any?) { false }
-
         it 'returns the correct heading' do
           expect(subject.notifications_heading).to include('No Recent Notifications')
         end

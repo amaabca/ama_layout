@@ -12,10 +12,11 @@
   <div class="row column">
     <p class="mt1">Did You Know?</p>
     <div class="section-content">
-      <p class="bold">Renew Your Membership Automatically</p>
-      <p>You can sign up for automatic membership renewal to have your membership
-      renewed automatically every year. We will simply send you a receipt when it's all done, and you can unsubscribe at any time.</p>
-      <%= link_to 'Sign up now', "#{Rails.configuration.membership_site}/accr_renews/new", class: 'button--right button--expand-small-down' %>
+      <p class="bold">Sign up for Vehicle Registration Auto-Renew</p>
+      <p>
+        We'll process your payment and mail you a new registration certificate and licence plate sticker. It's that simple!
+      </p>
+      <%= link_to 'Sign up now', "#{Rails.configuration.registries_site}/order/registrations/new", class: 'button--right button--expand-small-down' %>
     </div>
   </div>
 </div>
