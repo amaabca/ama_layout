@@ -3,7 +3,7 @@ class AMALayout.Notifications
     $(document).on 'click', '[data-notifications-toggle]', (event) =>
       event.preventDefault();
       badge = event.currentTarget
-      if $(badge).find('[data-notification-count]').remove().size
+      if $(badge).find('[data-notification-count]').remove().size()
         @request()
 
   request: () ->
