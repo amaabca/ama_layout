@@ -167,7 +167,7 @@ member-with-outstanding-balance:
     link: "<%= Rails.configuration.gatekeeper_site %>/"
     icon: "fa-tachometer"
   - text: "Pay Outstanding Balance"
-    link: "<%= Rails.configuration.membership_site %>/membership/payments/new"
+    link: "<%= Rails.configuration.membership_site %>/renews/new"
     icon: "fa-credit-card"
   - text: "Driver Education"
     link: "<%= Rails.configuration.driveredonline_site %>/"

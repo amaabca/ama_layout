@@ -63,8 +63,8 @@ module AmaLayoutPathHelper
     "#{Rails.configuration.membership_site}/reward_cards"
   end
 
-  def membership_payment_path
-    "#{Rails.configuration.membership_site}/membership/payments/new"
+  def membership_renew_path
+    "#{Rails.configuration.membership_site}/renews/new"
   end
 
   def driveredonline_path

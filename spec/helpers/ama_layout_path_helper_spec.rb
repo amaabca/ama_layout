@@ -111,9 +111,9 @@ describe AmaLayoutPathHelper do
     end
   end
 
-  describe "#membership_payment_path" do
-    it "returns the membership payment path" do
-      expect(helper.membership_payment_path).to eq "#{membership_site}/membership/payments/new"
+  describe "#membership_renew_path" do
+    it "returns the membership renew path" do
+      expect(helper.membership_renew_path).to eq "#{membership_site}/renews/new"
     end
   end
 
