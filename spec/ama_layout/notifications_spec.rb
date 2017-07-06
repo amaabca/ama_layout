@@ -9,7 +9,7 @@ describe AmaLayout::Notifications do
   let(:json) do
     <<-JSON
     {
-      "8ca9f850c18acc17643038b2341bee3ede8a24c0f3e92f56f2109ce49fdcb616": {
+      "02ac263cea5660e9f9020cb46e93772ed7755f2a60c40ad8961d2a15c1f99e6f": {
         "type": "notice",
         "header": "test",
         "content": "test",

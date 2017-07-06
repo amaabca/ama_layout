@@ -1,0 +1,10 @@
+<div class="row <%= notification.active_class %>">
+  <div class="small-2 column">
+    <%= notification.icon %>
+  </div>
+  <div class="small-10 column">
+    <p class="bold"><%= notification.header %></p>
+    <p><%= sanitize notification.content, scrubber: AmaLayout::NotificationScrubber.new %></p>
+    <p class="micetype"><%= notification.created_at %></p>
+  </div>
+</div>
