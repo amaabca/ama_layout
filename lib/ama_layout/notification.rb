@@ -1,18 +1,22 @@
 module AmaLayout
   class Notification
+    include Draper::Decoratable
+
     TYPES = %i[notice warning alert].freeze
     DEFAULT_LIFESPAN = 1.year.freeze
     FORMAT_VERSION = '1.0.0'.freeze
 
     # NOTE: The following attributes are designed to be immutable - you need
     # make a new instance to change them. The only mutable attribute is :active.
-    attr_reader :id, :type, :header, :content, :created_at, :lifespan, :version
+    attr_reader :id, :type, :brand, :header, :content, :created_at, :lifespan,
+                :version
     attr_accessor :active
 
     def initialize(args = {})
       args = args.with_indifferent_access
       @id = args[:id]
       @type = args.fetch(:type, :notice).to_sym
+      @brand = args[:brand]
       @header = args.fetch(:header)
       @content = args.fetch(:content)
       @created_at = parse_time(args.fetch(:created_at))
@@ -41,7 +45,7 @@ module AmaLayout
 
     def digest
       Digest::SHA256.hexdigest(
-        "#{type}#{header}#{content}#{lifespan.to_i}#{version}"
+        "#{type}#{header}#{content}#{brand}#{version}"
       )
     end
 
@@ -54,6 +58,7 @@ module AmaLayout
       # consistency with the underlying data store.
       {
         'type' => type.to_s,
+        'brand' => brand,
         'header' => header,
         'content' => content,
         'created_at' => created_at.iso8601,

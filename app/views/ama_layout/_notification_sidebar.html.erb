@@ -1,0 +1,22 @@
+<div class="off-canvas position-right right-sidebar" id="offCanvasRight" data-off-canvas>
+  <div class="row column right-sidebar__header">
+    <h2 class="mt1">Notification Centre</h2>
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="row column">
+    <%= navigation.notifications_heading %>
+  </div>
+  <%= render partial: 'ama_layout/notification', collection: notifications %>
+  <div class="row column">
+    <p class="mt1">Did You Know?</p>
+    <div class="section-content">
+      <p class="bold">Sign up for Vehicle Registration Auto-Renew</p>
+      <p>
+        We'll process your payment and mail you a new registration certificate and licence plate sticker. It's that simple!
+      </p>
+      <%= link_to 'Sign up now', "#{Rails.configuration.registries_site}/order/registrations/new", class: 'button--right button--expand-small-down' %>
+    </div>
+  </div>
+</div>
