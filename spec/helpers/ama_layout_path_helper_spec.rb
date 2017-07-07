@@ -111,6 +111,12 @@ describe AmaLayoutPathHelper do
     end
   end
 
+  describe "#membership_renew_path" do
+    it "returns the membership renew path" do
+      expect(helper.membership_renew_path).to eq "#{membership_site}/renews/new"
+    end
+  end
+
   describe "#driveredonline_path" do
     it "returns the driveredonile path" do
       expect(helper.driveredonline_path).to eq "#{driveredonline_site}"

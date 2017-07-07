@@ -147,7 +147,7 @@ describe AmaLayout::Navigation do
           expect(subject.items[0].text).to eq "Account Dashboard"
           expect(subject.items[0].link).to eq "#{gatekeeper_site}/"
           expect(subject.items[1].text).to eq "Pay Outstanding Balance"
-          expect(subject.items[1].link).to eq "#{youraccount_site}/renew"
+          expect(subject.items[1].link).to eq "#{membership_site}/renews/new"
         end
       end
 
