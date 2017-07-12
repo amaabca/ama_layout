@@ -9,6 +9,7 @@ describe AmaLayout::NavigationDecorator do
   let(:registries_site) { "http://registries.waffles.ca" }
   let(:automotive_site) { "http://automotive.waffles.ca" }
   let(:travel_site) { "http://travel.waffles.ca" }
+  let(:rewards_site) { "http://rewards.waffles.ca" }
 
   before(:each) do
     allow(Rails.configuration).to receive(:gatekeeper_site).and_return(gatekeeper_site)
@@ -19,6 +20,7 @@ describe AmaLayout::NavigationDecorator do
     allow(Rails.configuration).to receive(:registries_site).and_return(registries_site)
     allow(Rails.configuration).to receive(:automotive_site).and_return(automotive_site)
     allow(Rails.configuration).to receive(:travel_site).and_return(travel_site)
+    allow(Rails.configuration).to receive(:rewards_site).and_return(rewards_site)
   end
 
   describe "#display_name_text" do

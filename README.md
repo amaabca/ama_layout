@@ -38,6 +38,8 @@ Rails.configuration.amaabca_site
 
 Rails.configuration.forms_amaabca_site
 
+Rails.configuration.rewards_site
+
 
 ### Navigation
 

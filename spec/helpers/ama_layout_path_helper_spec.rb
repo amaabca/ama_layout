@@ -5,6 +5,7 @@ describe AmaLayoutPathHelper do
   let(:membership_site) { "http://membership.waffles.ca" }
   let(:driveredonline_site) { "http://driveredonline.waffles.ca" }
   let(:travel_site) { "http://travel.waffles.ca" }
+  let(:rewards_site) { "http://rewards.waffles.ca" }
 
   before(:each) do
     allow(Rails.configuration).to receive(:gatekeeper_site).and_return(gatekeeper_site)
@@ -13,6 +14,7 @@ describe AmaLayoutPathHelper do
     allow(Rails.configuration).to receive(:membership_site).and_return(membership_site)
     allow(Rails.configuration).to receive(:driveredonline_site).and_return(driveredonline_site)
     allow(Rails.configuration).to receive(:travel_site).and_return(travel_site)
+    allow(Rails.configuration).to receive(:rewards_site).and_return(rewards_site)
   end
 
   describe "#gatekeeper_profile_path" do
@@ -105,9 +107,9 @@ describe AmaLayoutPathHelper do
     end
   end
 
-  describe "#membership_path" do
-    it "returns the membership esso reload path" do
-      expect(helper.membership_esso_reload_path).to eq "#{membership_site}/reward_cards"
+  describe "#rewards_path" do
+    it "returns the rewards esso reload path" do
+      expect(helper.rewards_esso_reload_path).to eq "#{rewards_site}"
     end
   end
 

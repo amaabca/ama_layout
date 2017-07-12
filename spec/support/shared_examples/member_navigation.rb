@@ -56,7 +56,7 @@ shared_examples 'member_navigation' do
       expect(rewards_subnav[0].link).to eq "#{youraccount_site}/rewards"
 
       expect(rewards_subnav[1].text).to eq 'Gift Cards'
-      expect(rewards_subnav[1].link).to eq "#{membership_site}/reward_cards"
+      expect(rewards_subnav[1].link).to eq "#{rewards_site}"
 
       expect(rewards_subnav[2].text).to eq 'Transaction History'
       expect(rewards_subnav[2].link).to eq "#{youraccount_site}/reward_dollars"
