@@ -6,3 +6,4 @@
 //= require ../mailcheck/index
 //= require ../real_date_picker
 //= require ../notifications
+//= require ../forms/placeholder
