@@ -8,18 +8,17 @@ class AMALayout.Placeholder
 
   setup: ->
     for defaultText in @defaultTextList
-      @changeDefaultPlaceholderColor(defaultText)
-      @updatePlaceholderColor(defaultText)
+      select = $("select:contains('#{defaultText}')")
+      @setPlaceholderColor select
+      @setupChangeEvent select
 
-  changeDefaultPlaceholderColor: (defaultText) ->
-    $("option:selected:contains('#{defaultText}')").parent('select').css('color', @placeholderTextColor)
+  setPlaceholderColor: (select) ->
+    color = if $(select).prop('selectedIndex') is 0 then @placeholderTextColor else @inputTextColor
+    $(select).css('color', color)
 
-  updatePlaceholderColor: (defaultText) ->
-    $("select:contains('#{defaultText}')").on 'change', (obj) =>
-      if $(obj.currentTarget).prop('selectedIndex') == 0
-        $(obj.currentTarget).css('color', @placeholderTextColor)
-      else
-        $(obj.currentTarget).css('color', @inputTextColor)
+  setupChangeEvent: (select) ->
+    select.on 'change', (obj) =>
+      @setPlaceholderColor $(obj.currentTarget)
 
   defaultVariables: ->
     placeholderTextColor: "#cccccc",
@@ -27,4 +26,4 @@ class AMALayout.Placeholder
     defaultTextList: ["Please Select", "Month", "Day", "Year", "Select a Class (estimated cost)"]
 
 $ ->
-  window.AMALayout.Placeholder = new AMALayout.Placeholder()
+  new AMALayout.Placeholder()
