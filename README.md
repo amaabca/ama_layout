@@ -2,6 +2,10 @@
 
 The AmaLayout gem is used to add a standard layout to .ama.ab.ca sites.
 
+## Testing
+
+The template
+
 ## Installation
 
 Add this line to your application's Gemfile:
