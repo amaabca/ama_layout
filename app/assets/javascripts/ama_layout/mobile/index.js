@@ -3,3 +3,4 @@
 //= require ./tablesaw.stackonly.js
 //= require ./ready
 //= require ../mailcheck/index
+//= require ../forms/placeholder
