@@ -27,12 +27,6 @@ describe AmaLayoutPathHelper do
     end
   end
 
-  describe "#youraccount_help_path" do
-    it "returns the help path" do
-      expect(helper.youraccount_help_path).to eq "#{youraccount_site}/help"
-    end
-  end
-
   describe "#youraccount_billing_path" do
     it "returns the billing path" do
       expect(helper.youraccount_billing_path).to eq "#{youraccount_site}/billing"
