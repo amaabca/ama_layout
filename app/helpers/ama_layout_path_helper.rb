@@ -6,11 +6,7 @@ module AmaLayoutPathHelper
   def youraccount_dashboard_path
     "#{Rails.configuration.youraccount_site}/dashboard"
   end
-
-  def youraccount_help_path
-    "#{Rails.configuration.youraccount_site}/help"
-  end
-
+  
   def youraccount_billing_path
     "#{Rails.configuration.youraccount_site}/billing"
   end
