@@ -1,3 +1,4 @@
+//= require select2
 //= require ../ama_layout_namespace
 //= require ./foundation-custom
 //= require ./foundation-ready

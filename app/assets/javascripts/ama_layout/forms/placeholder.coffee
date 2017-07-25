@@ -9,8 +9,9 @@ class AMALayout.Placeholder
   setup: ->
     for defaultText in @defaultTextList
       select = $("select:contains('#{defaultText}')")
-      @setPlaceholderColor select
-      @setupChangeEvent select
+      $(select).select2(placeholder: defaultText, minimumResultsForSearch: Infinity)
+      # @setPlaceholderColor select
+      # @setupChangeEvent select
 
   setPlaceholderColor: (select) ->
     color = if $(select).prop('selectedIndex') is 0 then @placeholderTextColor else @inputTextColor
