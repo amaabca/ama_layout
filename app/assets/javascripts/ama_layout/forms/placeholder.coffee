@@ -7,9 +7,11 @@ class AMALayout.Placeholder
     @setup()
 
   setup: ->
-    for defaultText in @defaultTextList
-      select = $("select:contains('#{defaultText}')")
-      $(select).select2(placeholder: defaultText, minimumResultsForSearch: Infinity)
+    #for defaultText in @defaultTextList
+      #select = $("select")
+    $('select').each (n, element) ->
+      text = $(element).find('option:first').text()
+      $(element).select2(placeholder: text, minimumResultsForSearch: Infinity)
       # @setPlaceholderColor select
       # @setupChangeEvent select
 
