@@ -1,8 +1,10 @@
 module AmaLayout
   class NavigationDecorator
     attr_accessor :object
-    include ActionView::Helpers
-    alias_method :h, :helpers
+    
+    def h
+      ActionView::Base.new
+    end
 
     def initialize(args = {})
       self.object = args
