@@ -1,8 +1,9 @@
 module AmaLayout
   class NavigationDecorator
     attr_accessor :object
-    
+
     def h
+      binding.pry
       ActionView::Base.new
     end
 
@@ -40,6 +41,7 @@ module AmaLayout
     end
 
     def top_nav
+      binding.pry
       h.render partial: "ama_layout/top_nav", locals: { navigation: self } if items.any?
     end
 
