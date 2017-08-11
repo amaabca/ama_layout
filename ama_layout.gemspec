@@ -17,12 +17,12 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
-
-  spec.add_dependency 'foundation-rails', '>= 6.4.1.2'
-  spec.add_dependency 'rails', '~> 4.2'
-  spec.add_dependency 'draper', '~> 2.1'
+  spec.add_dependency 'foundation-rails', '~> 6.3.1.0'
+  spec.add_dependency 'rails', '>= 5.0'
+  spec.add_dependency 'activemodel-serializers-xml'
+  spec.add_dependency 'draper', '>= 3.0.0'
   spec.add_dependency 'browser', '~> 2.0'
-  spec.add_dependency 'breadcrumbs_on_rails', '~> 3.0.1'
+  spec.add_dependency 'breadcrumbs_on_rails', '>= 3'
   spec.add_dependency 'redis-rails'
   spec.add_development_dependency 'bundler', '~> 1.11'
   spec.add_development_dependency 'rake', '>= 11.0'
