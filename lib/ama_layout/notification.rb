@@ -1,7 +1,5 @@
 module AmaLayout
   class Notification
-    include Draper::Decoratable
-
     TYPES = %i[notice warning alert].freeze
     DEFAULT_LIFESPAN = 1.year.freeze
     FORMAT_VERSION = '1.0.0'.freeze
