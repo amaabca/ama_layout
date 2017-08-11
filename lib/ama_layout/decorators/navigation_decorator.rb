@@ -4,7 +4,7 @@ module AmaLayout
 
     def h
       #ActionView::Base.new (Rails.configuration.view_paths)
-      ActionView::Base.new(::ActionController::Base.view_paths)
+      ActionView::Base.new(::ActionController::Base.view_paths, {}, ::ApplicationController)
     end
 
     def initialize(args = {})
