@@ -50,6 +50,7 @@ module AmaLayout
     end
 
     def account_toggle
+      binding.pry
       h.render partial: "account_toggle"
     end
 
