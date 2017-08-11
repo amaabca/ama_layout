@@ -6,6 +6,9 @@ module AmaLayout
     #def h
     #  binding.pry
     #  ActionView::Base.new
+    ActionView::Base.new(
+      Rails.configuration.paths #['app/views']
+    )
     #end
 
     #def initialize(args = {})

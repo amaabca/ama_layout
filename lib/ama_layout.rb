@@ -25,6 +25,7 @@ require 'ama_layout/notifications'
 module AmaLayout
   class Engine < Rails::Engine
     initializer('ama_layout') do
+      binding.pry
       I18n.load_path << File.join(self.root, 'app', 'config', 'locales', 'en.yml')
       ::ActionController::Base.send :include, AmaLayout::ActionController
     end
