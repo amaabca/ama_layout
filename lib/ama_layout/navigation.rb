@@ -1,10 +1,11 @@
 module AmaLayout
   class Navigation
     include ActiveModel::Model
+    include Draper::Decoratable
 
-    def decorate
-      AmaLayout::NavigationDecorator.new(self)
-    end
+    #def decorate
+    #  AmaLayout::NavigationDecorator.new(self)
+    #end
 
     attr_accessor :user, :current_url, :nav_file_path, :display_name
 

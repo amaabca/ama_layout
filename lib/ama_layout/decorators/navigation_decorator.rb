@@ -1,25 +1,26 @@
 module AmaLayout
-  class NavigationDecorator
-    attr_accessor :object
+  class NavigationDecorator < Draper::Decorator
+      delegate_all
+    #attr_accessor :object
 
-    def h
-      binding.pry
-      ActionView::Base.new
-    end
+    #def h
+    #  binding.pry
+    #  ActionView::Base.new
+    #end
 
-    def initialize(args = {})
-      self.object = args
-    end
+    #def initialize(args = {})
+    #  self.object = args
+    #end
 
-    def method_missing(method, *args, &block)
-      return super unless delegatable?(method)
+    #def method_missing(method, *args, &block)
+    #  return super unless delegatable?(method)
 
-      object.send(method, *args, &block)
-    end
+    #  object.send(method, *args, &block)
+    #end
 
-    def delegatable?(method)
-      object.respond_to?(method)
-    end
+    #def delegatable?(method)
+    #  object.respond_to?(method)
+    #end
 
     def items
       object.items.map { |i| i.decorate }
@@ -42,6 +43,7 @@ module AmaLayout
     end
 
     def sidebar
+      binding.pry
       h.render partial: "ama_layout/sidebar", locals: { navigation: self } if items.any?
     end
 
@@ -50,6 +52,7 @@ module AmaLayout
     end
 
     def account_toggle
+      binding.pry
       h.render partial: "account_toggle"
     end
 
