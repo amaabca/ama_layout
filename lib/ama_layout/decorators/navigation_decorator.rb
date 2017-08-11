@@ -21,10 +21,6 @@ module AmaLayout
       object.respond_to?(method)
     end
 
-    def h
-
-    end
-
     def items
       object.items.map { |i| i.decorate }
     end
