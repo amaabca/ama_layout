@@ -1,6 +1,20 @@
 module AmaLayout
-  class NavigationDecorator < Draper::Decorator
-    delegate_all
+  class NavigationDecorator
+    attr_accessor :object
+
+    def initialize(args = {})
+      self.object = args
+    end
+
+    def method_missing(method, *args, &block)
+      return super unless delegatable?(method)
+
+      object.send(method, *args, &block)
+    end
+
+    def delegatable?(method)
+      object.respond_to?(method)
+    end
 
     def items
       object.items.map { |i| i.decorate }
