@@ -3,7 +3,7 @@ module AmaLayout
     attr_accessor :object
 
     def h
-      ActionView::Base.new(::ActionController::Base.view_paths, {}, ::ApplicationController.new)
+      ActionView::Base.new(::ActionController::Base.view_paths, {})
     end
 
     def initialize(args = {})
