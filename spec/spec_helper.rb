@@ -18,8 +18,6 @@ ActionView::TestCase::TestController.instance_eval do
   helper Rails.application.routes.url_helpers
 end
 
-Draper::ViewContext.test_strategy :fast
-
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.include Rails.application.routes.url_helpers

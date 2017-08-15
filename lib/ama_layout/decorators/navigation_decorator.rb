@@ -1,20 +1,19 @@
 module AmaLayout
-  class NavigationDecorator < Draper::Decorator
-    delegate_all
+  class NavigationDecorator
+    include AmaLayout::DraperReplacement
+    extend AmaLayout::DraperReplacement
 
     def items
       object.items.map { |i| i.decorate }
     end
 
     def display_name_text
-      name_or_email.truncate(30)
+      name_or_email.try(:truncate,30)
     end
 
     def sign_out_link
       return "" unless user
-      h.content_tag :li, class: "side-nav__item" do
-        h.concat h.link_to "Sign Out", "/logout", class: "side-nav__link"
-      end
+      h.render partial: "ama_layout/sign_out_link"
     end
 
     def top_nav

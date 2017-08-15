@@ -94,8 +94,9 @@ describe AmaLayout::NavigationDecorator do
     context "with items" do
       it "renders the partial" do
         allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: "member"))
-        allow_any_instance_of(Draper::HelperProxy).to receive(:render).and_return "render"
-        expect(navigation_presenter.top_nav).to eq "render"
+        allow(Rails.configuration).to receive(:amaabca_site).and_return("amaabca.example.com")
+        allow(navigation_presenter).to receive(:sign_out_link).and_return("sign_out_link")
+        expect(navigation_presenter.top_nav).to include("AMA Road Reports", "http://auth.waffles.ca")
       end
     end
 
@@ -110,8 +111,7 @@ describe AmaLayout::NavigationDecorator do
     context "with items" do
       it "renders the partial" do
         allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: "member"))
-        allow_any_instance_of(Draper::HelperProxy).to receive(:render).and_return "render"
-        expect(navigation_presenter.sidebar).to eq "render"
+        expect(navigation_presenter.sidebar).to include("Online Account", "Membership Overview", "Rewards Overview")
       end
     end
 
@@ -125,8 +125,7 @@ describe AmaLayout::NavigationDecorator do
   context "account toggle" do
     it "in ama_layout it renders a blank partial" do
       allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: "member"))
-      allow_any_instance_of(Draper::HelperProxy).to receive(:render).and_return "render"
-      expect(navigation_presenter.account_toggle).to eq "render"
+      expect(navigation_presenter.account_toggle).to eq ""
     end
   end
 
@@ -153,8 +152,7 @@ describe AmaLayout::NavigationDecorator do
 
     describe '#notifications' do
       it 'renders the content to the page' do
-        expect(subject.h).to receive(:render).once.and_return true
-        expect(subject.notifications).to be true
+        expect(subject.notifications).to include("data-notifications-toggle")
       end
     end
 
@@ -217,8 +215,7 @@ describe AmaLayout::NavigationDecorator do
 
     describe '#notification_sidebar' do
       it 'renders content to the page' do
-        expect(subject.h).to receive(:render).once.and_return true
-        expect(subject.notification_sidebar).to be true
+        expect(subject.notification_sidebar).to include("Sign up now","off-canvas position-right")
       end
     end
 
