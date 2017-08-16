@@ -1,7 +1,7 @@
 <div class="header">
   <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
     <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
-    <%= link_to(image_tag("ama-logo.png"), "https://www.ama.ab.ca", class: "title-bar__logo") %>
+    <%= binding.pry ; link_to(image_tag("ama-logo.png"), "https://www.ama.ab.ca", class: "title-bar__logo") %>
     <a href="#" data-toggle="offCanvasRight" data-notifications-toggle>
       <i class="fa fa-2x fa-bell notification__icon"></i>
       <%= navigation.notification_badge %>
@@ -44,7 +44,7 @@
       <li class="side-nav__item">
         <a class="side-nav__link" href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a>
       </li>
-      <%= navigation.sign_out_link %>
+      <%= binding.pry ; navigation.sign_out_link %>
     </ul>
   </div>
 </div>
