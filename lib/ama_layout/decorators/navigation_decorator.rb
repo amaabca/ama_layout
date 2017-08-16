@@ -17,6 +17,7 @@ module AmaLayout
     end
 
     def top_nav
+      binding.pry
       h.render partial: "ama_layout/top_nav", locals: { navigation: self } if items.any?
     end
 
