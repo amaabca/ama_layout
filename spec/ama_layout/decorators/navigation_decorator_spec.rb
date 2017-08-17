@@ -94,9 +94,8 @@ describe AmaLayout::NavigationDecorator do
     context "with items" do
       it "renders the partial" do
         allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: "member"))
-        allow(Rails.configuration).to receive(:amaabca_site).and_return("amaabca.example.com")
-        allow(navigation_presenter).to receive(:sign_out_link).and_return("sign_out_link")
-        expect(navigation_presenter.top_nav).to include("AMA Road Reports", "http://auth.waffles.ca")
+        allow_any_instance_of(ActionView::Base).to receive(:render).and_return "render"
+        expect(navigation_presenter.top_nav).to eq "render"
       end
     end
 
@@ -111,7 +110,8 @@ describe AmaLayout::NavigationDecorator do
     context "with items" do
       it "renders the partial" do
         allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: "member"))
-        expect(navigation_presenter.sidebar).to include("Online Account", "Membership Overview", "Rewards Overview")
+        allow_any_instance_of(ActionView::Base).to receive(:render).and_return "render"
+        expect(navigation_presenter.sidebar).to eq "render"
       end
     end
 
@@ -125,7 +125,8 @@ describe AmaLayout::NavigationDecorator do
   context "account toggle" do
     it "in ama_layout it renders a blank partial" do
       allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: "member"))
-      expect(navigation_presenter.account_toggle).to eq ""
+      allow_any_instance_of(ActionView::Base).to receive(:render).and_return "render"
+      expect(navigation_presenter.account_toggle).to eq "render"
     end
   end
 
