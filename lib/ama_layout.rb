@@ -4,6 +4,7 @@ require 'foundation-rails'
 require 'browser'
 require 'breadcrumbs_on_rails'
 require 'redis-rails'
+require 'ama_layout/ama_layout_view'
 require 'ama_layout/draper_replacement'
 require 'ama_layout/breadcrumb_builder'
 require 'ama_layout/moneris'
@@ -25,7 +26,7 @@ require 'ama_layout/notifications'
 module AmaLayout
   class Engine < Rails::Engine
     initializer('ama_layout') do
-      Rails.configuration.view_paths = File.join(self.root, 'app', 'views')
+      #Rails.configuration.view_paths = File.join(self.root, 'app', 'views')
       I18n.load_path << File.join(self.root, 'app', 'config', 'locales', 'en.yml')
       ::ActionController::Base.send :include, AmaLayout::ActionController
     end

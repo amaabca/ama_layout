@@ -39,7 +39,8 @@ describe AmaLayout::NavigationItemDecorator do
     context "with items" do
       it "renders the partial" do
         navigation_item.sub_nav = items
-        expect(navigation_item_presenter.top_sub_nav).to include("Othersite Overview", "http://othersite.com")
+        allow_any_instance_of(AmaLayout::AmaLayoutView).to receive(:render).and_return "render"
+        expect(navigation_item_presenter.top_sub_nav).to eq "render"
       end
     end
 
@@ -54,7 +55,8 @@ describe AmaLayout::NavigationItemDecorator do
     context "with items" do
       it "renders the partial" do
         navigation_item.sub_nav = items
-        expect(navigation_item_presenter.sidebar_sub_nav).to include(">Othersite Overview", "http://othersite.com")
+        allow_any_instance_of(AmaLayout::AmaLayoutView).to receive(:render).and_return "render"
+        expect(navigation_item_presenter.sidebar_sub_nav).to eq "render"
       end
     end
 

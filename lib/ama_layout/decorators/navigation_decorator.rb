@@ -28,8 +28,8 @@ module AmaLayout
       display_name.present? ? "Welcome, #{display_name.titleize}" : email
     end
 
-    def account_toggle
-      h.render partial: "account_toggle"
+    def account_toggle(view_data = {})
+      h(view_data).render partial: "account_toggle"
     end
 
     def notifications

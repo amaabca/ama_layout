@@ -20,7 +20,7 @@
         <li>
           <a href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a>
         </li>
-        <%= navigation.account_toggle %>
+        <%= navigation.account_toggle(self) %>
         <%= navigation.top_nav %>
       </ul>
     </div>
@@ -30,7 +30,7 @@
   <h2 class="side-nav__header">Online Account</h2>
   <div class="side-nav__content">
     <ul class="side-nav__list">
-      <%= navigation.account_toggle %>
+      <%= navigation.account_toggle(self) %>
       <%= render partial: "ama_layout/main_nav_item", collection: navigation.items, as: :nav_item %>
       <li class="side-nav__item">
         <a class="side-nav__link" href="<%= Rails.configuration.amaabca_site %>">AMA Website</a>
