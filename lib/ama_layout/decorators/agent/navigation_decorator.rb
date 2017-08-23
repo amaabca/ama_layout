@@ -4,7 +4,7 @@ module AmaLayout
       delegate_all
 
       def items
-        object.items.map { |i| i.decorate }
+        object.items.map(&:decorate)
       end
 
       def display_name_text

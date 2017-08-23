@@ -1,11 +1,11 @@
 <div class="header">
   <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
     <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
-    <%= link_to(image_tag("ama-logo.png"), "https://www.ama.ab.ca", class: "title-bar__logo") %>
+    <%= link_to(image_tag("ama-logo.png"), Rails.configuration.amaabca_site, class: "title-bar__logo") %>
   </div>
   <div class="top-bar" id="main-menu">
     <div class="top-bar-left">
-      <%= link_to(image_tag("ama-logo.png", class: "top-bar__logo"), "https://www.ama.ab.ca") %>
+      <%= link_to(image_tag("ama-logo.png", class: "top-bar__logo"), Rails.configuration.amaabca_site) %>
     </div>
     <div class="top-bar-right">
       <ul class="menu" data-responsive-menu="drilldown medium-dropdown">

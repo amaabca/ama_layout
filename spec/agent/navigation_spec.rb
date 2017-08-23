@@ -21,23 +21,23 @@ describe AmaLayout::Agent::Navigation do
 
   describe "#items" do
     it "does not remove nil #navigation_items" do
-      expect(subject.items.collect {|i| i.alt }).to include nil
+      expect(subject.items.collect(&:alt)).to include nil
     end
 
-    it "displays links " do
-      expect(subject.items.collect {|i| i.link }).to eq subject.navigation_items.collect {|i| i["link"] }
+    it "displays links" do
+      expect(subject.items.collect(&:link)).to eq subject.navigation_items.collect {|i| i["link"] }
     end
 
     it "contains text" do
-      expect(subject.items.collect {|i| i.text }).to eq subject.navigation_items.collect {|i| i["text"] }
+      expect(subject.items.collect(&:text)).to eq subject.navigation_items.collect {|i| i["text"] }
     end
 
     it "contains icons" do
-      expect(subject.items.collect {|i| i.icon }).to eq subject.navigation_items.collect {|i| i["icon"] }
+      expect(subject.items.collect(&:icon)).to eq subject.navigation_items.collect {|i| i["icon"] }
     end
 
     it "contains alt text" do
-      expect(subject.items.collect {|i| i.alt }).to eq subject.navigation_items.collect {|i| i["alt"] }
+      expect(subject.items.collect(&:alt)).to eq subject.navigation_items.collect {|i| i["alt"] }
     end
 
     context "customer lookup" do
