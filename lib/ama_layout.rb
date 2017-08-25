@@ -21,6 +21,8 @@ require 'ama_layout/decorators/notification_decorator'
 require 'ama_layout/notification_scrubber'
 require 'ama_layout/notification_set'
 require 'ama_layout/notifications'
+require 'ama_layout/agent/navigation'
+require 'ama_layout/decorators/agent/navigation_decorator'
 
 module AmaLayout
   class Engine < Rails::Engine
