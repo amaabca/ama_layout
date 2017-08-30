@@ -1,9 +1,9 @@
 module AmaLayout
   module DraperReplacement
-    attr_accessor :object
+    attr_accessor :object, :controller
 
-    def h
-      ActionView::Base.new(::ActionController::Base.view_paths, {}, ::ApplicationController.new)
+    def h(view_data = {})
+      AmaLayoutView.new(view_data: view_data)
     end
 
     def initialize(args = {})

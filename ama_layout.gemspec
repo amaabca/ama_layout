@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'foundation-rails', '>= 6.4.1.2'
   spec.add_dependency 'rails', '>= 4.2'
   spec.add_dependency 'browser', '~> 2.0'
-  spec.add_dependency 'breadcrumbs_on_rails', '~> 3.0.1'
+  spec.add_dependency 'breadcrumbs_on_rails', '>= 3'
   spec.add_dependency 'redis-rails'
   spec.add_development_dependency 'bundler', '~> 1.11'
   spec.add_development_dependency 'rake', '>= 11.0'
