@@ -18,12 +18,12 @@ module AmaLayout
       end
 
       def top_nav
-        return '' unless user
+        return "" unless user
         h.render partial: "ama_layout/agent/top_nav", locals: { navigation: self }
       end
 
       def sidebar
-        return '' unless user
+        return "" unless user
         h.render partial: "ama_layout/sidebar", locals: { navigation: self }
       end
 

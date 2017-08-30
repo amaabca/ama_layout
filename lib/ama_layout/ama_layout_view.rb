@@ -6,7 +6,7 @@ module AmaLayout
       self.view_data = args[:view_data]
       controller = view_data.try(:controller) || ::ApplicationController.new
       context = controller.view_paths
-      super(context,{},controller)
+      super(context, {}, controller)
     end
 
     def method_missing(method, *args, &block)
