@@ -2,10 +2,6 @@
   <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
     <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
     <%= link_to(image_tag("ama-logo.png"), Rails.configuration.amaabca_site, class: "title-bar__logo") %>
-    <a href="#" data-toggle="offCanvasRight" data-notifications-toggle>
-      <i class="fa fa-2x fa-bell notification__icon"></i>
-      <%= navigation.notification_badge %>
-    </a>
   </div>
   <div class="top-bar" id="main-menu">
     <div class="top-bar-left">
@@ -13,14 +9,9 @@
     </div>
     <div class="top-bar-right">
       <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
-        <%= navigation.notifications %>
         <li>
           <a href="https://albertamotorassociation.zendesk.com/hc/en-us" target="_blank">Help</a>
         </li>
-        <li>
-          <a href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a>
-        </li>
-        <%= navigation.account_toggle(self) %>
         <%= navigation.top_nav %>
       </ul>
     </div>
@@ -30,25 +21,11 @@
   <h2 class="side-nav__header">Online Account</h2>
   <div class="side-nav__content">
     <ul class="side-nav__list">
-      <%= navigation.account_toggle(self) %>
       <%= render partial: "ama_layout/main_nav_item", collection: navigation.items, as: :nav_item %>
-      <li class="side-nav__item">
-        <a class="side-nav__link" href="<%= Rails.configuration.amaabca_site %>">AMA Website</a>
-      </li>
-      <li class="side-nav__item">
-        <a class="side-nav__link" href="http://amaroadreports.ca/">AMA Road Reports</a>
-      </li>
-      <li class="side-nav__item">
-        <a class="side-nav__link" href="https://albertamotorassociation.zendesk.com/hc/en-us" target="_blank">Help</a>
-      </li>
-      <li class="side-nav__item">
-        <a class="side-nav__link" href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a>
-      </li>
       <%= navigation.sign_out_link %>
     </ul>
   </div>
 </div>
-<%= navigation.notification_sidebar %>
 <div class="javascript_errors error_notification" hidden></div>
 <noscript>
   <div class="mt1 large-12 columns text-center error_notification">
