@@ -1,7 +1,6 @@
 module AmaLayout
   class NotificationDecorator
     include AmaLayout::DraperReplacement
-    extend AmaLayout::DraperReplacement
 
     ICONS = {
       notice: {
