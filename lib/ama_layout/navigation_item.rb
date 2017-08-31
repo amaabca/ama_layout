@@ -6,7 +6,7 @@ module AmaLayout
       AmaLayout::NavigationItemDecorator.new(self)
     end
 
-    attr_accessor :text, :icon, :link, :target, :alt, :sub_nav, :current_url
+    attr_accessor :text, :icon, :link, :target, :alt, :sub_nav, :current_url, :nested_page
 
     def initialize(args = {})
       self.current_url = args[:current_url]

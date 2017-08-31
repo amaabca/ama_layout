@@ -25,7 +25,7 @@ module AmaLayout
 
   private
     def active_link?
-      sub_nav.map(&:link).push(link).include? current_url_without_query
+      sub_nav.map(&:link).push(link).push(nested_page).include? current_url_without_query
     end
 
     def current_url_without_query
