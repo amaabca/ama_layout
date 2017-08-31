@@ -229,8 +229,16 @@ describe AmaLayout::NavigationDecorator do
     end
 
     describe '#notification_sidebar' do
+      before(:each) do
+        user.notifications.create(
+          type: :warning,
+          header: 'decorated_notification',
+          content: 'decorated_notification'
+        )
+      end
+
       it 'renders content to the page' do
-        expect(subject.notification_sidebar).to include("Sign up now","off-canvas position-right")
+        expect(subject.notification_sidebar).to include('decorated_notification')
       end
     end
 
