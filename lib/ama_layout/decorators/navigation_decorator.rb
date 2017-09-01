@@ -1,7 +1,6 @@
 module AmaLayout
   class NavigationDecorator
     include AmaLayout::DraperReplacement
-    extend AmaLayout::DraperReplacement
 
     def items
       object.items.map { |i| i.decorate }

@@ -2,7 +2,6 @@ module AmaLayout
   module Agent
     class NavigationDecorator
       include AmaLayout::DraperReplacement
-      extend AmaLayout::DraperReplacement
 
       def items
         object.items.map(&:decorate)
