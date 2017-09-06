@@ -1,4 +1,7 @@
 describe AmaLayout::Agent::Navigation do
+  let(:pos_site) { "http://pos.waffles.ca"}
+  before(:each) { allow(Rails.configuration).to receive(:pos_site).and_return(pos_site) }
+
   describe "#nav_file_path" do
     let(:file_path) { File.join(Gem.loaded_specs["ama_layout"].full_gem_path, "lib", "ama_layout", "agent_navigation.yml") }
 
@@ -44,7 +47,7 @@ describe AmaLayout::Agent::Navigation do
       context "main nav" do
         it "return the main nav items" do
           expect(subject.items[0].text).to eq "Customer Lookup"
-          expect(subject.items[0].link).to eq ""
+          expect(subject.items[0].link).to eq "#{pos_site}/customer_lookup/new"
           expect(subject.items[0].icon).to eq ""
         end
       end
