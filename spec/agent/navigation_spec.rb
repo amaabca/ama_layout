@@ -3,8 +3,8 @@ describe AmaLayout::Agent::Navigation do
   let(:driver_ed_agent_site) { "https://driver_ed_agent_site.waffles.com" }
 
   before(:each) do
-    allow(Rails.configuration).to receive(:driver_ed_agent_site).and_return(driver_ed_agent_site) }
-    allow(Rails.configuration).to receive(:pos_site).and_return(pos_site) }
+    allow(Rails.configuration).to receive(:driver_ed_agent_site).and_return(driver_ed_agent_site)
+    allow(Rails.configuration).to receive(:pos_site).and_return(pos_site)
   end
 
   describe "#nav_file_path" do
@@ -62,7 +62,7 @@ describe AmaLayout::Agent::Navigation do
       context "main nav" do
         it "return the main nav items" do
           expect(subject.items[1].text).to eq "Driver Education"
-          expect(subject.items[1].link).to eq ""
+          expect(subject.items[1].link).to eq "#{driver_ed_agent_site}"
           expect(subject.items[1].icon).to eq "fa-car"
         end
       end
@@ -72,10 +72,10 @@ describe AmaLayout::Agent::Navigation do
 
         it "return the subnav items" do
           expect(driver_education_subnav[0].text).to eq "Purchase Course"
-          expect(driver_education_subnav[0].link).to eq ""
+          expect(driver_education_subnav[0].link).to eq "#{driver_ed_agent_site}"
 
           expect(driver_education_subnav[1].text).to eq "Admin Tasks"
-          expect(driver_education_subnav[1].link).to eq ""
+          expect(driver_education_subnav[1].link).to eq "#{driver_ed_agent_site}"
         end
       end
     end

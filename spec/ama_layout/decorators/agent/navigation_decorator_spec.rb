@@ -5,7 +5,7 @@ describe AmaLayout::Agent::NavigationDecorator do
   let(:navigation) { FactoryGirl.build(:agent_navigation, user: user, display_name: name) }
   let(:navigation_presenter) { navigation.decorate }
   let(:pos_site) { "http://pos.waffles.ca"}
-  let(:driver_ed_agent_site_site) { "http://driver_ed_agent_site.waffles.ca"}
+  let(:driver_ed_agent_site) { "http://driver_ed_agent_site.waffles.ca"}
 
   before(:each) do
     allow(Rails.configuration).to receive(:pos_site).and_return(pos_site)
