@@ -1,7 +1,10 @@
 module AmaLayout
   class NavigationItem
     include ActiveModel::Model
-    include Draper::Decoratable
+
+    def decorate
+      AmaLayout::NavigationItemDecorator.new(self)
+    end
 
     attr_accessor :text, :icon, :link, :target, :alt, :sub_nav, :current_url
 

@@ -52,7 +52,7 @@ describe AmaLayout::Agent::NavigationDecorator do
   describe "#top_nav" do
     context "with user" do
       it "renders the partial" do
-        allow_any_instance_of(Draper::HelperProxy).to receive(:render).and_return "render"
+        allow_any_instance_of(AmaLayout::AmaLayoutView).to receive(:render).and_return "render"
         expect(navigation_presenter.top_nav).to eq "render"
       end
     end
@@ -69,7 +69,7 @@ describe AmaLayout::Agent::NavigationDecorator do
   describe "#sidebar" do
     context "with user" do
       it "renders the partial" do
-        allow_any_instance_of(Draper::HelperProxy).to receive(:render).and_return "render"
+        allow_any_instance_of(AmaLayout::AmaLayoutView).to receive(:render).and_return "render"
         expect(navigation_presenter.sidebar).to eq "render"
       end
     end

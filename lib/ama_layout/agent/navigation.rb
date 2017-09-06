@@ -2,7 +2,10 @@ module AmaLayout
   module Agent
     class Navigation
       include ActiveModel::Model
-      include Draper::Decoratable
+
+      def decorate
+        AmaLayout::Agent::NavigationDecorator.new(self)
+      end
 
       attr_accessor :user, :current_url, :nav_file_path, :display_name
 

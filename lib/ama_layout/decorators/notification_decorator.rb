@@ -1,6 +1,6 @@
 module AmaLayout
-  class NotificationDecorator < Draper::Decorator
-    delegate_all
+  class NotificationDecorator
+    include AmaLayout::DraperReplacement
 
     ICONS = {
       notice: {
