@@ -1,6 +1,11 @@
 describe AmaLayout::Agent::Navigation do
   let(:pos_site) { "http://pos.waffles.ca"}
-  before(:each) { allow(Rails.configuration).to receive(:pos_site).and_return(pos_site) }
+  let(:driver_ed_agent_site) { "https://driver_ed_agent_site.waffles.com" }
+
+  before(:each) do
+    allow(Rails.configuration).to receive(:driver_ed_agent_site).and_return(driver_ed_agent_site) }
+    allow(Rails.configuration).to receive(:pos_site).and_return(pos_site) }
+  end
 
   describe "#nav_file_path" do
     let(:file_path) { File.join(Gem.loaded_specs["ama_layout"].full_gem_path, "lib", "ama_layout", "agent_navigation.yml") }
