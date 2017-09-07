@@ -4,6 +4,13 @@ describe AmaLayout::Agent::NavigationDecorator do
   let(:user) { OpenStruct.new(email: 'john.doe@test.com', cash_drawers: [cash_drawer]) }
   let(:navigation) { FactoryGirl.build(:agent_navigation, user: user, display_name: name) }
   let(:navigation_presenter) { navigation.decorate }
+  let(:pos_site) { "http://pos.waffles.ca"}
+  let(:driver_ed_agent_site) { "http://driver_ed_agent_site.waffles.ca"}
+
+  before(:each) do
+    allow(Rails.configuration).to receive(:pos_site).and_return(pos_site)
+    allow(Rails.configuration).to receive(:driver_ed_agent_site).and_return(driver_ed_agent_site)
+  end
 
   describe "#display_name_text" do
     context "user does have a cash drawer" do
