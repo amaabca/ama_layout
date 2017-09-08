@@ -52,7 +52,7 @@ describe AmaLayout::Agent::Navigation do
       context "main nav" do
         it "return the main nav items" do
           expect(subject.items[0].text).to eq "Customer Lookup"
-          expect(subject.items[0].link).to eq "#{pos_site}/customer_lookup/new"
+          expect(subject.items[0].link).to eq "#{pos_site}/customer_lookup"
           expect(subject.items[0].icon).to eq ""
         end
       end
