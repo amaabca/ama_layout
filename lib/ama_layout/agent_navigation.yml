@@ -1,5 +1,5 @@
 - text: "Customer Lookup"
-  link: "<%= Rails.configuration.pos_site %>/customer_lookup/new"
+  link: "<%= Rails.configuration.pos_site %>/customer_lookup"
   icon: ""
 - text: "Driver Education"
   link: "<%= Rails.configuration.driver_ed_agent_site %>"
