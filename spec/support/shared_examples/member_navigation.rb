@@ -81,7 +81,7 @@ shared_examples 'member_navigation' do
   context 'travel' do
     it 'has the correct travel text and url' do
       expect(subject.items[6].text).to eq 'My Travel'
-      expect(subject.items[6].link).to eq "#{travel_site}"
+      expect(subject.items[6].link).to eq "#{travel_login_url}"
     end
   end
 
