@@ -5,6 +5,7 @@ describe AmaLayoutPathHelper do
   let(:membership_site) { "http://membership.waffles.ca" }
   let(:driveredonline_site) { "http://driveredonline.waffles.ca" }
   let(:travel_site) { "http://travel.waffles.ca" }
+  let(:travel_login_url) { "http://travel.waffles.ca/MyAccount" }
 
   before(:each) do
     allow(Rails.configuration).to receive(:gatekeeper_site).and_return(gatekeeper_site)
@@ -13,6 +14,7 @@ describe AmaLayoutPathHelper do
     allow(Rails.configuration).to receive(:membership_site).and_return(membership_site)
     allow(Rails.configuration).to receive(:driveredonline_site).and_return(driveredonline_site)
     allow(Rails.configuration).to receive(:travel_site).and_return(travel_site)
+    allow(Rails.configuration).to receive(:travel_login_url).and_return(travel_login_url)
   end
 
   describe "#gatekeeper_profile_path" do

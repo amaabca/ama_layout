@@ -1,3 +1,3 @@
 module AmaLayout
-  VERSION = '7.1.2'
+  VERSION = '8.1'
 end
