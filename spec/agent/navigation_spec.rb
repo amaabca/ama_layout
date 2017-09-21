@@ -58,17 +58,27 @@ describe AmaLayout::Agent::Navigation do
       end
     end
 
+    context "new purchase" do
+      context "main nav" do
+        it "return the main nav items" do
+          expect(subject.items[1].text).to eq "New Purchase"
+          expect(subject.items[1].link).to eq "#{pos_site}/transactions/new"
+          expect(subject.items[1].icon).to eq ""
+        end
+      end
+    end
+
     context "driver education" do
       context "main nav" do
         it "return the main nav items" do
-          expect(subject.items[1].text).to eq "Driver Education"
-          expect(subject.items[1].link).to eq "#{driver_ed_agent_site}"
-          expect(subject.items[1].icon).to eq "fa-car"
+          expect(subject.items[2].text).to eq "Driver Education"
+          expect(subject.items[2].link).to eq "#{driver_ed_agent_site}"
+          expect(subject.items[2].icon).to eq "fa-car"
         end
       end
 
       context "subnavs" do
-        let(:driver_education_subnav) { subject.items[1].sub_nav }
+        let(:driver_education_subnav) { subject.items[2].sub_nav }
 
         it "return the subnav items" do
           expect(driver_education_subnav[0].text).to eq "Purchase Course"
@@ -83,9 +93,9 @@ describe AmaLayout::Agent::Navigation do
     context "cashout" do
       context "main nav" do
         it "return the main nav items" do
-          expect(subject.items[2].text).to eq "Cashout"
-          expect(subject.items[2].link).to eq ""
-          expect(subject.items[2].icon).to eq ""
+          expect(subject.items[3].text).to eq "Cashout"
+          expect(subject.items[3].link).to eq ""
+          expect(subject.items[3].icon).to eq ""
         end
       end
     end
