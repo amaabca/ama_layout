@@ -167,9 +167,15 @@ describe AmaLayout::NavigationDecorator do
       end
     end
 
-    describe '#notifications' do
+    describe '#notification_icon' do
       it 'renders the content to the page' do
-        expect(subject.notifications).to include("data-notifications-toggle")
+        expect(subject.notification_icon).to include('data-notifications-toggle')
+      end
+    end
+
+    describe '#mobile_notification_icon' do
+      it 'renders the content to the page' do
+        expect(subject.mobile_notification_icon).to include('fa-bell')
       end
     end
 
