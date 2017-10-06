@@ -3,11 +3,11 @@ module AmaLayout
     include AmaLayout::DraperReplacement
 
     def items
-      object.items.map { |i| i.decorate }
+      object.items.map(&:decorate)
     end
 
     def display_name_text
-      name_or_email.try(:truncate,30)
+      name_or_email.try(:truncate, 30)
     end
 
     def sign_out_link
@@ -16,7 +16,7 @@ module AmaLayout
     end
 
     def top_nav
-      h.render partial: "ama_layout/top_nav", locals: { navigation: self } if items.any?
+      h.render partial: "ama_layout/top_nav", locals: { navigation: self } if user
     end
 
     def sidebar
