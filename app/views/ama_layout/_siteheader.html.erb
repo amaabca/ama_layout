@@ -23,28 +23,7 @@
     </div>
   </div>
 </div>
-<div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
-  <h2 class="side-nav__header">Online Account</h2>
-  <div class="side-nav__content">
-    <ul class="side-nav__list">
-      <%= navigation.account_toggle(self) %>
-      <%= render partial: "ama_layout/main_nav_item", collection: navigation.items, as: :nav_item %>
-      <li class="side-nav__item">
-        <a class="side-nav__link" href="<%= Rails.configuration.amaabca_site %>">AMA Website</a>
-      </li>
-      <li class="side-nav__item">
-        <a class="side-nav__link" href="http://amaroadreports.ca/">AMA Road Reports</a>
-      </li>
-      <li class="side-nav__item">
-        <a class="side-nav__link" href="https://albertamotorassociation.zendesk.com/hc/en-us" target="_blank">Help</a>
-      </li>
-      <li class="side-nav__item">
-        <a class="side-nav__link" href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a>
-      </li>
-      <%= navigation.sign_out_link %>
-    </ul>
-  </div>
-</div>
+<%= navigation.mobile_links %>
 <%= navigation.notification_sidebar %>
 <div class="javascript_errors error_notification" hidden></div>
 <noscript>

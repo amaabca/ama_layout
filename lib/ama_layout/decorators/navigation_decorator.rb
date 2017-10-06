@@ -43,6 +43,10 @@ module AmaLayout
       end
     end
 
+    def mobile_links
+      h.render 'ama_layout/mobile_links' unless user
+    end
+
     def notification_badge
       if new_notifications?
         h.content_tag(
