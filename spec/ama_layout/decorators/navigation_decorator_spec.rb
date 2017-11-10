@@ -1,26 +1,18 @@
 describe AmaLayout::NavigationDecorator do
   let(:navigation) { FactoryGirl.build(:navigation) }
   let(:navigation_presenter) { navigation.decorate }
-  let(:gatekeeper_site) { "http://auth.waffles.ca" }
-  let(:youraccount_site) { "http://youraccount.waffles.ca" }
-  let(:insurance_site) { "http://insurance.waffles.ca" }
-  let(:membership_site) { "http://membership.waffles.ca" }
-  let(:driveredonline_site) { "http://driveredonline.waffles.ca" }
-  let(:registries_site) { "http://registries.waffles.ca" }
-  let(:automotive_site) { "http://automotive.waffles.ca" }
-  let(:travel_site) { "http://travel.waffles.ca" }
-  let(:travel_login_url) { "http://travel.waffles.ca/MyAccount" }
 
   before(:each) do
-    allow(Rails.configuration).to receive(:gatekeeper_site).and_return(gatekeeper_site)
-    allow(Rails.configuration).to receive(:youraccount_site).and_return(youraccount_site)
-    allow(Rails.configuration).to receive(:insurance_site).and_return(insurance_site)
-    allow(Rails.configuration).to receive(:membership_site).and_return(membership_site)
-    allow(Rails.configuration).to receive(:driveredonline_site).and_return(driveredonline_site)
-    allow(Rails.configuration).to receive(:registries_site).and_return(registries_site)
-    allow(Rails.configuration).to receive(:automotive_site).and_return(automotive_site)
-    allow(Rails.configuration).to receive(:travel_site).and_return(travel_site)
-    allow(Rails.configuration).to receive(:travel_login_url).and_return(travel_login_url)
+    Rails.configuration.gatekeeper_site = 'http://auth.waffles.ca'
+    Rails.configuration.youraccount_site = 'http://youraccount.waffles.ca'
+    Rails.configuration.insurance_site = 'http://insurance.waffles.ca'
+    Rails.configuration.membership_site = 'http://membership.waffles.ca'
+    Rails.configuration.driveredonline_site = 'http://driveredonline.waffles.ca'
+    Rails.configuration.registries_site = 'http://registries.waffles.ca'
+    Rails.configuration.automotive_site = 'http://automotive.waffles.ca'
+    Rails.configuration.travel_site = 'http://travel.waffles.ca'
+    Rails.configuration.travel_login_url = 'http://travel.waffles.ca/MyAccount'
+    Rails.configuration.amaabca_site = 'http://test.ama.ab.ca/'
   end
 
   describe "#display_name_text" do
@@ -73,6 +65,24 @@ describe AmaLayout::NavigationDecorator do
       items = navigation_presenter.items
       items.each do |i|
         expect(i).to be_a AmaLayout::NavigationItemDecorator
+      end
+    end
+  end
+
+  describe '#mobile_links' do
+    context 'with user' do
+      before(:each) do
+        navigation_presenter.object = OpenStruct.new(user: true)
+      end
+
+      it 'returns nil' do
+        expect(navigation_presenter.mobile_links).to be_nil
+      end
+    end
+
+    context 'without user' do
+      it 'renders an offcanvas menu' do
+        expect(navigation_presenter.mobile_links).to include('off-canvas')
       end
     end
   end
@@ -167,9 +177,15 @@ describe AmaLayout::NavigationDecorator do
       end
     end
 
-    describe '#notifications' do
+    describe '#notification_icon' do
       it 'renders the content to the page' do
-        expect(subject.notifications).to include("data-notifications-toggle")
+        expect(subject.notification_icon).to include('data-notifications-toggle')
+      end
+    end
+
+    describe '#mobile_notification_icon' do
+      it 'renders the content to the page' do
+        expect(subject.mobile_notification_icon).to include('fa-bell')
       end
     end
 

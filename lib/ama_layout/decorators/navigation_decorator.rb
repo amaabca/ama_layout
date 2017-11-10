@@ -3,11 +3,11 @@ module AmaLayout
     include AmaLayout::DraperReplacement
 
     def items
-      object.items.map { |i| i.decorate }
+      object.items.map(&:decorate)
     end
 
     def display_name_text
-      name_or_email.try(:truncate,30)
+      name_or_email.try(:truncate, 30)
     end
 
     def sign_out_link
@@ -16,7 +16,7 @@ module AmaLayout
     end
 
     def top_nav
-      h.render partial: "ama_layout/top_nav", locals: { navigation: self } if items.any?
+      h.render partial: "ama_layout/top_nav", locals: { navigation: self } if user
     end
 
     def sidebar
@@ -31,10 +31,20 @@ module AmaLayout
       h(view_data).render partial: "account_toggle"
     end
 
-    def notifications
+    def notification_icon
       if user
-        h.render 'ama_layout/notifications', notifications: user.notifications, navigation: self
+        h.render 'ama_layout/notification_icon', navigation: self
       end
+    end
+
+    def mobile_notification_icon
+      if user
+        h.render 'ama_layout/mobile_notification_icon', navigation: self
+      end
+    end
+
+    def mobile_links
+      h.render 'ama_layout/mobile_links' unless user
     end
 
     def notification_badge
