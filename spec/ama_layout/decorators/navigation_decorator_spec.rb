@@ -1,5 +1,5 @@
 describe AmaLayout::NavigationDecorator do
-  let(:navigation) { FactoryGirl.build(:navigation) }
+  let(:navigation) { FactoryBot.build(:navigation) }
   let(:navigation_presenter) { navigation.decorate }
 
   before(:each) do
@@ -166,7 +166,7 @@ describe AmaLayout::NavigationDecorator do
     end
     let(:notification_set) { AmaLayout::NotificationSet.new(store, 1) }
     let(:user) { OpenStruct.new(navigation: 'member', notifications: notification_set) }
-    let(:navigation) { FactoryGirl.build :navigation, user: user }
+    let(:navigation) { FactoryBot.build :navigation, user: user }
     subject { described_class.new(navigation) }
 
     around(:each) do |example|

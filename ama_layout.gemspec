@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.11'
   spec.add_development_dependency 'rake', '>= 11.0'
   spec.add_development_dependency 'rspec-rails'
-  spec.add_development_dependency 'factory_girl'
+  spec.add_development_dependency 'factory_bot'
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'combustion'

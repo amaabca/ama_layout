@@ -1,5 +1,5 @@
 describe AmaLayout::NavigationHelper do
-  subject { FactoryGirl.create(:user) }
+  subject { FactoryBot.create(:user) }
 
   describe '#navigation' do
     before(:each) do
@@ -7,7 +7,7 @@ describe AmaLayout::NavigationHelper do
     end
 
     context 'non-member' do
-      subject { FactoryGirl.create(:user, :non_member) }
+      subject { FactoryBot.create(:user, :non_member) }
 
       it 'shows non-member sidebar menu' do
         expect(subject.navigation).to eq 'non-member'
@@ -21,7 +21,7 @@ describe AmaLayout::NavigationHelper do
     end
 
     context 'member with accr' do
-      subject { FactoryGirl.create(:user, :with_accr) }
+      subject { FactoryBot.create(:user, :with_accr) }
 
       it 'shows member sidebar menu' do
         expect(subject.navigation).to eq 'member'
@@ -29,7 +29,7 @@ describe AmaLayout::NavigationHelper do
     end
 
     context 'member with mpp' do
-      subject { FactoryGirl.create(:user, :with_mpp) }
+      subject { FactoryBot.create(:user, :with_mpp) }
 
       it 'shows member sidebar menu' do
         expect(subject.navigation).to eq 'member'
@@ -37,7 +37,7 @@ describe AmaLayout::NavigationHelper do
     end
 
     context 'member in-renewal' do
-      subject { FactoryGirl.create(:user, :in_renewal) }
+      subject { FactoryBot.create(:user, :in_renewal) }
 
       it 'shows in-renewal sidebar menu' do
         expect(subject.navigation).to eq 'member-in-renewal'
@@ -45,7 +45,7 @@ describe AmaLayout::NavigationHelper do
     end
 
     context 'member in-renewal late' do
-      subject { FactoryGirl.create(:user, :in_renewal_late) }
+      subject { FactoryBot.create(:user, :in_renewal_late) }
 
       it 'shows in-renewal-late sidebar menu' do
         expect(subject.navigation).to eq 'member-in-renewal-late'
@@ -53,7 +53,7 @@ describe AmaLayout::NavigationHelper do
     end
 
     context 'member with outstanding balance' do
-      subject { FactoryGirl.create(:user, :outstanding_balance) }
+      subject { FactoryBot.create(:user, :outstanding_balance) }
 
       it 'shows member-with-outstanding-balance sidebar menu' do
         expect(subject.navigation).to eq 'member-with-outstanding-balance'

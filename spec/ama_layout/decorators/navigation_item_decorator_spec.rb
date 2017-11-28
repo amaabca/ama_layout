@@ -1,5 +1,5 @@
 describe AmaLayout::NavigationItemDecorator do
-  let(:navigation_item) { FactoryGirl.build(:navigation_item) }
+  let(:navigation_item) { FactoryBot.build(:navigation_item) }
   let(:navigation_item_presenter) { navigation_item.decorate }
   let(:items) { [{ text: "Othersite Overview", link: "http://othersite.com"}] }
 

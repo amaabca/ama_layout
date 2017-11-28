@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :user, class: Class.new(OpenStruct) do
     in_renewal false
     member_type 'P'
