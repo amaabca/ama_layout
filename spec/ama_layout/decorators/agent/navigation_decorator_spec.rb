@@ -2,7 +2,7 @@ describe AmaLayout::Agent::NavigationDecorator do
   let(:name) { "John D" }
   let(:cash_drawer) { OpenStruct.new(name: 'Edmonton Main') }
   let(:user) { OpenStruct.new(email: 'john.doe@test.com', cash_drawers: [cash_drawer]) }
-  let(:navigation) { FactoryGirl.build(:agent_navigation, user: user, display_name: name) }
+  let(:navigation) { FactoryBot.build(:agent_navigation, user: user, display_name: name) }
   let(:navigation_presenter) { navigation.decorate }
 
   describe "#display_name_text" do

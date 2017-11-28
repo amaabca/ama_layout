@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :agent_navigation, class: AmaLayout::Agent::Navigation do
     current_url "http://waffleemporium.ca"
   end

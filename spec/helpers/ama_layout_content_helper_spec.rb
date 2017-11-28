@@ -3,7 +3,7 @@ describe AmaLayoutContentHelper do
   let(:site_name) { "Waffle Emporium" }
   let(:site_domain) { "http://waffleemporium.ca" }
   let(:site_url) { "#{site_domain}/wafflesauce" }
-  let(:nav_item) { FactoryGirl.build(:navigation_item) }
+  let(:nav_item) { FactoryBot.build(:navigation_item) }
 
   describe "#greeting" do
     it "returns the greeting set in the domain cookie" do

@@ -1,5 +1,5 @@
 require 'simplecov'
-require 'factory_girl'
+require 'factory_bot'
 require 'ama_layout'
 require 'pry'
 require 'rspec/rails'
@@ -12,7 +12,7 @@ Combustion.initialize! :all
 
 Dir['./spec/support/**/*.rb'].sort.each { |file| require file }
 
-FactoryGirl.find_definitions
+FactoryBot.find_definitions
 
 ActionView::TestCase::TestController.instance_eval do
   helper Rails.application.routes.url_helpers
