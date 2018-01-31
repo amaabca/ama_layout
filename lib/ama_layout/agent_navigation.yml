@@ -1,14 +1,13 @@
 - text: "Customer Lookup"
-  link: ""
-  icon: ""
-- text: "Driver Education"
-  link: ""
-  icon: "fa-car"
+  link: "<%= URI.join(Rails.configuration.pos_site, '/mdm/queries/new').to_s %>"
+- text: New Purchase
+  link: "<%=  URI.join(Rails.configuration.pos_site, '/business_units').to_s %>"
+- text: Driver Education
+  link: "<%= Rails.configuration.driver_ed_agent_site %>"
   sub_nav:
-    - text: "Purchase Course"
-      link: ""
-    - text: "Admin Tasks"
-      link: ""
-- text: "Cashout"
-  link: ""
-  icon: ""
+    - text: Purchase Course
+      link: "<%= Rails.configuration.driver_ed_agent_site %>"
+    - text: Admin Tasks
+      link: "<%= "#{Rails.configuration.driver_ed_agent_site}/admin/tasks" %>"
+- text: Cashout
+  link: "<%= URI.join(Rails.configuration.pos_site, '/cashout_report/new').to_s %>"
