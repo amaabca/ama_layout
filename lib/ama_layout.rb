@@ -356,7 +356,7 @@ module AmaLayout
           b.optional :readonly
 
           b.wrapper :label_wrapper, tag: :div, class: 'medium-4 columns' do |ba|
-            ba.use :label
+            ba.use :label, class: 'inline'
           end
 
           b.wrapper :right_input_wrapper, tag: :div, class: 'medium-3 columns' do |ba|
