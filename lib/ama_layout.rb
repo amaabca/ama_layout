@@ -87,6 +87,58 @@ module AmaLayout
           # b.use :full_error, wrap_with: { tag: :span, class: :error }
         end
 
+        config.wrappers :subscription_form, tag: :div, class: 'row', error_class: :error do |b|
+          b.use :html5
+          b.use :placeholder
+          b.optional :maxlength
+          b.optional :pattern
+          b.optional :min_max
+          b.optional :readonly
+
+          b.wrapper :label_wrapper, tag: :div, class: 'medium-4 columns' do |ba|
+            ba.use :label, class: 'inline'
+          end
+
+          b.wrapper :right_input_wrapper, tag: :div, class: 'medium-8 columns' do |ba|
+            ba.use :input, class: 'radius'
+            ba.use :error, wrap_with: { tag: :small, class: :error }
+          end
+        end
+
+        config.wrappers :checkbox, tag: :div do |b|
+          b.use :html5
+          b.optional :readonly
+
+          b.wrapper tag: :div, class: "medium-8 columns checkboxes" do |ba|
+            ba.use :input
+            ba.use :label
+            ba.use :error, wrap_with: { tag: :small, class: :error }
+          end
+        end
+
+        config.wrappers :nolabel_checkbox, tag: :div, class: :row do |b|
+          b.use :html5
+          b.optional :readonly
+
+          b.wrapper tag: :div, class: "large-8 large-offset-4 columns checkboxes" do |ba|
+            ba.use :input
+            ba.use :label
+            ba.use :error, wrap_with: { tag: :small, class: :error }
+          end
+        end
+
+        config.wrappers :nolabel_input, tag: :div, class: :row do |b|
+          b.use :html5
+          b.optional :readonly
+          b.use :placeholder
+
+          b.wrapper tag: :div, class: "large-11 large-offset-1 columns" do |ba|
+            ba.use :input
+            ba.use :label
+            ba.use :error, wrap_with: { tag: :small, class: :error }
+          end
+        end
+
         # The default wrapper to be used by the FormBuilder.
         config.default_wrapper = :default
 
@@ -195,7 +247,7 @@ module AmaLayout
 
         # Defines if the default input wrapper class should be included in radio
         # collection wrappers.
-        # config.include_default_input_wrapper_class = true
+        config.include_default_input_wrapper_class = false
 
         # Defines which i18n scope will be used in Simple Form.
         # config.i18n_scope = 'simple_form'
@@ -303,11 +355,11 @@ module AmaLayout
           b.optional :min_max
           b.optional :readonly
 
-          b.wrapper :label_wrapper, tag: :div, class: 'form-horizontal__label-wrapper' do |ba|
+          b.wrapper :label_wrapper, tag: :div, class: 'medium-4 columns' do |ba|
             ba.use :label
           end
 
-          b.wrapper :right_input_wrapper, tag: :div, class: 'form-horizontal__input-wrapper--half-width' do |ba|
+          b.wrapper :right_input_wrapper, tag: :div, class: 'medium-3 columns' do |ba|
             ba.use :input, class: :radius
             ba.use :error, wrap_with: { tag: :small, class: :error }
           end
@@ -321,7 +373,7 @@ module AmaLayout
           b.optional :min_max
           b.optional :readonly
 
-          b.wrapper :right_input_wrapper, tag: :div, class: 'form-horizontal__input-wrapper--half-width' do |ba|
+          b.wrapper :right_input_wrapper, tag: :div, class: 'medium-4 columns' do |ba|
             ba.use :input, class: :radius
             ba.use :error, wrap_with: { tag: :small, class: :error }
           end
