@@ -6,7 +6,6 @@
 //= require foundation.util.motion.js
 //= require foundation.util.nest.js
 //= require foundation.util.timer.js
-//= require foundation.util.timerAndImageLoader.js
 //= require foundation.util.triggers.js
 //= require foundation.abide.js
 //= require foundation.accordion.js
