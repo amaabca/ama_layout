@@ -316,6 +316,25 @@ module AmaLayout
           end
         end
 
+        config.wrappers :horizontal_form_with_hint, tag: 'div', class: 'form-horizontal__row', hint_class: :field_with_hint, error_class: :error do |b|
+          b.use :html5
+          b.use :placeholder
+          b.optional :maxlength
+          b.optional :pattern
+          b.optional :min_max
+          b.optional :readonly
+
+          b.wrapper :label_wrapper, tag: :div, class: 'columns large-4' do |ba|
+            ba.use :label, class: ''
+          end
+
+          b.wrapper :right_input_wrapper, tag: :div, class: 'columns large-8' do |ba|
+            ba.use :input
+            ba.use :hint,  wrap_with: { tag: :div }
+            ba.use :error, wrap_with: { tag: :small, class: :error }
+          end
+        end
+
         config.wrappers :coverage_types, tag: false, hint_class: :field_with_hint, error_class: :error do |b|
           b.use :html5
           b.use :placeholder
@@ -442,12 +461,35 @@ module AmaLayout
           end
         end
 
+        config.wrappers :offset_checkbox, tag: :div, class: 'form-horizontal__row' do |b|
+          b.use :html5
+          b.optional :readonly
+
+          b.wrapper :container_wrapper, tag: 'div', class: "form-horizontal__input-wrapper--offset" do |ba|
+            ba.wrapper :tag => 'input', :class => 'checkbox' do |bb|
+              bb.use :input
+              bb.use :label_text
+            end
+          end
+        end
+
+        config.wrappers :inline_label do |b|
+            b.use :html5
+            b.use :placeholder
+            b.use :error, wrap_with: { tag: :small, class: 'error italic' }
+
+            b.wrapper tag: :div, class: 'input-group' do |g|
+              g.use :label, wrap_with: { tag: :span, class: 'input-group-label' }
+              g.use :input
+            end
+          end
+
         config.wrappers :credit_card_month, tag: false, hint_class: :field_with_hint, error_class: :error do |b|
           b.use :html5
           b.use :placeholder
 
           b.wrapper :label_wrapper, tag: :div, class: 'medium-4 columns' do |ba|
-            ba.use :label
+            ba.use :label, class: 'inline'
           end
 
           b.wrapper :right_input_wrapper, tag: :div, class: 'medium-2 columns credit-card-month' do |ba|
