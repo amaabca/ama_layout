@@ -519,7 +519,7 @@ module AmaLayout
           b.use :input, wrap_with: { tag: :div, class: 'form-horizontal__input-wrapper--small' }
           b.use :hint,  wrap_with: { tag: :div, class: 'form-horizontal__input-hint' }
 
-          b.wrapper :error_wrapper, tag: :div, class: 'form-horizontal__error-wrapper' do |ba|
+          b.wrapper :error_wrapper, tag: :div, class: 'medium-8 columns' do |ba|
             ba.use :error, wrap_with: { tag: :small, class: 'error' }
           end
         end
