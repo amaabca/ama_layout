@@ -502,18 +502,18 @@ module AmaLayout
           b.use :html5
           b.use :placeholder
 
-          b.wrapper :right_input_wrapper, tag: :div, class: 'medium-2 columns end' do |ba|
+          b.wrapper :right_input_wrapper, tag: :div, class: 'medium-2 columns end credit-card-year' do |ba|
             ba.use :input, class: :radius
             ba.use :error, wrap_with: { tag: :small, class: :error }
           end
         end
 
-        config.wrappers :credit_card_verification_digits, tag: false, hint_class: :field_with_hint, error_class: :error do |b|
+        config.wrappers :credit_card_verification_digits, tag: :div, class: 'form-horizontal__row', hint_class: :field_with_hint, error_class: :error do |b|
           b.use :html5
           b.use :placeholder
 
           b.wrapper :label_wrapper, tag: :div, class: 'form-horizontal__label-wrapper' do |ba|
-            ba.use :label, class: 'uppercase'
+            ba.use :label, class: 'inline uppercase'
           end
 
           b.use :input, wrap_with: { tag: :div, class: 'form-horizontal__input-wrapper--small' }
