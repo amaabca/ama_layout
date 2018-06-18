@@ -109,7 +109,7 @@ module AmaLayout
           b.use :html5
           b.optional :readonly
 
-          b.wrapper tag: :div, class: "medium-8 columns checkboxes" do |ba|
+          b.wrapper tag: :div, class: "form-horizontal__input-wrapper checkboxes" do |ba|
             ba.use :input
             ba.use :label
             ba.use :error, wrap_with: { tag: :small, class: :error }
@@ -421,7 +421,7 @@ module AmaLayout
           b.use :html5
           b.optional :readonly
 
-          b.wrapper :container_wrapper, tag: 'div', class: 'small-offset-4 small-8 columns' do |ba|
+          b.wrapper :container_wrapper, tag: 'div', class: 'medium-offset-3 medium-9 columns' do |ba|
             ba.wrapper :tag => 'label', :class => 'checkbox' do |bb|
               bb.use :input
               bb.use :label_text
