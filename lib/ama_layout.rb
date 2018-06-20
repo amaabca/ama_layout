@@ -160,7 +160,7 @@ module AmaLayout
         config.error_notification_tag = :div
 
         # CSS class to add for error notification helper.
-        config.error_notification_class = 'error_notification'
+        config.error_notification_class = 'error__page-error'
 
         # ID to add for error notification helper.
         # config.error_notification_id = nil
@@ -186,7 +186,7 @@ module AmaLayout
         # config.item_wrapper_class = nil
 
         # How the label text should be generated altogether with the required text.
-        config.label_text = lambda { |label, required, explicit_label| "#{label.titleize}" }
+        config.label_text = lambda { |label, required, explicit_label| explicit_label ? label : "#{required} #{label.titleize}" }
 
         # You can define the class to use on all labels. Default is nil.
         # config.label_class = nil
@@ -295,6 +295,24 @@ module AmaLayout
             ba.use :input
             ba.use :error, wrap_with: { tag: :small, class: :error }
             # ba.use :hint,  wrap_with: { tag: :span, class: :hint }
+          end
+        end
+
+        config.wrappers :conditional_field_hidden, tag: :div, class: 'form-horizontal__conditional-row--hidden', hint_class: :field_with_hint, error_class: :error do |b|
+          b.use :html5
+          b.use :placeholder
+          b.optional :maxlength
+          b.optional :pattern
+          b.optional :min_max
+          b.optional :readonly
+
+          b.wrapper :label_wrapper, tag: :div, class: 'form-horizontal__label-wrapper' do |ba|
+            ba.use :label, class: ''
+          end
+
+          b.wrapper :right_input_wrapper, tag: :div, class: 'form-horizontal__input-wrapper' do |ba|
+            ba.use :input
+            ba.use :error, wrap_with: { tag: :small, class: :error }
           end
         end
 
@@ -450,6 +468,27 @@ module AmaLayout
           end
         end
 
+        config.wrappers :checkbox_label_addon, tag: 'div', class: 'form__label-addon', hint_class: :field_with_hint, error_class: :error do |b|
+          b.use :html5
+          b.use :placeholder
+          b.optional :maxlength
+          b.optional :pattern
+          b.optional :min_max
+          b.optional :readonly
+
+          b.wrapper :checkbox_label_wrapper, tag: :div, class: 'checkbox-label' do |ba|
+            ba.wrapper :label_wrapper, tag: :div, class: 'form-horizontal__label-wrapper' do |bc|
+              bc.use :label, class: ''
+            end
+
+            ba.wrapper :right_input_wrapper, tag: :div, class: 'form-horizontal__input-wrapper' do |bc|
+              bc.use :input
+              bc.use :error, wrap_with: { tag: :small, class: :error }
+              # ba.use :hint,  wrap_with: { tag: :span, class: :hint }
+            end
+          end
+        end
+
         config.wrappers :nolabel_checkbox, tag: :div, class: 'form-horizontal__row' do |b|
           b.use :html5
           b.optional :readonly
@@ -457,6 +496,31 @@ module AmaLayout
           b.wrapper tag: :div, class: "form-horizontal__input-wrapper--offset" do |ba|
             ba.use :input
             ba.use :label
+            ba.use :error, wrap_with: { tag: :small, class: :error }
+          end
+        end
+
+        config.wrappers :nolabel_checkbox_nowrapper, tag: :div, class: 'mb1' do |b|
+          b.use :html5
+          b.optional :readonly
+
+          b.wrapper tag: :div do |ba|
+            ba.use :input
+            ba.use :label
+            ba.use :error, wrap_with: { tag: :small, class: :error }
+          end
+        end
+
+        config.wrappers :left_label_checkbox, tag: :div, class: 'form-horizontal__row' do |b|
+          b.use :html5
+          b.optional :readonly
+
+          b.wrapper :label_wrapper, tag: :div, class: 'form-horizontal__label-wrapper' do |ba|
+            ba.use :label, class: ''
+          end
+
+          b.wrapper :right_input_wrapper, tag: :div, class: 'form-horizontal__input-wrapper checkboxes' do |ba|
+            ba.use :input
             ba.use :error, wrap_with: { tag: :small, class: :error }
           end
         end
