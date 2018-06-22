@@ -17,7 +17,12 @@ $.rails.allowAction = function(link){
 */
 $.rails.confirmed = function(link){
   link.data('confirm', null);
-  link.trigger('click.rails');
+  if (link.data('method')){
+    // let rails handle non-GET requests
+    // (i.e. data-method="delete")
+    return link.trigger('click.rails');
+  }
+  window.location.href = link.attr('href');
 }
 
 /*
