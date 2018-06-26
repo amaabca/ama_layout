@@ -32,11 +32,11 @@ $.rails.confirmed = function(link) {
 $.rails.showConfirmationDialog = function(link) {
   var el = link.data('confirm');
   var modal = $('[data-' + el + ']');
-  modal.foundation('open');
   var key = link.data('reveal-confirm-key');
   if (key && key.length) {
     modal.data('reveal-confirm-key', key);
   }
+  modal.foundation('open');
 }
 
 /*
@@ -67,15 +67,13 @@ $.rails.showConfirmationDialog = function(link) {
 */
 $(document).on('click', '*[data-reveal-confirm]', function(e) {
   e.preventDefault();
-  var link;
   var target = e.currentTarget;
   var el = $(target).data('reveal-confirm');
   var modal = $('[data-' + el + ']');
   var key = $(modal).data('reveal-confirm-key');
+  var link = $('[data-confirm="'+ el + '"]');
   if (key && key.length) {
     link = $('[data-reveal-confirm-key=' + key + ']');
-  } else {
-    link = $('[data-confirm="'+ el + '"]');
   }
   $(modal).foundation('close');
   $(modal).data('reveal-confirm-key', null);
