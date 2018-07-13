@@ -22,7 +22,9 @@ $.rails.confirmed = function(link) {
     // (i.e. data-method="delete")
     return link.trigger('click.rails');
   }
-  window.location.href = link.attr('href');
+  if (link.attr('href')) {
+    window.location.href = link.attr('href');
+  }
 }
 
 /*
