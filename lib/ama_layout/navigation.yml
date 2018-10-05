@@ -62,6 +62,8 @@ member:
         link: "<%= Rails.configuration.youraccount_site %>/amainsider"
       - text: "Change Address"
         link: "<%= Rails.configuration.youraccount_site %>/membership_update/new"
+      - text: "Manage Credit Cards"
+        link: "<%= Rails.configuration.gatekeeper_site %>/members/credit_cards"
 non-member:
   - text: "Account Dashboard"
     link: "<%= Rails.configuration.gatekeeper_site %>/"
@@ -147,6 +149,8 @@ member-in-renewal:
         link: "<%= Rails.configuration.youraccount_site %>/amainsider"
       - text: "Change Address"
         link: "<%= Rails.configuration.youraccount_site %>/membership_update/new"
+      - text: "Manage Credit Cards"
+        link: "<%= Rails.configuration.gatekeeper_site %>/members/credit_cards"
 member-in-renewal-late:
   - text: "Account Dashboard"
     link: "<%= Rails.configuration.gatekeeper_site %>/"
