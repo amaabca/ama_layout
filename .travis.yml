@@ -4,3 +4,5 @@ rvm:
 sudo: false
 services:
   - redis-server
+script:
+  - bundle exec danger
