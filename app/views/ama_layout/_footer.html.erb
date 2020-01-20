@@ -50,10 +50,13 @@
           <%= link_to "Site Map", "https://ama.ab.ca/about-ama/site-map/", class: "link-list__link--white" %>
         </li>
         <li class="link-list__item">
-          <%= link_to 'AMA Website', Rails.configuration.amaabca_site %>
+          <%= link_to 'AMA Website', Rails.configuration.amaabca_site, class: "link-list__link--white" %>
         </li>
         <li class="link-list__item">
-          <a href="http://amaroadreports.ca/">AMA Road Reports</a>
+          <%= link_to "AMA Road Reports", "http://amaroadreports.ca/", class: "link-list__link--white" %>
+        </li>
+        <li class="link-list__item">
+          <%= link_to "AMA Insider Magazine", "https://amainsider.com/", class: "link-list__link--white" %>
         </li>
       </ul>
     </div>
