@@ -2,7 +2,9 @@
   <%= link_to navigation.display_name_text, '#', class: 'link--no-underline' %>
   <ul class="submenu menu vertical">
     <li>
-      <%= link_to 'Account Settings', "#{Rails.configuration.gatekeeper_site}/user/edit" %>
+      <div class="side-nav__link">
+        <%= link_to 'Account Settings', "#{Rails.configuration.gatekeeper_site}/user/edit"%>
+      </div>
     </li>
     <li>
       <%= link_to 'Change Email/Password', "#{Rails.configuration.gatekeeper_site}/user/edit" %>
