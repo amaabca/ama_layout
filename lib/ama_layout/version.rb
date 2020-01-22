@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AmaLayout
-  VERSION = '9.5.3'
+  VERSION = '10.0.0'
 end
