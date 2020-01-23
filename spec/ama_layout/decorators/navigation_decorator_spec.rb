@@ -166,24 +166,24 @@ describe AmaLayout::NavigationDecorator do
     context 'outstanding balance' do
       let(:user) { FactoryBot.build(:user, :outstanding_balance) }
 
-      it 'returns the manage credit card link' do
-        expect(navigation_presenter.manage_credit_card_link).to include('Manage Credit Card')
+      it 'returns the manage credit cards link' do
+        expect(navigation_presenter.manage_credit_card_link).to include('Manage Credit Cards')
       end
     end
 
     context 'member' do
       let(:user) { FactoryBot.build(:user) }
 
-      it 'returns the manage credit card link' do
-        expect(navigation_presenter.manage_credit_card_link).to include('Manage Credit Card')
+      it 'returns the manage credit cards link' do
+        expect(navigation_presenter.manage_credit_card_link).to include('Manage Credit Cards')
       end
     end
 
     context 'in renewal' do
       let(:user) { FactoryBot.build(:user, :in_renewal) }
 
-      it 'returns the manage credit card link' do
-        expect(navigation_presenter.manage_credit_card_link).to include('Manage Credit Card')
+      it 'returns the manage credit cards link' do
+        expect(navigation_presenter.manage_credit_card_link).to include('Manage Credit Cards')
       end
     end
   end
