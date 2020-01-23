@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AmaLayout
   class NavigationDecorator
     include AmaLayout::DraperReplacement
@@ -11,16 +13,27 @@ module AmaLayout
     end
 
     def sign_out_link
-      return "" unless user
-      h.render partial: "ama_layout/sign_out_link"
+      return '' unless user
+
+      h.render partial: 'ama_layout/sign_out_link'
+    end
+
+    def manage_credit_card_link
+      return '' unless user && %w[member member_renewal member_outstanding_balance].include?(user.try(:menu_key))
+
+      h.render partial: 'ama_layout/manage_credit_card_link'
     end
 
     def top_nav
-      h.render partial: "ama_layout/top_nav", locals: { navigation: self } if user
+      return '' unless user
+
+      h.render partial: 'ama_layout/top_nav', locals: { navigation: self }
     end
 
     def sidebar
-      h.render partial: "ama_layout/sidebar", locals: { navigation: self } if items.any?
+      return '' if items.none?
+
+      h.render partial: 'ama_layout/sidebar', locals: { navigation: self }
     end
 
     def name_or_email
@@ -28,42 +41,44 @@ module AmaLayout
     end
 
     def account_toggle(view_data = {})
-      h(view_data).render partial: "account_toggle"
+      h(view_data).render partial: 'account_toggle'
     end
 
     def notification_icon
-      if user
-        h.render 'ama_layout/notification_icon', navigation: self
-      end
+      return '' unless user
+
+      h.render 'ama_layout/notification_icon', navigation: self
     end
 
     def mobile_notification_icon
-      if user
-        h.render 'ama_layout/mobile_notification_icon', navigation: self
-      end
+      return '' unless user
+
+      h.render 'ama_layout/mobile_notification_icon', navigation: self
     end
 
     def mobile_links
-      h.render 'ama_layout/mobile_links' unless user
+      return '' if user
+
+      h.render 'ama_layout/mobile_links'
     end
 
     def notification_badge
-      if new_notifications?
-        h.content_tag(
-          :div,
-          active_notification_count,
-          class: 'notification__badge',
-          data: {
-            notification_count: true
-          }
-        )
-      end
+      return '' unless new_notifications?
+
+      h.content_tag(
+        :div,
+        active_notification_count,
+        class: 'notification__badge',
+        data: {
+          notification_count: true
+        }
+      )
     end
 
     def notification_sidebar
-      if user
-        h.render 'ama_layout/notification_sidebar', navigation: self, notifications: decorated_notifications
-      end
+      return '' unless user
+
+      h.render 'ama_layout/notification_sidebar', navigation: self, notifications: decorated_notifications
     end
 
     def notifications_heading
@@ -85,7 +100,7 @@ module AmaLayout
     end
 
     def new_notifications?
-      active_notification_count > 0
+      active_notification_count.positive?
     end
   end
 end

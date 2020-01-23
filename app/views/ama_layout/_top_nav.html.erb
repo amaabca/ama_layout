@@ -1,11 +1,19 @@
 <li class="has-submenu">
   <%= link_to navigation.display_name_text, '#', class: 'link--no-underline' %>
   <ul class="submenu menu vertical">
-    <li>
-      <%= link_to 'Online Account', Rails.configuration.gatekeeper_site %>
+    <li class="bold">
+      <%= link_to 'Account Settings', "#{Rails.configuration.gatekeeper_site}/user/edit" %>
     </li>
-    <li><%= link_to 'AMA Website', Rails.configuration.amaabca_site %></li>
-    <li><a href="http://amaroadreports.ca/">AMA Road Reports</a></li>
+    <li class="small-text">
+      <%= link_to 'Change Email/Password', "#{Rails.configuration.gatekeeper_site}/user/edit" %>
+    </li>
+    <li class="small-text">
+      <%= link_to 'Email Subscriptions', "#{Rails.configuration.youraccount_site}/subscriptions" %>
+    </li>
+    <li class="small-text">
+      <%= link_to 'Update Address', "#{Rails.configuration.youraccount_site}/membership_update/new" %>
+    </li>
+    <%= navigation.manage_credit_card_link %>
     <%= navigation.sign_out_link %>
   </ul>
 </li>
