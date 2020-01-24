@@ -18,10 +18,10 @@ module AmaLayout
       h.render partial: 'ama_layout/sign_out_link'
     end
 
-    def manage_credit_card_link
+    def member_links
       return '' unless user && %w[member member_renewal member_outstanding_balance].include?(user.try(:menu_key))
 
-      h.render partial: 'ama_layout/manage_credit_card_link'
+      h.render partial: 'ama_layout/member_links'
     end
 
     def top_nav
