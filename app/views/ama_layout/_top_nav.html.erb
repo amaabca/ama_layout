@@ -10,10 +10,7 @@
     <li class="small-text">
       <%= link_to 'Email Subscriptions', "#{Rails.configuration.youraccount_site}/subscriptions" %>
     </li>
-    <li class="small-text">
-      <%= link_to 'Update Address', "#{Rails.configuration.youraccount_site}/membership_update/new" %>
-    </li>
-    <%= navigation.manage_credit_card_link %>
+    <%= navigation.member_links %>
     <%= navigation.sign_out_link %>
   </ul>
 </li>

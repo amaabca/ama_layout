@@ -136,14 +136,15 @@ describe AmaLayout::NavigationDecorator do
     end
   end
 
-  describe '#manage_credit_card_link' do
+  describe '#member_links' do
     let(:navigation) { FactoryBot.build(:navigation, user: user) }
+    let(:member_links) { navigation_presenter.member_links }
 
     context 'nil user' do
       let(:user) {}
 
       it 'returns nothing' do
-        expect(navigation_presenter.manage_credit_card_link).to eq('')
+        expect(member_links).to eq('')
       end
     end
 
@@ -151,7 +152,7 @@ describe AmaLayout::NavigationDecorator do
       let(:user) { FactoryBot.build(:user, :non_member) }
 
       it 'returns nothing' do
-        expect(navigation_presenter.manage_credit_card_link).to eq('')
+        expect(member_links).to eq('')
       end
     end
 
@@ -159,7 +160,7 @@ describe AmaLayout::NavigationDecorator do
       let(:user) { FactoryBot.build(:user, :in_renewal_late) }
 
       it 'returns nothing' do
-        expect(navigation_presenter.manage_credit_card_link).to eq('')
+        expect(member_links).to eq('')
       end
     end
 
@@ -167,7 +168,7 @@ describe AmaLayout::NavigationDecorator do
       let(:user) { FactoryBot.build(:user, :outstanding_balance) }
 
       it 'returns the manage credit cards link' do
-        expect(navigation_presenter.manage_credit_card_link).to include('Manage Credit Cards')
+        expect(member_links).to include('Manage Credit Cards')
       end
     end
 
@@ -175,7 +176,7 @@ describe AmaLayout::NavigationDecorator do
       let(:user) { FactoryBot.build(:user) }
 
       it 'returns the manage credit cards link' do
-        expect(navigation_presenter.manage_credit_card_link).to include('Manage Credit Cards')
+        expect(member_links).to include('Manage Credit Cards')
       end
     end
 
@@ -183,7 +184,7 @@ describe AmaLayout::NavigationDecorator do
       let(:user) { FactoryBot.build(:user, :in_renewal) }
 
       it 'returns the manage credit cards link' do
-        expect(navigation_presenter.manage_credit_card_link).to include('Manage Credit Cards')
+        expect(member_links).to include('Manage Credit Cards')
       end
     end
   end
