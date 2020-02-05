@@ -51,7 +51,7 @@ member:
   - text: "My Travel"
     link: "<%= Rails.configuration.travel_login_url %>"
   - text: "My Account Settings"
-    link: "<%= Rails.configuration.gatekeeper_site %>/user/edit"
+    link: "<%= Rails.configuration.gatekeeper_site %>/account_settings"
     icon: "fa-cogs"
     sub_nav:
       - text: "Change Email/Password"
@@ -136,7 +136,7 @@ member-in-renewal:
   - text: "My Travel"
     link: "<%= Rails.configuration.travel_login_url %>"
   - text: "My Account Settings"
-    link: "<%= Rails.configuration.gatekeeper_site %>/user/edit"
+    link: "<%= Rails.configuration.gatekeeper_site %>/account_settings"
     icon: "fa-cogs"
     sub_nav:
       - text: "Change Email/Password"
