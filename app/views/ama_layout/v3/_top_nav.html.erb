@@ -1,0 +1,16 @@
+<li class="has-submenu">
+  <%= link_to navigation.display_name_text, '#', class: 'link--no-underline' %>
+  <ul class="submenu menu vertical">
+    <li class="bold">
+      <%= link_to 'Account Settings', "#{Rails.configuration.gatekeeper_site}/account_settings" %>
+    </li>
+    <li class="small-text">
+      <%= link_to 'Change Email/Password', "#{Rails.configuration.gatekeeper_site}/user/edit" %>
+    </li>
+    <li class="small-text">
+      <%= link_to 'Email Subscriptions', "#{Rails.configuration.youraccount_site}/subscriptions" %>
+    </li>
+    <%= navigation.member_links %>
+    <%= navigation.sign_out_link %>
+  </ul>
+</li>
