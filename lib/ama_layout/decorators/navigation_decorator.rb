@@ -15,25 +15,25 @@ module AmaLayout
     def sign_out_link
       return '' unless user
 
-      h.render partial: 'ama_layout/sign_out_link'
+      h.render partial: ama_layout_partial('sign_out_link')
     end
 
     def member_links
       return '' unless user && %w[member member_renewal member_outstanding_balance].include?(user.try(:menu_key))
 
-      h.render partial: 'ama_layout/member_links'
+      h.render partial: ama_layout_partial('member_links')
     end
 
     def top_nav
       return '' unless user
 
-      h.render partial: 'ama_layout/top_nav', locals: { navigation: self }
+      h.render partial: ama_layout_partial('top_nav'), locals: { navigation: self }
     end
 
     def sidebar
       return '' if items.none?
 
-      h.render partial: 'ama_layout/sidebar', locals: { navigation: self }
+      h.render partial: ama_layout_partial('sidebar'), locals: { navigation: self }
     end
 
     def name_or_email
@@ -47,19 +47,19 @@ module AmaLayout
     def notification_icon
       return '' unless user
 
-      h.render 'ama_layout/notification_icon', navigation: self
+      h.render ama_layout_partial('notification_icon'), navigation: self
     end
 
     def mobile_notification_icon
       return '' unless user
 
-      h.render 'ama_layout/mobile_notification_icon', navigation: self
+      h.render ama_layout_partial('mobile_notification_icon'), navigation: self
     end
 
     def mobile_links
       return '' if user
 
-      h.render 'ama_layout/mobile_links'
+      h.render ama_layout_partial('mobile_links')
     end
 
     def notification_badge
@@ -78,7 +78,7 @@ module AmaLayout
     def notification_sidebar
       return '' unless user
 
-      h.render 'ama_layout/notification_sidebar', navigation: self, notifications: decorated_notifications
+      h.render ama_layout_partial('notification_sidebar'), navigation: self, notifications: decorated_notifications
     end
 
     def notifications_heading

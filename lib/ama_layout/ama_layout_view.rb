@@ -1,5 +1,11 @@
+# frozen_string_literal: true
+
+require_relative '../../app/helpers/ama_layout_partial_helper'
+
 module AmaLayout
   class AmaLayoutView < ActionView::Base
+    include AmaLayoutPartialHelper
+
     attr_accessor :view_data
 
     def initialize(args)

@@ -1,8 +1,14 @@
+# frozen_string_literal: true
+
+require_relative '../../app/helpers/ama_layout_partial_helper'
+
 module AmaLayout
   module DraperReplacement
     extend ActiveSupport::Concern
 
     included do
+      include AmaLayoutPartialHelper
+
       attr_accessor :object, :controller
 
       def h(view_data = {})

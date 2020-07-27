@@ -8,7 +8,9 @@ require 'timecop'
 
 ENV['RAILS_ENV'] = 'test'
 
-Combustion.initialize! :all
+Combustion.initialize!(:all) do
+  config.stylesheet_resolver = OpenStruct.new(version: 'v3')
+end
 
 Dir['./spec/support/**/*.rb'].sort.each { |file| require file }
 

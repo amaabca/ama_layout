@@ -8,6 +8,7 @@
 //= require foundation.util.timer.js
 //= require foundation.util.triggers.js
 //= require foundation.abide.js
+//= require foundation.accordionMenu.js
 //= require foundation.accordion.js
 //= require foundation.drilldown.js
 //= require foundation.dropdown.js
