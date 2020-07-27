@@ -7,7 +7,7 @@
 -webkit-transition-timing-function: ease, ease-in-out;
 -webkit-user-select: text;
 -webkit-writing-mode: horizontal-tb;
-background-color: rgb(229, 229, 229);
+background-color: rgb(255, 255, 255);
 border-bottom-color: rgb(229, 229, 229);
 border-bottom-style: solid;
 border-bottom-width: 2px;
