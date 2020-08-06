@@ -6,7 +6,7 @@
   </div>
   <div class="top-bar" id="main-menu">
     <div class="top-bar-left">
-      <%= link_to(image_tag("ama-logo.png", class: "top-bar__logo"), Rails.configuration.amaabca_site) %>
+      <a href="<%= Rails.configuration.amaabca_site %>" class="ml1 pl1"><i class="fas fa-chevron-left"></i> Back to Other AMA Services</a>
     </div>
     <div class="top-bar-right">
       <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
@@ -23,6 +23,7 @@
     </div>
   </div>
 </div>
+<%= navigation.top_logo %>
 <%= navigation.mobile_links %>
 <%= navigation.notification_sidebar %>
 <div class="javascript_errors error_notification" hidden></div>

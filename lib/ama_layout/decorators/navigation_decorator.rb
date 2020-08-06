@@ -30,6 +30,12 @@ module AmaLayout
       h.render partial: ama_layout_partial('top_nav'), locals: { navigation: self }
     end
 
+    def top_logo
+      return '' if user
+
+      h.render partial: ama_layout_partial('top_logo'), locals: { navigation: self }
+    end
+
     def sidebar
       return '' if items.none?
 
