@@ -34,6 +34,7 @@ module AmaLayout
       return '' if user
 
       h.render partial: ama_layout_partial('top_logo'), locals: { navigation: self }
+
     end
 
     def sidebar
