@@ -1,22 +1,19 @@
-<div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
-  <h2 class="side-nav__header">Online Account</h2>
-  <div class="side-nav__content">
-    <ul class="side-nav__list">
-      <li class="side-nav__item">
-        <%= link_to 'Sign In', "#{Rails.configuration.gatekeeper_site}/login", class: 'side-nav__link' %>
-      </li>
-      <li class="side-nav__item">
-        <a class="side-nav__link" href="<%= Rails.configuration.amaabca_site %>">AMA Website</a>
-      </li>
-      <li class="side-nav__item">
-        <a class="side-nav__link" href="http://amaroadreports.ca/">AMA Road Reports</a>
-      </li>
-      <li class="side-nav__item">
-        <a class="side-nav__link" href="<%= Rails.configuration.amaabca_site %>/knowledge-base/articles" target="_blank">Help</a>
-      </li>
-      <li class="side-nav__item">
-        <a class="side-nav__link" href="<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information">Contact Us</a>
-      </li>
-    </ul>
-  </div>
+<div class="m-side-nav__content off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+  <ul class="m-side-nav__list vertical menu drilldown" data-drilldown>
+    <li class="side-nav__item">
+      <%= link_to 'Sign In', "#{Rails.configuration.gatekeeper_site}/login", class: 'side-nav__link' %>
+    </li>
+    <li class="m-side-nav__item">
+      <%= link_to 'AMA Website', Rails.configuration.amaabca_site, class: 'm-side-nav__link' %>
+    </li>
+    <li class="m-side-nav__item">
+      <%= link_to 'AMA Road Reports', 'https://roadreports.ama.ab.ca', class: 'm-side-nav__link' %>
+    </li>
+    <li class="m-side-nav__item">
+      <%= link_to 'Help', "#{Rails.configuration.amaabca_site}/knowledge-base/articles", class: 'm-side-nav__link' %>
+    </li>
+    <li class="m-side-nav__item">
+      <%= link_to 'Contact Us', "#{Rails.configuration.amaabca_site}/membership/contact-us--centre-locations-hours-and-contact-information", class: 'm-side-nav__link' %>
+    </li>
+  </ul>
 </div>
