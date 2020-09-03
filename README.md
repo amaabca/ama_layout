@@ -98,9 +98,9 @@ Custom Navigation yaml file used to set all navigation:
       "Renew":
         link: "<%= Rails.configuration.youraccount_site %>/renew"
       "Help":
-        link: "<%= Rails.configuration.youraccount_site %>/help"
+        link: "<%= Rails.configuration.amaabca_site %>/help"
       "Contact Us":
-        link: "<%= Rails.configuration.amaabca_site %>/membership/contact-us--centre-locations-hours-and-contact-information"
+        link: "<%= Rails.configuration.amaabca_site %>/contact"
         target: "_blank"
 
 
