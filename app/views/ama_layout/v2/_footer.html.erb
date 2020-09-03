@@ -6,7 +6,7 @@
       </div>
       <ul class="link-list">
         <li class="link-list__item">
-          <%= link_to "About AMA", "https://ama.ab.ca/about-ama/", class: "link-list__link--white" %>
+          <%= link_to "About AMA", "#{Rails.configuration.amaabca_site}/about", class: "link-list__link--white" %>
         </li>
         <li class="link-list__item">
           <%= link_to "Careers", "http://careers.ama.ab.ca/", class: "link-list__link--white" %>
@@ -22,13 +22,13 @@
       </div>
       <ul class="link-list">
         <li class="link-list__item">
-          <%= link_to "Contact Us", "https://ama.ab.ca/contact/", class: "link-list__link--white" %>
+          <%= link_to "Contact Us", "#{Rails.configuration.amaabca_site}/contact", class: "link-list__link--white" %>
         </li>
         <li class="link-list__item">
-          <%= link_to "Locations", "https://ama.ab.ca/centre-locations-hours/", class: "link-list__link--white" %>
+          <%= link_to "Locations", "#{Rails.configuration.amaabca_site}/centres", class: "link-list__link--white" %>
         </li>
         <li class="link-list__item">
-          <%= link_to "Social Media", "https://ama.ab.ca/about-ama/social-media/", class: "link-list__link--white" %>
+          <%= link_to "Social Media", "#{Rails.configuration.amaabca_site}/contact", class: "link-list__link--white" %>
         </li>
       </ul>
     </div>
@@ -38,16 +38,16 @@
       </div>
       <ul class="link-list">
         <li class="link-list__item">
-          <%= link_to "Blog", "https://ama.ab.ca/blog/", class: "link-list__link--white" %>
+          <%= link_to "Blog", "#{Rails.configuration.amaabca_site}/help", class: "link-list__link--white" %>
         </li>
         <li class="link-list__item">
-          <%= link_to "Knowledge Base", "https://ama.ab.ca/knowledge-base/", class: "link-list__link--white" %>
+          <%= link_to "Knowledge Base", "#{Rails.configuration.amaabca_site}/help", class: "link-list__link--white" %>
         </li>
         <li class="link-list__item">
           <%= link_to "Email Newsletters", "https://youraccount.ama.ab.ca/subscriptions", class: "link-list__link--white" %>
         </li>
         <li class="link-list__item">
-          <%= link_to "Site Map", "https://ama.ab.ca/about-ama/site-map/", class: "link-list__link--white" %>
+          <%= link_to "Site Map", "#{Rails.configuration.amaabca_site}/sitemap", class: "link-list__link--white" %>
         </li>
       </ul>
     </div>
@@ -57,10 +57,10 @@
       </div>
       <ul class="link-list">
         <li class="link-list__item">
-          <%= link_to "Privacy Policy", "https://ama.ab.ca/about-ama/privacy-policy/", class: "link-list__link--white" %>
+          <%= link_to "Privacy Policy", "#{Rails.configuration.amaabca_site}/privacy-policy", class: "link-list__link--white" %>
         </li>
         <li class="link-list__item">
-          <%= link_to "Terms & Conditions", "https://ama.ab.ca/about-ama/terms-conditions/", class: "link-list__link--white" %>
+          <%= link_to "Terms & Conditions", "#{Rails.configuration.amaabca_site}/terms-conditions", class: "link-list__link--white" %>
         </li>
       </ul>
     </div>
