@@ -49,6 +49,7 @@ class AMALayout.EmailSuggestion
 
   setupEvents: ->
     $('[type="email"]').on 'blur', (e) =>
+      return if $(e.originalEvent.target).data('skip-email-suggestion')
       $(e.originalEvent.target).mailcheck
         domains: @domains
         secondLevelDomains: @secondLevelDomains

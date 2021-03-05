@@ -21,11 +21,11 @@ module AmaLayout
       end
 
       def set(key, value, opts = {})
-        base.write(key, value, opts) == 'OK'
+        base.write(key, value, opts)
       end
 
       def delete(key, opts = {})
-        base.delete(key, opts) == 1
+        base.delete(key, opts)
       end
 
       def transaction
