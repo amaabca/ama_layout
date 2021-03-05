@@ -207,12 +207,6 @@ describe AmaLayout::NotificationSet do
         expect(subject.destroy!).to be_empty
       end
     end
-
-    context 'when data is not removed' do
-      it 'returns false' do
-        expect(subject.destroy!).to be false
-      end
-    end
   end
 
   describe '#find' do
