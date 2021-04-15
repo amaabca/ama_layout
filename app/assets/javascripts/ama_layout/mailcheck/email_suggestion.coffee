@@ -54,20 +54,26 @@ class AMALayout.EmailSuggestion
         domains: @domains
         secondLevelDomains: @secondLevelDomains
         suggested: (element, suggestion) =>
+          event = new Event('mailcheck');
           text = @suggestionMarkup suggestion.address, suggestion.domain
           if !$('.email_hint').length
-            $("<div class='email_hint'>#{text}</div>").insertAfter(element).fadeIn 150
+            $("<div class='email_hint'>#{text}</div>").insertAfter(element).show()
           else
             $('.email_hint').html text
+          window.dispatchEvent(event)
         empty: (element) ->
+          event = new Event('mailcheck');
           $('.email_hint').html ''
+          window.dispatchEvent(event)
 
     $(document).on 'click', '.email_hint .suggestion a.email_domain', (e) =>
       @trackUsage()
+      event = new Event('mailcheck');
       email_hint = $(e.originalEvent.target).parents('.email_hint')
       email = $(email_hint).prevAll('input[type=email]:last')
       $(email).val $('.suggestion').first().text()
       $('.email_hint').remove()
+      window.dispatchEvent(event)
 
   suggestionMarkup: (address, domain) ->
     "Did you mean " +
