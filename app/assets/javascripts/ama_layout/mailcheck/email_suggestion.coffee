@@ -61,7 +61,7 @@ class AMALayout.EmailSuggestion
           else
             $('.email_hint').html text
           window.dispatchEvent(event)
-        empty: (element) ->
+        empty: (element) =>
           event = @buildEvent()
           $('.email_hint').html ''
           window.dispatchEvent(event)
