@@ -10,21 +10,21 @@
     </div>
     <div class="top-bar-right">
       <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
-        <%= navigation.notification_icon %>
+        <% #navigation.notification_icon %>
         <li>
           <a href="<%= Rails.configuration.amaabca_site %>/help" target="_blank">Help</a>
         </li>
         <li>
           <a href="<%= Rails.configuration.amaabca_site %>/contact">Contact Us</a>
         </li>
-        <%= navigation.account_toggle(self) %>
-        <%= navigation.top_nav %>
+        <% # navigation.account_toggle(self) %>
+        <% # navigation.top_nav %>
       </ul>
     </div>
   </div>
 </div>
-<%= navigation.mobile_links %>
-<%= navigation.notification_sidebar %>
+<% # navigation.mobile_links %>
+<% # navigation.notification_sidebar %>
 <div class="javascript_errors error_notification" hidden></div>
 <noscript>
   <div class="mt1 large-12 columns text-center error_notification">
