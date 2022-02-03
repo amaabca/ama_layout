@@ -1,6 +1,8 @@
 module AmaLayout
-  class MonerisDecorator
-    include AmaLayout::DraperReplacement
+  class MonerisDecorator < Draper::Decorator
+    include AmaLayoutPartialHelper
+
+    delegate_all
 
     def textbox
       h.raw File.read textbox_style_file

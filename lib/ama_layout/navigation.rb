@@ -3,6 +3,7 @@
 module AmaLayout
   class Navigation
     include ActiveModel::Model
+    include Draper::Decoratable
 
     def decorate
       AmaLayout::NavigationDecorator.new(self)

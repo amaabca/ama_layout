@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 module AmaLayout
-  class NavigationDecorator
-    include AmaLayout::DraperReplacement
+  class NavigationDecorator < Draper::Decorator
+    include AmaLayoutPartialHelper
+
+    delegate_all
 
     def items
       object.items.map(&:decorate)
@@ -40,8 +42,8 @@ module AmaLayout
       display_name.present? ? "Welcome, #{display_name.titleize}" : email
     end
 
-    def account_toggle(view_data = {})
-      h(view_data).render partial: 'account_toggle'
+    def account_toggle(view_data = {}) # TODO: drop view data argument and fix calls using it
+      h.render partial: 'account_toggle'
     end
 
     def notification_icon

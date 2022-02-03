@@ -2,8 +2,10 @@
 
 module AmaLayout
   module Agent
-    class NavigationDecorator
-      include AmaLayout::DraperReplacement
+    class NavigationDecorator < Draper::Decorator
+      include AmaLayoutPartialHelper
+
+      delegate_all
 
       def items
         object.items.map(&:decorate)

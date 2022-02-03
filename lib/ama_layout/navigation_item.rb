@@ -1,6 +1,7 @@
 module AmaLayout
   class NavigationItem
     include ActiveModel::Model
+    include Draper::Decoratable
 
     def decorate
       AmaLayout::NavigationItemDecorator.new(self)

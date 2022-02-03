@@ -3,6 +3,7 @@
 module AmaLayout
   class Moneris
     include ActiveModel::Model
+    include Draper::Decoratable
 
     def decorate
       AmaLayout::MonerisDecorator.new(self)

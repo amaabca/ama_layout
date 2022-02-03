@@ -2,7 +2,7 @@
 
 require_relative '../../app/helpers/ama_layout_partial_helper'
 
-module AmaLayout
+module AmaLayout # TODO: remove
   module DraperReplacement
     extend ActiveSupport::Concern
 
