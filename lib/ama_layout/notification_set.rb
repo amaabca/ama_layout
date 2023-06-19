@@ -48,7 +48,8 @@ module AmaLayout
     end
 
     def destroy!
-      data_store.delete(key) && reload!
+      data_store.delete(key)
+      reload!
     end
 
     def delete(*digests)

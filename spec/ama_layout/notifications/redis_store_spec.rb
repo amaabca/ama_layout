@@ -43,10 +43,6 @@ describe AmaLayout::Notifications::RedisStore do
       subject.set('test', 'value')
       expect(subject.get('test')).to eq('value')
     end
-
-    it 'returns true' do
-      expect(subject.set('test', 'value')).to be true
-    end
   end
 
   describe '#delete' do
@@ -55,19 +51,9 @@ describe AmaLayout::Notifications::RedisStore do
         subject.set('key', 'value')
       end
 
-      it 'returns true' do
-        expect(subject.delete('key')).to be true
-      end
-
       it 'deletes the key' do
         subject.delete('key')
         expect(subject.get('key')).to be nil
-      end
-    end
-
-    context 'when a value is not deleted' do
-      it 'returns false' do
-        expect(subject.delete('key')).to be false
       end
     end
   end
