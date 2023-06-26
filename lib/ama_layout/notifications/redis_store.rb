@@ -29,8 +29,8 @@ module AmaLayout
       end
 
       def transaction
-        base.data.multi do
-          yield self
+        base.data.multi do |pipeline|
+          yield pipeline.self
         end
       end
     end
