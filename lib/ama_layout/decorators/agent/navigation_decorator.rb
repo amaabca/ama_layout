@@ -2,8 +2,10 @@
 
 module AmaLayout
   module Agent
-    class NavigationDecorator
-      include AmaLayout::DraperReplacement
+    class NavigationDecorator < Draper::Decorator
+      include AmaLayoutPartialHelper
+
+      delegate_all
 
       def items
         object.items.map(&:decorate)
@@ -22,13 +24,13 @@ module AmaLayout
       def top_nav
         return '' unless user
 
-        h.render partial: ama_layout_partial('agent/top_nav'), locals: { navigation: self }
+        h.render partial: 'ama_layout/agent/top_nav', locals: { navigation: self }
       end
 
       def sidebar
         return '' unless user
 
-        h.render partial: ('sidebar'), locals: { navigation: self }
+        h.render partial: 'ama_layout/agent/sidebar', locals: { navigation: self }
       end
 
       def cash_drawer_name

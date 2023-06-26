@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module AmaLayout
-  class MonerisDecorator
-    include AmaLayout::DraperReplacement
+  class MonerisDecorator < Draper::Decorator
+    delegate_all
 
     def textbox
       h.raw File.read textbox_style_file

@@ -1,6 +1,8 @@
 describe AmaLayout::Api::V1::NotificationsController, type: :controller do
+  routes { AmaLayout::Engine.routes }
+
   describe 'DELETE api/v1/notifications' do
-    routes { AmaLayout::Engine.routes }
+    
 
     before(:each) do
       delete :dismiss_all

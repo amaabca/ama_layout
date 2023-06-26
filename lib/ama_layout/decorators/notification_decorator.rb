@@ -1,6 +1,10 @@
+# frozen_string_literal: true
+
 module AmaLayout
-  class NotificationDecorator
-    include AmaLayout::DraperReplacement
+  class NotificationDecorator < Draper::Decorator
+    include AmaLayoutPartialHelper
+
+    delegate_all
 
     ICONS = {
       notice: {

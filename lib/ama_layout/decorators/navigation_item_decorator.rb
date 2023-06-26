@@ -1,6 +1,10 @@
+# frozen_string_literal: true
+
 module AmaLayout
-  class NavigationItemDecorator
-    include AmaLayout::DraperReplacement
+  class NavigationItemDecorator < Draper::Decorator
+    include AmaLayoutPartialHelper
+
+    delegate_all
 
     def sub_nav
       object.sub_nav.map { |sn| sn.decorate }
@@ -11,11 +15,11 @@ module AmaLayout
     end
 
     def top_sub_nav
-      h.render partial: "ama_layout/top_sub_nav", locals: { sub_nav: sub_nav } if sub_nav.any?
+      h.render partial: ama_layout_partial('top_sub_nav'), locals: { sub_nav: sub_nav } if sub_nav.any?
     end
 
     def sidebar_sub_nav
-      h.render partial: "ama_layout/sub_nav", locals: { sub_nav: sub_nav } if sub_nav.any?
+      h.render partial: ama_layout_partial('sub_nav'), locals: { sub_nav: sub_nav } if sub_nav.any?
     end
 
     def active_class

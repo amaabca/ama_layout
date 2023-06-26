@@ -11,7 +11,7 @@ describe AmaLayout::Agent::Navigation do
         File.join(Gem.loaded_specs["ama_layout"].full_gem_path, "spec", "ama_layout", "fixtures", "agent_navigation.yml")
       end
       let(:user) { double("user") }
-      let(:subject) { described_class.new(user: user, nav_file_path: file_path, current_url: '/') }
+      subject { described_class.new(user: user, nav_file_path: file_path, current_url: '/') }
 
       it "uses the overridden file path" do
         expect(subject.items.first.text).to eq "Waffles"

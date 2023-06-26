@@ -33,7 +33,7 @@ describe AmaLayout::Navigation do
         File.join(Gem.loaded_specs["ama_layout"].full_gem_path, "spec", "ama_layout", "fixtures", "navigation.yml")
       end
       let(:user) { double("user", navigation: AmaLayout::Navigation.member) }
-      let(:subject) { described_class.new(user: user, nav_file_path: file_path) }
+      subject { described_class.new(user: user, nav_file_path: file_path) }
 
       it "uses the overridden file path" do
         expect(subject.items.first.text).to eq "Fixture"

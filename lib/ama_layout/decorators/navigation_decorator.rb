@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 module AmaLayout
-  class NavigationDecorator
-    include AmaLayout::DraperReplacement
+  class NavigationDecorator < Draper::Decorator
+    include AmaLayoutPartialHelper
+
+    delegate_all
 
     def items
       object.items.map(&:decorate)
@@ -41,7 +43,7 @@ module AmaLayout
     end
 
     def account_toggle(view_data = {})
-      h(view_data).render partial: 'account_toggle'
+      h.render partial: 'account_toggle'
     end
 
     def notification_icon

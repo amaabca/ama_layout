@@ -9,16 +9,12 @@ Gem::Specification.new do |spec|
   spec.version = AmaLayout::VERSION
   spec.authors = [
     'Darko Dosenovic',
-    'Jesse Doyle',
-    'Kayt Wilson',
     'Michael van den Beuken',
     'Sinead Errity',
     'Zoie Carnegie'
   ]
   spec.email = [
     'darko.dosenovic@ama.ab.ca',
-    'jesse.doyle@ama.ab.ca',
-    'kayt.wilson@ama.ab.ca',
     'michael.beuken@gmail.com',
     'sinead.errity@ama.ab.ca',
     'zoie.carnegie@ama.ab.ca'
@@ -35,8 +31,9 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'breadcrumbs_on_rails', '>= 3'
   spec.add_dependency 'browser', '~> 2.0'
+  spec.add_dependency 'draper'
   spec.add_dependency 'foundation-rails', '<= 6.4.3.0'
-  spec.add_dependency 'rails', '>= 4.2', '< 6.1'
+  spec.add_dependency 'rails', '>= 4.2', '< 7'
   spec.add_dependency 'redis-rails'
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'combustion'
