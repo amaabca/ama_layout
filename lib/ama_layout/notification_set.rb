@@ -69,6 +69,7 @@ module AmaLayout
       data_store.transaction do |store|
         normalized = normalize(all)
         self.base = serialize(normalized)
+        binding.pry
         store.set(key, base.to_json)
       end
       reload!

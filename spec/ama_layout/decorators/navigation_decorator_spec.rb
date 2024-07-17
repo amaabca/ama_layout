@@ -193,6 +193,8 @@ describe AmaLayout::NavigationDecorator do
         host: 'localhost'
       )
     end
+
+
     let(:notification_set) { AmaLayout::NotificationSet.new(store, 1) }
     let(:user) { OpenStruct.new(navigation: 'member', notifications: notification_set) }
     let(:navigation) { FactoryBot.build :navigation, user: user }
