@@ -66,11 +66,14 @@ module AmaLayout
     end
 
     def save
-      data_store.transaction do |store|
+      data_store.transaction do |store, namespace|
         normalized = normalize(all)
         self.base = serialize(normalized)
-        binding.pry
-        store.set(key, base.to_json)
+        if namespace.present?
+          store.set("#{namespace}:#{key}", base.to_json)
+        else
+          store.set(key, base.to_json)
+        end
       end
       reload!
     end
