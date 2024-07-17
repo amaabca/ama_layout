@@ -1,5 +1,5 @@
 describe AmaLayout::BreadcrumbBuilder do
-  let(:view_context) { ActionView::Base.new }
+  let(:view_context) { ActionView::Base.new(ActionView::LookupContext.new(ActionController::Base.view_paths), {}, {}) }
   let(:foo_crumb) { BreadcrumbsOnRails::Breadcrumbs::Element.new('Foo', '/foo') }
   let(:bar_crumb) { BreadcrumbsOnRails::Breadcrumbs::Element.new('Bar', '/foo/bar') }
   let(:crumbs) { [foo_crumb, bar_crumb] }

@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 describe AmaLayout::NavigationDecorator do
-  let(:navigation) { FactoryBot.build(:navigation) }
-  let(:navigation_presenter) { navigation.decorate }
+  let(:user) { nil }
+  let(:name) { nil }
+  let(:navigation) { FactoryBot.build(:navigation, user: user, display_name: name) }
+  subject { navigation.decorate }
 
   before(:each) do
     Rails.configuration.gatekeeper_site = 'http://auth.waffles.ca'
@@ -22,49 +24,44 @@ describe AmaLayout::NavigationDecorator do
 
     context 'name is provided' do
       let(:name) { 'John D' }
-      let(:nav) { AmaLayout::Navigation.new(user: user, display_name: name).decorate }
 
       it 'has a welcome message' do
-        expect(nav.display_name_text).to eq('Welcome, John D')
+        expect(subject.display_name_text).to eq('Welcome, John D')
       end
 
       context 'long name given' do
         let(:name) { 'A Really Really Really Really Long Name' }
 
         it 'trucates to a total of 30 characters' do
-          expect(nav.display_name_text).to eq("Welcome, #{name.titleize}".truncate(30))
+          expect(subject.display_name_text).to eq("Welcome, #{name.titleize}".truncate(30))
         end
       end
     end
 
     context 'name is not provided' do
-      let(:nav) { AmaLayout::Navigation.new(user: user).decorate }
-
       it 'returns the email address' do
-        expect(nav.display_name_text).to eq(user.email)
+        expect(subject.display_name_text).to eq(user.email)
       end
 
       context 'a really long email' do
         let(:user) { OpenStruct.new(email: 'areallyreallyreallylongemail@test.com') }
 
         it 'trucates to a total of 30 characters' do
-          expect(nav.display_name_text).to eq(user.email.truncate(30))
+          expect(subject.display_name_text).to eq(user.email.truncate(30))
         end
       end
     end
   end
 
   describe '#items' do
-    before(:each) do
-      allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: 'member'))
-    end
+    let(:user) { OpenStruct.new(navigation: 'member') }
 
     it 'returns an array of navigation items' do
-      expect(navigation_presenter.items).to be_an Array
+      expect(subject.items).to be_an Array
     end
 
     it 'array contains decorated navigation items' do
-      items = navigation_presenter.items
+      items = subject.items
       items.each do |i|
         expect(i).to be_a AmaLayout::NavigationItemDecorator
       end
@@ -73,72 +70,71 @@ describe AmaLayout::NavigationDecorator do
 
   describe '#mobile_links' do
     context 'with user' do
-      before(:each) do
-        navigation_presenter.object = OpenStruct.new(user: true)
-      end
+      let(:user) { OpenStruct.new(email: 'john.doe@test.com') }
 
       it 'returns nil' do
-        expect(navigation_presenter.mobile_links).to eq('')
+        expect(subject.mobile_links).to eq('')
       end
     end
 
     context 'without user' do
       it 'renders an offcanvas menu' do
-        expect(navigation_presenter.mobile_links).to include('off-canvas')
+        expect(subject.mobile_links).to include('off-canvas')
       end
     end
   end
 
   describe '#sign_out_link' do
     context 'with user' do
+      let(:user) { OpenStruct.new(navigation: 'member') }
+
       it 'returns link' do
-        allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: 'member'))
-        expect(navigation_presenter.sign_out_link).to include('Sign Out')
+        expect(subject.sign_out_link).to include('Sign Out')
       end
     end
 
     context 'without user' do
       it 'does not return the link' do
-        expect(navigation_presenter.sign_out_link).to eq('')
+        expect(subject.sign_out_link).to eq('')
       end
     end
   end
 
   describe '#top_nav' do
     context 'with items' do
+      let(:user) { OpenStruct.new(navigation: 'member') }
+
       it 'renders the partial' do
-        allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: 'member'))
-        allow_any_instance_of(AmaLayout::AmaLayoutView).to receive(:render).and_return 'render'
-        expect(navigation_presenter.top_nav).to eq('render')
+        expect(subject.top_nav).to include('has-submenu')
       end
     end
 
     context 'without items' do
       it 'does not renders the partial' do
-        expect(navigation_presenter.top_nav).to eq('')
+        expect(subject.top_nav).to eq('')
       end
     end
   end
 
   describe '#sidebar' do
     context 'with items' do
+      let(:user) { OpenStruct.new(navigation: 'member') }
+
       it 'renders the partial' do
-        allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: 'member'))
-        allow_any_instance_of(AmaLayout::AmaLayoutView).to receive(:render).and_return 'render'
-        expect(navigation_presenter.sidebar).to eq('render')
+        expect(subject.sidebar).to include('side-nav')
       end
     end
 
     context 'without items' do
-      it 'does not renders the partial' do
-        expect(navigation_presenter.sidebar).to eq('')
+      it 'does not render the partial' do
+        expect(subject.sidebar).to eq('')
       end
     end
   end
 
   describe '#member_links' do
     let(:navigation) { FactoryBot.build(:navigation, user: user) }
-    let(:member_links) { navigation_presenter.member_links }
+    let(:member_links) { subject.member_links }
 
     context 'nil user' do
       let(:user) {}
@@ -189,28 +185,6 @@ describe AmaLayout::NavigationDecorator do
     end
   end
 
-  context 'account toggle' do
-    it 'in ama_layout it renders a blank partial' do
-      allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: 'member'))
-      allow_any_instance_of(AmaLayout::AmaLayoutView).to receive(:render).and_return 'render'
-      expect(navigation_presenter.account_toggle).to eq('render')
-    end
-
-    it 'in ama_layout it renders a blank partial' do
-      allow_any_instance_of(AmaLayout::Navigation).to receive(:user).and_return(OpenStruct.new(navigation: 'member'))
-      allow_any_instance_of(AmaLayout::AmaLayoutView).to receive(:render).and_return 'render'
-      expect(navigation_presenter.account_toggle).to eq('render')
-    end
-  end
-
-  describe 'ama layout view' do
-    context 'needed to allow rendering based on the view main app' do
-      it 'attaches additional methods to current decorator - draper is capable of the same thing' do
-        expect(navigation_presenter.h(Helpers::AttachMethodsSample.new).additional_info).to eq('Bruce Wayne')
-      end
-    end
-  end
-
   context 'notification center' do
     let(:store) do
       AmaLayout::Notifications::RedisStore.new(
@@ -219,6 +193,8 @@ describe AmaLayout::NavigationDecorator do
         host: 'localhost'
       )
     end
+
+
     let(:notification_set) { AmaLayout::NotificationSet.new(store, 1) }
     let(:user) { OpenStruct.new(navigation: 'member', notifications: notification_set) }
     let(:navigation) { FactoryBot.build :navigation, user: user }
@@ -312,6 +288,12 @@ describe AmaLayout::NavigationDecorator do
 
       it 'renders content to the page' do
         expect(subject.notification_sidebar).to include('decorated_notification')
+      end
+    end
+
+    describe '#account_toggle' do
+      it 'renders the account_toggle partial' do
+        expect(subject.account_toggle).to eq('')
       end
     end
 

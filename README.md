@@ -9,7 +9,6 @@ Add this line to your application's Gemfile:
 ```ruby
 gem 'ama_layout'
 ```
-
 And then execute:
 
     $ bundle

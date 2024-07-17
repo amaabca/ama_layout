@@ -72,7 +72,7 @@ describe AmaLayout::Notifications::RedisStore do
 
     it 'commits to redis successfully' do
       subject.transaction do |store|
-        store.set('key', 'value')
+        store.set('test_notifications:key', 'value')
       end
       expect(subject.get('key')).to eq('value')
     end
